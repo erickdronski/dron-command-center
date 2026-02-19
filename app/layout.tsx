@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 import {
   LayoutDashboard, CheckSquare, FileText, ThumbsUp,
-  Calendar, FolderOpen, Brain, Users, Building2, Zap
+  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ const navItems = [
   { href: '/memory', icon: Brain, label: 'Memory' },
   { href: '/team', icon: Users, label: 'Team' },
   { href: '/office', icon: Building2, label: 'Office' },
+  { href: '/weather', icon: CloudSun, label: 'Weather' },
   { href: '/live-feed', icon: Zap, label: 'Live Feed', highlight: true },
 ];
 
