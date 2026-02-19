@@ -1,0 +1,14 @@
+[
+  {"id":"1","timestamp":"2026-02-19T10:00:00Z","type":"THINKING","message":"Analyzing Mission Control architecture. Planning sidebar layout with 8 pages.","agent":"Dron Builder"},
+  {"id":"2","timestamp":"2026-02-19T10:02:00Z","type":"FILE_EDIT","message":"Created app/layout.tsx — added sidebar navigation with 10 nav items","agent":"Dron Builder"},
+  {"id":"3","timestamp":"2026-02-19T10:05:00Z","type":"FILE_EDIT","message":"Created public/data/tasks.json — 8 realistic tasks","agent":"Dron Builder"},
+  {"id":"4","timestamp":"2026-02-19T10:08:00Z","type":"FILE_EDIT","message":"Created app/tasks/page.tsx — Kanban board with 5 columns","agent":"Dron Builder"},
+  {"id":"5","timestamp":"2026-02-19T10:15:00Z","type":"FILE_EDIT","message":"Created app/content/page.tsx — content pipeline with 6 stages","agent":"Dron Builder"},
+  {"id":"6","timestamp":"2026-02-19T10:22:00Z","type":"FILE_EDIT","message":"Created app/calendar/page.tsx — weekly cron job calendar","agent":"Dron Builder"},
+  {"id":"7","timestamp":"2026-02-19T10:30:00Z","type":"FILE_EDIT","message":"Created app/memory/page.tsx — memory viewer with search","agent":"Dron Builder"},
+  {"id":"8","timestamp":"2026-02-19T10:38:00Z","type":"FILE_EDIT","message":"Created app/team/page.tsx — agent team hierarchy","agent":"Dron Builder"},
+  {"id":"9","timestamp":"2026-02-19T10:45:00Z","type":"FILE_EDIT","message":"Created app/office/page.tsx — digital office workstations","agent":"Dron Builder"},
+  {"id":"10","timestamp":"2026-02-19T10:52:00Z","type":"FILE_EDIT","message":"Created app/live-feed/page.tsx — terminal-style live coding feed","agent":"Dron Builder"},
+  {"id":"11","timestamp":"2026-02-19T10:58:00Z","type":"COMMAND","message":"Ran: npm run build — compiled successfully with 0 errors","agent":"Dron Builder"},
+  {"id":"12","timestamp":"2026-02-19T11:02:00Z","type":"GIT","message":"Committed: feat: full Mission Control rebuild with live feed","agent":"Dron Builder"}
+]

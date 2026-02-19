@@ -1,0 +1,10 @@
+[
+  {"id":"1","title":"Build Mission Control UI","description":"Full rebuild of command center with sidebar nav and all pages","status":"In Progress","assignee":"AI","project":"Mission Control","createdAt":"2026-02-19T10:00:00Z"},
+  {"id":"2","title":"Add live feed auto-deploy","description":"When AI finishes coding, auto-post to live feed and deploy to Vercel","status":"Backlog","assignee":"AI","project":"Mission Control","createdAt":"2026-02-19T09:00:00Z"},
+  {"id":"3","title":"Polymarket weather bot V2","description":"Integrate NOAA forecast API for temperature prediction trading","status":"In Progress","assignee":"AI","project":"Trading","createdAt":"2026-02-18T14:00:00Z"},
+  {"id":"4","title":"Review trading P&L report","description":"Analyze last 7 days of Polymarket trades, identify winning patterns","status":"Backlog","assignee":"Dron","project":"Trading","createdAt":"2026-02-18T10:00:00Z"},
+  {"id":"5","title":"X follower growth sprint","description":"Implement reply strategy targeting 10k AI accounts","status":"Review","assignee":"AI","project":"Social","createdAt":"2026-02-17T12:00:00Z"},
+  {"id":"6","title":"Deploy memory viewer","description":"Mission Control memory page with search and markdown rendering","status":"Done","assignee":"AI","project":"Mission Control","createdAt":"2026-02-17T08:00:00Z"},
+  {"id":"7","title":"Content pipeline for YouTube","description":"Script AI tools video - Claude Sonnet 4.5 deep dive","status":"Backlog","assignee":"Dron","project":"Content","createdAt":"2026-02-16T10:00:00Z"},
+  {"id":"8","title":"FastLoop v8 optimization","description":"Improve win rate by tweaking feature weights in the ML model","status":"Done","assignee":"AI","project":"Trading","createdAt":"2026-02-15T09:00:00Z"}
+]
