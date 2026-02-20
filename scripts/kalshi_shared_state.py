@@ -127,7 +127,7 @@ class KalshiState:
         data = self._load()
         bdata = data["bots"].get(bot, {})
         bot_remaining   = bdata.get("daily_budget_cents", 0) - bdata.get("daily_spent_cents", 0)
-        total_remaining = data["daily_limit_cents"] - data["total_spent_today_cents"]
+        total_remaining = data["daily_limit_cents"] - data["total_spent_cents"]
         return max(0, min(bot_remaining, total_remaining))
 
     def can_trade(self, bot: str, cost_cents: int) -> tuple[bool, str]:
@@ -140,7 +140,7 @@ class KalshiState:
         budget   = bdata.get("daily_budget_cents", 0)
         spent    = bdata.get("daily_spent_cents", 0)
         tot_cap  = data["daily_limit_cents"]
-        tot_spent = data["total_spent_today_cents"]
+        tot_spent = data["total_spent_cents"]
 
         if cost_cents > (budget - spent):
             return False, (f"{bot} daily budget exhausted "
@@ -167,7 +167,7 @@ class KalshiState:
             bdata["trades_today"]        += 1
             bdata["last_trade"]          = datetime.datetime.utcnow().isoformat() + "Z"
             bdata["last_trade_ticker"]   = ticker
-            data["total_spent_today_cents"] += cost_cents
+            data["total_spent_cents"] += cost_cents
 
             entry = {
                 "ts":       bdata["last_trade"],
@@ -187,7 +187,7 @@ class KalshiState:
         data = self._load()
         pf = data["bots"].get("price_farmer", {})
         wt = data["bots"].get("weather_trader", {})
-        tot = data["total_spent_today_cents"]
+        tot = data["total_spent_cents"]
         cap = data["daily_limit_cents"]
         return (
             f"💰 Kalshi daily: ${tot/100:.2f}/${cap/100:.2f} spent | "
