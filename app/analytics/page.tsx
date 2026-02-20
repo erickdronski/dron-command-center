@@ -27,6 +27,25 @@ interface StatusData {
   lastUpdated: string;
 }
 
+interface KalshiData {
+  ok: boolean;
+  balance: number;
+  totalPositions: number;
+  weather: {
+    openPositions: number;
+    recentFills: number;
+    pnlApprox: number;
+    winRate: number | null;
+    marketsScanned: number;
+    monitoredCities: number;
+    cityCounts: Record<string, number>;
+    strategy: string;
+    thresholds: { entry: number; exit: number; maxPositionCents: number };
+    lastPositions: { ticker: string; contracts: number; exposure: number; realizedPnl: number }[];
+  };
+  error?: string;
+}
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 function pct(val: number, max: number) {
   return Math.max(0, Math.min(100, (val / Math.max(max, 1)) * 100));
@@ -88,15 +107,19 @@ function SectionHeader({ icon: Icon, title, sub }: { icon: React.ElementType; ti
 // ── Main Page ──────────────────────────────────────────────────────────────
 export default function AnalyticsPage() {
   const [data, setData] = useState<StatusData | null>(null);
+  const [kalshi, setKalshi] = useState<KalshiData | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
 
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/status');
-      const json = await res.json();
-      setData(json);
+      const [statusRes, kalshiRes] = await Promise.allSettled([
+        fetch('/api/status').then(r => r.json()),
+        fetch('/api/kalshi').then(r => r.json()),
+      ]);
+      if (statusRes.status === 'fulfilled') setData(statusRes.value);
+      if (kalshiRes.status === 'fulfilled') setKalshi(kalshiRes.value);
       setLastRefresh(new Date());
     } catch {
       // keep stale data
@@ -107,18 +130,18 @@ export default function AnalyticsPage() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 30000); // refresh every 30s
+    const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
   }, []);
 
   const s = data?.social;
-  const t = data?.trading;
   const sys = data?.system;
+  const kw = kalshi?.weather;
 
-  const totalPnl = t ? t.combined.pnl24h : 0;
-  const winRate = t?.polymarket.winRate ?? 0;
-  const positions = t?.polymarket.positions ?? 0;
-  const trades = t?.polymarket.totalTrades24h ?? 0;
+  const totalPnl = kw?.pnlApprox ?? 0;
+  const winRate = kw?.winRate ?? 0;
+  const positions = kw?.openPositions ?? 0;
+  const trades = kw?.recentFills ?? 0;
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -247,15 +270,27 @@ export default function AnalyticsPage() {
           {!s && !loading && <p className="text-xs text-[#444]">No social data available</p>}
         </div>
 
-        {/* Trading Analytics */}
+        {/* Kalshi Weather Bot */}
         <div className="bg-[#111] border border-[#1e1e1e] rounded-lg p-5">
-          <SectionHeader icon={DollarSign} title="Polymarket Trading" sub="FastLoop v8 + Weather Bot" />
+          <SectionHeader icon={DollarSign} title="Kalshi Weather Bot" sub="NOAA → daily high/low temp markets" />
 
           <div className="grid grid-cols-3 gap-3 mb-5">
             {[
-              { label: 'P&L 24h', value: t ? `${sign(t.combined.pnl24h)}$${fmt(Math.abs(t.combined.pnl24h))}` : '—', color: t && t.combined.pnl24h >= 0 ? 'text-green-400' : 'text-red-400' },
-              { label: 'Positions', value: t?.polymarket.positions.toString() ?? '—', color: 'text-white' },
-              { label: 'Win rate', value: winRate > 0 ? `${fmt(winRate, 1)}%` : '—', color: winRate >= 60 ? 'text-green-400' : 'text-white' },
+              {
+                label: 'Balance',
+                value: kalshi?.ok ? `$${fmt(kalshi.balance)}` : '—',
+                color: 'text-white',
+              },
+              {
+                label: 'Open positions',
+                value: kalshi?.ok ? String(positions) : '—',
+                color: 'text-cyan-400',
+              },
+              {
+                label: 'Markets scanned',
+                value: kalshi?.ok ? String(kw?.marketsScanned ?? 0) : '—',
+                color: 'text-purple-400',
+              },
             ].map(({ label, value, color }) => (
               <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
                 <div className={`text-lg font-bold ${color}`}>{value}</div>
@@ -264,38 +299,68 @@ export default function AnalyticsPage() {
             ))}
           </div>
 
-          {t && (
+          {kalshi?.ok && kw && (
             <>
               <BarRow
-                label={`Win rate (${fmt(winRate, 1)}% / target 65%)`}
-                value={winRate}
-                max={100}
-                color={winRate >= 65 ? 'bg-green-500' : winRate >= 50 ? 'bg-yellow-500' : 'bg-red-500'}
-                suffix="%"
+                label={`Cities monitored (${kw.monitoredCities} / 20)`}
+                value={kw.monitoredCities}
+                max={20}
+                color="bg-cyan-500"
               />
               <BarRow
-                label="Weather bot"
-                value={t.weather.active ? 1 : 0}
-                max={1}
-                color={t.weather.active ? 'bg-cyan-500' : 'bg-[#333]'}
+                label={`Entry ≤${kw.thresholds.entry}¢ · Exit ≥${kw.thresholds.exit}¢ · Max $${(kw.thresholds.maxPositionCents/100).toFixed(2)}`}
+                value={kw.thresholds.entry}
+                max={100}
+                color="bg-purple-500"
+                suffix="¢"
               />
-              <div className="mt-4 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-[#555]">FastLoop v8 (ML)</span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-medium ${t.polymarket.active ? 'bg-green-500/20 text-green-400' : 'bg-[#222] text-[#555]'}`}>
-                    {t.polymarket.active ? 'ACTIVE' : 'IDLE'}
-                  </span>
+              {winRate !== null && winRate > 0 && (
+                <BarRow
+                  label={`Win rate ${fmt(winRate, 0)}%`}
+                  value={winRate}
+                  max={100}
+                  color={winRate >= 60 ? 'bg-green-500' : 'bg-yellow-500'}
+                  suffix="%"
+                />
+              )}
+
+              {/* Recent open positions */}
+              {kw.lastPositions.length > 0 && (
+                <div className="mt-4">
+                  <p className="text-xs text-[#555] mb-2">Open weather positions</p>
+                  <div className="space-y-1.5">
+                    {kw.lastPositions.map((p, i) => (
+                      <div key={i} className="flex items-center justify-between text-xs bg-[#0d0d0d] rounded px-3 py-2">
+                        <span className="font-mono text-cyan-400 truncate mr-2">{p.ticker}</span>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <span className="text-[#555]">{p.contracts} contracts</span>
+                          <span className="text-[#888]">${fmt(p.exposure)}</span>
+                          {p.realizedPnl !== 0 && (
+                            <span className={p.realizedPnl >= 0 ? 'text-green-400' : 'text-red-400'}>
+                              {sign(p.realizedPnl)}${fmt(Math.abs(p.realizedPnl))}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-[#555]">Weather Bot (NOAA)</span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-medium ${t.weather.active ? 'bg-green-500/20 text-green-400' : 'bg-[#222] text-[#555]'}`}>
-                    {t.weather.active ? 'ACTIVE' : 'IDLE'}
-                  </span>
-                </div>
+              )}
+
+              <div className="mt-3 pt-3 border-t border-[#1a1a1a] text-xs text-[#555]">
+                Strategy: <span className="text-[#888]">NOAA daily high/low temp vs Kalshi buckets</span>
+                &nbsp;·&nbsp; Fills: <span className="text-white">{kw.recentFills}</span>
               </div>
             </>
           )}
-          {!t && !loading && <p className="text-xs text-[#444]">No trading data available</p>}
+
+          {kalshi && !kalshi.ok && (
+            <div className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded px-3 py-2 flex items-center gap-2">
+              <AlertCircle size={12} />
+              {kalshi.error ?? 'Kalshi API unavailable'}
+            </div>
+          )}
+          {!kalshi && !loading && <p className="text-xs text-[#444]">No Kalshi data available</p>}
         </div>
       </div>
 
@@ -333,8 +398,8 @@ export default function AnalyticsPage() {
         <div className="space-y-3">
           {[
             { name: 'Dron Command Center', desc: 'Next.js dashboard + AI collaboration', status: 'live', url: 'dron-command-center.vercel.app' },
+            { name: 'Kalshi Weather Bot v3', desc: 'NOAA → Kalshi daily high/low temp markets — 438 markets, 20 cities', status: 'active' },
             { name: 'Polymarket FastLoop v8', desc: 'ML trading bot — Simmer Markets API', status: 'active' },
-            { name: 'Weather Trading Bot', desc: 'NOAA → Polymarket temperature arbitrage', status: 'active' },
             { name: 'X Automation', desc: 'Follower growth — reply & post strategy', status: 'active' },
             { name: 'YouTube Content Pipeline', desc: 'AI tools build-in-public content', status: 'backlog' },
           ].map((p) => (
@@ -359,7 +424,7 @@ export default function AnalyticsPage() {
       </div>
 
       <p className="text-center text-[10px] text-[#333] mt-6">
-        Auto-refreshes every 30s · Data from X API, Polymarket/Simmer, OpenClaw cron
+        Auto-refreshes every 30s · Data from X API, Kalshi, NOAA, OpenClaw cron
       </p>
     </div>
   );
