@@ -2,13 +2,16 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const WORKSPACE = '/Users/dron/.openclaw/workspace/dron-command-center';
+// Works both locally and on Vercel — points to the deployed project root
+const WORKSPACE = process.cwd();
 
 function safePath(file: string): string | null {
   const resolved = path.resolve(WORKSPACE, file);
   if (!resolved.startsWith(WORKSPACE + path.sep) && resolved !== WORKSPACE) return null;
   return resolved;
 }
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -26,14 +29,16 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // List all memory-related files across the workspace
+  // List all memory-related files
   const files: { name: string; path: string; size: number; modified: string; category: string }[] = [];
 
   const addFile = (relPath: string, category: string) => {
     const abs = path.join(WORKSPACE, relPath);
     if (fs.existsSync(abs)) {
-      const stat = fs.statSync(abs);
-      files.push({ name: path.basename(relPath), path: relPath, size: stat.size, modified: stat.mtime.toISOString(), category });
+      try {
+        const stat = fs.statSync(abs);
+        files.push({ name: path.basename(relPath), path: relPath, size: stat.size, modified: stat.mtime.toISOString(), category });
+      } catch { /* skip */ }
     }
   };
 
@@ -45,18 +50,23 @@ export async function GET(request: NextRequest) {
   addFile('AGENTS.md', 'config');
   addFile('TOOLS.md', 'config');
   addFile('HEARTBEAT.md', 'config');
+  addFile('BOOTSTRAP.md', 'config');
 
   // Daily memory logs
   const memoryDir = path.join(WORKSPACE, 'memory');
   if (fs.existsSync(memoryDir)) {
-    const dailyFiles = fs.readdirSync(memoryDir)
-      .filter(f => f.endsWith('.md') || f.endsWith('.json'))
-      .sort()
-      .reverse();
-    for (const f of dailyFiles) {
-      const stat = fs.statSync(path.join(memoryDir, f));
-      files.push({ name: f, path: `memory/${f}`, size: stat.size, modified: stat.mtime.toISOString(), category: 'daily' });
-    }
+    try {
+      const dailyFiles = fs.readdirSync(memoryDir)
+        .filter(f => f.endsWith('.md') || f.endsWith('.json'))
+        .sort()
+        .reverse();
+      for (const f of dailyFiles) {
+        try {
+          const stat = fs.statSync(path.join(memoryDir, f));
+          files.push({ name: f, path: `memory/${f}`, size: stat.size, modified: stat.mtime.toISOString(), category: 'daily' });
+        } catch { /* skip */ }
+      }
+    } catch { /* skip */ }
   }
 
   return NextResponse.json({ files });
@@ -68,7 +78,7 @@ export async function DELETE(request: NextRequest) {
 
   if (!file) return NextResponse.json({ error: 'No file specified' }, { status: 400 });
 
-  // Safety: only allow deleting files in memory/ subfolder or specific deletable files
+  // Safety: only allow deleting files in memory/ subfolder or specific ones
   const DELETABLE_PREFIXES = ['memory/'];
   const DELETABLE_FILES = ['MEMORY.md', 'BOOTSTRAP.md'];
 
@@ -90,6 +100,6 @@ export async function DELETE(request: NextRequest) {
     fs.unlinkSync(filePath);
     return NextResponse.json({ ok: true, deleted: file });
   } catch {
-    return NextResponse.json({ error: 'Could not delete file' }, { status: 500 });
+    return NextResponse.json({ error: 'Could not delete file — filesystem may be read-only on this deployment' }, { status: 500 });
   }
 }
