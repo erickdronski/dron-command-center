@@ -27,21 +27,40 @@ interface StatusData {
   lastUpdated: string;
 }
 
+interface KalshiTrade {
+  ts: string;
+  ticker: string;
+  type?: string;
+  side: string;
+  costUsd: number;
+  orderId: string;
+}
+
 interface KalshiData {
   ok: boolean;
-  balance: number;
-  totalPositions: number;
-  weather: {
-    openPositions: number;
-    recentFills: number;
-    pnlApprox: number;
-    winRate: number | null;
-    marketsScanned: number;
-    monitoredCities: number;
-    cityCounts: Record<string, number>;
-    strategy: string;
-    thresholds: { entry: number; exit: number; maxPositionCents: number };
-    lastPositions: { ticker: string; contracts: number; exposure: number; realizedPnl: number }[];
+  date?: string;
+  lastUpdated?: string;
+  budget?: {
+    totalLimitCents: number;
+    totalSpentCents: number;
+    totalRemainingCents: number;
+    totalPct: number;
+  };
+  weatherTrader?: {
+    tradesDay: number;
+    spentCents: number;
+    budgetCents: number;
+    budgetPct: number;
+    lastTrade: string | null;
+    lastTicker: string | null;
+    trades: KalshiTrade[];
+  };
+  priceFarmer?: {
+    tradesDay: number;
+    spentCents: number;
+    budgetCents: number;
+    budgetPct: number;
+    trades: KalshiTrade[];
   };
   error?: string;
 }
@@ -136,12 +155,13 @@ export default function AnalyticsPage() {
 
   const s = data?.social;
   const sys = data?.system;
-  const kw = kalshi?.weather;
+  const wt = kalshi?.weatherTrader;
+  const pf = kalshi?.priceFarmer;
 
-  const totalPnl = kw?.pnlApprox ?? 0;
-  const winRate = kw?.winRate ?? 0;
-  const positions = kw?.openPositions ?? 0;
-  const trades = kw?.recentFills ?? 0;
+  const totalSpentUsd = kalshi?.budget ? kalshi.budget.totalSpentCents / 100 : 0;
+  const wtTrades  = wt?.tradesDay ?? 0;
+  const pfTrades  = pf?.tradesDay ?? 0;
+  const totalBudgetPct = kalshi?.budget?.totalPct ?? 0;
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -191,11 +211,11 @@ export default function AnalyticsPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <StatCard
           icon={DollarSign}
-          label="P&L 24h"
-          value={`${sign(totalPnl)}$${fmt(Math.abs(totalPnl))}`}
-          sub={`${positions} open position${positions !== 1 ? 's' : ''}`}
-          color={totalPnl >= 0 ? 'text-green-400' : 'text-red-400'}
-          trend={totalPnl >= 0 ? 'up' : 'down'}
+          label="Kalshi spent today"
+          value={kalshi?.ok ? `$${fmt(totalSpentUsd)}` : '—'}
+          sub={kalshi?.budget ? `$${fmt(kalshi.budget.totalRemainingCents / 100)} remaining` : undefined}
+          color={totalBudgetPct >= 90 ? 'text-red-400' : totalBudgetPct >= 70 ? 'text-yellow-400' : 'text-green-400'}
+          trend={totalBudgetPct < 90 ? 'up' : 'down'}
         />
         <StatCard
           icon={Users}
@@ -207,10 +227,10 @@ export default function AnalyticsPage() {
         />
         <StatCard
           icon={Target}
-          label="Win Rate"
-          value={winRate > 0 ? `${fmt(winRate, 1)}%` : '—'}
-          sub={`${trades} trade${trades !== 1 ? 's' : ''} today`}
-          color={winRate >= 60 ? 'text-green-400' : winRate >= 50 ? 'text-yellow-400' : 'text-red-400'}
+          label="Trades today"
+          value={kalshi?.ok ? `${wtTrades + pfTrades}` : '—'}
+          sub={kalshi?.ok ? `${wtTrades} weather · ${pfTrades} price` : undefined}
+          color="text-cyan-400"
         />
         <StatCard
           icon={Activity}
@@ -270,97 +290,73 @@ export default function AnalyticsPage() {
           {!s && !loading && <p className="text-xs text-[#444]">No social data available</p>}
         </div>
 
-        {/* Kalshi Weather Bot */}
+        {/* Kalshi Trading */}
         <div className="bg-[#111] border border-[#1e1e1e] rounded-lg p-5">
-          <SectionHeader icon={DollarSign} title="Kalshi Weather Bot" sub="NOAA → daily high/low temp markets" />
-
-          <div className="grid grid-cols-3 gap-3 mb-5">
-            {[
-              {
-                label: 'Balance',
-                value: kalshi?.ok ? `$${fmt(kalshi.balance)}` : '—',
-                color: 'text-white',
-              },
-              {
-                label: 'Open positions',
-                value: kalshi?.ok ? String(positions) : '—',
-                color: 'text-cyan-400',
-              },
-              {
-                label: 'Markets scanned',
-                value: kalshi?.ok ? String(kw?.marketsScanned ?? 0) : '—',
-                color: 'text-purple-400',
-              },
-            ].map(({ label, value, color }) => (
-              <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
-                <div className={`text-lg font-bold ${color}`}>{value}</div>
-                <div className="text-[10px] text-[#555] mt-0.5">{label}</div>
-              </div>
-            ))}
+          <div className="flex items-center justify-between mb-4">
+            <SectionHeader icon={DollarSign} title="Kalshi Trading" sub="Weather + Price Farmer bots" />
+            {kalshi?.date && (
+              <span className="text-[10px] text-[#444]">
+                {new Date(kalshi.lastUpdated ?? '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}
+              </span>
+            )}
           </div>
 
-          {kalshi?.ok && kw && (
+          {kalshi?.ok && kalshi.budget && wt && pf ? (
             <>
-              <BarRow
-                label={`Cities monitored (${kw.monitoredCities} / 20)`}
-                value={kw.monitoredCities}
-                max={20}
-                color="bg-cyan-500"
-              />
-              <BarRow
-                label={`Entry ≤${kw.thresholds.entry}¢ · Exit ≥${kw.thresholds.exit}¢ · Max $${(kw.thresholds.maxPositionCents/100).toFixed(2)}`}
-                value={kw.thresholds.entry}
-                max={100}
-                color="bg-purple-500"
-                suffix="¢"
-              />
-              {winRate !== null && winRate > 0 && (
-                <BarRow
-                  label={`Win rate ${fmt(winRate, 0)}%`}
-                  value={winRate}
-                  max={100}
-                  color={winRate >= 60 ? 'bg-green-500' : 'bg-yellow-500'}
-                  suffix="%"
-                />
-              )}
+              {/* Summary stats */}
+              <div className="grid grid-cols-3 gap-3 mb-5">
+                {[
+                  { label: 'Total spent', value: `$${fmt(kalshi.budget.totalSpentCents / 100)}`, sub: `/ $${fmt(kalshi.budget.totalLimitCents / 100)}`, color: 'text-white' },
+                  { label: 'Weather trades', value: String(wt.tradesDay), sub: `$${fmt(wt.spentCents / 100)} spent`, color: 'text-cyan-400' },
+                  { label: 'Price Farmer', value: String(pf.tradesDay), sub: `$${fmt(pf.spentCents / 100)} spent`, color: 'text-purple-400' },
+                ].map(({ label, value, sub, color }) => (
+                  <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
+                    <div className={`text-lg font-bold ${color}`}>{value}</div>
+                    <div className="text-[10px] text-[#555] mt-0.5">{label}</div>
+                    {sub && <div className="text-[10px] text-[#444] mt-0.5">{sub}</div>}
+                  </div>
+                ))}
+              </div>
 
-              {/* Recent open positions */}
-              {kw.lastPositions.length > 0 && (
+              {/* Budget bars */}
+              <BarRow label={`Daily budget (${kalshi.budget.totalPct}% used)`} value={kalshi.budget.totalPct} max={100}
+                color={kalshi.budget.totalPct >= 90 ? 'bg-red-500' : kalshi.budget.totalPct >= 70 ? 'bg-yellow-500' : 'bg-green-500'} suffix="%" />
+              <BarRow label={`Weather Trader $${fmt(wt.spentCents/100)}/$${fmt(wt.budgetCents/100)}`} value={wt.budgetPct} max={100} color="bg-cyan-500" suffix="%" />
+              <BarRow label={`Price Farmer $${fmt(pf.spentCents/100)}/$${fmt(pf.budgetCents/100)}`} value={pf.budgetPct} max={100} color="bg-purple-500" suffix="%" />
+
+              {/* Weather trade log */}
+              {wt.trades.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs text-[#555] mb-2">Open weather positions</p>
-                  <div className="space-y-1.5">
-                    {kw.lastPositions.map((p, i) => (
-                      <div key={i} className="flex items-center justify-between text-xs bg-[#0d0d0d] rounded px-3 py-2">
-                        <span className="font-mono text-cyan-400 truncate mr-2">{p.ticker}</span>
-                        <div className="flex items-center gap-3 shrink-0">
-                          <span className="text-[#555]">{p.contracts} contracts</span>
-                          <span className="text-[#888]">${fmt(p.exposure)}</span>
-                          {p.realizedPnl !== 0 && (
-                            <span className={p.realizedPnl >= 0 ? 'text-green-400' : 'text-red-400'}>
-                              {sign(p.realizedPnl)}${fmt(Math.abs(p.realizedPnl))}
-                            </span>
-                          )}
+                  <p className="text-xs text-[#555] mb-2 font-medium">Today&apos;s weather trades</p>
+                  <div className="space-y-1">
+                    {wt.trades.map((t, i) => (
+                      <div key={i} className="flex items-center justify-between text-xs bg-[#0d0d0d] rounded px-3 py-2 font-mono">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded font-sans font-bold ${t.side === 'YES' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                            {t.side}
+                          </span>
+                          <span className="text-cyan-400 truncate">{t.ticker}</span>
+                        </div>
+                        <div className="flex items-center gap-3 shrink-0 ml-2">
+                          <span className="text-[#888] font-sans">${fmt(t.costUsd)}</span>
+                          <span className="text-[#444] font-sans text-[10px]">
+                            {new Date(t.ts).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}
+                          </span>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
-
-              <div className="mt-3 pt-3 border-t border-[#1a1a1a] text-xs text-[#555]">
-                Strategy: <span className="text-[#888]">NOAA daily high/low temp vs Kalshi buckets</span>
-                &nbsp;·&nbsp; Fills: <span className="text-white">{kw.recentFills}</span>
-              </div>
             </>
-          )}
-
-          {kalshi && !kalshi.ok && (
+          ) : kalshi && !kalshi.ok ? (
             <div className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded px-3 py-2 flex items-center gap-2">
               <AlertCircle size={12} />
-              {kalshi.error ?? 'Kalshi API unavailable'}
+              {kalshi.error ?? 'State file not found'}
             </div>
+          ) : (
+            !loading && <p className="text-xs text-[#444]">No Kalshi data — bot may not have run today</p>
           )}
-          {!kalshi && !loading && <p className="text-xs text-[#444]">No Kalshi data available</p>}
         </div>
       </div>
 

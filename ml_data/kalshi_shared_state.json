@@ -1,0 +1,128 @@
+{
+  "date": "2026-02-20",
+  "daily_limit_cents": 1800,
+  "total_spent_cents": 1762,
+  "bots": {
+    "price_farmer": {
+      "daily_budget_cents": 900,
+      "daily_spent_cents": 868,
+      "trades_today": 4,
+      "last_trade": "2026-02-20T15:55:52.886444Z",
+      "last_trade_ticker": "KXETH15M-26FEB201100-00"
+    },
+    "weather_trader": {
+      "daily_budget_cents": 900,
+      "daily_spent_cents": 894,
+      "trades_today": 9,
+      "last_trade": "2026-02-20T15:44:50.686975Z",
+      "last_trade_ticker": "KXRAINDALM-26FEB-1"
+    }
+  },
+  "trade_log": [
+    {
+      "ts": "2026-02-20T15:25:52.427364Z",
+      "bot": "price_farmer",
+      "ticker": "KXXRP15M-26FEB201030-30",
+      "side": "yes",
+      "cost_c": 297,
+      "order_id": "12644e64-03d0-4286-ae55-36c3fba0e859"
+    },
+    {
+      "ts": "2026-02-20T15:25:53.077017Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB201030-30",
+      "side": "yes",
+      "cost_c": 288,
+      "order_id": "ba4cc82d-c589-4ebd-b1e7-540907820391"
+    },
+    {
+      "ts": "2026-02-20T15:25:53.995285Z",
+      "bot": "price_farmer",
+      "ticker": "KXETH15M-26FEB201030-30",
+      "side": "yes",
+      "cost_c": 184,
+      "order_id": "91c6f312-dea5-45ef-bb26-42122eef27a4"
+    },
+    {
+      "ts": "2026-02-20T15:44:35.397869Z",
+      "bot": "weather_trader",
+      "ticker": "KXHIGHCHI-26FEB21-T35",
+      "side": "yes",
+      "cost_c": 66,
+      "order_id": "5ad7b713-c7ec-4235-b734-06f9cbf04439"
+    },
+    {
+      "ts": "2026-02-20T15:44:40.403293Z",
+      "bot": "weather_trader",
+      "ticker": "KXHIGHMIA-26FEB21-B79.5",
+      "side": "yes",
+      "cost_c": 138,
+      "order_id": "e060e59a-5c39-443f-980e-e24029ea4f96"
+    },
+    {
+      "ts": "2026-02-20T15:44:48.700398Z",
+      "bot": "weather_trader",
+      "ticker": "KXLOWTDEN-26FEB20-B14.5",
+      "side": "yes",
+      "cost_c": 128,
+      "order_id": "98db5106-9964-412d-a702-716fa0c81316"
+    },
+    {
+      "ts": "2026-02-20T15:44:48.856447Z",
+      "bot": "weather_trader",
+      "ticker": "KXLOWTLAX-26FEB20-B40.5",
+      "side": "no",
+      "cost_c": 88,
+      "order_id": "60ad709d-fb8c-4d6b-9413-37550852639f"
+    },
+    {
+      "ts": "2026-02-20T15:44:49.829375Z",
+      "bot": "weather_trader",
+      "ticker": "KXRAINHOUM-26FEB-1",
+      "side": "no",
+      "cost_c": 112,
+      "order_id": "a54d5312-9ab8-4206-a523-c736566a45c5"
+    },
+    {
+      "ts": "2026-02-20T15:44:50.124548Z",
+      "bot": "weather_trader",
+      "ticker": "KXRAINLAXM-26FEB-3",
+      "side": "no",
+      "cost_c": 102,
+      "order_id": "f6c24d9c-2bef-4504-8a07-b0c686bc7b85"
+    },
+    {
+      "ts": "2026-02-20T15:44:50.234757Z",
+      "bot": "weather_trader",
+      "ticker": "KXRAINLAXM-26FEB-2",
+      "side": "no",
+      "cost_c": 94,
+      "order_id": "49d790f6-d63a-4abe-8622-211f0a6fe1d0"
+    },
+    {
+      "ts": "2026-02-20T15:44:50.352980Z",
+      "bot": "weather_trader",
+      "ticker": "KXRAINLAXM-26FEB-1",
+      "side": "no",
+      "cost_c": 86,
+      "order_id": "3841f4fd-8688-47b8-933f-5cf825e45803"
+    },
+    {
+      "ts": "2026-02-20T15:44:50.686975Z",
+      "bot": "weather_trader",
+      "ticker": "KXRAINDALM-26FEB-1",
+      "side": "no",
+      "cost_c": 80,
+      "order_id": "6af703ec-b54b-4c94-8c80-2d982b86b4bb"
+    },
+    {
+      "ts": "2026-02-20T15:55:52.886444Z",
+      "bot": "price_farmer",
+      "ticker": "KXETH15M-26FEB201100-00",
+      "side": "yes",
+      "cost_c": 99,
+      "order_id": "a0de1b9a-817c-4b99-9767-a8e36f372523"
+    }
+  ],
+  "last_updated": "2026-02-20T15:55:52.886461Z"
+}
