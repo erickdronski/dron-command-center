@@ -496,26 +496,24 @@ def evaluate_monthly_snow(market: dict, parsed: dict, city_code: str) -> dict:
               f"climo:{climo_supplement:.1f}\"/{days_uncovered}d = "
               f"blended:{blended:.1f}\" vs {threshold}\" ({days_remaining}d left) [{conf}]")
 
-    if blended >= threshold * 1.3 and conf != "low":
+    # Only trade monthly snow when forecast clearly resolves the question:
+    # - Forecast covers most of the remaining month (high conf)
+    # - Blended estimate is far enough from threshold to be actionable
+    if blended >= threshold * 1.5 and conf == "high":
+        # NOAA says 50%+ above threshold — YES is likely
         if yes_ask <= ENTRY_THRESHOLD:
             return {"signal": "buy_yes", "side": "yes", "price": yes_ask, "edge": ENTRY_THRESHOLD - yes_ask,
-                    "reason": f"Snow likely: {detail}"}
+                    "reason": f"Snow likely (blended {blended:.1f}\" >> {threshold}\"): {detail}"}
         elif yes_bid >= EXIT_THRESHOLD:
             return {"signal": "sell_yes", "side": "yes", "price": yes_bid, "reason": f"Exit YES. {detail}"}
-    elif blended <= threshold * 0.5 and conf != "low":
+    elif blended <= threshold * 0.3 and conf == "high":
+        # NOAA says less than 30% of threshold — NO is very likely
         if no_ask <= ENTRY_THRESHOLD:
             return {"signal": "buy_no", "side": "no", "price": no_ask, "edge": ENTRY_THRESHOLD - no_ask,
-                    "reason": f"Snow unlikely: {detail}"}
+                    "reason": f"Snow very unlikely (blended {blended:.1f}\" << {threshold}\"): {detail}"}
 
-    # Extreme value plays regardless of confidence
-    if yes_ask <= 3:
-        return {"signal": "buy_yes", "side": "yes", "price": yes_ask, "edge": 10,
-                "reason": f"Extreme value YES at {yes_ask}¢. {detail}"}
-    if no_ask <= 3:
-        return {"signal": "buy_no", "side": "no", "price": no_ask, "edge": 10,
-                "reason": f"Extreme value NO at {no_ask}¢. {detail}"}
-
-    return {"signal": "hold", "reason": detail}
+    # No data backing → hold. Don't bet on extreme snow unless forecast actually supports it.
+    return {"signal": "hold", "reason": f"No strong signal. {detail}"}
 
 
 def evaluate_monthly_rain(market: dict, parsed: dict, city_code: str) -> dict:
@@ -578,13 +576,6 @@ def evaluate_monthly_rain(market: dict, parsed: dict, city_code: str) -> dict:
                 "reason": f"Rain days unlikely: {detail}"}
     elif yes_bid >= EXIT_THRESHOLD:
         return {"signal": "sell_yes", "side": "yes", "price": yes_bid, "reason": f"Exit YES. {detail}"}
-
-    if yes_ask <= 3:
-        return {"signal": "buy_yes", "side": "yes", "price": yes_ask, "edge": 10,
-                "reason": f"Extreme value YES at {yes_ask}¢. {detail}"}
-    if no_ask <= 3:
-        return {"signal": "buy_no", "side": "no", "price": no_ask, "edge": 10,
-                "reason": f"Extreme value NO at {no_ask}¢. {detail}"}
 
     return {"signal": "hold", "reason": detail}
 
