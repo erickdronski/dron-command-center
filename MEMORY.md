@@ -116,6 +116,15 @@ An AI-first autonomous operation — treating AI agents like actual employees of
 
 ---
 
+## 🔑 Credentials & Tokens
+
+- **GitHub token (classic, repo+workflow):** stored in git remote URL locally
+- **Vercel token:** stored as GitHub secret `VERCEL_TOKEN`
+- **Vercel project ID:** `prj_zfbXJ9Ir2SlBh5ecuQ73IOMxwZFb`
+- **Vercel org ID:** `team_yQ5rBCyVa8Z7R3aL3IULvJV0`
+
+---
+
 ## 🔑 Session Notes (Feb 19, 2026)
 
 - First session. Fresh workspace, no prior memory.
