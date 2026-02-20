@@ -32,6 +32,12 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding
 
+# Shared state coordination with Weather Trader
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from kalshi_shared_state import KalshiState
+_state = KalshiState()
+BOT_NAME = "price_farmer"
+
 # ─── Config ──────────────────────────────────────────────────────────────────
 
 API_KEY_ID = os.environ.get("KALSHI_API_KEY",  "69d03bf0-4a89-414d-8ecf-d6fe4cfdf183")
@@ -309,6 +315,12 @@ def run(live: bool, quiet: bool, max_trades: int):
             print(f"  🛡️  {c['ticker']} | Insufficient balance (${balance_cents/100:.2f})")
             continue
 
+        # Shared budget check — coordinate with Weather Trader
+        ok, reason = _state.can_trade(BOT_NAME, cost_c)
+        if not ok and live:
+            print(f"  🤝 {c['ticker']} | Budget gate: {reason}")
+            continue
+
         print(f"\n  💰 {c['ticker']} | BUY {count}x {c['side'].upper()} @ {c['price']}¢ "
               f"= ${cost_c/100:.2f} | edge {c['edge']}¢")
 
@@ -325,6 +337,7 @@ def run(live: bool, quiet: bool, max_trades: int):
             status = order.get("status", "?")
             print(f"  ✅ {status} | order_id={oid}")
             log_trade(c, count, cost_c, oid, dry_run=False)
+            _state.record_trade(BOT_NAME, cost_c, c["ticker"], c["side"], oid, dry_run=False)
             balance_cents -= cost_c
             trades_done   += 1
             results.append({"ticker": c["ticker"], "side": c["side"],
@@ -335,6 +348,7 @@ def run(live: bool, quiet: bool, max_trades: int):
     print(f"\n{'='*60}")
     print(f"📊 {len(candidates)} opps | {trades_done} trades {'executed' if live else '(dry-run)'} | "
           f"Balance: ${balance_cents/100:.2f}")
+    print(_state.summary_line())
     if results:
         print("🎯 Trades:")
         for r in results:

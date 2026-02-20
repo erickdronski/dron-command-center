@@ -13,6 +13,12 @@ Covers 150+ daily markets across 20 cities:
 
 import argparse, base64, datetime, json, os, re, sys, uuid
 from typing import Optional
+
+# Shared state coordination with Price Farmer
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from kalshi_shared_state import KalshiState
+_state = KalshiState()
+BOT_NAME = "weather_trader"
 import requests
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
@@ -800,6 +806,14 @@ def run(live: bool, quiet: bool, no_safeguards: bool, max_trades: int):
                 print(f"     🛡️  Insufficient balance (${balance_cents/100:.2f})")
             continue
 
+        # Shared budget check — coordinate with Price Farmer
+        if "buy" in signal and live:
+            ok, reason_budget = _state.can_trade(BOT_NAME, cost)
+            if not ok:
+                if not quiet:
+                    print(f"     🤝 Budget gate: {reason_budget}")
+                continue
+
         action = "buy" if "buy" in signal else "sell"
         order = place_order(ticker, side, action, count, price, live)
 
@@ -814,6 +828,8 @@ def run(live: bool, quiet: bool, no_safeguards: bool, max_trades: int):
             held[ticker] = {"position": count if side == "yes" else -count}
             oid = order.get("order_id", "?")
             print(f"     ✅ {order.get('status','?')} | {oid}")
+            if "buy" in signal:
+                _state.record_trade(BOT_NAME, cost, ticker, side, oid, dry_run=False)
             results.append({"ticker": ticker, "side": side, "action": action,
                             "count": count, "price_cents": price, "order_id": oid,
                             "reason": reason[:80]})
@@ -822,6 +838,7 @@ def run(live: bool, quiet: bool, no_safeguards: bool, max_trades: int):
     print(f"📊 [{ts}] {len(markets)} markets | {opps} opportunities | "
           f"{trades} trades {'executed' if live else '(dry run)'} | "
           f"Balance: ${balance_cents/100:.2f}")
+    print(_state.summary_line())
     if results:
         print("🎯 Trades:")
         for r in results:
