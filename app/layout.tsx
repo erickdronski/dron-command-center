@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 import {
   LayoutDashboard, CheckSquare, FileText, ThumbsUp,
-  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, BarChart2, Wrench, Rocket
+  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, BarChart2, Wrench, Rocket, Terminal
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const navItems = [
   { href: '/', icon: LayoutDashboard, label: 'Dashboard' },
+  { href: '/action-center', icon: Terminal, label: 'Action Center', highlight: true },
   { href: '/analytics', icon: BarChart2, label: 'Analytics' },
   { href: '/deployments', icon: Rocket, label: 'Deployments' },
   { href: '/tasks', icon: CheckSquare, label: 'Tasks' },
