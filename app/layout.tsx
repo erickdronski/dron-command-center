@@ -3,8 +3,10 @@ import Link from 'next/link';
 import './globals.css';
 import {
   LayoutDashboard, CheckSquare, FileText, ThumbsUp,
-  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, BarChart2, Wrench
+  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, 
+  BarChart2, Wrench, Rocket, GitBranch
 } from 'lucide-react';
+import { HealthIndicator } from './components/HealthStatus';
 
 export const metadata: Metadata = {
   title: 'Mission Control',
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
 const navItems = [
   { href: '/', icon: LayoutDashboard, label: 'Dashboard' },
   { href: '/analytics', icon: BarChart2, label: 'Analytics' },
+  { href: '/deployments', icon: Rocket, label: 'Deployments' },
   { href: '/tasks', icon: CheckSquare, label: 'Tasks' },
   { href: '/content', icon: FileText, label: 'Content' },
   { href: '/approvals', icon: ThumbsUp, label: 'Approvals' },
@@ -36,10 +39,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Logo */}
           <div className="px-4 py-4 border-b border-[#222]">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-purple-500 rounded flex items-center justify-center text-xs font-bold">M</div>
-              <span className="text-sm font-semibold text-white">Mission Control</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-white block leading-tight">Mission Control</span>
+                <span className="text-[10px] text-[#555] uppercase tracking-wider">Dron Command</span>
+              </div>
             </div>
           </div>
+          
           {/* Nav */}
           <nav className="flex-1 overflow-y-auto py-2">
             {navItems.map((item) => (
@@ -57,14 +68,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
             ))}
           </nav>
-          {/* Status */}
+          
+          {/* Health Status */}
           <div className="px-4 py-3 border-t border-[#222]">
-            <div className="flex items-center gap-2 text-xs text-[#555]">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              AI Online
+            <div className="flex items-center gap-2 text-xs">
+              <HealthIndicator status="up" size="sm" />
+              <span className="text-[#555]">All systems operational</span>
+            </div>
+            <div className="text-[10px] text-[#444] mt-1 ml-4">
+              Updated just now
             </div>
           </div>
         </aside>
+        
         {/* Main */}
         <main className="flex-1 overflow-y-auto">
           {children}
