@@ -78,6 +78,13 @@ const alternatives = [
     solves: 'Pipeline management, forecasting accuracy, deal intelligence. Replaces manual pipeline tracking and the "Pulse" column.',
     doesnt: 'Doesn\'t do product ownership mapping, white space analysis, or Customer 360 usage data integration.',
     fit: 3,
+    orgBenefits: [
+      { role: 'Sales Leadership / CRO', benefit: 'AI-driven forecasting replaces gut-feel pipeline reviews. Executive dashboards show real-time revenue health across all territories.' },
+      { role: 'CSMs', benefit: 'Renewal risk scoring from engagement signals. CSMs see which accounts are going dark before it becomes a fire drill.' },
+      { role: 'RevOps', benefit: 'Automated pipeline hygiene — stale deals flagged, stages updated, forecast accuracy tracked over time. Eliminates hours of manual CRM cleanup.' },
+      { role: 'Marketing', benefit: 'Deal velocity data shows which campaigns influence faster closes. Attribution modeling improves with activity-level engagement data.' },
+      { role: 'Finance', benefit: 'More accurate revenue forecasting for quarterly planning. Reduces variance between forecast and actuals.' },
+    ],
   },
   {
     name: 'People.ai',
@@ -87,6 +94,13 @@ const alternatives = [
     solves: 'Contact mapping (CIO, CISO columns), relationship strength, engagement scoring. Auto-populates who\'s been contacted and how often.',
     doesnt: 'No product ownership tracking, no external data enrichment (ZoomInfo replacement), no usage telemetry.',
     fit: 3,
+    orgBenefits: [
+      { role: 'SEs / Pre-Sales', benefit: 'See which stakeholders have been engaged and by whom — avoid duplicating outreach. Know who the technical champion is before the call.' },
+      { role: 'CSMs', benefit: 'Relationship maps show if key contacts are being nurtured post-sale. Gaps in engagement = churn risk signal.' },
+      { role: 'Sales Leadership', benefit: 'Rep activity analytics: who\'s doing the outreach work vs. who\'s coasting. Data-driven coaching instead of anecdotal reviews.' },
+      { role: 'Marketing', benefit: 'See which personas and titles are most engaged in active deals. Informs ABM targeting and content strategy.' },
+      { role: 'VE Team', benefit: 'Know exactly which stakeholders participated in prior engagements. Prep for capability workshops with full relationship context.' },
+    ],
   },
   {
     name: 'Demandbase',
@@ -96,6 +110,13 @@ const alternatives = [
     solves: 'Company intelligence (revenue, employees, industry), technographics (competitor detection), intent signals. Could replace ZoomInfo for some use cases.',
     doesnt: 'No Salesforce-native integration depth. No product ownership mapping. No usage telemetry from Customer 360.',
     fit: 2,
+    orgBenefits: [
+      { role: 'Marketing', benefit: 'BIGGEST winner. Intent data shows which accounts are actively researching solutions. ABM campaigns target accounts showing buying signals. Ad spend goes to accounts that are actually in-market.' },
+      { role: 'SDR/BDR Team', benefit: 'Intent-based prioritization: call the accounts that are researching "endpoint management" or "ITSM" right now, not random cold outreach.' },
+      { role: 'Sales Reps', benefit: 'Technographic data reveals competitor products installed at accounts. Walk into meetings knowing their current stack.' },
+      { role: 'Product Marketing', benefit: 'Competitive intelligence at scale — see which competitors are gaining or losing share across your install base.' },
+      { role: 'Channel / Partners', benefit: 'Identify partner-sourced accounts showing intent. Route warm leads to the right partner faster.' },
+    ],
   },
   {
     name: 'ARPEDIO (Salesforce Native)',
@@ -105,6 +126,14 @@ const alternatives = [
     solves: 'White space analysis (product gaps), account planning structure, competitive mapping — all INSIDE Salesforce. This is literally built for the bingo card use case.',
     doesnt: 'No external data enrichment (still need ZoomInfo). No usage telemetry. No AI brief generation.',
     fit: 5,
+    orgBenefits: [
+      { role: 'Sales Reps', benefit: 'Visual white space maps replace 25+ manual product columns. See instantly which products are owned, which aren\'t, and where the revenue opportunity is.' },
+      { role: 'CSMs', benefit: 'Account plans with SWOT analysis give CSMs a strategic framework for QBRs. Adoption gaps visible at a glance.' },
+      { role: 'VE Team', benefit: 'Pre-built account plans feed directly into capability assessment prep. White space data identifies which capabilities to focus workshops on.' },
+      { role: 'Sales Leadership', benefit: 'Standardized account planning across all reps. Roll-up views show white space opportunity by territory, segment, product line.' },
+      { role: 'Product Management', benefit: 'Aggregate white space data reveals which products have the largest addressable opportunity across the install base. Informs roadmap priorities.' },
+      { role: 'Marketing', benefit: 'White space data by segment/vertical drives targeted campaign strategy. Know which products to promote to which audience.' },
+    ],
   },
   {
     name: 'DemandFarm',
@@ -114,6 +143,13 @@ const alternatives = [
     solves: 'Visual org charts (contacts/CIO/CISO), white space heat maps, account health scoring. Similar to ARPEDIO but with stronger visualization.',
     doesnt: 'Same gaps as ARPEDIO — no external enrichment, no usage data, no AI.',
     fit: 4,
+    orgBenefits: [
+      { role: 'Sales Reps', benefit: 'Visual org charts show the power map: who\'s the economic buyer, who\'s the champion, who\'s the blocker. Navigate complex orgs visually.' },
+      { role: 'SEs / Pre-Sales', benefit: 'See the technical evaluation team mapped out before a demo. Tailor presentations to the specific stakeholders in the room.' },
+      { role: 'CSMs', benefit: 'Relationship health scores by contact. If the champion leaves, get alerted immediately. Track multi-threaded relationships.' },
+      { role: 'Sales Leadership', benefit: 'Account health dashboards across the entire book. Identify single-threaded accounts (risk) vs. well-penetrated accounts (safe).' },
+      { role: 'Executive Sponsors', benefit: 'Visual account maps for exec-to-exec alignment. Know who to call at which level for strategic accounts.' },
+    ],
   },
   {
     name: 'ZoomInfo + Salesforce Native Enrichment',
@@ -123,6 +159,14 @@ const alternatives = [
     solves: 'Company intelligence auto-populated, contact discovery (CIO, CISO), competitor detection via technographics, website and LinkedIn auto-linked.',
     doesnt: 'No product ownership tracking, no usage telemetry, no white space analysis, no account planning structure.',
     fit: 4,
+    orgBenefits: [
+      { role: 'Sales Reps', benefit: 'Account fields auto-populated: revenue, employee count, industry, HQ, website, key contacts. Eliminates 30-45 min of manual research per account.' },
+      { role: 'SDR/BDR Team', benefit: 'Contact discovery at scale — find the CIO, CISO, IT Director at any account instantly. Direct dials and verified emails.' },
+      { role: 'Marketing', benefit: 'Firmographic enrichment improves segmentation. Technographic data reveals competitor install base for displacement campaigns.' },
+      { role: 'CSMs', benefit: 'Auto-detect when key contacts change roles or leave the company (ZoomInfo alerts). Protect relationships proactively.' },
+      { role: 'RevOps / Data Team', benefit: 'CRM data quality dramatically improves. Less manual cleanup, fewer duplicates, standardized industry/revenue fields across all accounts.' },
+      { role: 'Channel / Partners', benefit: 'Enrich partner-sourced leads with firmographic data for better qualification and routing.' },
+    ],
   },
 ];
 
@@ -308,6 +352,14 @@ ${agentforceCapabilities.map(a => `<tr><td><strong>${a.name}</strong></td><td>${
 <tr><th>Platform</th><th>Category</th><th>What It Solves</th><th>What It Doesn't</th><th>Price</th><th>Fit (1-5)</th></tr>
 ${alternatives.map(a => `<tr><td><strong>${a.name}</strong></td><td>${a.category}</td><td>${a.solves}</td><td>${a.doesnt}</td><td>${a.price}</td><td>${'★'.repeat(a.fit)}${'☆'.repeat(5-a.fit)}</td></tr>`).join('')}
 </table>
+
+${alternatives.map(a => `
+<h3>${a.name} — Organization-Wide Benefits</h3>
+<table>
+<tr><th>Role / Team</th><th>Benefit</th></tr>
+${a.orgBenefits ? a.orgBenefits.map((b: {role: string; benefit: string}) => `<tr><td><strong>${b.role}</strong></td><td>${b.benefit}</td></tr>`).join('') : ''}
+</table>
+`).join('')}
 
 <h2>The Power Sales Rep Framework</h2>
 <p><em>What data does an enterprise rep ACTUALLY need, and in what form?</em></p>
@@ -495,7 +547,20 @@ export default function DeepDivePage() {
               </div>
               <p className="text-xs text-[#888] mb-2">{a.what}</p>
               <div className="text-xs text-green-400/70 mb-1">✅ Solves: {a.solves}</div>
-              <div className="text-xs text-amber-400/70">⚠️ Doesn&apos;t solve: {a.doesnt}</div>
+              <div className="text-xs text-amber-400/70 mb-3">⚠️ Doesn&apos;t solve: {a.doesnt}</div>
+              {a.orgBenefits && (
+                <div className="border-t border-[#1a1a1a] pt-3">
+                  <div className="text-[10px] font-semibold text-[#555] uppercase mb-2">Organization-Wide Impact</div>
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {a.orgBenefits.map((b: {role: string; benefit: string}) => (
+                      <div key={b.role} className="bg-[#111] border border-[#1a1a1a] rounded p-2">
+                        <div className="text-[10px] font-bold text-purple-400">{b.role}</div>
+                        <div className="text-[10px] text-[#888] mt-0.5 leading-relaxed">{b.benefit}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
