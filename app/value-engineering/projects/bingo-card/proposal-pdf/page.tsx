@@ -35,23 +35,20 @@ export default function ProposalPDF() {
     <>
       <style jsx global>{`
         @media print {
-          body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+          body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; overflow: visible !important; height: auto !important; display: block !important; }
           .no-print { display: none !important; }
-          .page-break { page-break-before: always; }
-          .avoid-break { page-break-inside: avoid; }
-          @page { margin: 0.5in; size: letter; }
-          /* Hide the Command Center sidebar and all nav chrome */
+          .page-break { break-before: page; }
+          .avoid-break { break-inside: avoid; }
+          @page { margin: 0.4in 0.5in; size: letter; }
           aside { display: none !important; }
-          main { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
-          body { overflow: visible !important; height: auto !important; display: block !important; }
+          main { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; overflow: visible !important; height: auto !important; }
           body > * > aside { display: none !important; }
-          /* Kill the VE tab bar if it leaks through */
           [class*="border-b"][class*="bg-[#0a0a0a]"] { display: none !important; }
+          /* Tighter spacing for print */
+          .pdf-section { padding: 24px 0 !important; }
+          .pdf-wrapper { padding: 0 !important; }
         }
-        /* When this page is active, hide sidebar on screen too for clean full-page view */
         body { background: #0a0a0f !important; }
-        .proposal-pdf-active aside { display: none !important; }
-        .proposal-pdf-active main { width: 100% !important; }
       `}</style>
 
       {/* Print Button */}
@@ -66,13 +63,13 @@ export default function ProposalPDF() {
         </a>
       </div>
 
-      <div className="max-w-[850px] mx-auto bg-[#0a0a0f] text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      <div className="max-w-[850px] mx-auto bg-[#0a0a0f] text-white pdf-wrapper" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
 
         {/* ═══════════════════════════════════════════
             COVER PAGE
             ═══════════════════════════════════════════ */}
-        <div className="min-h-screen flex flex-col justify-center items-center px-12 py-16 text-center">
-          <div className="w-20 h-1 bg-purple-500 rounded mb-8" />
+        <div className="flex flex-col justify-center items-center px-12 py-20 text-center">
+          <div className="w-20 h-1 bg-purple-500 rounded mb-5" />
           <h1 className="text-5xl font-bold tracking-tight mb-4">
             The Ivanti<br />
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Connected Journey</span>
@@ -93,9 +90,9 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             TABLE OF CONTENTS
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
-          <h2 className="text-2xl font-bold mb-8 text-purple-400">Contents</h2>
-          <div className="space-y-3">
+        <div className="page-break px-12 py-8 pdf-section">
+          <h2 className="text-2xl font-bold mb-5 text-purple-400">Contents</h2>
+          <div className="space-y-1">
             {[
               ['01', 'The Problem — Disconnected Sales Intelligence'],
               ['02', 'The Power Sales Rep Framework'],
@@ -122,10 +119,10 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             01 - THE PROBLEM
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">01</div>
-          <h2 className="text-3xl font-bold mb-6">The Problem</h2>
-          <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 mb-8">
+          <h2 className="text-3xl font-bold mb-4">The Problem</h2>
+          <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 mb-5">
             <p className="text-sm text-[#ccc] leading-relaxed">
               Every sales rep at Ivanti manually builds a <strong className="text-white">"Bingo Card"</strong> — a 70+ column spreadsheet tracking ~35 accounts across 5+ disconnected systems. This requires pulling data from Salesforce, ZoomInfo, Customer 360, LinkedIn, and tribal knowledge — then stitching it together by hand.
             </p>
@@ -170,10 +167,10 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             02 - POWER SALES REP
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">02</div>
           <h2 className="text-3xl font-bold mb-2">The Power Sales Rep Framework</h2>
-          <p className="text-sm text-[#666] mb-8">What data does an enterprise rep actually need to be unstoppable — and in what form?</p>
+          <p className="text-sm text-[#666] mb-5">What data does an enterprise rep actually need to be unstoppable — and in what form?</p>
           <div className="grid grid-cols-2 gap-4">
             {[
               { icon: '🧠', name: 'Know — Account Intelligence', need: 'Who is this customer? What are they facing?',
@@ -214,13 +211,13 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             03 - PROPOSAL A
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">03</div>
           <h2 className="text-3xl font-bold mb-2">Proposal A: AI-First</h2>
           <p className="text-lg text-purple-400 mb-1">Ivy / Copilot Integration</p>
-          <p className="text-sm text-[#666] mb-6">Single prompt → blended output from all systems. "Give me the bingo card for Randstad" → complete portfolio.</p>
+          <p className="text-sm text-[#666] mb-4">Single prompt → blended output from all systems. "Give me the bingo card for Randstad" → complete portfolio.</p>
 
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-4 mb-4">
             <div className="bg-[#111] border border-purple-500/20 rounded-lg p-4 text-center">
               <div className="text-xs text-[#555]">Build Cost</div><div className="text-lg font-bold text-white">$80-150K</div>
             </div>
@@ -233,7 +230,7 @@ export default function ProposalPDF() {
           </div>
 
           <h3 className="text-sm font-bold text-[#ccc] mb-3">How It Works</h3>
-          <div className="space-y-2 mb-6">
+          <div className="space-y-2 mb-4">
             {[
               'Build custom Copilot plugins / Ivy connectors for Salesforce REST API, ZoomInfo API, and Customer 360 data warehouse',
               'Rep types natural language query → AI orchestrates API calls across all systems simultaneously',
@@ -267,14 +264,14 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             04 - PROPOSAL B
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-blue-400 font-mono mb-2">04</div>
           <h2 className="text-3xl font-bold mb-2">Proposal B: Integration Platform</h2>
           <p className="text-lg text-blue-400 mb-1">Enterprise Middleware (iPaaS)</p>
-          <p className="text-sm text-[#666] mb-6">Connect everything once, automate forever. Salesforce + ZoomInfo + Customer 360 unified through a central hub.</p>
+          <p className="text-sm text-[#666] mb-4">Connect everything once, automate forever. Salesforce + ZoomInfo + Customer 360 unified through a central hub.</p>
 
           <h3 className="text-sm font-bold text-[#ccc] mb-3">Three Sub-Options</h3>
-          <div className="space-y-3 mb-6">
+          <div className="space-y-2 mb-4">
             {[
               { name: 'B1: Power Automate (In-Stack)', cost: '$15-40K build + $5-15K/yr', time: '4-8 weeks', best: 'Already licensed, IT-approved, fast.', risk: 'Limited complex orchestration.' },
               { name: 'B2: Workato (Enterprise iPaaS)', cost: '$100-150K build + $60-130K/yr', time: '8-16 weeks', best: '1000+ connectors, handles complex logic, scales org-wide.', risk: 'New vendor, significant annual cost.' },
@@ -313,13 +310,13 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             05 - PROPOSAL C
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-green-400 font-mono mb-2">05</div>
           <h2 className="text-3xl font-bold mb-2">Proposal C: Power BI Dashboard</h2>
           <p className="text-lg text-green-400 mb-1">Unified Visual Portfolio for Every Rep</p>
-          <p className="text-sm text-[#666] mb-6">See everything, act on anything — one screen. Highest feasibility, fastest time to value.</p>
+          <p className="text-sm text-[#666] mb-4">See everything, act on anything — one screen. Highest feasibility, fastest time to value.</p>
 
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-4 mb-4">
             <div className="bg-[#111] border border-green-500/20 rounded-lg p-4 text-center">
               <div className="text-xs text-[#555]">Build Cost</div><div className="text-lg font-bold text-white">$60-120K</div>
             </div>
@@ -332,7 +329,7 @@ export default function ProposalPDF() {
           </div>
 
           <h3 className="text-sm font-bold text-[#ccc] mb-3">7 Dashboard Views</h3>
-          <div className="grid grid-cols-2 gap-2 mb-6">
+          <div className="grid grid-cols-2 gap-2 mb-4">
             {[
               { name: 'Portfolio Overview', desc: 'All accounts with ARR, renewal, health, product count — sortable, filterable' },
               { name: 'Product Heat Map', desc: 'Accounts × Products matrix with color-coded ownership' },
@@ -368,13 +365,13 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             06 - PROPOSAL D
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">06</div>
           <h2 className="text-3xl font-bold mb-2">Proposal D: Salesforce-Native</h2>
           <p className="text-lg text-purple-400 mb-1">Agentforce + Data Cloud + ARPEDIO</p>
-          <p className="text-sm text-[#666] mb-6">The bingo card lives IN Salesforce — where reps already work. AI agents that come to you, not the other way around.</p>
+          <p className="text-sm text-[#666] mb-4">The bingo card lives IN Salesforce — where reps already work. AI agents that come to you, not the other way around.</p>
 
-          <div className="space-y-2 mb-6">
+          <div className="space-y-2 mb-4">
             {[
               { tool: 'Salesforce Data Cloud', role: 'Unify Customer 360 ITSM data + ZoomInfo INTO Salesforce profiles', cost: '$65-150K/yr' },
               { tool: 'Agentforce', role: 'AI agents for account research, renewal alerts, pipeline management', cost: '$25-50K/yr' },
@@ -390,7 +387,7 @@ export default function ProposalPDF() {
           </div>
 
           <h3 className="text-sm font-bold text-[#ccc] mb-3">Agentforce Capabilities Mapped to Bingo Card</h3>
-          <div className="space-y-2 mb-6">
+          <div className="space-y-2 mb-4">
             {[
               { agent: 'Account Research Agent', impact: 'Replaces manual "Area 51" research. Rep asks "Brief me on Randstad" → full dossier.', ready: true },
               { agent: 'Data Cloud Integration', impact: 'THE GAME CHANGER. Unifies all external data into one Salesforce profile. The bingo card becomes native.', ready: true },
@@ -424,10 +421,10 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             07 - ALTERNATIVES + ORG IMPACT
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">07</div>
           <h2 className="text-3xl font-bold mb-2">Alternative Platforms</h2>
-          <p className="text-sm text-[#666] mb-6">These platforms solve specific pieces of the puzzle. Each includes organization-wide impact beyond sales.</p>
+          <p className="text-sm text-[#666] mb-4">These platforms solve specific pieces of the puzzle. Each includes organization-wide impact beyond sales.</p>
 
           {[
             { name: 'ARPEDIO', cat: 'Account Planning + White Space', price: '$18-30K/yr', fit: 5, solves: 'White space, account planning, SWOT — all inside Salesforce.',
@@ -504,11 +501,11 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             08 - ITSM USAGE
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-cyan-400 font-mono mb-2">08</div>
           <h2 className="text-3xl font-bold mb-2">Customer 360 ITSM Usage</h2>
-          <p className="text-sm text-[#666] mb-6">The most underutilized sales asset at Ivanti. Here&apos;s how surfacing it drives revenue.</p>
-          <div className="space-y-3">
+          <p className="text-sm text-[#666] mb-4">The most underutilized sales asset at Ivanti. Here&apos;s how surfacing it drives revenue.</p>
+          <div className="space-y-2">
             {[
               { metric: 'Ticket Volume Trends', signal: '📈 Rising = scaling (upsell) | 📉 Falling = disengagement (churn risk)' },
               { metric: 'Module / Feature Adoption %', signal: 'Licensed but dormant modules → adoption conversation. Prevents shelfware objections at renewal.' },
@@ -528,10 +525,10 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             09 - SUCCESS STORIES
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-green-400 font-mono mb-2">09</div>
-          <h2 className="text-3xl font-bold mb-6">Enterprise Success Stories</h2>
-          <div className="space-y-4">
+          <h2 className="text-3xl font-bold mb-4">Enterprise Success Stories</h2>
+          <div className="space-y-2">
             {[
               { co: 'Wiley (Publishing)', result: '213% ROI, 40%+ self-service', solution: 'Agentforce AI agents for customer self-service and contextual rep briefs.', lesson: 'AI agents that pre-brief reps eliminate the manual research bottleneck.' },
               { co: 'Adecco (Global Staffing)', result: 'Hours/week recovered per recruiter', solution: 'Agentforce automating resume screening, shortlists, candidate management.', lesson: 'Identical to Ivanti: knowledge workers doing data assembly instead of high-value work.' },
@@ -554,9 +551,9 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             10 - COMPARISON
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">10</div>
-          <h2 className="text-3xl font-bold mb-6">Side-by-Side Comparison</h2>
+          <h2 className="text-3xl font-bold mb-4">Side-by-Side Comparison</h2>
           <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
             <table className="w-full text-xs">
               <thead>
@@ -598,10 +595,10 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             11 - RECOMMENDED
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">11</div>
-          <h2 className="text-3xl font-bold mb-6">Recommended Hybrid Approach</h2>
-          <div className="space-y-4">
+          <h2 className="text-3xl font-bold mb-4">Recommended Hybrid Approach</h2>
+          <div className="space-y-2">
             {[
               { phase: 'NOW', title: 'Power BI Dashboard (Proposal C)', time: 'Months 1-3', cost: '$60-120K', why: 'Immediate visual impact. ITSM usage visible for first time. White space automated. Executive roll-ups.' },
               { phase: 'PARALLEL', title: 'Customer 360 API + Data Pipeline', time: 'Months 2-4', cost: '$20-40K', why: 'Critical dependency for ALL proposals. Build once, use everywhere. Shared infrastructure.' },
@@ -628,11 +625,11 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             12 - ROI
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-green-400 font-mono mb-2">12</div>
-          <h2 className="text-3xl font-bold mb-6">ROI & Financial Impact</h2>
+          <h2 className="text-3xl font-bold mb-4">ROI & Financial Impact</h2>
 
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5">
               <div className="text-xs text-[#555] mb-3">Conservative (50 Reps)</div>
               <div className="space-y-2">
@@ -680,11 +677,11 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             13 - EXECUTIVE ASK
             ═══════════════════════════════════════════ */}
-        <div className="page-break px-12 py-16">
+        <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">13</div>
-          <h2 className="text-3xl font-bold mb-6">Executive Ask & Next Steps</h2>
+          <h2 className="text-3xl font-bold mb-4">Executive Ask & Next Steps</h2>
 
-          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-6 mb-8">
+          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-6 mb-5">
             <h3 className="text-sm font-bold text-purple-400 mb-4">Required for Any Proposal</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -706,7 +703,7 @@ export default function ProposalPDF() {
           </div>
 
           <h3 className="text-lg font-bold text-[#ccc] mb-4">Proposed Next Steps</h3>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {[
               { step: 1, action: 'Present this proposal to VP / leadership team', owner: 'Erick + VE Team', time: 'This week' },
               { step: 2, action: 'Confirm Salesforce licensing (Data Cloud, Agentforce eligibility)', owner: 'IT / SF Admin', time: 'Week 1-2' },
