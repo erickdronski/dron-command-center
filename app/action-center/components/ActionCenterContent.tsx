@@ -10,7 +10,7 @@ import { ErrorBoundary } from './ErrorBoundary';
 import { CreateActionModal } from './CreateActionModal';
 import { ActionDetailModal } from './ActionDetailModal';
 import { ActionCard } from './ActionCard';
-import { StatusBadge } from './StatusBadge';
+// StatusBadge removed — unused
 
 // Types
 export interface Action {

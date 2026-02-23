@@ -306,43 +306,38 @@ def calculate_kelly_size(edge: int, spot_confidence: float, flow_strength: float
                          balance_cents: int, daily_budget_remaining: int) -> int:
     """
     Calculate position size using Kelly Criterion with modifications.
-    
-    edge: cents of edge (e.g., 5¢ edge on 95¢ price)
-    spot_confidence: 0-1 from spot market signal
-    flow_strength: 0-1 from order book flow
-    balance_cents: available balance
-    daily_budget_remaining: remaining daily budget
+    Falls back to fixed size when balance is low.
     """
-    # Base edge probability (simplified)
-    # If buying at 95¢ with 5¢ edge, implied win probability ~95%
-    # But we discount for uncertainty
+    # Low balance mode: fixed $2 per trade
+    LOW_BALANCE_THRESHOLD = 1000  # $10
+    FIXED_SIZE_LOW_BALANCE = 200  # $2
+    
+    if balance_cents < LOW_BALANCE_THRESHOLD:
+        # Use fixed size, but ensure we have budget
+        size = min(FIXED_SIZE_LOW_BALANCE, balance_cents, daily_budget_remaining)
+        if size >= 100:  # Minimum $1
+            return size
+        return 0
+    
+    # Normal Kelly sizing for healthy balances
     win_prob = min(0.95, 0.80 + (edge / 100))
     loss_prob = 1 - win_prob
     
-    # Kelly fraction: (bp - q) / b
-    # where b = odds received, p = win prob, q = loss prob
     odds = (100 - (95 - edge)) / (95 - edge) if (95 - edge) > 0 else 1
     kelly = (win_prob * odds - loss_prob) / odds if odds > 0 else 0
-    
-    # Apply fractional Kelly for safety
     kelly = max(0, kelly * KELLY_FRACTION)
     
-    # Modifiers from signals
-    spot_modifier = 0.8 + (spot_confidence * 0.4)  # 0.8 to 1.2
-    flow_modifier = 0.8 + (flow_strength * 0.4)    # 0.8 to 1.2
+    spot_modifier = 0.8 + (spot_confidence * 0.4)
+    flow_modifier = 0.8 + (flow_strength * 0.4)
     
-    # Combined position size
     base_size = BASE_POSITION_USD * kelly * spot_modifier * flow_modifier
-    
-    # Cap at max position and available budget
     max_size = min(MAX_POSITION_USD, balance_cents / 100, daily_budget_remaining / 100)
     position_usd = min(base_size, max_size)
     
-    # Ensure minimum viable position
     if position_usd < 1.0:
-        return 0  # Skip if too small
+        return 0
     
-    return int(position_usd * 100)  # Return cents
+    return int(position_usd * 100)
 
 # ─── ML Prediction Layer ─────────────────────────────────────────────────────
 
@@ -474,11 +469,16 @@ def scan_opportunities() -> List[MarketOpportunity]:
             no_ask = m.get("no_ask", 99)
             no_bid = m.get("no_bid", 0)
             
-            # Find convergence side
+            # Find convergence side — check BOTH yes_ask >= 80 AND no_ask >= 80
             candidates = []
+            
+            # YES side convergence (price going up)
             if yes_ask >= MIN_CONVERGENCE and yes_ask < MAX_PRICE:
                 candidates.append(('yes', yes_ask, 100 - yes_ask))
+            
+            # NO side convergence (price going down) — if no_ask >= 80, that means YES is cheap
             if no_ask >= MIN_CONVERGENCE and no_ask < MAX_PRICE:
+                # Edge for NO is (100 - no_ask) — what we pay vs $1 payout
                 candidates.append(('no', no_ask, 100 - no_ask))
             
             if not candidates:
@@ -602,8 +602,8 @@ def run(live: bool = False):
         print(f"     🤖 ML prob: {ml_prob:.2f}")
         
         # Skip if ML confidence too low
-        if ml_prob < 0.6:
-            print(f"     ⏭️  Skipping — ML confidence too low")
+        if ml_prob < 0.5:
+            print(f"     ⏭️  Skipping — ML confidence {ml_prob:.2f} < 0.50")
             continue
         
         # Calculate position size

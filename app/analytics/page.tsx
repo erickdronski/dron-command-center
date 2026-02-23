@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import {
   BarChart2, TrendingUp, TrendingDown, Twitter, Zap,
-  Activity, Users, DollarSign, RefreshCw, CheckCircle2,
+  Activity, Users, DollarSign, RefreshCw,
   AlertCircle, Target, Bot
 } from 'lucide-react';
 
@@ -14,7 +14,7 @@ interface StatusData {
     polymarket: { active: boolean; positions: number; tradesTotal: number };
   };
   social: {
-    followers: number; postsToday: number; repliesToday: number; likesToday: number;
+    postsToday: number; repliesToday: number; likesToday: number;
     totalActivity: number; budgetSpent: number; budgetLimit: number;
   };
   system: {
@@ -26,49 +26,10 @@ interface StatusData {
   lastUpdated: string;
 }
 
-interface KalshiTrade {
-  ts: string;
-  ticker: string;
-  type?: string;
-  side: string;
-  costUsd: number;
-  orderId: string;
-}
-
-interface KalshiData {
-  ok: boolean;
-  date?: string;
-  lastUpdated?: string;
-  budget?: {
-    totalLimitCents: number;
-    totalSpentCents: number;
-    totalRemainingCents: number;
-    totalPct: number;
-  };
-  weatherTrader?: {
-    tradesDay: number;
-    spentCents: number;
-    budgetCents: number;
-    budgetPct: number;
-    lastTrade: string | null;
-    lastTicker: string | null;
-    trades: KalshiTrade[];
-  };
-  priceFarmer?: {
-    tradesDay: number;
-    spentCents: number;
-    budgetCents: number;
-    budgetPct: number;
-    trades: KalshiTrade[];
-  };
-  error?: string;
-}
-
 // ── Helpers ────────────────────────────────────────────────────────────────
 function pct(val: number, max: number) {
   return Math.max(0, Math.min(100, (val / Math.max(max, 1)) * 100));
 }
-function sign(n: number) { return n >= 0 ? '+' : ''; }
 function fmt(n: number, digits = 2) { return n.toFixed(digits); }
 
 // ── Sub-components ─────────────────────────────────────────────────────────
@@ -125,19 +86,15 @@ function SectionHeader({ icon: Icon, title, sub }: { icon: React.ElementType; ti
 // ── Main Page ──────────────────────────────────────────────────────────────
 export default function AnalyticsPage() {
   const [data, setData] = useState<StatusData | null>(null);
-  const [kalshi, setKalshi] = useState<KalshiData | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
 
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [statusRes, kalshiRes] = await Promise.allSettled([
-        fetch('/api/status').then(r => r.json()),
-        fetch('/api/kalshi').then(r => r.json()),
-      ]);
-      if (statusRes.status === 'fulfilled') setData(statusRes.value);
-      if (kalshiRes.status === 'fulfilled') setKalshi(kalshiRes.value);
+      const res = await fetch('/api/status');
+      const json = await res.json();
+      setData(json);
       setLastRefresh(new Date());
     } catch {
       // keep stale data
@@ -154,10 +111,10 @@ export default function AnalyticsPage() {
 
   const s = data?.social;
   const sys = data?.system;
-  const kalshi = data?.trading?.kalshi;
+  const k = data?.trading?.kalshi;
 
-  const totalSpent = kalshi?.spent ?? 0;
-  const totalBudget = kalshi?.budget ?? 18;
+  const totalSpent = k?.spent ?? 0;
+  const totalBudget = k?.budget ?? 18;
   const budgetPct = totalBudget > 0 ? Math.round((totalSpent / totalBudget) * 100) : 0;
 
   return (
@@ -168,7 +125,7 @@ export default function AnalyticsPage() {
           <BarChart2 size={20} className="text-purple-400" />
           <div>
             <h1 className="text-xl font-semibold text-white">Analytics</h1>
-            <p className="text-xs text-[#555] mt-0.5">All projects & profiles — live data</p>
+            <p className="text-xs text-[#555] mt-0.5">All projects &amp; profiles — live data</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -209,7 +166,7 @@ export default function AnalyticsPage() {
         <StatCard
           icon={DollarSign}
           label="Kalshi spent today"
-          value={kalshi ? `$${fmt(totalSpent)}` : '—'}
+          value={k ? `$${fmt(totalSpent)}` : '—'}
           sub={`$${fmt(totalBudget - totalSpent)} remaining · ${budgetPct}%`}
           color={budgetPct >= 90 ? 'text-red-400' : budgetPct >= 70 ? 'text-yellow-400' : 'text-green-400'}
           trend={budgetPct < 90 ? 'up' : 'down'}
@@ -224,8 +181,8 @@ export default function AnalyticsPage() {
         <StatCard
           icon={Target}
           label="Trades today"
-          value={kalshi ? `${kalshi.trades}` : '—'}
-          sub={kalshi ? `${kalshi.weatherTrades} weather · ${kalshi.priceTrades} price` : undefined}
+          value={k ? `${k.trades}` : '—'}
+          sub={k ? `${k.weatherTrades} weather · ${k.priceTrades} price` : undefined}
           color="text-cyan-400"
         />
         <StatCard
@@ -249,7 +206,7 @@ export default function AnalyticsPage() {
               { label: 'Posts', value: s?.postsToday?.toString() ?? '—' },
               { label: 'Replies', value: s?.repliesToday?.toString() ?? '—' },
               { label: 'Likes', value: s?.likesToday?.toString() ?? '—' },
-              { label: 'Budget', value: s ? `$${fmt(s.budgetSpent)}/$${fmt(s.budgetLimit)}` : '—' },
+              { label: 'Budget', value: s ? `$${fmt(s.budgetSpent, 3)}` : '—' },
             ].map(({ label, value }) => (
               <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
                 <div className="text-lg font-bold text-white">{value}</div>
@@ -261,7 +218,7 @@ export default function AnalyticsPage() {
           {s && (
             <>
               <BarRow
-                label={`Daily budget ($${fmt(s.budgetSpent)}/$${fmt(s.budgetLimit)})`}
+                label={`Daily budget ($${fmt(s.budgetSpent, 3)}/$${fmt(s.budgetLimit)})`}
                 value={s.budgetSpent}
                 max={s.budgetLimit}
                 color={s.budgetSpent / s.budgetLimit > 0.8 ? 'bg-red-500' : 'bg-green-500'}
@@ -278,21 +235,21 @@ export default function AnalyticsPage() {
         <div className="bg-[#111] border border-[#1e1e1e] rounded-lg p-5">
           <div className="flex items-center justify-between mb-4">
             <SectionHeader icon={DollarSign} title="Kalshi Trading" sub="Weather + Price Farmer bots" />
-            {kalshi?.date && (
+            {data?.lastUpdated && (
               <span className="text-[10px] text-[#444]">
-                {new Date(kalshi.lastUpdated ?? '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}
+                {new Date(data.lastUpdated).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}
               </span>
             )}
           </div>
 
-          {kalshi?.ok && kalshi.budget && wt && pf ? (
+          {k ? (
             <>
               {/* Summary stats */}
               <div className="grid grid-cols-3 gap-3 mb-5">
                 {[
-                  { label: 'Total spent', value: `$${fmt(kalshi.budget.totalSpentCents / 100)}`, sub: `/ $${fmt(kalshi.budget.totalLimitCents / 100)}`, color: 'text-white' },
-                  { label: 'Weather trades', value: String(wt.tradesDay), sub: `$${fmt(wt.spentCents / 100)} spent`, color: 'text-cyan-400' },
-                  { label: 'Price Farmer', value: String(pf.tradesDay), sub: `$${fmt(pf.spentCents / 100)} spent`, color: 'text-purple-400' },
+                  { label: 'Total spent', value: `$${fmt(k.spent)}`, sub: `/ $${fmt(k.budget)}`, color: 'text-white' },
+                  { label: 'Weather trades', value: String(k.weatherTrades), sub: 'today', color: 'text-cyan-400' },
+                  { label: 'Price trades', value: String(k.priceTrades), sub: 'today', color: 'text-purple-400' },
                 ].map(({ label, value, sub, color }) => (
                   <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
                     <div className={`text-lg font-bold ${color}`}>{value}</div>
@@ -302,42 +259,25 @@ export default function AnalyticsPage() {
                 ))}
               </div>
 
-              {/* Budget bars */}
-              <BarRow label={`Daily budget (${kalshi.budget.totalPct}% used)`} value={kalshi.budget.totalPct} max={100}
-                color={kalshi.budget.totalPct >= 90 ? 'bg-red-500' : kalshi.budget.totalPct >= 70 ? 'bg-yellow-500' : 'bg-green-500'} suffix="%" />
-              <BarRow label={`Weather Trader $${fmt(wt.spentCents/100)}/$${fmt(wt.budgetCents/100)}`} value={wt.budgetPct} max={100} color="bg-cyan-500" suffix="%" />
-              <BarRow label={`Price Farmer $${fmt(pf.spentCents/100)}/$${fmt(pf.budgetCents/100)}`} value={pf.budgetPct} max={100} color="bg-purple-500" suffix="%" />
+              {/* Budget bar */}
+              <BarRow label={`Daily budget (${budgetPct}% used)`} value={budgetPct} max={100}
+                color={budgetPct >= 90 ? 'bg-red-500' : budgetPct >= 70 ? 'bg-yellow-500' : 'bg-green-500'} suffix="%" />
 
-              {/* Weather trade log */}
-              {wt.trades.length > 0 && (
+              {/* Activity feed */}
+              {data?.activity && data.activity.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs text-[#555] mb-2 font-medium">Today&apos;s weather trades</p>
+                  <p className="text-xs text-[#555] mb-2 font-medium">Recent activity</p>
                   <div className="space-y-1">
-                    {wt.trades.map((t, i) => (
-                      <div key={i} className="flex items-center justify-between text-xs bg-[#0d0d0d] rounded px-3 py-2 font-mono">
-                        <div className="flex items-center gap-2 min-w-0">
-                          <span className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded font-sans font-bold ${t.side === 'YES' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
-                            {t.side}
-                          </span>
-                          <span className="text-cyan-400 truncate">{t.ticker}</span>
-                        </div>
-                        <div className="flex items-center gap-3 shrink-0 ml-2">
-                          <span className="text-[#888] font-sans">${fmt(t.costUsd)}</span>
-                          <span className="text-[#444] font-sans text-[10px]">
-                            {new Date(t.ts).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}
-                          </span>
-                        </div>
+                    {data.activity.slice(0, 5).map((item, i) => (
+                      <div key={i} className="flex items-center justify-between text-xs bg-[#0d0d0d] rounded px-3 py-2">
+                        <span className="text-[#888]">{item.message}</span>
+                        <span className="text-[#444]">{item.time}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
             </>
-          ) : kalshi && !kalshi.ok ? (
-            <div className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded px-3 py-2 flex items-center gap-2">
-              <AlertCircle size={12} />
-              {kalshi.error ?? 'State file not found'}
-            </div>
           ) : (
             !loading && <p className="text-xs text-[#444]">No Kalshi data — bot may not have run today</p>
           )}
@@ -346,23 +286,26 @@ export default function AnalyticsPage() {
 
       {/* Bots / Cron Jobs */}
       <div className="bg-[#111] border border-[#1e1e1e] rounded-lg p-5 mb-6">
-        <SectionHeader icon={Bot} title="Automated Jobs" sub={sys ? `${sys.activeJobs} active` : ''} />
+        <SectionHeader icon={Bot} title="Automated Jobs" sub={sys ? `${sys.activeJobs} active · ${sys.errors} errors` : ''} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {(sys?.jobs ?? []).map((job) => (
             <div key={job.name} className="bg-[#0d0d0d] border border-[#1a1a1a] rounded p-3">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-white">{job.name}</span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
-                  !job.enabled ? 'bg-[#222] text-[#555]' :
+                <span className="text-sm font-medium text-white truncate mr-2">{job.name}</span>
+                <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium shrink-0 ${
+                  job.status === 'error' ? 'bg-red-500/20 text-red-400' :
                   job.status === 'running' ? 'bg-green-500/20 text-green-400' :
                   'bg-yellow-500/20 text-yellow-400'
                 }`}>
-                  {!job.enabled ? 'DISABLED' : job.status.toUpperCase()}
+                  {job.status.toUpperCase()}
                 </span>
               </div>
               <div className="text-xs text-[#555] space-y-0.5">
-                <div>Next: <span className="text-[#888]">{job.nextRun}</span></div>
-                <div>Last: <span className={job.lastRun === 'Success' ? 'text-green-400' : 'text-[#888]'}>{job.lastRun}</span></div>
+                <div>Schedule: <span className="text-[#888]">{job.nextRun}</span></div>
+                <div>Last: <span className={
+                  job.consecutiveErrors > 0 ? 'text-red-400' :
+                  job.lastRun === 'ok' ? 'text-green-400' : 'text-[#888]'
+                }>{job.lastRun}</span></div>
               </div>
             </div>
           ))}
@@ -404,7 +347,7 @@ export default function AnalyticsPage() {
       </div>
 
       <p className="text-center text-[10px] text-[#333] mt-6">
-        Auto-refreshes every 30s · Data from X API, Kalshi, NOAA, OpenClaw cron
+        Auto-refreshes every 30s · Data from agent_state.json, kalshi_shared_state.json, x_bot_state.json, OpenClaw cron
       </p>
     </div>
   );

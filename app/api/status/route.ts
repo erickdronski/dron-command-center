@@ -18,7 +18,6 @@ async function readJSON(filePath: string) {
 // Get real cron jobs from OpenClaw
 async function getCronJobs() {
   try {
-    // Read from cron jobs file directly
     const cronPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'cron', 'jobs.json');
     const data = await readJSON(cronPath);
     
@@ -28,7 +27,6 @@ async function getCronJobs() {
       .filter((j: any) => j.enabled)
       .map((j: any) => {
         const state = j.state || {};
-        const lastRun = state.lastRunAtMs ? new Date(state.lastRunAtMs).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : 'Never';
         const hasErrors = (state.consecutiveErrors || 0) > 0;
         
         return {
@@ -42,19 +40,19 @@ async function getCronJobs() {
           consecutiveErrors: state.consecutiveErrors || 0,
         };
       })
-      .slice(0, 10); // Top 10 jobs
+      .slice(0, 10);
   } catch {
     return [];
   }
 }
 
-// Get Kalshi trading data from shared state
+// Get Kalshi data from shared state
 async function getKalshiData() {
   try {
     const statePath = path.join(process.cwd(), 'ml_data', 'kalshi_shared_state.json');
     const data = await readJSON(statePath);
     
-    if (!data) return { trades: 0, spent: 0, budget: 0 };
+    if (!data) return { trades: 0, spent: 0, budget: 18, weatherTrades: 0, priceTrades: 0 };
     
     const wt = data.bots?.weather_trader;
     const pf = data.bots?.price_farmer;
@@ -67,7 +65,7 @@ async function getKalshiData() {
       priceTrades: pf?.trades_today || 0,
     };
   } catch {
-    return { trades: 0, spent: 0, budget: 0, weatherTrades: 0, priceTrades: 0 };
+    return { trades: 0, spent: 0, budget: 18, weatherTrades: 0, priceTrades: 0 };
   }
 }
 
@@ -81,7 +79,7 @@ async function getAgentState() {
   }
 }
 
-// Get X bot state
+// Get X bot state - FIXED to properly count replies
 async function getXState() {
   try {
     const statePath = path.join(WORKSPACE, 'x_bot_state.json');
@@ -89,9 +87,13 @@ async function getXState() {
     
     if (!data) return null;
     
+    // replies_today can be an array of tweet IDs or a number
+    const replies = data.replies_today;
+    const replyCount = Array.isArray(replies) ? replies.length : (replies || 0);
+    
     return {
       postsToday: data.posts_today || 0,
-      repliesToday: data.replies_today || data.engaged_tweets || 0,
+      repliesToday: replyCount,
       likesToday: data.likes_today || 0,
       budgetSpent: data.daily_budget_spent || 0,
       budgetLimit: data.daily_budget_limit || 1.0,
@@ -112,13 +114,11 @@ export async function GET() {
 
     const social = agentState?.agents?.social_engagement;
     const poster = agentState?.agents?.social_poster;
-    const trading = agentState?.agents?.trading;
-    const monitor = agentState?.agents?.monitor;
     
     const totalJobs = cronJobs.length;
     const errorJobs = cronJobs.filter((j: any) => j.consecutiveErrors > 0);
     
-    // Build activity feed
+    // Build activity feed from real data
     const activity = [];
     
     if (kalshi.trades > 0) {
@@ -128,17 +128,17 @@ export async function GET() {
       });
     }
     
-    if (xState?.budgetSpent > 0) {
+    if (xState && xState.budgetSpent > 0) {
       activity.push({
         time: 'Today',
-        message: `💸 X Budget: $${xState.budgetSpent.toFixed(2)} / $${xState.budgetLimit.toFixed(2)}`,
+        message: `💸 X Budget: $${xState.budgetSpent.toFixed(3)} / $${xState.budgetLimit.toFixed(2)}`,
       });
     }
     
-    if (social?.repliesToday > 0 || social?.likesToday > 0) {
+    if (xState && (xState.repliesToday > 0 || xState.likesToday > 0)) {
       activity.push({
         time: 'Today',
-        message: `💬 X Engagement: ${social.repliesToday || 0} replies, ${social.likesToday || 0} likes`,
+        message: `💬 X Engagement: ${xState.repliesToday} replies, ${xState.likesToday} likes`,
       });
     }
     
@@ -159,7 +159,7 @@ export async function GET() {
     // Build alerts
     const alerts = [];
     
-    if (xState?.budgetSpent > 0.8) {
+    if (xState && xState.budgetSpent > 0.8) {
       alerts.push({
         level: 'warning',
         message: `X budget: $${xState.budgetSpent.toFixed(2)}/$${xState.budgetLimit.toFixed(2)} (${Math.round((xState.budgetSpent/xState.budgetLimit)*100)}%)`,
@@ -184,18 +184,17 @@ export async function GET() {
           priceTrades: kalshi.priceTrades,
         },
         polymarket: {
-          active: trading?.status === 'active',
-          positions: trading?.openPositions || 0,
-          tradesTotal: trading?.tradesTotal || 0,
+          active: false,
+          positions: 0,
+          tradesTotal: 0,
         },
       },
       social: {
-        followers: social?.followerCount || 0,
-        postsToday: poster?.postsToday || 0,
-        repliesToday: social?.repliesToday || 0,
-        likesToday: social?.likesToday || 0,
-        totalActivity: (social?.repliesToday || 0) + (social?.likesToday || 0),
-        budgetSpent: xState?.budgetSpent || 0,
+        postsToday: poster?.postsToday || xState?.postsToday || 0,
+        repliesToday: xState?.repliesToday || social?.repliesToday || 0,
+        likesToday: xState?.likesToday || social?.likesToday || 0,
+        totalActivity: (xState?.repliesToday || 0) + (xState?.likesToday || 0),
+        budgetSpent: xState?.budgetSpent || social?.budgetSpent || 0,
         budgetLimit: xState?.budgetLimit || 1.0,
       },
       system: {
