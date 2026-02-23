@@ -508,7 +508,8 @@ def place_order(ticker: str, side: str, count: int, price: int) -> Dict:
     order_id = str(uuid.uuid4())
     payload = {
         "ticker": ticker,
-        "side": side,
+        "action": "buy",  # Required field - "buy" or "sell"
+        "side": side,     # "yes" or "no"
         "count": count,
         "price": price,
         "client_order_id": order_id
