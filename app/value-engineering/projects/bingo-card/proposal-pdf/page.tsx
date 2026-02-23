@@ -1301,9 +1301,229 @@ export default function ProposalPDF() {
             </div>
           </div>
 
+          {/* Per-Proposal Cost Breakdowns */}
+          <div className="bg-[#111] border border-purple-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Proposal A: AI-First (Ivy / Copilot) — Cost Breakdown</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a] mb-2">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Line Item</th>
+                  <th className="text-left p-2 text-[#555]">Low</th>
+                  <th className="text-left p-2 text-[#555]">High</th>
+                  <th className="text-left p-2 text-[#555]">Calculation / Source</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['BUILD COSTS', '', '', '', true],
+                    ['Copilot Studio plugin dev (3 connectors)', '$40K', '$60K', 'Senior dev at $175-250/hr × 200-300 hrs. 3 connectors (SF, ZoomInfo, 360) × ~80-100 hrs each including auth, data mapping, error handling, testing.'],
+                    ['Customer 360 API development', '$20K', '$40K', 'Data engineering to expose 360 data via API or scheduled export. $175-225/hr × 100-200 hrs. Complexity depends on existing data warehouse architecture.'],
+                    ['AI prompt engineering & guardrails', '$10K', '$20K', 'Prompt design, output validation, hallucination guardrails, template library. $150-200/hr × 60-100 hrs. Includes testing across diverse account profiles.'],
+                    ['Testing, security review, deployment', '$10K', '$30K', 'QA: $125-175/hr × 40-80 hrs. Security review for API credentials, data access controls, PII handling. Deployment + documentation.'],
+                    ['TOTAL BUILD', '$80K', '$150K', '', true],
+                    ['ONGOING ANNUAL', '', '', '', true],
+                    ['Copilot Studio licensing', '$0', '$30K', '$0 if included in existing M365 E5. If not: Copilot Studio starts at ~$200/mo per author + $0.01/message for users. 50 reps × heavy usage = up to $30K/yr.'],
+                    ['ZoomInfo API tier upgrade', '$10K', '$20K', 'Current ZoomInfo license covers UI access. API enrichment tier: ~$10-20K/yr incremental based on ZoomInfo Enterprise API add-on. Source: ZoomInfo sales + G2 pricing data.'],
+                    ['Azure OpenAI API usage', '$5K', '$15K', 'GPT-4o at ~$5/1M input tokens, ~$15/1M output tokens. Est. 50 reps × 20 queries/day × 250 days × ~2K tokens avg = 500M tokens/yr. Blended cost: $5-15K depending on model mix.'],
+                    ['Maintenance & connector updates', '$15K', '$25K', 'Dev time for API version updates, schema changes, bug fixes, new feature requests. $175/hr × 80-140 hrs/yr (~2-3 hrs/week).'],
+                    ['TOTAL ONGOING', '$30K', '$80K', '', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[4] ? 'bg-purple-500/5' : ''}`}>
+                      <td className={`p-2 ${row[4] ? 'text-purple-400 font-bold' : 'text-[#999]'}`}>{row[0]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[1]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[2]}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-[#111] border border-blue-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-blue-400 mb-3">Proposal B: iPaaS — Cost Breakdown (3 Sub-Options)</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a] mb-2">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Line Item</th>
+                  <th className="text-center p-2 text-[#555]">B1: Power Auto</th>
+                  <th className="text-center p-2 text-[#555]">B2: Workato</th>
+                  <th className="text-center p-2 text-[#555]">B3: n8n</th>
+                  <th className="text-left p-2 text-[#555]">Source</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['BUILD', '', '', '', '', true],
+                    ['Platform setup', '$5K', '$20K', '$5K', 'PA: minimal (already provisioned). Workato: workspace config, SSO, governance. n8n: server provisioning, Docker/K8s setup.'],
+                    ['Connector development', '$5-15K', '$30-50K', '$10-20K', 'PA: premium connectors + custom flows. Workato: recipes + custom connectors. n8n: nodes + custom API integrations. Dev rate: $150-250/hr.'],
+                    ['360 API/export build', '$5-10K', '$20-30K', '$5-10K', 'Same data engineering work across all options. PA & n8n use simpler scheduled exports; Workato can do real-time streaming (more complex).'],
+                    ['Data model + output templates', '$3-5K', '$15-25K', '$5-10K', 'Schema normalization, bingo card Excel template, Teams/Slack alert formatting. Workato requires more formal recipe architecture.'],
+                    ['Testing + deployment', '$2-5K', '$15-25K', '$5-10K', 'Proportional to complexity. Workato enterprise requires formal UAT + security review.'],
+                    ['TOTAL BUILD', '$15-40K', '$100-150K', '$20-40K', '', true],
+                    ['ONGOING', '', '', '', '', true],
+                    ['Platform licensing', '$5-15K/yr', '$60-130K/yr', '$0-2K/yr', 'PA: premium connectors $15/user/mo × relevant users. Workato: enterprise contract. n8n: free self-hosted, $600/yr cloud.'],
+                    ['ZoomInfo API', '$10-20K/yr', '$10-20K/yr', '$10-20K/yr', 'Same across all options — API tier upgrade for programmatic access.'],
+                    ['Maintenance', '$5-10K/yr', '$10-20K/yr', '$10-15K/yr', 'PA: flow updates, connector maintenance. Workato: recipe tuning, vendor-managed. n8n: self-maintained (higher internal effort).'],
+                    ['TOTAL ONGOING', '$20-45K/yr', '$80-170K/yr', '$20-37K/yr', '', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[5] ? 'bg-blue-500/5' : ''}`}>
+                      <td className={`p-2 ${row[5] ? 'text-blue-400 font-bold' : 'text-[#999]'}`}>{row[0]}</td>
+                      <td className={`p-2 text-center ${row[5] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[1]}</td>
+                      <td className={`p-2 text-center ${row[5] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[2]}</td>
+                      <td className={`p-2 text-center ${row[5] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[3]}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{row[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-[#111] border border-green-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-green-400 mb-3">Proposal C: Power BI Dashboard — Cost Breakdown</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a] mb-2">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Line Item</th>
+                  <th className="text-left p-2 text-[#555]">Low</th>
+                  <th className="text-left p-2 text-[#555]">High</th>
+                  <th className="text-left p-2 text-[#555]">Calculation / Source</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['BUILD COSTS', '', '', '', true],
+                    ['Dashboard dev (7 views)', '$30K', '$50K', 'BI developer at $125-200/hr × 200-300 hrs. 7 dashboard views × ~30-40 hrs each (data modeling, DAX measures, visuals, filters, drill-through). Includes design iteration.'],
+                    ['Customer 360 data pipeline', '$15K', '$30K', 'Data engineer to build scheduled export or API from 360 data warehouse → Power BI dataset. $150-225/hr × 100-150 hrs. Includes data transformation, scheduling, monitoring.'],
+                    ['Data model + SF mapping', '$10K', '$20K', 'Map Salesforce objects (Account, Opportunity, Asset, Contact, AccountTeam) to Power BI star schema. $150/hr × 60-130 hrs. Includes handling deduplication, null handling, calculated columns.'],
+                    ['Training & adoption program', '$5K', '$10K', 'Training materials, recorded walkthroughs, 3-4 live training sessions for different roles (reps, managers, SEs). $150/hr × 30-65 hrs. Adoption tracking setup.'],
+                    ['Testing & deployment', '$5K', '$10K', 'UAT with 5-10 pilot users, data validation, performance optimization (dataset refresh times, query speed), workspace permissions, row-level security. $150/hr × 30-65 hrs.'],
+                    ['TOTAL BUILD', '$60K', '$120K', 'Range driven primarily by 360 pipeline complexity and number of dashboard iterations needed.', true],
+                    ['ONGOING ANNUAL', '', '', '', true],
+                    ['Power BI licensing', '$0', '$10K', '$0 if M365 E5 (Power BI Pro included). If additional seats needed: $10/user/mo × up to 80 users = $9.6K/yr. Power BI Premium Per User at $20/user/mo if large datasets needed.'],
+                    ['Data pipeline maintenance', '$5K', '$10K', 'Monthly: monitor refresh failures, handle schema changes from Salesforce/360 updates, add new fields. $150/hr × 30-65 hrs/yr (~1 hr/week).'],
+                    ['Dashboard iteration', '$5K', '$10K', 'New views, modified visuals, additional filters/drill-throughs as team provides feedback. $150/hr × 30-65 hrs/yr. Tapers off after Year 1.'],
+                    ['TOTAL ONGOING', '$10K', '$30K', 'Lowest ongoing cost of all proposals — leverages existing M365 licensing.', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[4] ? 'bg-green-500/5' : ''}`}>
+                      <td className={`p-2 ${row[4] ? 'text-green-400 font-bold' : 'text-[#999]'}`}>{row[0]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[1]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[2]}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-[#111] border border-purple-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Proposal D: Salesforce-Native — Cost Breakdown</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a] mb-2">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Line Item</th>
+                  <th className="text-left p-2 text-[#555]">Low</th>
+                  <th className="text-left p-2 text-[#555]">High</th>
+                  <th className="text-left p-2 text-[#555]">Calculation / Source</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['BUILD COSTS', '', '', '', true],
+                    ['Data Cloud configuration', '$25K', '$60K', 'Configure Data Cloud to ingest 360 + ZoomInfo data streams. Create unified customer profiles. Data mapping, identity resolution, calculated insights. SF consultant at $200-300/hr × 100-200 hrs.'],
+                    ['Agentforce agent development', '$20K', '$50K', 'Build 3-4 custom agents (White Space, Competitor Intel, Account Research, Renewal Risk). Agent Builder + prompt engineering + testing. $200-250/hr × 80-200 hrs.'],
+                    ['ARPEDIO / DemandFarm setup', '$10K', '$25K', 'Configure white space matrix (map 25+ Ivanti products), account planning templates, SWOT framework, scoring models. Includes data migration from existing spreadsheets. Vendor PS + internal: $175/hr × 60-140 hrs.'],
+                    ['ZoomInfo enrichment activation', '$5K', '$15K', 'Enable auto-enrichment flows in Salesforce. Map ZoomInfo fields to SF fields. Configure technographic tracking. Deduplication rules. $150/hr × 30-100 hrs.'],
+                    ['SF reports, dashboards, RLS', '$10K', '$25K', 'Build bingo card report types, dashboards, row-level security per rep. Custom fields, formula fields, validation rules. $150/hr × 60-165 hrs.'],
+                    ['Integration testing + deployment', '$10K', '$25K', 'End-to-end testing across all components. Data validation, performance testing, user acceptance. Security review for Data Cloud access. $175/hr × 60-140 hrs.'],
+                    ['TOTAL BUILD', '$80K', '$200K', 'Wide range due to Data Cloud complexity. If already on Data Cloud: build drops to ~$55-140K.', true],
+                    ['ONGOING ANNUAL', '', '', '', true],
+                    ['Salesforce Data Cloud', '$65K', '$150K', 'Included in some SF Enterprise+ editions ($0). Standalone: starts ~$65K/yr. Enterprise with multiple external connectors + high volume: up to $150K/yr. Source: Salesforce.com pricing page (2025). Verify current license entitlements first.'],
+                    ['Agentforce consumption', '$25K', '$50K', '$0.10/action. 50 reps × 20 interactions/day × 250 days = 250K actions/yr = $25K base. Complex multi-step queries (research agent doing 5+ actions per request) push toward $50K.'],
+                    ['ARPEDIO / DemandFarm license', '$18K', '$36K', 'ARPEDIO: ~$30-50/user/mo for 50 users = $18-30K/yr. DemandFarm: ~$35-60/user/mo = $21-36K/yr. Source: vendor websites + G2 pricing (2025).'],
+                    ['ZoomInfo API tier', '$10K', '$20K', 'Incremental cost for API-level enrichment beyond current UI-only license. Based on ZoomInfo Enterprise API add-on pricing.'],
+                    ['TOTAL ONGOING', '$118K', '$256K', 'Highest ongoing cost. Dominated by Data Cloud licensing. If already entitled: drops to $53-106K/yr.', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[4] ? 'bg-purple-500/5' : ''}`}>
+                      <td className={`p-2 ${row[4] ? 'text-purple-400 font-bold' : 'text-[#999]'}`}>{row[0]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[1]}</td>
+                      <td className={`p-2 ${row[4] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[2]}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-[#111] border border-amber-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-amber-400 mb-3">Hybrid Approach — Combined Cost Build-Up</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a] mb-2">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Phase</th>
+                  <th className="text-left p-2 text-[#555]">Components</th>
+                  <th className="text-left p-2 text-[#555]">Build</th>
+                  <th className="text-left p-2 text-[#555]">Annual</th>
+                  <th className="text-left p-2 text-[#555]">How Calculated</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['Phase 1: Power BI', 'Dashboard (7 views) + SF data model', '$60-120K', '$10-30K/yr', 'Full Proposal C build. See Proposal C breakdown above.'],
+                    ['Phase 1 (parallel): 360 API', 'Data pipeline from Customer 360', '$20-40K', '(incl above)', 'Subset of Proposal C build. Data engineering: $150-225/hr × 100-200 hrs.'],
+                    ['Phase 2: AI Layer', 'Copilot/Ivy connectors + prompts', '$80-150K', '$30-80K/yr', 'Full Proposal A build. See Proposal A breakdown above. Leverages 360 API already built in Phase 1.'],
+                    ['TOTAL HYBRID', '', '$160-310K', '$40-110K/yr', '', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[5] ? 'bg-amber-500/5' : ''}`}>
+                      <td className={`p-2 ${row[5] ? 'text-amber-400 font-bold' : 'text-[#999]'}`}>{row[0]}</td>
+                      <td className="p-2 text-[#888] text-[10px]">{row[1]}</td>
+                      <td className={`p-2 ${row[5] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[2]}</td>
+                      <td className={`p-2 ${row[5] ? 'text-white font-bold' : 'text-[#999]'}`}>{row[3]}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{row[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="text-[10px] text-[#555] mt-2">
+              <strong>Note:</strong> Hybrid avoids Proposal D&apos;s Data Cloud licensing ($65-150K/yr) by using Power BI + direct 360 pipeline instead. The 360 API build cost is shared between Phase 1 and Phase 2 (built once, used twice). If Ivanti later decides to add Data Cloud, it&apos;s additive — not wasted work.
+            </div>
+          </div>
+
+          {/* Developer Rate Justification */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Developer / Consultant Rate Assumptions</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Role</th>
+                  <th className="text-left p-2 text-[#555]">Rate Range</th>
+                  <th className="text-left p-2 text-[#555]">Basis</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['BI Developer (Power BI)', '$125-200/hr', 'Mid-market to enterprise BI consultants. Source: Glassdoor + Upwork enterprise tier. Internal FTE equivalent: $90-130/hr fully loaded.'],
+                    ['Data Engineer', '$150-225/hr', 'ETL/pipeline specialists with Salesforce + data warehouse experience. Source: Levels.fyi + consulting firm rate cards.'],
+                    ['Salesforce Developer/Admin', '$150-250/hr', 'Certified SF developers for Data Cloud, Agentforce, custom objects. Source: Salesforce partner rate cards (2025). Internal FTE: $100-150/hr.'],
+                    ['AI/ML Engineer', '$175-300/hr', 'Copilot Studio / LLM integration specialists. Source: AI consulting market rates (2025). Niche skill = premium rate.'],
+                    ['QA / Testing', '$125-175/hr', 'Test engineering for enterprise integrations. Source: consulting firm rate cards. Lower than dev rates.'],
+                    ['Project Management', '$125-175/hr', 'Included in build estimates as ~10-15% overhead. Not broken out separately.'],
+                  ].map(([role, rate, basis]) => (
+                    <tr key={role} className="border-t border-[#1a1a1a]">
+                      <td className="p-2 text-[#999] font-medium">{role}</td>
+                      <td className="p-2 text-white">{rate}</td>
+                      <td className="p-2 text-[#666] text-[10px]">{basis}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="text-[10px] text-[#555] mt-2">
+              <strong>Internal vs. External:</strong> If Ivanti uses internal resources, rates drop 30-40%. Build costs would decrease proportionally. Above rates assume external consultants/contractors which is typical for project-based work when internal teams are at capacity.
+            </div>
+          </div>
+
           {/* Cost Sources */}
           <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
-            <h3 className="text-sm font-bold text-purple-400 mb-3">Cost Estimates — Sources &amp; Methodology</h3>
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Tool Licensing — Sources &amp; Verification</h3>
             <div className="space-y-2">
               {[
                 { item: 'Fully loaded hourly rate ($85/hr)', source: 'BLS Occupational Employment and Wage Statistics (2024). Median salary for Sales Engineers: $116K-$160K. With 30% benefits loading: $150K-$208K. Midpoint $180K ÷ 1,708 annual hours = ~$105/hr for senior reps. We use $85/hr as a blended average across all roles (including CSMs at lower salary bands) to be conservative.' },
