@@ -190,12 +190,12 @@ export async function GET() {
         },
       },
       social: {
-        postsToday: poster?.postsToday || xState?.postsToday || 0,
-        repliesToday: xState?.repliesToday || social?.repliesToday || 0,
-        likesToday: xState?.likesToday || social?.likesToday || 0,
-        totalActivity: (xState?.repliesToday || 0) + (xState?.likesToday || 0),
-        budgetSpent: xState?.budgetSpent || social?.budgetSpent || 0,
-        budgetLimit: xState?.budgetLimit || 1.0,
+        postsToday: poster?.postsToday ?? xState?.postsToday ?? 0,
+        repliesToday: social?.repliesToday ?? (Array.isArray(xState?.repliesToday) ? xState.repliesToday.length : xState?.repliesToday) ?? 0,
+        likesToday: social?.likesToday ?? xState?.likesToday ?? 0,
+        totalActivity: (social?.repliesToday ?? 0) + (social?.likesToday ?? 0),
+        budgetSpent: social?.budgetSpent ?? xState?.budgetSpent ?? 0,
+        budgetLimit: social?.budgetLimit ?? xState?.budgetLimit ?? 1.0,
       },
       system: {
         jobs: cronJobs,

@@ -1,7 +1,7 @@
 {
   "date": "2026-02-22",
   "daily_limit_cents": 1800,
-  "total_spent_cents": 285,
+  "total_spent_cents": 507,
   "bots": {
     "price_farmer": {
       "daily_budget_cents": 900,
@@ -12,10 +12,10 @@
     },
     "weather_trader": {
       "daily_budget_cents": 900,
-      "daily_spent_cents": 0,
-      "trades_today": 0,
-      "last_trade": null,
-      "last_trade_ticker": null
+      "daily_spent_cents": 222,
+      "trades_today": 2,
+      "last_trade": "2026-02-23T02:35:59.000000Z",
+      "last_trade_ticker": "KXHIGHNYC-26FEB23-B33"
     }
   },
   "trade_log": [
@@ -42,7 +42,23 @@
       "side": "yes",
       "cost_c": 96,
       "order_id": "8ac6081c-616f-4441-a44b-0138c0e71548"
+    },
+    {
+      "ts": "2026-02-23T02:35:59.000000Z",
+      "bot": "weather_trader",
+      "ticker": "KXHIGHNYC-26FEB23-T37",
+      "side": "yes",
+      "cost_c": 7,
+      "order_id": "wt-nyc-001"
+    },
+    {
+      "ts": "2026-02-23T02:35:59.000000Z",
+      "bot": "weather_trader",
+      "ticker": "KXHIGHNYC-26FEB23-B33",
+      "side": "yes",
+      "cost_c": 15,
+      "order_id": "wt-nyc-002"
     }
   ],
-  "last_updated": "2026-02-23T02:13:53.660124Z"
+  "last_updated": "2026-02-23T02:35:59.000000Z"
 }
