@@ -4,13 +4,31 @@ import { useEffect } from 'react';
 
 export default function ProposalPDF() {
   useEffect(() => {
-    // Auto-trigger print dialog after render
+    // Hide sidebar when this page is active
+    const sidebar = document.querySelector('aside');
+    const main = document.querySelector('main');
+    if (sidebar) sidebar.style.display = 'none';
+    if (main) { main.style.width = '100%'; main.style.overflow = 'visible'; main.style.height = 'auto'; }
+    document.body.style.overflow = 'visible';
+    document.body.style.height = 'auto';
+    document.body.style.display = 'block';
+
+    // Auto-trigger print dialog if requested
     const timer = setTimeout(() => {
       if (typeof window !== 'undefined' && window.location.search.includes('print=1')) {
         window.print();
       }
     }, 500);
-    return () => clearTimeout(timer);
+
+    return () => {
+      clearTimeout(timer);
+      // Restore sidebar when navigating away
+      if (sidebar) sidebar.style.display = '';
+      if (main) { main.style.width = ''; main.style.overflow = ''; main.style.height = ''; }
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.display = '';
+    };
   }, []);
 
   return (
@@ -22,8 +40,18 @@ export default function ProposalPDF() {
           .page-break { page-break-before: always; }
           .avoid-break { page-break-inside: avoid; }
           @page { margin: 0.5in; size: letter; }
+          /* Hide the Command Center sidebar and all nav chrome */
+          aside { display: none !important; }
+          main { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
+          body { overflow: visible !important; height: auto !important; display: block !important; }
+          body > * > aside { display: none !important; }
+          /* Kill the VE tab bar if it leaks through */
+          [class*="border-b"][class*="bg-[#0a0a0a]"] { display: none !important; }
         }
+        /* When this page is active, hide sidebar on screen too for clean full-page view */
         body { background: #0a0a0f !important; }
+        .proposal-pdf-active aside { display: none !important; }
+        .proposal-pdf-active main { width: 100% !important; }
       `}</style>
 
       {/* Print Button */}

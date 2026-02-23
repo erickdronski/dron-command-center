@@ -13,6 +13,11 @@ const tabs = [
 export default function VELayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
+  // PDF proposal page gets no chrome at all
+  if (pathname?.includes('proposal-pdf')) {
+    return <>{children}</>;
+  }
+
   return (
     <div className="flex flex-col h-full">
       {/* Tab Bar */}
