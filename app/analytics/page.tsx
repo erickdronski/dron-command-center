@@ -10,19 +10,18 @@ import {
 // ── Types ──────────────────────────────────────────────────────────────────
 interface StatusData {
   trading: {
-    polymarket: { active: boolean; positions: number; pnl24h: number; winRate: number; totalTrades24h: number };
-    weather: { active: boolean; edges: number; pnl24h: number };
-    combined: { pnl24h: number };
+    kalshi: { active: boolean; trades: number; spent: number; budget: number; weatherTrades: number; priceTrades: number };
+    polymarket: { active: boolean; positions: number; tradesTotal: number };
   };
   social: {
-    followers: number; followerChange: number; postsToday: number; repliesToday: number;
-    totalActivity: number; totalPosts: number; engagementRate: number;
-    budgetSpent: number; dailyBudget: number;
+    followers: number; postsToday: number; repliesToday: number; likesToday: number;
+    totalActivity: number; budgetSpent: number; budgetLimit: number;
   };
   system: {
-    jobs: { name: string; status: string; nextRun: string; enabled: boolean; lastRun: string }[];
+    jobs: { name: string; status: string; nextRun: string; enabled: boolean; lastRun: string; consecutiveErrors: number }[];
     errors: number; totalJobs: number; activeJobs: number;
   };
+  activity: { time: string; message: string }[];
   alerts: { level: string; message: string }[];
   lastUpdated: string;
 }
@@ -155,13 +154,11 @@ export default function AnalyticsPage() {
 
   const s = data?.social;
   const sys = data?.system;
-  const wt = kalshi?.weatherTrader;
-  const pf = kalshi?.priceFarmer;
+  const kalshi = data?.trading?.kalshi;
 
-  const totalSpentUsd = kalshi?.budget ? kalshi.budget.totalSpentCents / 100 : 0;
-  const wtTrades  = wt?.tradesDay ?? 0;
-  const pfTrades  = pf?.tradesDay ?? 0;
-  const totalBudgetPct = kalshi?.budget?.totalPct ?? 0;
+  const totalSpent = kalshi?.spent ?? 0;
+  const totalBudget = kalshi?.budget ?? 18;
+  const budgetPct = totalBudget > 0 ? Math.round((totalSpent / totalBudget) * 100) : 0;
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -212,32 +209,31 @@ export default function AnalyticsPage() {
         <StatCard
           icon={DollarSign}
           label="Kalshi spent today"
-          value={kalshi?.ok ? `$${fmt(totalSpentUsd)}` : '—'}
-          sub={kalshi?.budget ? `$${fmt(kalshi.budget.totalRemainingCents / 100)} remaining` : undefined}
-          color={totalBudgetPct >= 90 ? 'text-red-400' : totalBudgetPct >= 70 ? 'text-yellow-400' : 'text-green-400'}
-          trend={totalBudgetPct < 90 ? 'up' : 'down'}
+          value={kalshi ? `$${fmt(totalSpent)}` : '—'}
+          sub={`$${fmt(totalBudget - totalSpent)} remaining · ${budgetPct}%`}
+          color={budgetPct >= 90 ? 'text-red-400' : budgetPct >= 70 ? 'text-yellow-400' : 'text-green-400'}
+          trend={budgetPct < 90 ? 'up' : 'down'}
         />
         <StatCard
           icon={Users}
-          label="X Followers"
-          value={s ? s.followers.toLocaleString() : '—'}
-          sub={s ? `${sign(s.followerChange)}${s.followerChange} today` : undefined}
+          label="X Activity"
+          value={s ? `${s.totalActivity}` : '—'}
+          sub={s ? `${s.postsToday} posts · ${s.repliesToday} replies · ${s.likesToday} likes` : undefined}
           color="text-white"
-          trend={s && s.followerChange >= 0 ? 'up' : 'down'}
         />
         <StatCard
           icon={Target}
           label="Trades today"
-          value={kalshi?.ok ? `${wtTrades + pfTrades}` : '—'}
-          sub={kalshi?.ok ? `${wtTrades} weather · ${pfTrades} price` : undefined}
+          value={kalshi ? `${kalshi.trades}` : '—'}
+          sub={kalshi ? `${kalshi.weatherTrades} weather · ${kalshi.priceTrades} price` : undefined}
           color="text-cyan-400"
         />
         <StatCard
           icon={Activity}
-          label="Active Bots"
+          label="Active Jobs"
           value={sys ? `${sys.activeJobs}/${sys.totalJobs}` : '—'}
-          sub={sys && sys.errors > 0 ? `${sys.errors} error${sys.errors > 1 ? 's' : ''}` : 'All healthy'}
-          color="text-white"
+          sub={sys && sys.errors > 0 ? `${sys.errors} with errors` : 'All healthy'}
+          color={sys && sys.errors === 0 ? 'text-green-400' : 'text-yellow-400'}
           trend={sys && sys.errors === 0 ? 'up' : 'down'}
         />
       </div>
@@ -248,11 +244,12 @@ export default function AnalyticsPage() {
         <div className="bg-[#111] border border-[#1e1e1e] rounded-lg p-5">
           <SectionHeader icon={Twitter} title="X (Twitter)" sub="@DronskiErick" />
 
-          <div className="grid grid-cols-3 gap-3 mb-5">
+          <div className="grid grid-cols-4 gap-3 mb-5">
             {[
-              { label: 'Followers', value: s?.followers.toLocaleString() ?? '—' },
-              { label: 'Posts today', value: s?.postsToday?.toString() ?? '—' },
+              { label: 'Posts', value: s?.postsToday?.toString() ?? '—' },
               { label: 'Replies', value: s?.repliesToday?.toString() ?? '—' },
+              { label: 'Likes', value: s?.likesToday?.toString() ?? '—' },
+              { label: 'Budget', value: s ? `$${fmt(s.budgetSpent)}/$${fmt(s.budgetLimit)}` : '—' },
             ].map(({ label, value }) => (
               <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
                 <div className="text-lg font-bold text-white">{value}</div>
@@ -264,30 +261,17 @@ export default function AnalyticsPage() {
           {s && (
             <>
               <BarRow
-                label="Follower goal (10k)"
-                value={s.followers}
-                max={10000}
-                color="bg-blue-500"
-              />
-              <BarRow
-                label={`Daily posts (${s.postsToday}/${s.totalPosts})`}
-                value={s.postsToday}
-                max={s.totalPosts}
-                color="bg-purple-500"
-              />
-              <BarRow
-                label={`API budget ($${fmt(s.budgetSpent)}/$${fmt(s.dailyBudget)})`}
+                label={`Daily budget ($${fmt(s.budgetSpent)}/$${fmt(s.budgetLimit)})`}
                 value={s.budgetSpent}
-                max={s.dailyBudget}
-                color={s.budgetSpent / s.dailyBudget > 0.8 ? 'bg-red-500' : 'bg-green-500'}
+                max={s.budgetLimit}
+                color={s.budgetSpent / s.budgetLimit > 0.8 ? 'bg-red-500' : 'bg-green-500'}
               />
               <div className="mt-3 pt-3 border-t border-[#1a1a1a] text-xs text-[#555]">
-                Engagement rate: <span className="text-white">{s.engagementRate > 0 ? `${fmt(s.engagementRate, 1)}%` : 'n/a'}</span>
-                &nbsp;·&nbsp; Total activity: <span className="text-white">{s.totalActivity}</span>
+                Total activity today: <span className="text-white">{s.totalActivity}</span>
               </div>
             </>
           )}
-          {!s && !loading && <p className="text-xs text-[#444]">No social data available</p>}
+          {!s && !loading && <p className="text-xs text-[#444]">No X data available</p>}
         </div>
 
         {/* Kalshi Trading */}
