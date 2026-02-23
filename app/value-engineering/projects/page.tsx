@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Building2, Calendar, ChevronRight, MapPin, Users, Tag, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { Building2, Calendar, ChevronRight, MapPin, Users, Tag, ExternalLink, Zap, ArrowRight } from 'lucide-react';
 
 type Project = {
   id: string;
@@ -91,8 +92,45 @@ const typeLabels: Record<string, string> = {
 export default function ProjectsPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
+  const strategicProjects = [
+    {
+      href: '/value-engineering/projects/bingo-card',
+      title: 'Sales Bingo Card Automation',
+      desc: 'Executive proposal to automate manual portfolio assembly — 126 hrs/rep/yr saved, 564%+ ROI',
+      status: 'active',
+      color: 'border-purple-500/30',
+    },
+  ];
+
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-4">
+    <div className="p-6 max-w-5xl mx-auto space-y-6">
+      {/* Strategic Projects */}
+      <div>
+        <h2 className="text-sm font-semibold text-[#555] uppercase tracking-wider mb-3">Strategic Projects</h2>
+        <div className="space-y-3">
+          {strategicProjects.map((sp) => (
+            <Link key={sp.href} href={sp.href}
+              className={`block bg-[#111] border ${sp.color} rounded-xl p-5 hover:bg-[#141414] transition-all group`}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Zap size={18} className="text-purple-400" />
+                  <div>
+                    <div className="text-sm font-bold text-white">{sp.title}</div>
+                    <div className="text-xs text-[#666] mt-0.5">{sp.desc}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className={`text-xs px-2 py-1 rounded ${statusColors[sp.status]}`}>{sp.status}</span>
+                  <ArrowRight size={16} className="text-[#333] group-hover:text-[#666] transition-colors" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Customer Engagements */}
+      <h2 className="text-sm font-semibold text-[#555] uppercase tracking-wider mb-0">Customer Engagements</h2>
       <div className="flex items-center justify-between mb-2">
         <p className="text-sm text-[#666]">{projects.length} engagements tracked</p>
         <div className="flex gap-2">

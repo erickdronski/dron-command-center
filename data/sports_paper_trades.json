@@ -62,5 +62,37 @@
     "exit_timestamp": null,
     "pnl": null,
     "status": "open"
+  },
+  {
+    "id": "paper_20260223_133646_4",
+    "timestamp": "2026-02-23T13:36:46.621796",
+    "ticker": "KXNBAAST-26FEB23SASDET-SASDFOX4-10",
+    "title": "De'Aaron Fox: 10+ assists",
+    "side": "yes",
+    "entry_price": 14,
+    "size": 21,
+    "signal_type": "stats_edge",
+    "edge": 12.0,
+    "reason": "NBA | STATS | De'Aaron Fox avg 7.4 \u2192 10.0+ theo=26% vs mkt=14% | +12\u00a2 edge",
+    "exit_price": null,
+    "exit_timestamp": null,
+    "pnl": null,
+    "status": "open"
+  },
+  {
+    "id": "paper_20260223_143734_5",
+    "timestamp": "2026-02-23T14:37:34.676385",
+    "ticker": "KXNBAAST-26FEB23SASDET-SASDFOX4-8",
+    "title": "De'Aaron Fox: 8+ assists",
+    "side": "yes",
+    "entry_price": 29,
+    "size": 10,
+    "signal_type": "stats_edge",
+    "edge": 19.0,
+    "reason": "NBA | STATS | De'Aaron Fox avg 7.4 \u2192 8.0+ theo=48% vs mkt=29% | +19\u00a2 edge",
+    "exit_price": null,
+    "exit_timestamp": null,
+    "pnl": null,
+    "status": "open"
   }
 ]

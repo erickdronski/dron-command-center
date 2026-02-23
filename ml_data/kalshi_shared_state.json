@@ -1,7 +1,7 @@
 {
   "date": "2026-02-23",
   "daily_limit_cents": 2400,
-  "total_spent_cents": 887,
+  "total_spent_cents": 897,
   "bots": {
     "price_farmer": {
       "daily_budget_cents": 900,
@@ -12,9 +12,9 @@
     },
     "weather_trader": {
       "daily_budget_cents": 900,
-      "daily_spent_cents": 34,
-      "trades_today": 3,
-      "last_trade": "2026-02-23T11:36:09.003887",
+      "daily_spent_cents": 44,
+      "trades_today": 4,
+      "last_trade": "2026-02-23T13:35:31.517613",
       "last_trade_ticker": "KXHIGHNY-26FEB24-T28"
     },
     "sports_trader": {
@@ -97,7 +97,15 @@
       "side": "yes",
       "cost_c": 7,
       "order_id": "unknown"
+    },
+    {
+      "ts": "2026-02-23T13:35:31.517642",
+      "bot": "weather_trader",
+      "ticker": "KXHIGHNY-26FEB24-T28",
+      "side": "yes",
+      "cost_c": 10,
+      "order_id": "unknown"
     }
   ],
-  "last_updated": "2026-02-23T11:36:09.003915"
+  "last_updated": "2026-02-23T13:35:31.517637"
 }
