@@ -1,117 +1,185 @@
-import { Calendar, Clock, RotateCcw, Zap } from 'lucide-react';
+'use client';
 
-const RECURRING = [
-  { name: 'Mission Control Check', freq: 'Every 30 min', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30', icon: '🔄' },
-  { name: 'AI Trading Scan', freq: 'Every hour', color: 'bg-green-500/20 text-green-400 border-green-500/30', icon: '📊' },
-  { name: 'Morning Brief', freq: 'Daily 8:00 AM', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30', icon: '☀️' },
-  { name: 'Memory Maintenance', freq: 'Daily 11:00 PM', color: 'bg-violet-500/20 text-violet-400 border-violet-500/30', icon: '🧠' },
-  { name: 'Discord Heartbeat', freq: 'Every 30 min', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30', icon: '💓' },
-];
+import { useEffect, useState } from 'react';
+import { Calendar, Clock, RotateCcw, Zap, AlertCircle } from 'lucide-react';
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-const WEEKLY_EVENTS: Record<number, Array<{ name: string; time: string; color: string }>> = {
-  0: [{ name: 'Deploy review', time: '10:00', color: 'bg-purple-500/20 text-purple-300' }],
-  1: [
-    { name: 'Content sprint', time: '09:00', color: 'bg-yellow-500/20 text-yellow-300' },
-    { name: 'Trading scan deep', time: '14:00', color: 'bg-green-500/20 text-green-300' },
-  ],
-  2: [{ name: 'X growth batch', time: '11:00', color: 'bg-pink-500/20 text-pink-300' }],
-  3: [
-    { name: 'P&L review', time: '09:00', color: 'bg-green-500/20 text-green-300' },
-    { name: 'Video scripting', time: '15:00', color: 'bg-yellow-500/20 text-yellow-300' },
-  ],
-  4: [
-    { name: 'System health check', time: '08:00', color: 'bg-blue-500/20 text-blue-300' },
-    { name: 'Feature deploy', time: '16:00', color: 'bg-purple-500/20 text-purple-300' },
-  ],
-  5: [{ name: 'Weekly memory digest', time: '18:00', color: 'bg-violet-500/20 text-violet-300' }],
-  6: [{ name: 'Strategy review', time: '11:00', color: 'bg-cyan-500/20 text-cyan-300' }],
-};
-
-const UPCOMING = [
-  { name: 'AI Trading Scan', time: 'In 23 min', color: 'text-green-400', dot: 'bg-green-500' },
-  { name: 'Mission Control Check', time: 'In 8 min', color: 'text-purple-400', dot: 'bg-purple-500' },
-  { name: 'Morning Brief', time: 'Tomorrow 8:00 AM', color: 'text-blue-400', dot: 'bg-blue-500' },
-  { name: 'P&L Review', time: 'Wed 9:00 AM', color: 'text-green-400', dot: 'bg-green-500' },
-];
+interface CronJob {
+  id: string;
+  name: string;
+  schedule: string;
+  nextRun: string;
+  lastRun?: string;
+  status: 'ok' | 'error' | 'running';
+  consecutiveErrors: number;
+}
 
 export default function CalendarPage() {
+  const [jobs, setJobs] = useState<CronJob[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/calendar')
+      .then(r => r.json())
+      .then(data => {
+        setJobs(data.jobs || []);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
+  const formatTime = (iso: string) => {
+    const date = new Date(iso);
+    return date.toLocaleTimeString('en-US', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: true 
+    });
+  };
+
+  const formatDate = (iso: string) => {
+    const date = new Date(iso);
+    const now = new Date();
+    const isToday = date.toDateString() === now.toDateString();
+    const isTomorrow = new Date(now.getTime() + 86400000).toDateString() === date.toDateString();
+    
+    if (isToday) return 'Today';
+    if (isTomorrow) return 'Tomorrow';
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  };
+
+  const getTimeUntil = (iso: string) => {
+    const date = new Date(iso);
+    const now = new Date();
+    const diff = date.getTime() - now.getTime();
+    
+    if (diff < 0) return 'Overdue';
+    
+    const minutes = Math.floor(diff / 60000);
+    const hours = Math.floor(diff / 3600000);
+    
+    if (minutes < 60) return `in ${minutes}m`;
+    if (hours < 24) return `in ${hours}h`;
+    return `in ${Math.floor(hours / 24)}d`;
+  };
+
+  const getStatusColor = (status: string, errors: number) => {
+    if (errors > 2) return 'bg-red-500/20 text-red-400 border-red-500/30';
+    if (errors > 0) return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
+    if (status === 'ok') return 'bg-green-500/20 text-green-400 border-green-500/30';
+    return 'bg-[#222] text-[#888] border-[#333]';
+  };
+
+  const activeJobs = jobs.filter(j => j.consecutiveErrors === 0);
+  const errorJobs = jobs.filter(j => j.consecutiveErrors > 0);
+
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center gap-3">
-        <Calendar size={20} className="text-purple-400" />
-        <h1 className="text-lg font-semibold">Calendar</h1>
-        <span className="text-sm text-[#555]">Cron jobs & scheduled tasks</span>
-      </div>
-
-      {/* Always Running */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <RotateCcw size={14} className="text-[#555]" />
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-[#555]">Always Running</h2>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Calendar size={20} className="text-purple-400" />
+          <div>
+            <h1 className="text-lg font-semibold">Cron Schedule</h1>
+            <p className="text-sm text-[#555]">Live job schedule from OpenClaw</p>
+          </div>
         </div>
-        <div className="flex gap-3 flex-wrap">
-          {RECURRING.map((r) => (
-            <div key={r.name} className={`flex items-center gap-3 px-4 py-3 rounded-lg border ${r.color}`}>
-              <span className="text-base">{r.icon}</span>
-              <div>
-                <div className="text-sm font-medium">{r.name}</div>
-                <div className="text-xs opacity-70 flex items-center gap-1 mt-0.5">
-                  <Clock size={10} />
-                  {r.freq}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="flex items-center gap-4 text-sm">
+          <div className="text-center">
+            <div className="text-xl font-bold text-green-400">{activeJobs.length}</div>
+            <div className="text-xs text-[#555]">Healthy</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xl font-bold text-red-400">{errorJobs.length}</div>
+            <div className="text-xs text-[#555]">Errors</div>
+          </div>
         </div>
       </div>
 
-      {/* Weekly Grid */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <Zap size={14} className="text-[#555]" />
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-[#555]">This Week</h2>
-        </div>
-        <div className="grid grid-cols-7 gap-2">
-          {DAYS.map((day, i) => (
-            <div key={day} className="bg-[#111] border border-[#222] rounded-lg overflow-hidden">
-              <div className={`px-3 py-2 border-b border-[#1a1a1a] text-xs font-semibold ${
-                i === 4 ? 'text-purple-400 bg-purple-500/10' : 'text-[#555]'
-              }`}>
-                {day}
-                {i === 4 && <span className="ml-1 text-purple-300">(Today)</span>}
+      {loading ? (
+        <div className="text-center text-[#555] py-12">Loading schedule...</div>
+      ) : (
+        <>
+          {/* Error Jobs First */}
+          {errorJobs.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <AlertCircle size={14} className="text-red-400" />
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-red-400">Jobs With Errors</h2>
               </div>
-              <div className="p-2 space-y-1.5 min-h-[100px]">
-                {(WEEKLY_EVENTS[i] || []).map((evt, j) => (
-                  <div key={j} className={`text-xs px-2 py-1.5 rounded ${evt.color}`}>
-                    <div className="font-medium">{evt.name}</div>
-                    <div className="opacity-70">{evt.time}</div>
+              <div className="grid gap-3">
+                {errorJobs.map((job) => (
+                  <div key={job.id} className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <AlertCircle size={16} className="text-red-400" />
+                        <div>
+                          <div className="text-sm font-medium text-white">{job.name}</div>
+                          <div className="text-xs text-red-400">{job.consecutiveErrors} consecutive errors</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-[#555]">{job.schedule}</div>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          )}
 
-      {/* Next Up */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <Clock size={14} className="text-[#555]" />
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-[#555]">Next Up</h2>
-        </div>
-        <div className="bg-[#111] border border-[#222] rounded-lg overflow-hidden">
-          {UPCOMING.map((u, i) => (
-            <div key={i} className={`flex items-center gap-4 px-4 py-3 ${i > 0 ? 'border-t border-[#1a1a1a]' : ''}`}>
-              <div className={`w-2 h-2 rounded-full ${u.dot} animate-pulse`} />
-              <div className="flex-1 text-sm text-white">{u.name}</div>
-              <div className={`text-xs font-mono ${u.color}`}>{u.time}</div>
+          {/* All Jobs */}
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <RotateCcw size={14} className="text-[#555]" />
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-[#555]">All Scheduled Jobs</h2>
             </div>
-          ))}
-        </div>
-      </div>
+            <div className="grid gap-3">
+              {jobs
+                .sort((a, b) => new Date(a.nextRun).getTime() - new Date(b.nextRun).getTime())
+                .map((job) => (
+                <div key={job.id} className={`border rounded-lg p-4 ${getStatusColor(job.status, job.consecutiveErrors)}`}>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-2 h-2 rounded-full ${job.consecutiveErrors > 0 ? 'bg-red-500' : job.status === 'ok' ? 'bg-green-500' : 'bg-[#555]'}`} />
+                      <div>
+                        <div className="text-sm font-medium">{job.name}</div>
+                        <div className="text-xs opacity-70">{job.schedule}</div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-mono">{formatTime(job.nextRun)}</div>
+                      <div className="text-xs opacity-70">
+                        {formatDate(job.nextRun)} · {getTimeUntil(job.nextRun)}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {job.lastRun && (
+                    <div className="mt-2 text-xs opacity-50 flex items-center gap-1">
+                      <Clock size={10} />
+                      Last ran: {formatTime(job.lastRun)}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Legend */}
+          <div className="flex items-center gap-4 text-xs text-[#555] pt-4 border-t border-[#222]">
+            <div className="flex items-center gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-green-500" />
+              Healthy
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-yellow-500" />
+              Warning
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-red-500" />
+              Error
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

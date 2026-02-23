@@ -30,11 +30,12 @@ _script_dir  = os.path.dirname(os.path.abspath(__file__))
 STATE_FILE   = os.path.join(_script_dir, "../ml_data/kalshi_shared_state.json")
 
 # Daily budget config (cents)
-DAILY_LIMIT_CENTS       = int(os.environ.get("KALSHI_DAILY_LIMIT",  "1800"))  # $18 total
+DAILY_LIMIT_CENTS       = int(os.environ.get("KALSHI_DAILY_LIMIT",  "2400"))  # $24 total
 PRICE_FARMER_BUDGET     = int(os.environ.get("KALSHI_PF_BUDGET",    "900"))   # $9
 WEATHER_TRADER_BUDGET   = int(os.environ.get("KALSHI_WT_BUDGET",    "900"))   # $9
+SPORTS_TRADER_BUDGET    = int(os.environ.get("KALSHI_ST_BUDGET",    "600"))   # $6
 
-BOTS = ["price_farmer", "weather_trader"]
+BOTS = ["price_farmer", "weather_trader", "sports_trader"]
 
 
 def _today() -> str:
@@ -56,6 +57,13 @@ def _empty_day() -> dict:
             },
             "weather_trader": {
                 "daily_budget_cents": WEATHER_TRADER_BUDGET,
+                "daily_spent_cents":  0,
+                "trades_today":       0,
+                "last_trade":         None,
+                "last_trade_ticker":  None,
+            },
+            "sports_trader": {
+                "daily_budget_cents": SPORTS_TRADER_BUDGET,
                 "daily_spent_cents":  0,
                 "trades_today":       0,
                 "last_trade":         None,
@@ -158,8 +166,18 @@ class KalshiState:
             return  # don't count dry-runs against budget
 
         def _update(data):
+            # Determine budget based on bot type
+            if bot == "price_farmer":
+                default_budget = PRICE_FARMER_BUDGET
+            elif bot == "weather_trader":
+                default_budget = WEATHER_TRADER_BUDGET
+            elif bot == "sports_trader":
+                default_budget = SPORTS_TRADER_BUDGET
+            else:
+                default_budget = 600  # Default $6 for unknown bots
+
             bdata = data["bots"].setdefault(bot, {
-                "daily_budget_cents": PRICE_FARMER_BUDGET if bot == "price_farmer" else WEATHER_TRADER_BUDGET,
+                "daily_budget_cents": default_budget,
                 "daily_spent_cents": 0, "trades_today": 0,
                 "last_trade": None, "last_trade_ticker": None,
             })
@@ -187,14 +205,14 @@ class KalshiState:
         data = self._load()
         pf = data["bots"].get("price_farmer", {})
         wt = data["bots"].get("weather_trader", {})
+        st = data["bots"].get("sports_trader", {})
         tot = data["total_spent_cents"]
         cap = data["daily_limit_cents"]
         return (
             f"💰 Kalshi daily: ${tot/100:.2f}/${cap/100:.2f} spent | "
-            f"PriceFarmer: ${pf.get('daily_spent_cents',0)/100:.2f}/${pf.get('daily_budget_cents',PRICE_FARMER_BUDGET)/100:.2f} "
-            f"({pf.get('trades_today',0)} trades) | "
-            f"WeatherTrader: ${wt.get('daily_spent_cents',0)/100:.2f}/${wt.get('daily_budget_cents',WEATHER_TRADER_BUDGET)/100:.2f} "
-            f"({wt.get('trades_today',0)} trades)"
+            f"PF: ${pf.get('daily_spent_cents',0)/100:.2f} "
+            f"WT: ${wt.get('daily_spent_cents',0)/100:.2f} "
+            f"ST: ${st.get('daily_spent_cents',0)/100:.2f}"
         )
 
 

@@ -193,5 +193,83 @@
     "cost_usd": 0.96,
     "minutes_left": 1.12,
     "order_id": "8ac6081c-616f-4441-a44b-0138c0e71548"
+  },
+  {
+    "timestamp": "2026-02-23T10:43:56.524462Z",
+    "ticker": "KXSOL15M-26FEB230545-45",
+    "side": "yes",
+    "entry_price": 88,
+    "edge": 12,
+    "size_cents": 176,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.8,
+    "status": "open"
+  },
+  {
+    "timestamp": "2026-02-23T10:55:56.599916Z",
+    "ticker": "KXSOL15M-26FEB230600-00",
+    "side": "no",
+    "entry_price": 81,
+    "edge": 19,
+    "size_cents": 81,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.95,
+    "status": "open"
+  },
+  {
+    "timestamp": "2026-02-23T11:11:57.301683Z",
+    "ticker": "KXXRP15M-26FEB230615-15",
+    "side": "yes",
+    "entry_price": 83,
+    "edge": 17,
+    "size_cents": 166,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.925,
+    "status": "open"
+  },
+  {
+    "timestamp": "2026-02-23T11:13:57.179447Z",
+    "ticker": "KXBTC15M-26FEB230615-15",
+    "side": "yes",
+    "entry_price": 87,
+    "edge": 13,
+    "size_cents": 174,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.825,
+    "status": "open"
+  },
+  {
+    "timestamp": "2026-02-23T11:25:57.556076Z",
+    "ticker": "KXETH15M-26FEB230630-30",
+    "side": "no",
+    "entry_price": 94,
+    "edge": 6,
+    "size_cents": 94,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.65,
+    "status": "open"
+  },
+  {
+    "timestamp": "2026-02-23T11:41:57.204720Z",
+    "ticker": "KXXRP15M-26FEB230645-45",
+    "side": "no",
+    "entry_price": 81,
+    "edge": 19,
+    "size_cents": 162,
+    "order_id": "?",
+    "spot_signal": null,
+    "order_flow": null,
+    "ml_convergence_prob": 0.95,
+    "status": "open"
   }
 ]

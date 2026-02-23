@@ -83,6 +83,11 @@ An AI-first autonomous operation — treating AI agents like actual employees of
 - x-engagement: 1473823948193136844
 - audience-growth: 1473824036466458726
 - errors-debug: 1473824271775039699
+- command-center: 1474125586346676244
+- value-engineering: 1474125704454078610
+- precision-algorithms-x: 1475320497490231438
+- klashi-sports: 1475334350768832726
+- 5k-mrr-app-ideas: 1475349043394773092
 
 ### Models in Use
 - **Primary:** anthropic/claude-sonnet-4-6
