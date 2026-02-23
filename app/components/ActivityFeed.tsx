@@ -20,7 +20,7 @@ export function ActivityFeed({ maxItems = 10 }: { maxItems?: number }) {
       try {
         const res = await fetch('/api/live-feed');
         const data = await res.json();
-        setEntries(data);
+        setEntries(data.entries || data || []);
       } catch (error) {
         console.error('Failed to fetch feed:', error);
       } finally {
