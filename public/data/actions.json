@@ -1,0 +1,32 @@
+[
+  {
+    "id": "action-001",
+    "type": "code_change",
+    "title": "Add dark mode toggle",
+    "description": "Implement theme switching between light and dark modes",
+    "status": "completed",
+    "createdAt": "2026-02-20T10:00:00Z",
+    "updatedAt": "2026-02-20T10:15:00Z",
+    "requester": "Dron",
+    "agent": "Dron Builder",
+    "result": "Successfully added theme toggle component",
+    "logs": [
+      {"time": "2026-02-20T10:00:00Z", "level": "info", "message": "Action requested"},
+      {"time": "2026-02-20T10:05:00Z", "level": "info", "message": "Agent started working"},
+      {"time": "2026-02-20T10:15:00Z", "level": "success", "message": "Code changes committed and pushed"}
+    ]
+  },
+  {
+    "id": "action-002",
+    "type": "deploy",
+    "title": "Deploy v2.1 to production",
+    "description": "Push latest changes to Vercel production",
+    "status": "pending_approval",
+    "createdAt": "2026-02-21T08:00:00Z",
+    "updatedAt": "2026-02-21T08:00:00Z",
+    "requester": "Dron",
+    "agent": null,
+    "result": null,
+    "logs": []
+  }
+]
