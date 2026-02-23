@@ -102,11 +102,12 @@ export default function ProposalPDF() {
               ['06', 'Proposal D — Salesforce-Native (Agentforce + Data Cloud)'],
               ['07', 'Alternative Platforms & Organization-Wide Impact'],
               ['08', 'Customer 360 ITSM Usage — Unlocked Value'],
-              ['09', 'Enterprise Success Stories'],
-              ['10', 'Side-by-Side Comparison'],
-              ['11', 'Recommended Hybrid Approach'],
-              ['12', 'ROI & Financial Impact'],
-              ['13', 'Executive Ask & Next Steps'],
+              ['09', 'The Connected Story — Capability & Maturity Framework'],
+              ['10', 'Enterprise Success Stories'],
+              ['11', 'Side-by-Side Comparison'],
+              ['12', 'Recommended Hybrid Approach'],
+              ['13', 'ROI & Financial Impact'],
+              ['14', 'Executive Ask & Next Steps'],
             ].map(([num, title]) => (
               <div key={num} className="flex items-center gap-4 py-2 border-b border-[#1a1a1a]">
                 <span className="text-purple-400 font-mono text-sm w-6">{num}</span>
@@ -523,10 +524,107 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            09 - SUCCESS STORIES
+            09 - CAPABILITY & MATURITY CONNECTION
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
-          <div className="text-xs text-green-400 font-mono mb-2">09</div>
+          <div className="text-xs text-purple-400 font-mono mb-2">09</div>
+          <h2 className="text-3xl font-bold mb-2">The Connected Story</h2>
+          <p className="text-lg text-purple-400 mb-1">How It All Ties Back to Capability &amp; Maturity</p>
+          <p className="text-sm text-[#666] mb-4">
+            The Capability &amp; Maturity Assessment is Ivanti&apos;s strategic engagement framework — 36 IT capabilities across 4 pillars, measured on Maturity, Business Impact, and Priority. The Connected Journey doesn&apos;t replace this framework — it <strong className="text-white">supercharges it at every stage</strong>.
+          </p>
+
+          {/* The Story Arc */}
+          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">The Full Lifecycle — Before, During, and After the Assessment</h3>
+            <div className="space-y-2">
+              {[
+                { phase: 'Before the Workshop', icon: '🔍', title: 'Pre-Engagement Intelligence',
+                  today: 'VE team manually researches the customer. Pulls data from Salesforce, ZoomInfo, Customer 360 separately. Builds a custom deck from scratch. Takes days.',
+                  future: 'Connected systems auto-generate an account brief: industry trends, product ownership, ITSM usage patterns, renewal context, and competitive landscape — all before the first call. The bingo card data feeds directly into workshop prep.',
+                  connection: 'Prompts 1-4 from the Sales Knowledge Toolkit + automated bingo card data = instant pre-engagement intelligence.' },
+                { phase: 'Qualifying the Engagement', icon: '🎯', title: 'Smart Targeting',
+                  today: 'CSMs and SEs pitch the assessment to customers based on gut feel or ad-hoc conversations. No systematic way to identify which accounts need it most.',
+                  future: 'AI scores every account on assessment readiness: low ITSM adoption + upcoming renewal + product gaps = auto-flagged as "Maturity Workshop Target." The bingo card\'s strategic signals column becomes AI-driven.',
+                  connection: 'Customer 360 usage data + white space analysis + renewal timing = algorithmic workshop targeting. The "Maturity Workshop Target?" column populates itself.' },
+                { phase: 'During the Workshop', icon: '🎨', title: 'Contextual Capability Cards',
+                  today: 'Workshop covers all 36 capabilities generically. Facilitators adjust on the fly based on what they learn in the room.',
+                  future: 'Before the workshop, the system pre-identifies which of the 36 capabilities are most relevant based on the customer\'s product ownership, usage data, and industry vertical. Workshop is pre-loaded with context.',
+                  connection: 'Product heat map (owned vs. not) maps directly to capability pillars: ESM (13 caps) ↔ ITSM/ITAM products, EMS (12 caps) ↔ UEM/Security products, Exposure Management (4 caps) ↔ RBVM/Patch products.' },
+                { phase: 'After the Workshop', icon: '📊', title: 'Automated Synthesis & Roadmap',
+                  today: 'VE team manually builds the output deck — heatmap, strategic objectives, Crawl/Walk/Run roadmap, recommendations. Takes days to weeks.',
+                  future: 'Assessment scores feed into the Connected Journey. AI generates the synthesis: maps low-maturity + high-priority capabilities to specific Ivanti products, pulls "Actions to Maturity" from the Content Master, and drafts the Crawl/Walk/Run roadmap automatically.',
+                  connection: 'Prompt 5 (Cross-Sell) + Prompt 6 (Executive Readout) + Content Master\'s "Actions to Maturity" tables = automated output generation.' },
+                { phase: 'Driving the Sale', icon: '💰', title: 'From Assessment to Revenue',
+                  today: 'VE delivers the roadmap. Account owner is supposed to continue the conversation. Often drops off. No systematic handoff or tracking.',
+                  future: 'Assessment results feed back into the bingo card: capabilities scored as low maturity with high priority become tagged white space opportunities. Account owners get prioritized action items with talk tracks. Renewal conversations are pre-loaded with maturity progress.',
+                  connection: 'Assessment output → updates product ownership gaps → triggers cross-sell opportunities → feeds ROI Deal Deck / Value Cloud for pricing → executive readout for the close.' },
+                { phase: 'Year-Over-Year Revisit', icon: '🔄', title: 'Maturity Tracking Over Time',
+                  today: 'Ideally revisit after 1 year, but no persistent record of the first assessment. Hard to show progress. Often doesn\'t happen.',
+                  future: 'Assessment scores stored in Customer 360 or Salesforce. Year 2 revisit shows maturity progression visually. Dashboard tracks Crawl → Walk → Run advancement. Renewals become strategic conversations, not price negotiations.',
+                  connection: 'Power BI ITSM Usage view shows real adoption change. Product ownership changes tracked. The customer sees their own growth story.' },
+              ].map((p) => (
+                <div key={p.phase} className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-4 avoid-break">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg">{p.icon}</span>
+                    <div>
+                      <div className="text-xs text-[#555] uppercase">{p.phase}</div>
+                      <div className="text-sm font-bold text-white">{p.title}</div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 mb-2">
+                    <div><div className="text-[10px] font-bold text-red-400/70 mb-1">❌ Today</div><div className="text-[10px] text-[#888] leading-relaxed">{p.today}</div></div>
+                    <div><div className="text-[10px] font-bold text-green-400/70 mb-1">✅ Connected</div><div className="text-[10px] text-[#888] leading-relaxed">{p.future}</div></div>
+                  </div>
+                  <div className="text-[10px] text-cyan-400/70 bg-cyan-500/5 rounded p-2">🔗 {p.connection}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* The 4 Pillars Mapping */}
+          <h3 className="text-sm font-bold text-[#ccc] mb-2">Capability Pillars → Product Data → Sales Intelligence</h3>
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            {[
+              { pillar: 'Enterprise Service Management', caps: '13 capabilities', products: 'ITSM, ITAM, AITSM, LOB, Digital Assistant', data: 'Ticket volume, self-service adoption, automation usage, knowledge base utilization', color: 'border-blue-500/20' },
+              { pillar: 'Endpoint Management & Security', caps: '12 capabilities', products: 'UEM, EPM, DEX, MDM, MTD, Patch, ZTNA', data: 'Device count, patch compliance, endpoint health scores, BYOD enrollment', color: 'border-green-500/20' },
+              { pillar: 'Exposure Management', caps: '4 capabilities', products: 'RBVM, EASM, Patch Management, App Security', data: 'Vulnerability scan frequency, mean time to remediate, attack surface coverage', color: 'border-red-500/20' },
+              { pillar: 'Foundations', caps: '8 capabilities', products: 'Discovery, CMDB, GRC, Reporting, Integrations', data: 'CI count, discovery scan coverage, integration health, report usage', color: 'border-amber-500/20' },
+            ].map((p) => (
+              <div key={p.pillar} className={`bg-[#111] border ${p.color} rounded-lg p-3 avoid-break`}>
+                <div className="text-xs font-bold text-white">{p.pillar}</div>
+                <div className="text-[10px] text-[#555]">{p.caps}</div>
+                <div className="text-[10px] text-purple-400 mt-2 mb-1">Products: <span className="text-[#888]">{p.products}</span></div>
+                <div className="text-[10px] text-cyan-400">Usage Data: <span className="text-[#888]">{p.data}</span></div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-[#111] border border-purple-500/20 rounded-lg p-4 avoid-break">
+            <h3 className="text-xs font-bold text-purple-400 mb-2">The Flywheel Effect</h3>
+            <p className="text-xs text-[#888] leading-relaxed">
+              The Connected Journey creates a <strong className="text-white">self-reinforcing cycle</strong>: automated sales intelligence identifies the right customers for capability assessments → assessments reveal maturity gaps → gaps map to specific products → product adoption is tracked in Customer 360 → usage data feeds back into sales intelligence → next year&apos;s assessment shows measurable progress → renewal conversations become strategic, not transactional. <strong className="text-white">Every tool we propose accelerates this flywheel.</strong>
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-3 text-xs text-[#666]">
+              <span className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Sales Intelligence</span>
+              <span>→</span>
+              <span className="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Assessment</span>
+              <span>→</span>
+              <span className="bg-green-500/10 text-green-400 px-2 py-1 rounded">Adoption</span>
+              <span>→</span>
+              <span className="bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Usage Data</span>
+              <span>→</span>
+              <span className="bg-amber-500/10 text-amber-400 px-2 py-1 rounded">Renewal</span>
+              <span>→ 🔄</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            10 - SUCCESS STORIES
+            ═══════════════════════════════════════════ */}
+        <div className="page-break px-12 py-8 pdf-section">
+          <div className="text-xs text-green-400 font-mono mb-2">10</div>
           <h2 className="text-3xl font-bold mb-4">Enterprise Success Stories</h2>
           <div className="space-y-2">
             {[
@@ -549,10 +647,10 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            10 - COMPARISON
+            11 - COMPARISON
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
-          <div className="text-xs text-purple-400 font-mono mb-2">10</div>
+          <div className="text-xs text-purple-400 font-mono mb-2">11</div>
           <h2 className="text-3xl font-bold mb-4">Side-by-Side Comparison</h2>
           <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
             <table className="w-full text-xs">
@@ -593,10 +691,10 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            11 - RECOMMENDED
+            12 - RECOMMENDED
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
-          <div className="text-xs text-purple-400 font-mono mb-2">11</div>
+          <div className="text-xs text-purple-400 font-mono mb-2">12</div>
           <h2 className="text-3xl font-bold mb-4">Recommended Hybrid Approach</h2>
           <div className="space-y-2">
             {[
@@ -623,10 +721,10 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            12 - ROI
+            13 - ROI
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
-          <div className="text-xs text-green-400 font-mono mb-2">12</div>
+          <div className="text-xs text-green-400 font-mono mb-2">13</div>
           <h2 className="text-3xl font-bold mb-4">ROI & Financial Impact</h2>
 
           <div className="grid grid-cols-2 gap-4 mb-4">
@@ -675,10 +773,10 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            13 - EXECUTIVE ASK
+            14 - EXECUTIVE ASK
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
-          <div className="text-xs text-purple-400 font-mono mb-2">13</div>
+          <div className="text-xs text-purple-400 font-mono mb-2">14</div>
           <h2 className="text-3xl font-bold mb-4">Executive Ask & Next Steps</h2>
 
           <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-6 mb-5">
