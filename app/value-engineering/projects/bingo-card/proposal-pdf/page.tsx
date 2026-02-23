@@ -529,92 +529,99 @@ export default function ProposalPDF() {
         <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">09</div>
           <h2 className="text-3xl font-bold mb-2">The Connected Story</h2>
-          <p className="text-lg text-purple-400 mb-1">How It All Ties Back to Capability &amp; Maturity</p>
-          <p className="text-sm text-[#666] mb-4">
-            The Capability &amp; Maturity Assessment is Ivanti&apos;s strategic engagement framework — 36 IT capabilities across 4 pillars, measured on Maturity, Business Impact, and Priority. The Connected Journey doesn&apos;t replace this framework — it <strong className="text-white">supercharges it at every stage</strong>.
+          <p className="text-lg text-purple-400 mb-1">Capability &amp; Maturity Meets Sales Intelligence</p>
+          <p className="text-sm text-[#888] mb-4">
+            Ivanti&apos;s Capability &amp; Maturity Assessment is the most powerful strategic engagement we offer — 36 capabilities, 4 pillars, deep stakeholder alignment. It&apos;s how we become a trusted advisor, not just a vendor. But today, the people who pitch it, run it, and follow up on it are <strong className="text-white">operating blind</strong>. The Connected Journey arms every role with the intelligence they need to make this framework land harder.
           </p>
 
-          {/* The Story Arc */}
-          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-5 mb-4">
-            <h3 className="text-sm font-bold text-purple-400 mb-3">The Full Lifecycle — Before, During, and After the Assessment</h3>
+          {/* How each role benefits */}
+          <h3 className="text-sm font-bold text-[#ccc] mb-2">How the Connected Layer Empowers Every Role</h3>
+          <div className="space-y-2 mb-4">
+            {[
+              { role: 'Sales Rep / Account Executive', icon: '💼',
+                without: 'Pitches the assessment cold. Doesn\'t know which customers need it or which capabilities matter most. Can\'t articulate why this account specifically would benefit.',
+                with: 'Walks in knowing the customer\'s product footprint, white space gaps, ITSM adoption %, and renewal timeline. Pitches the assessment with precision: "You have ITSM but your self-service adoption is 12% — let\'s assess your Service Management maturity and build a plan to get that to 60%." That\'s a conversation that lands.',
+                outcome: 'Higher assessment conversion rate. More qualified engagements. Shorter time from pitch to booked workshop.' },
+              { role: 'SE / Pre-Sales Engineer', icon: '🔧',
+                without: 'Joins the assessment without context on what the customer owns or how they\'re using it. Spends the first hour discovering what they could have known beforehand.',
+                with: 'Has the full product landscape, usage data, and competitive intel before the room. Knows which of the 36 capabilities to focus on because the data already points to the gaps. Can immediately connect capability gaps to Ivanti solutions with credibility.',
+                outcome: 'More targeted workshops. Stronger technical credibility. Faster path from gap identification to solution mapping.' },
+              { role: 'CSM / Customer Success', icon: '🤝',
+                without: 'Uses the assessment as a relationship builder but struggles to follow through. After VE delivers the roadmap, the loop often breaks — no systematic way to track whether the customer acted on recommendations.',
+                with: 'Sees real-time adoption data against the assessment roadmap. If the customer committed to improving Incident Management maturity, the CSM can track ticket volume, resolution time, and self-service adoption. QBRs become progress reviews, not status updates. Renewal conversations are backed by measurable growth.',
+                outcome: 'Stronger renewal position. QBRs driven by data. Year 2 assessments happen because progress is visible and compelling.' },
+              { role: 'Value Engineering Team', icon: '📐',
+                without: 'Builds every engagement from scratch. Manually researches the customer, manually builds the deck, manually writes the synthesis. Days of work per engagement. The prompt toolkit helps but data is still scattered.',
+                with: 'Account intelligence pre-loaded. The prompt toolkit fires with real data instead of placeholders. Output generation accelerated because product ownership, usage metrics, and industry context are already structured. More time spent on strategic insight, less on data assembly.',
+                outcome: 'Faster time-to-deliverable. More engagements per quarter. Higher quality outputs because more time is spent on strategy, not research.' },
+              { role: 'Sales Leadership / VP', icon: '📊',
+                without: 'Can\'t see which accounts have been assessed, what the outcomes were, or whether the assessment drove revenue. No way to measure the ROI of the VE program itself.',
+                with: 'Dashboard view: assessments completed, capabilities assessed, recommendations made, products sold as a result, maturity progression year-over-year. Can prove the VE program\'s impact on pipeline and retention. Can identify which verticals and account segments benefit most from assessments.',
+                outcome: 'Data-driven VE program investment decisions. Proof of ROI for the assessment practice. Targeted expansion of the program to high-impact segments.' },
+            ].map((r) => (
+              <div key={r.role} className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-4 avoid-break">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-lg">{r.icon}</span>
+                  <div className="text-sm font-bold text-white">{r.role}</div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mb-2">
+                  <div><div className="text-[10px] font-bold text-red-400/70 mb-1">Without the Connected Layer</div><div className="text-[10px] text-[#888] leading-relaxed">{r.without}</div></div>
+                  <div><div className="text-[10px] font-bold text-green-400/70 mb-1">With the Connected Layer</div><div className="text-[10px] text-[#888] leading-relaxed">{r.with}</div></div>
+                </div>
+                <div className="text-[10px] text-cyan-400/70 bg-cyan-500/5 rounded p-2">📈 Outcome: {r.outcome}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* The value chain */}
+          <h3 className="text-sm font-bold text-[#ccc] mb-2">The Value Chain — From Intelligence to Revenue</h3>
+          <div className="bg-[#111] border border-purple-500/20 rounded-xl p-4 mb-4 avoid-break">
+            <p className="text-xs text-[#888] mb-3">
+              The Capability &amp; Maturity Assessment is the <strong className="text-white">strategic conversation</strong>. The Connected Journey is the <strong className="text-white">intelligence layer</strong> that makes it land. Together, they create a value chain:
+            </p>
             <div className="space-y-2">
               {[
-                { phase: 'Before the Workshop', icon: '🔍', title: 'Pre-Engagement Intelligence',
-                  today: 'VE team manually researches the customer. Pulls data from Salesforce, ZoomInfo, Customer 360 separately. Builds a custom deck from scratch. Takes days.',
-                  future: 'Connected systems auto-generate an account brief: industry trends, product ownership, ITSM usage patterns, renewal context, and competitive landscape — all before the first call. The bingo card data feeds directly into workshop prep.',
-                  connection: 'Prompts 1-4 from the Sales Knowledge Toolkit + automated bingo card data = instant pre-engagement intelligence.' },
-                { phase: 'Qualifying the Engagement', icon: '🎯', title: 'Smart Targeting',
-                  today: 'CSMs and SEs pitch the assessment to customers based on gut feel or ad-hoc conversations. No systematic way to identify which accounts need it most.',
-                  future: 'AI scores every account on assessment readiness: low ITSM adoption + upcoming renewal + product gaps = auto-flagged as "Maturity Workshop Target." The bingo card\'s strategic signals column becomes AI-driven.',
-                  connection: 'Customer 360 usage data + white space analysis + renewal timing = algorithmic workshop targeting. The "Maturity Workshop Target?" column populates itself.' },
-                { phase: 'During the Workshop', icon: '🎨', title: 'Contextual Capability Cards',
-                  today: 'Workshop covers all 36 capabilities generically. Facilitators adjust on the fly based on what they learn in the room.',
-                  future: 'Before the workshop, the system pre-identifies which of the 36 capabilities are most relevant based on the customer\'s product ownership, usage data, and industry vertical. Workshop is pre-loaded with context.',
-                  connection: 'Product heat map (owned vs. not) maps directly to capability pillars: ESM (13 caps) ↔ ITSM/ITAM products, EMS (12 caps) ↔ UEM/Security products, Exposure Management (4 caps) ↔ RBVM/Patch products.' },
-                { phase: 'After the Workshop', icon: '📊', title: 'Automated Synthesis & Roadmap',
-                  today: 'VE team manually builds the output deck — heatmap, strategic objectives, Crawl/Walk/Run roadmap, recommendations. Takes days to weeks.',
-                  future: 'Assessment scores feed into the Connected Journey. AI generates the synthesis: maps low-maturity + high-priority capabilities to specific Ivanti products, pulls "Actions to Maturity" from the Content Master, and drafts the Crawl/Walk/Run roadmap automatically.',
-                  connection: 'Prompt 5 (Cross-Sell) + Prompt 6 (Executive Readout) + Content Master\'s "Actions to Maturity" tables = automated output generation.' },
-                { phase: 'Driving the Sale', icon: '💰', title: 'From Assessment to Revenue',
-                  today: 'VE delivers the roadmap. Account owner is supposed to continue the conversation. Often drops off. No systematic handoff or tracking.',
-                  future: 'Assessment results feed back into the bingo card: capabilities scored as low maturity with high priority become tagged white space opportunities. Account owners get prioritized action items with talk tracks. Renewal conversations are pre-loaded with maturity progress.',
-                  connection: 'Assessment output → updates product ownership gaps → triggers cross-sell opportunities → feeds ROI Deal Deck / Value Cloud for pricing → executive readout for the close.' },
-                { phase: 'Year-Over-Year Revisit', icon: '🔄', title: 'Maturity Tracking Over Time',
-                  today: 'Ideally revisit after 1 year, but no persistent record of the first assessment. Hard to show progress. Often doesn\'t happen.',
-                  future: 'Assessment scores stored in Customer 360 or Salesforce. Year 2 revisit shows maturity progression visually. Dashboard tracks Crawl → Walk → Run advancement. Renewals become strategic conversations, not price negotiations.',
-                  connection: 'Power BI ITSM Usage view shows real adoption change. Product ownership changes tracked. The customer sees their own growth story.' },
-              ].map((p) => (
-                <div key={p.phase} className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-4 avoid-break">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-lg">{p.icon}</span>
-                    <div>
-                      <div className="text-xs text-[#555] uppercase">{p.phase}</div>
-                      <div className="text-sm font-bold text-white">{p.title}</div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mb-2">
-                    <div><div className="text-[10px] font-bold text-red-400/70 mb-1">❌ Today</div><div className="text-[10px] text-[#888] leading-relaxed">{p.today}</div></div>
-                    <div><div className="text-[10px] font-bold text-green-400/70 mb-1">✅ Connected</div><div className="text-[10px] text-[#888] leading-relaxed">{p.future}</div></div>
-                  </div>
-                  <div className="text-[10px] text-cyan-400/70 bg-cyan-500/5 rounded p-2">🔗 {p.connection}</div>
+                { step: '1', label: 'Identify', desc: 'Connected data surfaces which accounts are ripe for an assessment — product gaps, low adoption, upcoming renewal, executive engagement.' },
+                { step: '2', label: 'Pitch', desc: 'Sales rep walks in armed with the customer\'s product landscape and usage data. The assessment isn\'t generic — it\'s positioned around their specific gaps.' },
+                { step: '3', label: 'Assess', desc: 'VE leads the workshop with pre-loaded context. The 36 capabilities are prioritized based on data, not guesswork. Stakeholders see that Ivanti already understands their world.' },
+                { step: '4', label: 'Recommend', desc: 'Maturity gaps map directly to Ivanti products and the ROI Deal Deck. Recommendations come with value hypotheses, not just suggestions.' },
+                { step: '5', label: 'Close', desc: 'Account team picks up with a clear cross-sell/upsell playbook. White space is quantified. The executive readout is data-backed.' },
+                { step: '6', label: 'Adopt & Grow', desc: 'CSM tracks adoption against the roadmap using real usage data. Customer sees measurable progress. Year 2 assessment shows growth. Renewal is a strategic conversation.' },
+              ].map((s) => (
+                <div key={s.step} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded bg-purple-500/20 text-purple-400 flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">{s.step}</div>
+                  <div><span className="text-xs font-bold text-white">{s.label}</span> <span className="text-xs text-[#888]">— {s.desc}</span></div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* The 4 Pillars Mapping */}
-          <h3 className="text-sm font-bold text-[#ccc] mb-2">Capability Pillars → Product Data → Sales Intelligence</h3>
-          <div className="grid grid-cols-2 gap-2 mb-4">
-            {[
-              { pillar: 'Enterprise Service Management', caps: '13 capabilities', products: 'ITSM, ITAM, AITSM, LOB, Digital Assistant', data: 'Ticket volume, self-service adoption, automation usage, knowledge base utilization', color: 'border-blue-500/20' },
-              { pillar: 'Endpoint Management & Security', caps: '12 capabilities', products: 'UEM, EPM, DEX, MDM, MTD, Patch, ZTNA', data: 'Device count, patch compliance, endpoint health scores, BYOD enrollment', color: 'border-green-500/20' },
-              { pillar: 'Exposure Management', caps: '4 capabilities', products: 'RBVM, EASM, Patch Management, App Security', data: 'Vulnerability scan frequency, mean time to remediate, attack surface coverage', color: 'border-red-500/20' },
-              { pillar: 'Foundations', caps: '8 capabilities', products: 'Discovery, CMDB, GRC, Reporting, Integrations', data: 'CI count, discovery scan coverage, integration health, report usage', color: 'border-amber-500/20' },
-            ].map((p) => (
-              <div key={p.pillar} className={`bg-[#111] border ${p.color} rounded-lg p-3 avoid-break`}>
-                <div className="text-xs font-bold text-white">{p.pillar}</div>
-                <div className="text-[10px] text-[#555]">{p.caps}</div>
-                <div className="text-[10px] text-purple-400 mt-2 mb-1">Products: <span className="text-[#888]">{p.products}</span></div>
-                <div className="text-[10px] text-cyan-400">Usage Data: <span className="text-[#888]">{p.data}</span></div>
-              </div>
-            ))}
+          {/* What changes for the customer */}
+          <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-4 avoid-break">
+            <h3 className="text-xs font-bold text-green-400 mb-2">What the Customer Experiences</h3>
+            <p className="text-xs text-[#888] leading-relaxed">
+              From the customer&apos;s perspective, the difference is night and day. Instead of a vendor showing up with a generic assessment, <strong className="text-white">Ivanti arrives already understanding their environment</strong>. The workshop is focused on what matters to them. The recommendations connect to products they already own (or should own). The follow-up includes measurable milestones. And a year later, Ivanti comes back and shows them their growth. That&apos;s not a vendor relationship — that&apos;s a <strong className="text-white">strategic partnership</strong>. That&apos;s what drives retention, expansion, and advocacy.
+            </p>
           </div>
 
-          <div className="bg-[#111] border border-purple-500/20 rounded-lg p-4 avoid-break">
-            <h3 className="text-xs font-bold text-purple-400 mb-2">The Flywheel Effect</h3>
-            <p className="text-xs text-[#888] leading-relaxed">
-              The Connected Journey creates a <strong className="text-white">self-reinforcing cycle</strong>: automated sales intelligence identifies the right customers for capability assessments → assessments reveal maturity gaps → gaps map to specific products → product adoption is tracked in Customer 360 → usage data feeds back into sales intelligence → next year&apos;s assessment shows measurable progress → renewal conversations become strategic, not transactional. <strong className="text-white">Every tool we propose accelerates this flywheel.</strong>
+          {/* The flywheel */}
+          <div className="bg-[#111] border border-purple-500/20 rounded-lg p-4 mt-3 avoid-break">
+            <h3 className="text-xs font-bold text-purple-400 mb-2">The Flywheel</h3>
+            <p className="text-xs text-[#888] leading-relaxed mb-3">
+              Every successful assessment makes the next one better. Customer data flows back into the connected layer. Usage patterns validate (or challenge) the maturity roadmap. Success stories from one vertical inform the pitch to the next. The VE program compounds in value over time — but <strong className="text-white">only if the systems are connected</strong>.
             </p>
-            <div className="flex items-center justify-center gap-2 mt-3 text-xs text-[#666]">
-              <span className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Sales Intelligence</span>
+            <div className="flex items-center justify-center gap-2 text-xs text-[#666]">
+              <span className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Intel</span>
               <span>→</span>
-              <span className="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Assessment</span>
+              <span className="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Pitch</span>
               <span>→</span>
-              <span className="bg-green-500/10 text-green-400 px-2 py-1 rounded">Adoption</span>
+              <span className="bg-green-500/10 text-green-400 px-2 py-1 rounded">Assess</span>
               <span>→</span>
-              <span className="bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Usage Data</span>
+              <span className="bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Close</span>
               <span>→</span>
-              <span className="bg-amber-500/10 text-amber-400 px-2 py-1 rounded">Renewal</span>
+              <span className="bg-amber-500/10 text-amber-400 px-2 py-1 rounded">Adopt</span>
+              <span>→</span>
+              <span className="bg-rose-500/10 text-rose-400 px-2 py-1 rounded">Renew</span>
               <span>→ 🔄</span>
             </div>
           </div>
