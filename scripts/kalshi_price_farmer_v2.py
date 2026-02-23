@@ -513,12 +513,14 @@ def place_order(ticker: str, side: str, count: int, price: int) -> Dict:
         "price": price,
         "client_order_id": order_id
     }
-    
+
     r = kpost("/trade-api/v2/portfolio/orders", payload)
     if r.ok:
         return r.json()
     else:
-        return {"error": r.status_code, "detail": r.text}
+        error_detail = r.text[:200] if r.text else "No detail"
+        print(f"     🔴 Order failed: HTTP {r.status_code} | Payload: {payload} | Response: {error_detail}")
+        return {"error": r.status_code, "detail": error_detail}
 
 def log_trade(opp: MarketOpportunity, size_cents: int, order_id: str, 
               spot: Optional[SpotSignal], flow: Optional[OrderBookFlow],
@@ -621,14 +623,15 @@ def run(live: bool = False):
         
         count = max(1, size_cents // opp.price)
         cost_cents = count * opp.price
-        
+
         print(f"     💰 Kelly size: ${size_cents/100:.2f} → {count} contracts @ {opp.price}¢ = ${cost_cents/100:.2f}")
-        
+        print(f"     💵 Balance: ${balance_cents/100:.2f} | Daily remaining: ${daily_remaining/100:.2f}")
+
         # Check budget
         if cost_cents > balance_cents and live:
-            print(f"     🛡️  Insufficient balance")
+            print(f"     🛡️  Insufficient balance (need ${cost_cents/100:.2f}, have ${balance_cents/100:.2f})")
             continue
-        
+
         if cost_cents > daily_remaining and live:
             print(f"     🛡️  Daily budget exhausted")
             continue
