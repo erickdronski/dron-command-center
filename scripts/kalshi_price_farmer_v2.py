@@ -506,12 +506,16 @@ def scan_opportunities() -> List[MarketOpportunity]:
 def place_order(ticker: str, side: str, count: int, price: int) -> Dict:
     """Place a live order on Kalshi."""
     order_id = str(uuid.uuid4())
+    
+    # Kalshi API requires yes_price for YES side, no_price for NO side
+    price_field = "yes_price" if side == "yes" else "no_price"
+    
     payload = {
         "ticker": ticker,
         "action": "buy",  # Required field - "buy" or "sell"
         "side": side,     # "yes" or "no"
         "count": count,
-        "price": price,
+        price_field: price,  # yes_price or no_price based on side
         "client_order_id": order_id
     }
 
