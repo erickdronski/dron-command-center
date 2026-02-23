@@ -163,6 +163,114 @@ export default function ProposalPDF() {
             ))}
           </div>
           <p className="text-xs text-[#555] mt-4 italic">70-80% of bingo card data already exists in systems Ivanti has. Reps are just manually stitching it together.</p>
+
+          {/* Time Waste Visualization */}
+          <div className="mt-4 bg-[#111] border border-[#1a1a1a] rounded-xl p-5 avoid-break">
+            <h3 className="text-sm font-bold text-[#ccc] mb-3">Where 126 Hours/Year Per Rep Goes</h3>
+            <div className="space-y-2">
+              {[
+                { label: 'Pre-meeting research', hours: 65, pct: 52, color: 'bg-red-500' },
+                { label: 'Weekly maintenance', hours: 22, pct: 17, color: 'bg-orange-500' },
+                { label: 'Renewal prep & review', hours: 26, pct: 21, color: 'bg-amber-500' },
+                { label: 'White space identification', hours: 8, pct: 6, color: 'bg-yellow-500' },
+                { label: 'Initial bingo card build', hours: 5.5, pct: 4, color: 'bg-lime-500' },
+              ].map((b) => (
+                <div key={b.label} className="avoid-break">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[10px] text-[#888]">{b.label}</span>
+                    <span className="text-[10px] text-white font-bold">{b.hours} hrs/yr</span>
+                  </div>
+                  <div className="h-5 bg-[#1a1a1a] rounded-full overflow-hidden">
+                    <div className={`h-full ${b.color} rounded-full flex items-center justify-end pr-2`} style={{ width: `${b.pct}%` }}>
+                      <span className="text-[8px] text-white font-bold">{b.pct}%</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 pt-3 border-t border-[#1a1a1a] flex items-center justify-between">
+              <span className="text-xs text-[#888]">Total per rep per year</span>
+              <span className="text-sm font-bold text-red-400">126 hours = 3 full work weeks</span>
+            </div>
+          </div>
+
+          {/* Disconnected vs Connected Architecture */}
+          <div className="mt-4 bg-[#111] border border-[#1a1a1a] rounded-xl p-5 avoid-break">
+            <h3 className="text-sm font-bold text-[#ccc] mb-4">Today vs. Connected — Data Flow Architecture</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Today - Disconnected */}
+              <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-4">
+                <div className="text-xs font-bold text-red-400 mb-3 text-center">❌ Today: Manual Stitching</div>
+                <svg viewBox="0 0 280 200" className="w-full">
+                  {/* Source systems */}
+                  {[
+                    { x: 20, y: 15, label: 'Salesforce', color: '#3b82f6' },
+                    { x: 20, y: 55, label: 'ZoomInfo', color: '#8b5cf6' },
+                    { x: 20, y: 95, label: 'Customer 360', color: '#06b6d4' },
+                    { x: 20, y: 135, label: 'LinkedIn', color: '#2563eb' },
+                    { x: 20, y: 175, label: 'Tribal Knowledge', color: '#f59e0b' },
+                  ].map((s) => (
+                    <g key={s.label}>
+                      <rect x={s.x} y={s.y} width="80" height="24" rx="4" fill={s.color} opacity="0.2" stroke={s.color} strokeWidth="1" />
+                      <text x={s.x + 40} y={s.y + 15} textAnchor="middle" fill={s.color} fontSize="7" fontWeight="600">{s.label}</text>
+                      {/* Messy lines to rep */}
+                      <line x1="100" y1={s.y + 12} x2="160" y2="105" stroke="#ef4444" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
+                    </g>
+                  ))}
+                  {/* Rep in the middle doing manual work */}
+                  <circle cx="180" cy="105" r="22" fill="#ef4444" opacity="0.15" stroke="#ef4444" strokeWidth="1" />
+                  <text x="180" y="102" textAnchor="middle" fill="#ef4444" fontSize="14">😰</text>
+                  <text x="180" y="115" textAnchor="middle" fill="#ef4444" fontSize="6" fontWeight="600">Manual</text>
+                  {/* Arrow to Excel */}
+                  <line x1="202" y1="105" x2="230" y2="105" stroke="#ef4444" strokeWidth="1.5" markerEnd="url(#arrowRed)" />
+                  <rect x="230" y="90" width="45" height="30" rx="4" fill="#ef4444" opacity="0.15" stroke="#ef4444" strokeWidth="1" />
+                  <text x="252" y="108" textAnchor="middle" fill="#ef4444" fontSize="7" fontWeight="600">Excel</text>
+                  <defs><marker id="arrowRed" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#ef4444" /></marker></defs>
+                </svg>
+              </div>
+
+              {/* Connected */}
+              <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-4">
+                <div className="text-xs font-bold text-green-400 mb-3 text-center">✅ Connected: Automated Intelligence</div>
+                <svg viewBox="0 0 280 200" className="w-full">
+                  {/* Source systems */}
+                  {[
+                    { x: 5, y: 15, label: 'Salesforce', color: '#3b82f6' },
+                    { x: 5, y: 55, label: 'ZoomInfo', color: '#8b5cf6' },
+                    { x: 5, y: 95, label: 'Customer 360', color: '#06b6d4' },
+                    { x: 5, y: 135, label: 'Data Cloud', color: '#f59e0b' },
+                  ].map((s) => (
+                    <g key={s.label}>
+                      <rect x={s.x} y={s.y} width="72" height="24" rx="4" fill={s.color} opacity="0.2" stroke={s.color} strokeWidth="1" />
+                      <text x={s.x + 36} y={s.y + 15} textAnchor="middle" fill={s.color} fontSize="7" fontWeight="600">{s.label}</text>
+                      <line x1="77" y1={s.y + 12} x2="108" y2="85" stroke="#22c55e" strokeWidth="1.5" opacity="0.5" />
+                    </g>
+                  ))}
+                  {/* Hub */}
+                  <rect x="108" y="62" width="56" height="46" rx="8" fill="#22c55e" opacity="0.15" stroke="#22c55e" strokeWidth="1.5" />
+                  <text x="136" y="80" textAnchor="middle" fill="#22c55e" fontSize="7" fontWeight="700">Connected</text>
+                  <text x="136" y="92" textAnchor="middle" fill="#22c55e" fontSize="7" fontWeight="700">Hub</text>
+                  {/* Outputs */}
+                  {[
+                    { x: 195, y: 10, label: 'Dashboard', color: '#22c55e' },
+                    { x: 195, y: 45, label: 'AI Briefs', color: '#8b5cf6' },
+                    { x: 195, y: 80, label: 'Bingo Card', color: '#3b82f6' },
+                    { x: 195, y: 115, label: 'White Space', color: '#06b6d4' },
+                    { x: 195, y: 150, label: 'Alerts', color: '#f59e0b' },
+                  ].map((o) => (
+                    <g key={o.label}>
+                      <line x1="164" y1="85" x2={o.x} y2={o.y + 12} stroke="#22c55e" strokeWidth="1" opacity="0.4" />
+                      <rect x={o.x} y={o.y} width="58" height="24" rx="4" fill={o.color} opacity="0.2" stroke={o.color} strokeWidth="1" />
+                      <text x={o.x + 29} y={o.y + 15} textAnchor="middle" fill={o.color} fontSize="7" fontWeight="600">{o.label}</text>
+                    </g>
+                  ))}
+                  {/* Rep happy */}
+                  <circle cx="254" cy="185" r="12" fill="#22c55e" opacity="0.15" stroke="#22c55e" strokeWidth="1" />
+                  <text x="254" y="189" textAnchor="middle" fill="#22c55e" fontSize="12">😎</text>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* ═══════════════════════════════════════════
@@ -703,6 +811,46 @@ export default function ProposalPDF() {
         <div className="page-break px-12 py-8 pdf-section">
           <div className="text-xs text-purple-400 font-mono mb-2">12</div>
           <h2 className="text-3xl font-bold mb-4">Recommended Hybrid Approach</h2>
+
+          {/* Visual Timeline */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4 avoid-break">
+            <h3 className="text-sm font-bold text-[#ccc] mb-2">Implementation Roadmap</h3>
+            <svg viewBox="0 0 600 120" className="w-full">
+              {/* Timeline axis */}
+              <line x1="20" y1="60" x2="580" y2="60" stroke="#333" strokeWidth="2" />
+              {/* Month markers */}
+              {[0,1,2,3,4,5,6,7,8,9,10,11,12].map((m) => (
+                <g key={m}>
+                  <line x1={20 + m * 46.6} y1="57" x2={20 + m * 46.6} y2="63" stroke="#555" strokeWidth="1" />
+                  <text x={20 + m * 46.6} y="73" textAnchor="middle" fill="#555" fontSize="6">M{m}</text>
+                </g>
+              ))}
+              {/* Phase bars */}
+              {[
+                { x: 20, w: 140, y: 22, label: 'C: Power BI Dashboard', color: '#22c55e', cost: '$60-120K' },
+                { x: 66, w: 140, y: 38, label: '360 API (parallel)', color: '#06b6d4', cost: '$20-40K' },
+                { x: 186, w: 186, y: 22, label: 'A/D: AI Layer', color: '#a855f7', cost: '$80-200K' },
+                { x: 372, w: 186, y: 38, label: 'B: iPaaS (if needed)', color: '#3b82f6', cost: '$60-180K/yr' },
+              ].map((p) => (
+                <g key={p.label}>
+                  <rect x={p.x} y={p.y} width={p.w} height="14" rx="4" fill={p.color} opacity="0.3" stroke={p.color} strokeWidth="1" />
+                  <text x={p.x + 4} y={p.y + 10} fill={p.color} fontSize="6" fontWeight="600">{p.label}</text>
+                  <text x={p.x + p.w - 4} y={p.y + 10} textAnchor="end" fill={p.color} fontSize="5.5" opacity="0.7">{p.cost}</text>
+                </g>
+              ))}
+              {/* Value milestones */}
+              <circle cx="160" cy="85" r="3" fill="#22c55e" />
+              <text x="160" y="98" textAnchor="middle" fill="#22c55e" fontSize="6">First dashboards live</text>
+              <circle cx="300" cy="85" r="3" fill="#a855f7" />
+              <text x="300" y="98" textAnchor="middle" fill="#a855f7" fontSize="6">AI briefs operational</text>
+              <circle cx="460" cy="85" r="3" fill="#f59e0b" />
+              <text x="460" y="98" textAnchor="middle" fill="#f59e0b" fontSize="6">Full automation live</text>
+              {/* Breakeven marker */}
+              <line x1="250" y1="55" x2="250" y2="105" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3,2" />
+              <text x="250" y="115" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="700">↑ ROI breakeven</text>
+            </svg>
+          </div>
+
           <div className="space-y-2">
             {[
               { phase: 'NOW', title: 'Power BI Dashboard (Proposal C)', time: 'Months 1-3', cost: '$60-120K', why: 'Immediate visual impact. ITSM usage visible for first time. White space automated. Executive roll-ups.' },
@@ -751,6 +899,94 @@ export default function ProposalPDF() {
                 <div className="flex justify-between"><span className="text-xs text-[#888]">Cost savings @ $85/hr</span><span className="text-sm text-green-400 font-bold">$1,071,000/yr</span></div>
               </div>
             </div>
+          </div>
+
+          {/* Proposal Cost Comparison Chart */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4 avoid-break">
+            <h3 className="text-sm font-bold text-[#ccc] mb-3">Proposal Cost vs. Annual Savings</h3>
+            <svg viewBox="0 0 600 200" className="w-full">
+              {/* Y axis labels */}
+              <text x="0" y="32" fill="#666" fontSize="8">$1.2M</text>
+              <text x="0" y="82" fill="#666" fontSize="8">$600K</text>
+              <text x="0" y="132" fill="#666" fontSize="8">$300K</text>
+              <text x="0" y="178" fill="#666" fontSize="8">$0</text>
+              {/* Grid lines */}
+              <line x1="45" y1="28" x2="590" y2="28" stroke="#1a1a1a" strokeWidth="1" />
+              <line x1="45" y1="78" x2="590" y2="78" stroke="#1a1a1a" strokeWidth="1" />
+              <line x1="45" y1="128" x2="590" y2="128" stroke="#1a1a1a" strokeWidth="1" />
+              <line x1="45" y1="175" x2="590" y2="175" stroke="#1a1a1a" strokeWidth="1" />
+
+              {/* Savings bar (background across all) */}
+              <rect x="45" y="38" width="545" height="18" rx="3" fill="#22c55e" opacity="0.08" />
+              <text x="55" y="50" fill="#22c55e" fontSize="7" fontWeight="600">Annual Savings Range: $535K - $1.07M</text>
+              <rect x="45" y="38" width="300" height="18" rx="3" fill="#22c55e" opacity="0.15" />
+              <rect x="45" y="38" width="545" height="18" rx="3" fill="none" stroke="#22c55e" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
+
+              {/* Proposal bars - Build Cost */}
+              {[
+                { x: 60, label: 'A: AI-First', build: 150, annual: 80, color: '#a855f7', buildH: 50, annH: 27 },
+                { x: 190, label: 'B: iPaaS', build: 200, annual: 180, color: '#3b82f6', buildH: 67, annH: 60 },
+                { x: 320, label: 'C: Power BI', build: 120, annual: 30, color: '#22c55e', buildH: 40, annH: 10 },
+                { x: 450, label: 'D: SF Native', build: 200, annual: 256, color: '#8b5cf6', buildH: 67, annH: 85 },
+              ].map((p) => (
+                <g key={p.label}>
+                  <text x={p.x + 45} y="190" textAnchor="middle" fill="#888" fontSize="7" fontWeight="600">{p.label}</text>
+                  {/* Build cost bar */}
+                  <rect x={p.x} y={175 - p.buildH} width="38" height={p.buildH} rx="3" fill={p.color} opacity="0.6" />
+                  <text x={p.x + 19} y={170 - p.buildH} textAnchor="middle" fill={p.color} fontSize="7" fontWeight="600">${p.build}K</text>
+                  {/* Annual cost bar */}
+                  <rect x={p.x + 44} y={175 - p.annH} width="38" height={p.annH} rx="3" fill={p.color} opacity="0.3" />
+                  <text x={p.x + 63} y={170 - p.annH} textAnchor="middle" fill={p.color} fontSize="7">${p.annual}K/yr</text>
+                </g>
+              ))}
+              {/* Legend */}
+              <rect x="45" y="196" width="8" height="4" rx="1" fill="#888" opacity="0.6" />
+              <text x="56" y="200" fill="#666" fontSize="6">Build (one-time)</text>
+              <rect x="120" y="196" width="8" height="4" rx="1" fill="#888" opacity="0.3" />
+              <text x="131" y="200" fill="#666" fontSize="6">Annual ongoing</text>
+              <rect x="200" y="196" width="8" height="4" rx="1" fill="#22c55e" opacity="0.15" />
+              <text x="211" y="200" fill="#22c55e" fontSize="6">Savings zone ($535K-$1.07M)</text>
+            </svg>
+          </div>
+
+          {/* 3-Year Value Chart */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4 avoid-break">
+            <h3 className="text-sm font-bold text-[#ccc] mb-3">3-Year Cumulative Value (Hybrid Approach)</h3>
+            <svg viewBox="0 0 600 180" className="w-full">
+              {/* Grid */}
+              <line x1="60" y1="20" x2="60" y2="150" stroke="#1a1a1a" strokeWidth="1" />
+              <line x1="60" y1="150" x2="580" y2="150" stroke="#1a1a1a" strokeWidth="1" />
+              {/* Y labels */}
+              <text x="55" y="25" textAnchor="end" fill="#666" fontSize="8">$3M</text>
+              <text x="55" y="58" textAnchor="end" fill="#666" fontSize="8">$2M</text>
+              <text x="55" y="92" textAnchor="end" fill="#666" fontSize="8">$1M</text>
+              <text x="55" y="125" textAnchor="end" fill="#666" fontSize="8">$500K</text>
+              <text x="55" y="153" textAnchor="end" fill="#666" fontSize="8">$0</text>
+              {/* X labels */}
+              <text x="160" y="165" textAnchor="middle" fill="#666" fontSize="8">Q2 2026</text>
+              <text x="280" y="165" textAnchor="middle" fill="#666" fontSize="8">Q4 2026</text>
+              <text x="400" y="165" textAnchor="middle" fill="#666" fontSize="8">Q2 2027</text>
+              <text x="540" y="165" textAnchor="middle" fill="#666" fontSize="8">Q4 2028</text>
+
+              {/* Investment line (red area) */}
+              <polygon points="60,150 120,125 200,118 280,115 400,112 540,110 540,150" fill="#ef4444" opacity="0.1" />
+              <polyline points="60,150 120,125 200,118 280,115 400,112 540,110" fill="none" stroke="#ef4444" strokeWidth="2" />
+              <text x="545" y="108" fill="#ef4444" fontSize="7" fontWeight="600">Investment: ~$310K</text>
+
+              {/* Savings line (green area) */}
+              <polygon points="60,150 120,150 200,135 280,105 400,65 540,20 540,150" fill="#22c55e" opacity="0.1" />
+              <polyline points="60,150 120,150 200,135 280,105 400,65 540,20" fill="none" stroke="#22c55e" strokeWidth="2" />
+              <text x="545" y="18" fill="#22c55e" fontSize="7" fontWeight="600">Savings: ~$3.2M</text>
+
+              {/* Breakeven point */}
+              <circle cx="220" cy="130" r="4" fill="#f59e0b" stroke="#f59e0b" strokeWidth="1" />
+              <text x="220" y="143" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="600">↑ Breakeven (~5 mo)</text>
+
+              {/* Net value annotation */}
+              <rect x="420" y="40" width="90" height="28" rx="4" fill="#22c55e" opacity="0.1" stroke="#22c55e" strokeWidth="1" />
+              <text x="465" y="52" textAnchor="middle" fill="#22c55e" fontSize="7" fontWeight="700">3-Year Net Value</text>
+              <text x="465" y="63" textAnchor="middle" fill="#22c55e" fontSize="9" fontWeight="700">~$2.9M</text>
+            </svg>
           </div>
 
           <h3 className="text-sm font-bold text-[#ccc] mb-3">Additional Revenue Impact</h3>

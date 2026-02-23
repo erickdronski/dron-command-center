@@ -110,5 +110,37 @@
     "exit_timestamp": null,
     "pnl": null,
     "status": "open"
+  },
+  {
+    "id": "paper_20260223_172724_7",
+    "timestamp": "2026-02-23T17:27:24.047839",
+    "ticker": "KXNBAAST-26FEB23SASDET-DETTHARRIS12-6",
+    "title": "Tobias Harris: 6+ assists",
+    "side": "yes",
+    "entry_price": 8,
+    "size": 37,
+    "signal_type": "stats_edge",
+    "edge": 6.0,
+    "reason": "NBA | STATS | Tobias Harris avg 2.1 \u2192 6.0+ theo=14% vs mkt=8% | +6\u00a2 edge",
+    "exit_price": null,
+    "exit_timestamp": null,
+    "pnl": null,
+    "status": "open"
+  },
+  {
+    "id": "paper_20260223_172724_8",
+    "timestamp": "2026-02-23T17:27:24.061227",
+    "ticker": "KXNBAAST-26FEB23SASDET-DETTHARRIS12-3",
+    "title": "Tobias Harris: 3+ assists",
+    "side": "yes",
+    "entry_price": 44,
+    "size": 6,
+    "signal_type": "stats_edge",
+    "edge": 4.0,
+    "reason": "NBA | STATS | Tobias Harris avg 2.1 \u2192 3.0+ theo=48% vs mkt=44% | +4\u00a2 edge",
+    "exit_price": null,
+    "exit_timestamp": null,
+    "pnl": null,
+    "status": "open"
   }
 ]
