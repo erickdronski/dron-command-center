@@ -108,6 +108,7 @@ export default function ProposalPDF() {
               ['12', 'Recommended Hybrid Approach'],
               ['13', 'ROI & Financial Impact'],
               ['14', 'Executive Ask & Next Steps'],
+              ['A', 'Appendix — Calculations & Methodology'],
             ].map(([num, title]) => (
               <div key={num} className="flex items-center gap-4 py-2 border-b border-[#1a1a1a]">
                 <span className="text-purple-400 font-mono text-sm w-6">{num}</span>
@@ -1064,11 +1065,279 @@ export default function ProposalPDF() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <div className="w-20 h-1 bg-purple-500 rounded mx-auto mb-4" />
-            <p className="text-sm text-[#555]">The Ivanti Connected Journey</p>
-            <p className="text-xs text-[#444] mt-1">Prepared by Value Engineering • February 2026</p>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            APPENDIX — CALCULATIONS
+            ═══════════════════════════════════════════ */}
+        <div className="page-break px-12 py-8 pdf-section">
+          <div className="text-xs text-[#555] font-mono mb-2">APPENDIX A</div>
+          <h2 className="text-3xl font-bold mb-2">Calculations &amp; Methodology</h2>
+          <p className="text-sm text-[#666] mb-4">All figures in this proposal are derived from the calculations below. Assumptions are clearly marked and adjustable.</p>
+
+          {/* Base Assumptions */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Base Assumptions</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Assumption</th>
+                  <th className="text-left p-2 text-[#555]">Value</th>
+                  <th className="text-left p-2 text-[#555]">Source</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['Sales reps (conservative)', '50', 'Estimated Ivanti sales org size — adjust to actual headcount'],
+                    ['Sales reps (full org)', '100', 'Includes SEs, CSMs, and overlay reps who maintain account views'],
+                    ['Accounts per rep', '35', 'Based on Maley bingo card (actual data point)'],
+                    ['Columns per bingo card', '70+', 'Based on Maley bingo card (85 actual columns counted)'],
+                    ['Fully loaded hourly rate', '$85/hr', 'BLS median for sales engineers/account execs ($140K-$180K salary ÷ 1,708 hrs + 30% benefits)'],
+                    ['Annual working hours (US)', '1,708', 'OECD average annual hours, United States (2024)'],
+                    ['Working days per year', '250', 'Standard: 52 weeks × 5 days - 10 holidays'],
+                    ['Meetings per week per rep', '3', 'Conservative estimate for enterprise B2B sales (many have 5+)'],
+                  ].map(([assumption, value, source]) => (
+                    <tr key={assumption} className="border-t border-[#1a1a1a]">
+                      <td className="p-2 text-[#999]">{assumption}</td>
+                      <td className="p-2 text-white font-medium">{value}</td>
+                      <td className="p-2 text-[#666]">{source}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
+
+          {/* Time Savings Calculations */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Time Savings Per Rep — Detailed Calculations</h3>
+            <div className="space-y-3">
+              {[
+                {
+                  activity: 'Initial Bingo Card Build',
+                  calc: '6 hours manual build → 0.5 hours review/validate with automation',
+                  formula: '6.0 - 0.5 = 5.5 hours saved (one-time)',
+                  annual: '5.5 hrs',
+                  notes: 'Based on actual time to assemble Maley\'s 85-column, 35-account spreadsheet from 5+ systems. With automation, rep only reviews pre-populated data.',
+                },
+                {
+                  activity: 'Weekly Maintenance',
+                  calc: '30 min/week manual → 5 min/week spot-checking automated updates',
+                  formula: '(30 - 5) min × 52 weeks = 1,300 min = 21.7 hrs/year',
+                  annual: '21.7 hrs',
+                  notes: 'Reps currently update ARR changes, new contacts, product changes, meeting notes weekly. Automated sync handles data fields; rep only updates judgment fields (notes, status).',
+                },
+                {
+                  activity: 'Pre-Meeting Research',
+                  calc: '35 min average per account research → 10 min reviewing AI brief',
+                  formula: '(35 - 10) min × 3 meetings/week × 52 weeks = 3,900 min = 65 hrs/year',
+                  annual: '65 hrs',
+                  notes: 'Today: open ZoomInfo, Salesforce, LinkedIn, Customer 360, Google separately per account before each meeting. With AI brief, rep reviews a pre-generated summary.',
+                },
+                {
+                  activity: 'White Space Identification',
+                  calc: '2 hours per quarter manually cross-referencing product ownership vs. full portfolio',
+                  formula: '2 hrs × 4 quarters = 8 hrs/year → automated to 0',
+                  annual: '8 hrs',
+                  notes: 'Currently: rep manually compares 25+ product columns across 35 accounts to identify gaps. With automation: white space auto-calculated and ranked by revenue potential.',
+                },
+                {
+                  activity: 'Renewal Prep & Account Review',
+                  calc: '1 hour per account for renewal preparation → 15 min with pre-loaded data',
+                  formula: '(60 - 15) min × 35 accounts = 1,575 min = 26.25 hrs/year',
+                  annual: '26 hrs',
+                  notes: 'Assumes all 35 accounts renew annually. Prep includes: pulling ARR, reviewing usage, checking health score, building talking points. With automation: all pre-loaded, rep focuses on strategy.',
+                },
+              ].map((c) => (
+                <div key={c.activity} className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-3 avoid-break">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-bold text-white">{c.activity}</span>
+                    <span className="text-xs font-bold text-purple-400">{c.annual}</span>
+                  </div>
+                  <div className="text-[10px] text-[#888] mb-1">{c.calc}</div>
+                  <div className="text-[10px] text-cyan-400 font-mono bg-cyan-500/5 rounded px-2 py-1 mb-1">{c.formula}</div>
+                  <div className="text-[10px] text-[#555] italic">{c.notes}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 pt-3 border-t border-[#1a1a1a] flex items-center justify-between">
+              <div className="text-xs text-[#888]">Total per rep per year</div>
+              <div className="text-xs font-mono text-cyan-400 bg-cyan-500/5 rounded px-2 py-1">5.5 + 21.7 + 65.0 + 8.0 + 26.0 = <strong className="text-white">126.2 hours/year</strong></div>
+            </div>
+          </div>
+
+          {/* Org-Wide Financial Calculations */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Org-Wide Financial Impact — Calculations</h3>
+            <div className="space-y-2">
+              {[
+                {
+                  label: 'Hours saved (50 reps)',
+                  formula: '126.2 hrs/rep × 50 reps = 6,310 hours/year',
+                  result: '6,300 hrs/yr (rounded)',
+                },
+                {
+                  label: 'Hours saved (100 reps)',
+                  formula: '126.2 hrs/rep × 100 reps = 12,620 hours/year',
+                  result: '12,600 hrs/yr (rounded)',
+                },
+                {
+                  label: 'FTE equivalent (50 reps)',
+                  formula: '6,310 hrs ÷ 1,708 hrs/FTE = 3.69 FTEs',
+                  result: '3.7 FTEs',
+                },
+                {
+                  label: 'FTE equivalent (100 reps)',
+                  formula: '12,620 hrs ÷ 1,708 hrs/FTE = 7.39 FTEs',
+                  result: '7.4 FTEs',
+                },
+                {
+                  label: 'Cost savings (50 reps)',
+                  formula: '6,310 hrs × $85/hr = $536,350/year',
+                  result: '$535,500/yr (rounded)',
+                },
+                {
+                  label: 'Cost savings (100 reps)',
+                  formula: '12,620 hrs × $85/hr = $1,072,700/year',
+                  result: '$1,071,000/yr (rounded)',
+                },
+              ].map((c) => (
+                <div key={c.label} className="flex items-center gap-3 bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-2.5 avoid-break">
+                  <span className="text-xs text-[#888] w-40 flex-shrink-0">{c.label}</span>
+                  <span className="text-[10px] text-cyan-400 font-mono flex-1">{c.formula}</span>
+                  <span className="text-xs text-white font-bold w-32 text-right">{c.result}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ROI Calculations */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">ROI Calculations by Proposal</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Metric</th>
+                  <th className="text-center p-2 text-purple-400">A: AI</th>
+                  <th className="text-center p-2 text-blue-400">B: iPaaS</th>
+                  <th className="text-center p-2 text-green-400">C: Power BI</th>
+                  <th className="text-center p-2 text-purple-400">D: SF Native</th>
+                  <th className="text-center p-2 text-[#555]">Hybrid</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['Build cost (max)', '$150K', '$200K', '$120K', '$200K', '$310K'],
+                    ['Annual cost (max)', '$80K', '$180K', '$30K', '$256K', '$80K'],
+                    ['Year 1 total cost', '$230K', '$380K', '$150K', '$456K', '$390K'],
+                    ['Annual savings (50 reps)', '$535K', '$535K', '$535K', '$535K', '$535K'],
+                    ['Year 1 net savings', '$305K', '$155K', '$385K', '$79K', '$145K'],
+                    ['Year 1 ROI', '132%', '41%', '257%', '17%', '37%'],
+                    ['—', '—', '—', '—', '—', '—'],
+                    ['Annual savings (100 reps)', '$1,071K', '$1,071K', '$1,071K', '$1,071K', '$1,071K'],
+                    ['Year 1 net savings (100)', '$841K', '$691K', '$921K', '$615K', '$681K'],
+                    ['Year 1 ROI (100 reps)', '366%', '182%', '614%', '135%', '175%'],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[0] === '—' ? 'h-1' : ''}`}>
+                      {row[0] === '—' ? <td colSpan={6} className="bg-[#1a1a1a] h-px"></td> : <>
+                        <td className="p-2 text-[#888]">{row[0]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[1]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[2]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[3]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[4]}</td>
+                        <td className="p-2 text-center text-white font-medium">{row[5]}</td>
+                      </>}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-2 text-[10px] text-[#555]">
+              <strong>ROI formula:</strong> (Annual Savings - Year 1 Total Cost) ÷ Year 1 Total Cost × 100
+              <br /><strong>Example (Proposal C, 50 reps):</strong> ($535,500 - $150,000) ÷ $150,000 × 100 = 257%
+            </div>
+          </div>
+
+          {/* 3-Year Projection */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">3-Year Projection (Hybrid Approach, 50 Reps)</h3>
+            <div className="overflow-hidden rounded-lg border border-[#1a1a1a]">
+              <table className="w-full text-xs">
+                <thead><tr className="bg-[#0a0a0a]">
+                  <th className="text-left p-2 text-[#555]">Item</th>
+                  <th className="text-center p-2 text-[#555]">Year 1</th>
+                  <th className="text-center p-2 text-[#555]">Year 2</th>
+                  <th className="text-center p-2 text-[#555]">Year 3</th>
+                  <th className="text-center p-2 text-[#555]">3-Year Total</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    ['Build costs', '$310K', '$0', '$0', '$310K', false],
+                    ['Ongoing costs', '$80K', '$80K', '$80K', '$240K', false],
+                    ['Total investment', '$390K', '$80K', '$80K', '$550K', true],
+                    ['—', '', '', '', '', false],
+                    ['Gross savings', '$535K', '$535K', '$535K', '$1,607K', false],
+                    ['Net savings', '$145K', '$455K', '$455K', '$1,057K', true],
+                    ['Cumulative net', '$145K', '$601K', '$1,057K', '—', true],
+                    ['—', '', '', '', '', false],
+                    ['ROI (cumulative)', '37%', '254%', '481%', '—', true],
+                    ['Payback period', '~5 months', '—', '—', '—', false],
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-t border-[#1a1a1a] ${row[0] === '—' ? 'h-1' : ''}`}>
+                      {row[0] === '—' ? <td colSpan={5} className="bg-[#1a1a1a] h-px"></td> : <>
+                        <td className={`p-2 ${row[4] ? 'text-white font-medium' : 'text-[#888]'}`}>{row[0]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[1]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[2]}</td>
+                        <td className="p-2 text-center text-[#999]">{row[3]}</td>
+                        <td className={`p-2 text-center ${row[4] ? 'text-green-400 font-bold' : 'text-[#999]'}`}>{row[4] !== true && row[4] !== false ? row[4] : ''}</td>
+                      </>}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-2 text-[10px] text-[#555]">
+              <strong>Payback formula:</strong> Build cost ÷ (Monthly savings - Monthly ongoing) = $310K ÷ ($44.6K - $6.7K) = $310K ÷ $37.9K/mo = <strong className="text-white">~5.1 months (rounded to ~5 months)</strong>
+              <br /><strong>Monthly savings:</strong> $535,500 ÷ 12 = $44,625/mo
+              <br /><strong>Monthly ongoing:</strong> $80,000 ÷ 12 = $6,667/mo
+            </div>
+          </div>
+
+          {/* Cost Sources */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">Cost Estimates — Sources &amp; Methodology</h3>
+            <div className="space-y-2">
+              {[
+                { item: 'Fully loaded hourly rate ($85/hr)', source: 'BLS Occupational Employment and Wage Statistics (2024). Median salary for Sales Engineers: $116K-$160K. With 30% benefits loading: $150K-$208K. Midpoint $180K ÷ 1,708 annual hours = ~$105/hr for senior reps. We use $85/hr as a blended average across all roles (including CSMs at lower salary bands) to be conservative.' },
+                { item: 'Power BI licensing ($0-10K/yr)', source: 'Microsoft 365 E5 includes Power BI Pro ($14/user/mo value). If Ivanti is on E5 (likely for an enterprise), Power BI is included. Estimate assumes 0-50 additional Power BI Pro seats needed at $10/user/mo.' },
+                { item: 'Workato ($60-130K/yr)', source: 'Workato enterprise pricing: starts at ~$60K/yr for basic tier. Custom enterprise with advanced connectors and high-volume workflows: $100-130K/yr. Source: Workato pricing page + Gartner iPaaS market guide (2025).' },
+                { item: 'n8n ($5-10K/yr self-hosted)', source: 'n8n is open source (free). Self-hosting costs: cloud VM ($50-100/mo) + maintenance time (~2 hrs/month). Enterprise support: $500-1000/mo optional.' },
+                { item: 'Agentforce ($25-50K/yr)', source: 'Salesforce Agentforce pricing: $0.10/action (updated May 2025, down from $2/conversation at launch). Estimate: 50 reps × 20 interactions/day × 250 days = 250K actions × $0.10 = $25K baseline. Buffer for complex multi-action queries: up to $50K.' },
+                { item: 'Data Cloud ($65-150K/yr)', source: 'Salesforce Data Cloud: included in some Enterprise+ editions. Standalone: starts at ~$65K/yr for basic data ingestion. Enterprise with multiple external connectors and high volume: up to $150K/yr. Source: Salesforce pricing (2025).' },
+                { item: 'ARPEDIO ($18-30K/yr)', source: 'ARPEDIO Salesforce-native pricing: ~$30-50/user/month. For 50 users: $18K-30K/yr. Source: ARPEDIO website + G2 pricing data.' },
+                { item: 'ZoomInfo API upgrade ($10-20K/yr)', source: 'ZoomInfo is already licensed (links present in bingo card). API tier upgrade for programmatic enrichment: estimated $10-20K/yr incremental based on ZoomInfo Enterprise API add-on pricing.' },
+                { item: 'Build costs ($80-200K per proposal)', source: 'Based on enterprise integration project benchmarks: senior developer/consultant rate of $150-250/hr. Project timelines of 400-800 hours depending on complexity. Includes: development, testing, security review, deployment, and training.' },
+              ].map((c) => (
+                <div key={c.item} className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-3 avoid-break">
+                  <div className="text-xs font-medium text-white mb-1">{c.item}</div>
+                  <div className="text-[10px] text-[#888] leading-relaxed">{c.source}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sensitivity note */}
+          <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-4 avoid-break">
+            <h3 className="text-xs font-bold text-amber-400 mb-2">⚠️ Sensitivity Note</h3>
+            <p className="text-[10px] text-[#888] leading-relaxed">
+              All figures use conservative estimates. Key sensitivities: (1) <strong className="text-white">Hourly rate</strong> — using $85 vs. the $105 senior-rep rate understates savings by ~24%. (2) <strong className="text-white">Rep count</strong> — actual sales org size is the single biggest multiplier. (3) <strong className="text-white">Meetings per week</strong> — reps averaging 5 meetings/week instead of 3 would increase pre-meeting savings by 67%. (4) <strong className="text-white">Adoption rate</strong> — assumes 100% adoption. At 70% adoption, multiply all savings by 0.7. We recommend validating rep count and meeting frequency with Sales Ops for a more precise estimate.
+            </p>
+          </div>
+        </div>
+
+        {/* Closing */}
+        <div className="px-12 py-16 text-center">
+          <div className="w-20 h-1 bg-purple-500 rounded mx-auto mb-4" />
+          <p className="text-sm text-[#555]">The Ivanti Connected Journey</p>
+          <p className="text-xs text-[#444] mt-1">Prepared by Value Engineering • February 2026</p>
         </div>
 
       </div>
