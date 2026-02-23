@@ -94,5 +94,21 @@
     "exit_timestamp": null,
     "pnl": null,
     "status": "open"
+  },
+  {
+    "id": "paper_20260223_153826_6",
+    "timestamp": "2026-02-23T15:38:26.691501",
+    "ticker": "KXNBAAST-26FEB23SASDET-DETTHARRIS12-4",
+    "title": "Tobias Harris: 4+ assists",
+    "side": "yes",
+    "entry_price": 20,
+    "size": 15,
+    "signal_type": "stats_edge",
+    "edge": 4.0,
+    "reason": "NBA | STATS | Tobias Harris avg 2.1 \u2192 4.0+ theo=24% vs mkt=20% | +4\u00a2 edge",
+    "exit_price": null,
+    "exit_timestamp": null,
+    "pnl": null,
+    "status": "open"
   }
 ]
