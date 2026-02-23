@@ -888,6 +888,21 @@ export default function BingoCardPage() {
           ))}
         </div>
       </div>
+
+      {/* Deep Dive Link */}
+      <a href="/value-engineering/projects/bingo-card/deep-dive"
+        className="block bg-gradient-to-r from-purple-500/5 to-blue-500/5 border border-purple-500/30 rounded-xl p-5 hover:border-purple-500/50 transition-all group">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <MessageSquare size={20} className="text-purple-400" />
+            <div>
+              <div className="text-sm font-bold text-white">Extended Analysis: Salesforce Agentforce + Alternatives + Success Stories</div>
+              <div className="text-xs text-[#666] mt-0.5">Proposal D (Salesforce-Native), ARPEDIO, Clari, People.ai, Demandbase comparison, Power Sales Rep framework, 5 enterprise case studies</div>
+            </div>
+          </div>
+          <ArrowRight size={16} className="text-[#333] group-hover:text-purple-400 transition-colors" />
+        </div>
+      </a>
     </div>
   );
 }
