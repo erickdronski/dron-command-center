@@ -1,21 +1,21 @@
 {
-  "date": "2026-02-23",
+  "date": "2026-02-24",
   "daily_limit_cents": 2400,
-  "total_spent_cents": 921,
+  "total_spent_cents": 812,
   "bots": {
     "price_farmer": {
       "daily_budget_cents": 900,
-      "daily_spent_cents": 853,
-      "trades_today": 6,
-      "last_trade": "2026-02-23T11:41:57.200449Z",
-      "last_trade_ticker": "KXXRP15M-26FEB230645-45"
+      "daily_spent_cents": 812,
+      "trades_today": 8,
+      "last_trade": "2026-02-24T06:55:57.280821Z",
+      "last_trade_ticker": "KXXRP15M-26FEB240200-00"
     },
     "weather_trader": {
       "daily_budget_cents": 900,
-      "daily_spent_cents": 68,
-      "trades_today": 8,
-      "last_trade": "2026-02-23T17:35:35.592910",
-      "last_trade_ticker": "KXHIGHNY-26FEB24-B34.5"
+      "daily_spent_cents": 0,
+      "trades_today": 0,
+      "last_trade": null,
+      "last_trade_ticker": null
     },
     "sports_trader": {
       "daily_budget_cents": 600,
@@ -27,117 +27,69 @@
   },
   "trade_log": [
     {
-      "ts": "2026-02-23T10:43:56.444849Z",
+      "ts": "2026-02-24T05:25:57.755321Z",
       "bot": "price_farmer",
-      "ticker": "KXSOL15M-26FEB230545-45",
-      "side": "yes",
-      "cost_c": 176,
-      "order_id": "?"
-    },
-    {
-      "ts": "2026-02-23T10:55:56.595076Z",
-      "bot": "price_farmer",
-      "ticker": "KXSOL15M-26FEB230600-00",
+      "ticker": "KXXRP15M-26FEB240030-30",
       "side": "no",
-      "cost_c": 81,
+      "cost_c": 98,
       "order_id": "?"
     },
     {
-      "ts": "2026-02-23T11:11:57.296446Z",
+      "ts": "2026-02-24T05:41:57.231192Z",
       "bot": "price_farmer",
-      "ticker": "KXXRP15M-26FEB230615-15",
+      "ticker": "KXETH15M-26FEB240045-45",
       "side": "yes",
-      "cost_c": 166,
+      "cost_c": 88,
       "order_id": "?"
     },
     {
-      "ts": "2026-02-23T11:13:57.175259Z",
+      "ts": "2026-02-24T05:43:57.164784Z",
       "bot": "price_farmer",
-      "ticker": "KXBTC15M-26FEB230615-15",
-      "side": "yes",
-      "cost_c": 174,
-      "order_id": "?"
-    },
-    {
-      "ts": "2026-02-23T11:25:57.552864Z",
-      "bot": "price_farmer",
-      "ticker": "KXETH15M-26FEB230630-30",
+      "ticker": "KXSOL15M-26FEB240045-45",
       "side": "no",
-      "cost_c": 94,
+      "cost_c": 90,
       "order_id": "?"
     },
     {
-      "ts": "2026-02-23T11:41:57.200449Z",
+      "ts": "2026-02-24T05:55:58.342690Z",
       "bot": "price_farmer",
-      "ticker": "KXXRP15M-26FEB230645-45",
-      "side": "no",
-      "cost_c": 162,
+      "ticker": "KXBTC15M-26FEB240100-00",
+      "side": "yes",
+      "cost_c": 90,
       "order_id": "?"
     },
     {
-      "ts": "2026-02-23T07:35:27.559126",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB23-T33",
+      "ts": "2026-02-24T06:11:57.697874Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240115-15",
       "side": "yes",
-      "cost_c": 17,
-      "order_id": "unknown"
+      "cost_c": 83,
+      "order_id": "?"
     },
     {
-      "ts": "2026-02-23T11:36:08.631359",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-T35",
+      "ts": "2026-02-24T06:25:57.451320Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240130-30",
       "side": "yes",
-      "cost_c": 10,
-      "order_id": "unknown"
+      "cost_c": 97,
+      "order_id": "?"
     },
     {
-      "ts": "2026-02-23T11:36:09.003921",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-T28",
+      "ts": "2026-02-24T06:41:58.236177Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240145-45",
       "side": "yes",
-      "cost_c": 7,
-      "order_id": "unknown"
+      "cost_c": 168,
+      "order_id": "?"
     },
     {
-      "ts": "2026-02-23T13:35:31.517642",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-T28",
-      "side": "yes",
-      "cost_c": 10,
-      "order_id": "unknown"
-    },
-    {
-      "ts": "2026-02-23T15:35:40.555305",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-T28",
-      "side": "yes",
-      "cost_c": 7,
-      "order_id": "unknown"
-    },
-    {
-      "ts": "2026-02-23T15:35:40.911851",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-B34.5",
-      "side": "yes",
-      "cost_c": 5,
-      "order_id": "unknown"
-    },
-    {
-      "ts": "2026-02-23T17:35:35.060524",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-T28",
-      "side": "yes",
-      "cost_c": 7,
-      "order_id": "unknown"
-    },
-    {
-      "ts": "2026-02-23T17:35:35.592933",
-      "bot": "weather_trader",
-      "ticker": "KXHIGHNY-26FEB24-B34.5",
-      "side": "yes",
-      "cost_c": 5,
-      "order_id": "unknown"
+      "ts": "2026-02-24T06:55:57.280821Z",
+      "bot": "price_farmer",
+      "ticker": "KXXRP15M-26FEB240200-00",
+      "side": "no",
+      "cost_c": 98,
+      "order_id": "?"
     }
   ],
-  "last_updated": "2026-02-23T17:35:35.592929"
+  "last_updated": "2026-02-24T06:55:57.280859Z"
 }

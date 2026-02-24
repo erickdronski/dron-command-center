@@ -94,6 +94,13 @@ export default function ProjectsPage() {
 
   const strategicProjects = [
     {
+      href: '/value-engineering/projects/glasgow',
+      title: 'University of Glasgow — Value Hypothesis',
+      desc: 'Talk track & ROI hypothesis for Neurons for ITSM. £503K/yr financial + 5,735 hrs saved. Ready for customer call.',
+      status: 'active',
+      color: 'border-blue-500/30',
+    },
+    {
       href: '/value-engineering/projects/bingo-card',
       title: 'Sales Bingo Card Automation',
       desc: 'Executive proposal to automate manual portfolio assembly — 126 hrs/rep/yr saved, 564%+ ROI',
