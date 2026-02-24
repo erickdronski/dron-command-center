@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Building2, Factory, Heart, Shield, Zap, Landmark, Fuel, ShoppingCart, Handshake, Plane, BookOpen, ChevronRight, Plus, Search } from 'lucide-react';
+import { benefits } from './data';
 
 type Vertical = {
   id: string;
@@ -26,7 +27,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-blue-500/20',
     description: 'Consulting, staffing, outsourcing, professional services, IT services, legal, accounting. High ticket volumes, distributed workforce, client-facing SLAs.',
     examples: ['Accenture', 'Deloitte', 'ADP', 'Cognizant', 'Infosys'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['business-services']).length,
   },
   {
     id: 'non-profit',
@@ -37,7 +38,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-green-500/20',
     description: 'Charities, NGOs, foundations, associations, government-adjacent orgs. Budget-constrained, lean IT, donor/grant compliance, mission-critical uptime.',
     examples: ['Red Cross', 'WWF', 'Salvation Army', 'United Way', 'Habitat for Humanity'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['non-profit']).length,
   },
   {
     id: 'retail-wholesale',
@@ -48,7 +49,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-amber-500/20',
     description: 'Brick-and-mortar, e-commerce, distribution, supply chain. POS systems, seasonal spikes (Black Friday, holidays), store-level IT, high endpoint counts.',
     examples: ['Walmart', 'Target', 'Costco', 'Tesco', 'Home Depot'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['retail-wholesale']).length,
   },
   {
     id: 'medical-hospitals',
@@ -59,7 +60,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-red-500/20',
     description: 'Hospital systems, surgical centers, clinical networks. 24/7 operations, life-critical systems, HIPAA/regulatory, clinical devices, shift-based staff.',
     examples: ['HCA Healthcare', 'Mayo Clinic', 'Kaiser Permanente', 'NHS Trusts', 'Cleveland Clinic'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['medical-hospitals']).length,
   },
   {
     id: 'energy-utilities',
@@ -70,7 +71,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-yellow-500/20',
     description: 'Power generation, oil & gas, water, renewables, grid operators. OT/IT convergence, NERC CIP compliance, field workers, SCADA systems, critical infrastructure.',
     examples: ['Duke Energy', 'ExxonMobil', 'NextEra', 'National Grid', 'Shell'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['energy-utilities']).length,
   },
   {
     id: 'banking-finance',
@@ -81,7 +82,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-emerald-500/20',
     description: 'Banks, credit unions, investment firms, insurance carriers. Heavy regulation (SOX, PCI-DSS, GDPR), branch networks, trading floor uptime, fraud sensitivity.',
     examples: ['JPMorgan', 'Bank of America', 'Allianz', 'State Farm', 'Goldman Sachs'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['banking-finance']).length,
   },
   {
     id: 'healthcare-pharma',
@@ -92,7 +93,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-pink-500/20',
     description: 'Pharma companies, biotech, health insurers, clinical research. FDA/EMA validation, GxP compliance, R&D environments, global trial coordination.',
     examples: ['Pfizer', 'Johnson & Johnson', 'Roche', 'UnitedHealth', 'AstraZeneca'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['healthcare-pharma']).length,
   },
   {
     id: 'aerospace-defense-manufacturing',
@@ -103,7 +104,7 @@ const verticals: Vertical[] = [
     borderColor: 'border-slate-500/20',
     description: 'Defense contractors, aerospace OEMs, heavy manufacturing. ITAR/CMMC compliance, classified environments, shop floor IT/OT, supply chain complexity.',
     examples: ['Lockheed Martin', 'Boeing', 'Raytheon', 'BAE Systems', 'General Electric'],
-    benefitCount: 0,
+    benefitCount: benefits.filter(b => b.stories['aerospace-defense-manufacturing']).length,
   },
 ];
 
