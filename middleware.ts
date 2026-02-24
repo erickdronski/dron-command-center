@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 // Shared access token for team members
 // Share this URL with your team: https://your-domain.com/value-engineering/projects/benefit-stories?token=TOKEN
 // Once they visit with ?token=, a cookie is set and they won't need the token again for 30 days.
-const SHARE_TOKEN = process.env.VE_SHARE_TOKEN || 'bd433d3c01c5524a41d7275288b6cd69';
+const SHARE_TOKEN = process.env.VE_SHARE_TOKEN || 'team-ve-2026';
 
 // Public paths that shared users can access (benefit stories project only)
 const PUBLIC_PATHS = [
