@@ -1691,7 +1691,7 @@ export default function ProposalPDF() {
               },
               { 
                 role: 'For Leadership', 
-                now: 'Cannot quantify the ROI of the C&M Assessment program or the VE team's impact on revenue.',
+                now: 'Cannot quantify the ROI of the C&amp;M Assessment program or the VE team\'s impact on revenue.',
                 future: 'Dashboard shows: assessments completed → products sold → adoption tracked → renewals secured. The flywheel is visible and measurable.',
                 metric: 'Proof of program ROI'
               },
@@ -1733,7 +1733,7 @@ export default function ProposalPDF() {
               Month 12: Year 1 assessments show measurable maturity progress. Renewals include data-backed proof of value. Churn drops. Expansion revenue grows.
             </p>
             <p className="text-xs text-[#ccc] leading-relaxed font-medium">
-              Month 18: The C&M Assessment is no longer a "nice to have" program — it's a core driver of Ivanti's growth strategy. Customers expect it. Reps rely on it. The data proves it works.
+              Month 18: The C&amp;M Assessment is no longer a "nice to have" program — it's a core driver of Ivanti's growth strategy. Customers expect it. Reps rely on it. The data proves it works.
             </p>
           </div>
         </div>
