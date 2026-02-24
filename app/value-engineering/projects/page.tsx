@@ -94,6 +94,13 @@ export default function ProjectsPage() {
 
   const strategicProjects = [
     {
+      href: '/value-engineering/projects/benefit-stories',
+      title: 'Value Cloud Benefit Stories',
+      desc: 'Industry-specific storytelling guides for every Value Cloud benefit. 8 verticals, built for VEs, reps, and CSMs.',
+      status: 'active',
+      color: 'border-green-500/30',
+    },
+    {
       href: '/value-engineering/projects/glasgow',
       title: 'University of Glasgow — Value Hypothesis',
       desc: 'Talk track & ROI hypothesis for Neurons for ITSM. £503K/yr financial + 5,735 hrs saved. Ready for customer call.',
