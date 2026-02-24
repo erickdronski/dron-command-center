@@ -68,21 +68,46 @@ export default function ProposalPDF() {
         {/* ═══════════════════════════════════════════
             COVER PAGE
             ═══════════════════════════════════════════ */}
-        <div className="flex flex-col justify-center items-center px-12 py-20 text-center">
+        <div className="flex flex-col justify-center items-center px-12 py-16 text-center">
           <div className="w-20 h-1 bg-purple-500 rounded mb-5" />
           <h1 className="text-5xl font-bold tracking-tight mb-4">
             The Ivanti<br />
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Connected Journey</span>
           </h1>
-          <p className="text-xl text-[#666] max-w-lg mt-2 mb-12">
+          <p className="text-xl text-[#666] max-w-lg mt-2 mb-8">
             An enterprise proposal to unify sales intelligence, eliminate manual data assembly, and unlock revenue through connected systems.
           </p>
-          <div className="grid grid-cols-3 gap-8 mt-8">
+
+          {/* Visual Hook - The Transformation */}
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-2xl p-6 mb-8 max-w-2xl">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="text-center">
+                <div className="text-4xl mb-2">😰</div>
+                <div className="text-xs text-red-400 font-bold">TODAY</div>
+                <div className="text-[10px] text-[#666] mt-1">5 tabs open<br/>70+ columns<br/>Manual stitching</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 via-purple-500 to-green-500"></div>
+                <div className="text-[10px] text-purple-400 my-1 font-bold">THE CONNECTED JOURNEY</div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 via-purple-500 to-green-500"></div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-2">😎</div>
+                <div className="text-xs text-green-400 font-bold">CONNECTED</div>
+                <div className="text-[10px] text-[#666] mt-1">One dashboard<br/>AI-powered<br/>Real-time</div>
+              </div>
+            </div>
+            <div className="text-xs text-[#888] leading-relaxed">
+              <span className="text-white font-bold">3 work weeks per rep.</span> That's how much time your sales team spends manually assembling account data instead of selling. This proposal shows how to get that time back — and turn it into revenue.
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 mt-6">
             <div><div className="text-3xl font-bold text-purple-400">126</div><div className="text-xs text-[#555] mt-1">Hours Saved<br />Per Rep / Year</div></div>
             <div><div className="text-3xl font-bold text-green-400">$1M+</div><div className="text-xs text-[#555] mt-1">Annual Savings<br />Org-Wide</div></div>
             <div><div className="text-3xl font-bold text-blue-400">670%</div><div className="text-xs text-[#555] mt-1">Maximum<br />ROI</div></div>
           </div>
-          <div className="mt-16 text-xs text-[#444]">
+          <div className="mt-12 text-xs text-[#444]">
             Prepared by Ivanti Value Engineering • February 2026
           </div>
         </div>
