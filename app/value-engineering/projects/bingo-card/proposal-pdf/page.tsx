@@ -88,6 +88,80 @@ export default function ProposalPDF() {
         </div>
 
         {/* ═══════════════════════════════════════════
+            EXECUTIVE SUMMARY — ONE PAGE
+            ═══════════════════════════════════════════ */}
+        <div className="page-break px-12 py-8 pdf-section">
+          <div className="text-xs text-purple-400 font-mono mb-2">EXECUTIVE SUMMARY</div>
+          <h2 className="text-2xl font-bold mb-4">The Bottom Line</h2>
+          
+          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-5 mb-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-2">Why This Proposal Exists</h3>
+            <p className="text-xs text-[#ccc] leading-relaxed">
+              Every Ivanti sales rep spends <strong className="text-white">126 hours/year</strong> manually assembling account data from 5+ disconnected systems (Salesforce, ZoomInfo, Customer 360, LinkedIn, tribal knowledge). That's <strong className="text-white">3 full work weeks</strong> per rep spent on data assembly instead of selling. Across 50-100 reps, that's <strong className="text-white">$535K-$1M/year</strong> in wasted salary cost — plus lost revenue from slower deal cycles and missed opportunities.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-4">
+              <h3 className="text-xs font-bold text-red-400 mb-2">❌ Today</h3>
+              <ul className="space-y-1 text-[10px] text-[#999]">
+                <li>• 70+ column spreadsheets built by hand</li>
+                <li>• Data goes stale within days</li>
+                <li>• ITSM usage data invisible to sales</li>
+                <li>• No systematic way to identify which accounts need the C&amp;M Assessment</li>
+                <li>• VE team builds every engagement from scratch</li>
+              </ul>
+            </div>
+            <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4">
+              <h3 className="text-xs font-bold text-green-400 mb-2">✅ With The Connected Journey</h3>
+              <ul className="space-y-1 text-[10px] text-[#999]">
+                <li>• Real-time unified portfolio view</li>
+                <li>• AI-generated account briefs on demand</li>
+                <li>• ITSM usage data visible for first time</li>
+                <li>• Algorithmic targeting for Capability &amp; Maturity Assessments</li>
+                <li>• Automated synthesis and roadmap generation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-4 mb-4">
+            <h3 className="text-xs font-bold text-white mb-3">Recommended Path: Hybrid Approach</h3>
+            <div className="flex items-center gap-2 text-[10px] text-[#888] mb-2">
+              <span className="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded">Now: Power BI Dashboard</span>
+              <span>→</span>
+              <span className="bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded">Parallel: 360 API</span>
+              <span>→</span>
+              <span className="bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded">Then: AI Layer</span>
+            </div>
+            <div className="grid grid-cols-4 gap-3 text-center">
+              <div>
+                <div className="text-lg font-bold text-white">$160-310K</div>
+                <div className="text-[10px] text-[#666]">Year 1 Investment</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-green-400">$535K-$1.07M</div>
+                <div className="text-[10px] text-[#666]">Annual Savings</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-purple-400">170-670%</div>
+                <div className="text-[10px] text-[#666]">ROI Range</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-green-400">3-6 months</div>
+                <div className="text-[10px] text-[#666]">Payback Period</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-4">
+            <h3 className="text-xs font-bold text-amber-400 mb-2">⚡ The Strategic Connection</h3>
+            <p className="text-xs text-[#888] leading-relaxed">
+              This isn't just about saving time — it's about <strong className="text-white">making the Capability &amp; Maturity Assessment land harder</strong>. When reps walk into an account already knowing their product gaps, ITSM adoption %, and renewal timeline, the assessment becomes a strategic conversation, not a generic pitch. The Connected Journey arms every role (Sales, SE, CSM, VE, Leadership) with the intelligence to move from vendor to trusted advisor.
+            </p>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
             TABLE OF CONTENTS
             ═══════════════════════════════════════════ */}
         <div className="page-break px-12 py-8 pdf-section">
@@ -1549,6 +1623,92 @@ export default function ProposalPDF() {
             <h3 className="text-xs font-bold text-amber-400 mb-2">⚠️ Sensitivity Note</h3>
             <p className="text-[10px] text-[#888] leading-relaxed">
               All figures use conservative estimates. Key sensitivities: (1) <strong className="text-white">Hourly rate</strong> — using $85 vs. the $105 senior-rep rate understates savings by ~24%. (2) <strong className="text-white">Rep count</strong> — actual sales org size is the single biggest multiplier. (3) <strong className="text-white">Meetings per week</strong> — reps averaging 5 meetings/week instead of 3 would increase pre-meeting savings by 67%. (4) <strong className="text-white">Adoption rate</strong> — assumes 100% adoption. At 70% adoption, multiply all savings by 0.7. We recommend validating rep count and meeting frequency with Sales Ops for a more precise estimate.
+            </p>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            THE IDEAL OUTCOME — WHAT SUCCESS LOOKS LIKE
+            ═══════════════════════════════════════════ */}
+        <div className="page-break px-12 py-8 pdf-section">
+          <div className="text-xs text-green-400 font-mono mb-2">THE IDEAL OUTCOME</div>
+          <h2 className="text-3xl font-bold mb-4">What Success Looks Like</h2>
+          
+          <p className="text-sm text-[#888] mb-4">
+            This isn't about building software — it's about transforming how Ivanti's go-to-market team operates. Here's the picture of what we're building toward:
+          </p>
+
+          <div className="space-y-3 mb-4">
+            {[
+              { 
+                role: 'For the Sales Rep', 
+                now: 'Spends Monday morning updating a spreadsheet with data from 5 different tabs.',
+                future: 'Opens a dashboard Monday morning. Their 35 accounts are prioritized by renewal risk and white space opportunity. They know exactly who to call and why.',
+                metric: '3 weeks/year back for selling'
+              },
+              { 
+                role: 'For the SE', 
+                now: 'Walks into discovery calls blind, spending the first 20 minutes learning basic account context.',
+                future: 'Walks in with an AI-generated brief: current stack, usage patterns, competitive intel, and recommended capabilities to assess.',
+                metric: 'Faster time to credibility'
+              },
+              { 
+                role: 'For the CSM', 
+                now: 'Prepares for QBRs by manually pulling usage data from Customer 360, often days out of date.',
+                future: 'QBR deck auto-populates with real-time adoption metrics, maturity progress against the roadmap, and renewal risk scoring.',
+                metric: 'Data-driven customer conversations'
+              },
+              { 
+                role: 'For the VE Team', 
+                now: 'Builds every workshop from scratch: researching the account, customizing slides, manually populating the capability canvas.',
+                future: 'Account intelligence pre-loaded. The 36 capabilities are pre-prioritized based on actual data. Output synthesis is AI-assisted.',
+                metric: '2-3x more engagements per quarter'
+              },
+              { 
+                role: 'For Leadership', 
+                now: 'Cannot quantify the ROI of the C&M Assessment program or the VE team's impact on revenue.',
+                future: 'Dashboard shows: assessments completed → products sold → adoption tracked → renewals secured. The flywheel is visible and measurable.',
+                metric: 'Proof of program ROI'
+              },
+              { 
+                role: 'For the Customer', 
+                now: 'Experiences a generic vendor assessment with recommendations that may or may not fit their actual situation.',
+                future: 'Experiences a partner who already understands their environment. Recommendations are specific, measurable, and tied to their actual usage data.',
+                metric: 'Strategic partnership, not vendor'
+              },
+            ].map((item) => (
+              <div key={item.role} className="bg-[#111] border border-[#1a1a1a] rounded-xl p-4 avoid-break">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-bold text-white">{item.role}</span>
+                  <span className="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded">{item.metric}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="text-[10px] text-red-400/70 mb-1">Today</div>
+                    <div className="text-xs text-[#666]">{item.now}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-green-400/70 mb-1">With Connected Journey</div>
+                    <div className="text-xs text-[#888]">{item.future}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-5">
+            <h3 className="text-sm font-bold text-purple-400 mb-3">The Flywheel in Motion</h3>
+            <p className="text-xs text-[#888] leading-relaxed mb-3">
+              Month 3: First dashboards go live. Reps stop building spreadsheets. Time saved: ~10 hours/week per rep.
+            </p>
+            <p className="text-xs text-[#888] leading-relaxed mb-3">
+              Month 6: AI layer active. Reps walk into meetings with briefs. Assessment conversion rates improve. VE team delivers 50% more engagements with the same headcount.
+            </p>
+            <p className="text-xs text-[#888] leading-relaxed mb-3">
+              Month 12: Year 1 assessments show measurable maturity progress. Renewals include data-backed proof of value. Churn drops. Expansion revenue grows.
+            </p>
+            <p className="text-xs text-[#ccc] leading-relaxed font-medium">
+              Month 18: The C&M Assessment is no longer a "nice to have" program — it's a core driver of Ivanti's growth strategy. Customers expect it. Reps rely on it. The data proves it works.
             </p>
           </div>
         </div>
