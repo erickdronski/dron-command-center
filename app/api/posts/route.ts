@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import { promises as fs } from 'fs';
+import path from 'path';
 
-const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
-const X_POSTS_CHANNEL_ID = '1473394891290841223';
+const POSTS_FILE = path.join(process.cwd(), 'public', 'data', 'x_posts.json');
 
 interface XPost {
   id: string;
@@ -16,94 +17,59 @@ interface XPost {
   };
 }
 
-function extractCategory(content: string): string | undefined {
-  // Look for category indicators in Discord bot format
-  const match = content.match(/\|\s*(\w+)\s*\|/);
-  if (match) return match[1].toLowerCase();
-  
-  // Infer from content
-  if (content.includes('sports') || content.includes('betting') || content.includes('odds')) return 'sports';
-  if (content.includes('build') || content.includes('ship') || content.includes('product')) return 'builder';
-  if (content.includes('learn') || content.includes('MBA') || content.includes('framework')) return 'knowledge';
-  if (content.includes('stoic') || content.includes('discipline') || content.includes('mindset')) return 'stoic';
-  if (content.includes('humor') || content.includes('joke') || content.includes('funny')) return 'humor';
-  
-  return undefined;
-}
+// Default posts if file doesn't exist
+const DEFAULT_POSTS: XPost[] = [
+  {
+    id: '1',
+    content: "The hardest part of sports betting isn't picking winners.\n\nIt's:\n→ Managing bankroll\n→ Controlling emotion\n→ Staying disciplined\n\nMost people get the picks right. Then bet too much and blow up.\n\nMath is easy. Psychology is hard.",
+    url: 'https://twitter.com/DronskiErick/status/2025979009046073765',
+    timestamp: '2026-02-23T17:00:11Z',
+    category: 'sports',
+  },
+  {
+    id: '2',
+    content: "The best part of building your own thing:\n\nNo meetings about meetings.\nNo politics.\nNo BS.\n\nJust build. Ship. Learn. Repeat.\n\nThat's worth the risk.",
+    url: 'https://twitter.com/DronskiErick/status/2025968638948266072',
+    timestamp: '2026-02-23T16:18:58Z',
+    category: 'builder',
+  },
+];
 
-function parseDiscordMessage(message: any): XPost | null {
-  const content = message.content || '';
-  
-  // Check if this is a content post (has the 📝 CONTENT marker or X embed)
-  const isContentPost = content.includes('📝 CONTENT') || 
-                        message.embeds?.some((e: any) => e.footer?.text === 'X');
-  
-  if (!isContentPost) return null;
-  
-  // Extract tweet URL from embed or content
-  let url = '';
-  let tweetContent = '';
-  
-  const xEmbed = message.embeds?.find((e: any) => e.footer?.text === 'X');
-  if (xEmbed) {
-    url = xEmbed.url || '';
-    tweetContent = xEmbed.description || content;
-  } else {
-    // Extract URL from content
-    const urlMatch = content.match(/https?:\/\/twitter\.com\/[^\s]+/);
-    url = urlMatch?.[0] || '';
-    // Remove the URL and metadata lines from content
-    tweetContent = content
-      .replace(/\*\*📝 CONTENT\*\*[^\n]*\n/, '')
-      .replace(/\[View Tweet\]\([^)]+\)/, '')
-      .replace(/https?:\/\/[^\s]+/g, '')
-      .trim();
+async function readPosts(): Promise<XPost[]> {
+  try {
+    const content = await fs.readFile(POSTS_FILE, 'utf-8');
+    return JSON.parse(content);
+  } catch {
+    // Return defaults if file doesn't exist
+    return DEFAULT_POSTS;
   }
-  
-  if (!url) return null;
-  
-  return {
-    id: message.id,
-    content: tweetContent,
-    url,
-    timestamp: message.timestamp,
-    category: extractCategory(content),
-  };
 }
 
 export async function GET() {
   try {
-    // Fetch messages from Discord X Posts channel
-    const response = await fetch(
-      `https://discord.com/api/v10/channels/${X_POSTS_CHANNEL_ID}/messages?limit=50`,
-      {
-        headers: {
-          'Authorization': `Bot ${DISCORD_BOT_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        next: { revalidate: 60 }, // Cache for 1 minute
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Discord API error: ${response.status}`);
-    }
-
-    const messages = await response.json();
-    
-    // Parse messages into X posts
-    const posts: XPost[] = messages
-      .map(parseDiscordMessage)
-      .filter((p: XPost | null): p is XPost => p !== null)
-      .sort((a: XPost, b: XPost) => 
-        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-      );
-
+    const posts = await readPosts();
     return NextResponse.json({ posts });
   } catch (error) {
-    console.error('Error fetching posts:', error);
+    console.error('Error reading posts:', error);
+    return NextResponse.json({ posts: DEFAULT_POSTS });
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const post: XPost = await request.json();
+    const posts = await readPosts();
     
-    // Return empty array on error (don't break the UI)
-    return NextResponse.json({ posts: [], error: String(error) });
+    // Add new post at beginning
+    posts.unshift(post);
+    
+    // Keep only last 100 posts
+    const trimmed = posts.slice(0, 100);
+    
+    await fs.writeFile(POSTS_FILE, JSON.stringify(trimmed, null, 2));
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Error saving post:', error);
+    return NextResponse.json({ error: String(error) }, { status: 500 });
   }
 }

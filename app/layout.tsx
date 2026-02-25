@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import {
-  LayoutDashboard, CheckSquare, FileText, ThumbsUp,
-  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, BarChart2, Wrench, Rocket, Play
+  LayoutDashboard, ThumbsUp,
+  Calendar, FolderOpen, Brain, Users, Building2, Zap, CloudSun, BarChart2, Wrench, Rocket, Play, Twitter, Activity
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -16,13 +16,10 @@ const navItems = [
   { href: '/action-center', icon: Play, label: 'Action Center', highlight: true },
   { href: '/analytics', icon: BarChart2, label: 'Analytics' },
   { href: '/deployments', icon: Rocket, label: 'Deployments' },
-  { href: '/posts', icon: FileText, label: 'X Posts' },
-  { href: '/approvals', icon: ThumbsUp, label: 'Approvals' },
-  { href: '/calendar', icon: Calendar, label: 'Calendar' },
-  { href: '/projects', icon: FolderOpen, label: 'Projects' },
+  { href: '/posts', icon: Twitter, label: 'X Posts' },
+  { href: '/calendar', icon: Calendar, label: 'Schedule' },
   { href: '/memory', icon: Brain, label: 'Memory' },
   { href: '/team', icon: Users, label: 'Team' },
-  { href: '/office', icon: Building2, label: 'Office' },
   { href: '/weather', icon: CloudSun, label: 'Weather' },
   { href: '/value-engineering', icon: Wrench, label: 'Value Eng', highlight: true },
   { href: '/live-feed', icon: Zap, label: 'Live Feed', highlight: true },

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { CheckSquare, Zap, ThumbsUp, Calendar, TrendingUp, Activity, Rocket, BarChart2, Twitter, DollarSign, Users } from 'lucide-react';
+import { CheckSquare, Zap, ThumbsUp, Calendar, TrendingUp, Activity, Rocket, BarChart2, Twitter, DollarSign, Users, CloudSun } from 'lucide-react';
 import { PageHeader } from './components/PageHeader';
 import { ActivityFeedCompact } from './components/ActivityFeed';
 
@@ -19,10 +19,10 @@ const quickLinks = [
   { href: '/analytics', icon: BarChart2, label: 'Analytics', desc: 'Trading & social metrics' },
   { href: '/deployments', icon: Rocket, label: 'Deploys', desc: 'Build history' },
   { href: '/posts', icon: Twitter, label: 'X Posts', desc: 'Content archive' },
-  { href: '/approvals', icon: ThumbsUp, label: 'Approvals', desc: 'AI proposals' },
   { href: '/calendar', icon: Calendar, label: 'Schedule', desc: 'Cron jobs' },
   { href: '/memory', icon: Zap, label: 'Memory', desc: 'AI brain' },
   { href: '/team', icon: Users, label: 'Team', desc: 'Bot status' },
+  { href: '/weather', icon: CloudSun, label: 'Weather', desc: 'NOAA data' },
   { href: '/live-feed', icon: Activity, label: 'Live Feed', desc: 'Terminal' },
 ];
 
