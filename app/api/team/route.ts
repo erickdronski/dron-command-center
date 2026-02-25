@@ -16,6 +16,7 @@ interface Agent {
   lastRun?: string;
   nextRun?: string;
   consecutiveErrors?: number;
+  metrics?: Record<string, any>;
 }
 
 async function readJSON(filePath: string) {
@@ -37,9 +38,18 @@ async function getCronJobs() {
   }
 }
 
-async function getAgentState() {
+async function getKalshiState() {
   try {
-    const statePath = path.join(WORKSPACE, 'agent_state.json');
+    const statePath = path.join(process.cwd(), 'ml_data', 'kalshi_shared_state.json');
+    return await readJSON(statePath);
+  } catch {
+    return null;
+  }
+}
+
+async function getXState() {
+  try {
+    const statePath = path.join(WORKSPACE, 'dronskierick_bot_state.json');
     return await readJSON(statePath);
   } catch {
     return null;
@@ -53,72 +63,7 @@ function mapCronToAgent(cronJob: any): Agent | null {
   const isActive = state.lastStatus === 'ok' && (state.consecutiveErrors || 0) === 0;
   const hasErrors = (state.consecutiveErrors || 0) > 0;
   
-  // Determine agent type from cron job name
-  if (name.includes('weather')) {
-    return {
-      emoji: '🌤️',
-      name: 'Weather Trader',
-      role: 'Kalshi Weather Bot',
-      desc: 'NOAA + OpenWeather ensemble forecasting for temp markets',
-      tags: ['Kalshi', 'Weather', 'ML'],
-      color: 'border-cyan-500/30 bg-cyan-500/5',
-      tagColor: 'bg-cyan-500/20 text-cyan-300',
-      status: hasErrors ? 'error' : isActive ? 'active' : 'idle',
-      lastRun: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined,
-      nextRun: state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : undefined,
-      consecutiveErrors: state.consecutiveErrors,
-    };
-  }
-  
-  if (name.includes('price') || name.includes('crypto')) {
-    return {
-      emoji: '💰',
-      name: 'Price Farmer',
-      role: 'Kalshi Crypto Trader',
-      desc: '15-min crypto market trading with Kelly sizing',
-      tags: ['Kalshi', 'Crypto', 'Trading'],
-      color: 'border-yellow-500/30 bg-yellow-500/5',
-      tagColor: 'bg-yellow-500/20 text-yellow-300',
-      status: hasErrors ? 'error' : isActive ? 'active' : 'idle',
-      lastRun: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined,
-      nextRun: state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : undefined,
-      consecutiveErrors: state.consecutiveErrors,
-    };
-  }
-  
-  if (name.includes('sports')) {
-    return {
-      emoji: '🏈',
-      name: 'Sports Trader',
-      role: 'Kalshi Sports Bot',
-      desc: 'Sports market analysis and paper trading',
-      tags: ['Kalshi', 'Sports', 'Analytics'],
-      color: 'border-orange-500/30 bg-orange-500/5',
-      tagColor: 'bg-orange-500/20 text-orange-300',
-      status: hasErrors ? 'error' : isActive ? 'active' : 'idle',
-      lastRun: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined,
-      nextRun: state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : undefined,
-      consecutiveErrors: state.consecutiveErrors,
-    };
-  }
-  
-  if (name.includes('politics')) {
-    return {
-      emoji: '🏛️',
-      name: 'Politics Trader',
-      role: 'Kalshi Politics Bot',
-      desc: 'Political market analysis and polling divergence',
-      tags: ['Kalshi', 'Politics', 'Polling'],
-      color: 'border-indigo-500/30 bg-indigo-500/5',
-      tagColor: 'bg-indigo-500/20 text-indigo-300',
-      status: hasErrors ? 'error' : isActive ? 'active' : 'idle',
-      lastRun: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined,
-      nextRun: state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : undefined,
-      consecutiveErrors: state.consecutiveErrors,
-    };
-  }
-  
-  if (name.includes('dronskierick') && name.includes('content')) {
+  if (name.includes('content') && name.includes('dronskierick')) {
     return {
       emoji: '✍️',
       name: 'Content Bot',
@@ -134,7 +79,7 @@ function mapCronToAgent(cronJob: any): Agent | null {
     };
   }
   
-  if (name.includes('dronskierick') && name.includes('engagement')) {
+  if (name.includes('engagement') && name.includes('dronskierick')) {
     return {
       emoji: '💬',
       name: 'Engagement Bot',
@@ -214,42 +159,121 @@ function mapCronToAgent(cronJob: any): Agent | null {
     };
   }
   
-  return null; // Skip other jobs
+  if (name.includes('market') && name.includes('crypto')) {
+    return {
+      emoji: '🔍',
+      name: 'Crypto Detector',
+      role: 'Market Scanner',
+      desc: 'Detects crypto market opportunities',
+      tags: ['Crypto', 'Markets', 'Signals'],
+      color: 'border-blue-500/30 bg-blue-500/5',
+      tagColor: 'bg-blue-500/20 text-blue-300',
+      status: hasErrors ? 'error' : isActive ? 'active' : 'idle',
+      lastRun: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined,
+      nextRun: state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : undefined,
+      consecutiveErrors: state.consecutiveErrors,
+    };
+  }
+  
+  return null;
 }
 
 export async function GET() {
   try {
-    const [cronJobs, agentState] = await Promise.all([
+    const [cronJobs, kalshiState, xState] = await Promise.all([
       getCronJobs(),
-      getAgentState(),
+      getKalshiState(),
+      getXState(),
     ]);
 
-    // Map cron jobs to agents
-    const agents: Agent[] = cronJobs
-      .filter((j: any) => j.enabled)
-      .map(mapCronToAgent)
-      .filter((a: Agent | null): a is Agent => a !== null);
+    const agents: Agent[] = [];
 
-    // Add special agents from agent_state that might not have cron jobs
-    if (agentState?.agents) {
-      const stateAgents = agentState.agents;
+    // Add Kalshi bots from shared state
+    if (kalshiState?.bots) {
+      const { price_farmer, weather_trader, sports_trader } = kalshiState.bots;
       
-      // Add market detector if not already in list
-      if (stateAgents.market_detector && !agents.find(a => a.name === 'Market Detector')) {
-        const md = stateAgents.market_detector;
+      if (price_farmer) {
         agents.push({
-          emoji: '🔍',
-          name: 'Market Detector',
-          role: 'Opportunity Scanner',
-          desc: 'Scans for crypto market opportunities and signals',
-          tags: ['Markets', 'Crypto', 'Signals'],
-          color: 'border-blue-500/30 bg-blue-500/5',
-          tagColor: 'bg-blue-500/20 text-blue-300',
-          status: md.status === 'active' ? 'active' : 'idle',
-          lastRun: md.lastRun,
+          emoji: '💰',
+          name: 'Price Farmer',
+          role: 'Kalshi Crypto Trader',
+          desc: '15-min crypto market trading with Kelly sizing',
+          tags: ['Kalshi', 'Crypto', 'Trading'],
+          color: 'border-yellow-500/30 bg-yellow-500/5',
+          tagColor: 'bg-yellow-500/20 text-yellow-300',
+          status: price_farmer.trades_today > 0 ? 'active' : 'idle',
+          lastRun: price_farmer.last_trade,
+          metrics: {
+            tradesToday: price_farmer.trades_today,
+            spent: `$${(price_farmer.daily_spent_cents / 100).toFixed(2)}`,
+          },
+        });
+      }
+      
+      if (weather_trader) {
+        agents.push({
+          emoji: '🌤️',
+          name: 'Weather Trader',
+          role: 'Kalshi Weather Bot',
+          desc: 'NOAA + OpenWeather ensemble forecasting for temp markets',
+          tags: ['Kalshi', 'Weather', 'ML'],
+          color: 'border-cyan-500/30 bg-cyan-500/5',
+          tagColor: 'bg-cyan-500/20 text-cyan-300',
+          status: weather_trader.trades_today > 0 ? 'active' : 'idle',
+          lastRun: weather_trader.last_trade,
+          metrics: {
+            tradesToday: weather_trader.trades_today,
+            spent: `$${(weather_trader.daily_spent_cents / 100).toFixed(2)}`,
+          },
+        });
+      }
+      
+      if (sports_trader) {
+        agents.push({
+          emoji: '🏈',
+          name: 'Sports Trader',
+          role: 'Kalshi Sports Bot',
+          desc: 'Sports market analysis and paper trading',
+          tags: ['Kalshi', 'Sports', 'Analytics'],
+          color: 'border-orange-500/30 bg-orange-500/5',
+          tagColor: 'bg-orange-500/20 text-orange-300',
+          status: sports_trader.trades_today > 0 ? 'active' : 'idle',
+          lastRun: sports_trader.last_trade,
+          metrics: {
+            tradesToday: sports_trader.trades_today,
+            spent: `$${(sports_trader.daily_spent_cents / 100).toFixed(2)}`,
+          },
         });
       }
     }
+
+    // Add X engagement bot from state
+    if (xState) {
+      agents.push({
+        emoji: '💬',
+        name: 'X Engagement',
+        role: 'Community Engagement',
+        desc: 'Likes, replies, and authentic engagement',
+        tags: ['X', 'Engagement', 'Growth'],
+        color: 'border-pink-500/30 bg-pink-500/5',
+        tagColor: 'bg-pink-500/20 text-pink-300',
+        status: 'active',
+        lastRun: xState.last_run,
+        metrics: {
+          likesToday: xState.daily_stats?.total_likes || 0,
+          repliesToday: xState.daily_stats?.total_replies || 0,
+          spent: `$${(xState.daily_stats?.total_spent || 0).toFixed(3)}`,
+        },
+      });
+    }
+
+    // Map cron jobs to agents
+    cronJobs
+      .filter((j: any) => j.enabled)
+      .forEach((job: any) => {
+        const agent = mapCronToAgent(job);
+        if (agent) agents.push(agent);
+      });
 
     // Sort: active first, then by name
     agents.sort((a, b) => {

@@ -10,7 +10,7 @@ import {
 // ── Types ──────────────────────────────────────────────────────────────────
 interface StatusData {
   trading: {
-    kalshi: { active: boolean; trades: number; spent: number; budget: number; weatherTrades: number; priceTrades: number };
+    kalshi: { active: boolean; trades: number; spent: number; budget: number; weatherTrades: number; priceTrades: number; sportsTrades: number };
     polymarket: { active: boolean; positions: number; tradesTotal: number };
   };
   social: {
@@ -245,11 +245,12 @@ export default function AnalyticsPage() {
           {k ? (
             <>
               {/* Summary stats */}
-              <div className="grid grid-cols-3 gap-3 mb-5">
+              <div className="grid grid-cols-4 gap-3 mb-5">
                 {[
                   { label: 'Total spent', value: `$${fmt(k.spent)}`, sub: `/ $${fmt(k.budget)}`, color: 'text-white' },
-                  { label: 'Weather trades', value: String(k.weatherTrades), sub: 'today', color: 'text-cyan-400' },
                   { label: 'Price trades', value: String(k.priceTrades), sub: 'today', color: 'text-purple-400' },
+                  { label: 'Weather trades', value: String(k.weatherTrades), sub: 'today', color: 'text-cyan-400' },
+                  { label: 'Sports trades', value: String(k.sportsTrades || 0), sub: 'today', color: 'text-orange-400' },
                 ].map(({ label, value, sub, color }) => (
                   <div key={label} className="bg-[#0d0d0d] rounded p-3 text-center">
                     <div className={`text-lg font-bold ${color}`}>{value}</div>

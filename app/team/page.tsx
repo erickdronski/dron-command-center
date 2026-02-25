@@ -15,6 +15,7 @@ interface Agent {
   lastRun?: string;
   nextRun?: string;
   consecutiveErrors?: number;
+  metrics?: Record<string, any>;
 }
 
 const BOSS = {
@@ -136,10 +137,18 @@ export default function TeamPage() {
                     <Activity size={10} />
                     Last: {formatTime(agent.lastRun)}
                   </div>
-                  <div className="flex items-center gap-1.5 text-[#555]">
-                    <Clock size={10} />
-                    Next: {formatNextRun(agent.nextRun)}
-                  </div>
+                  {agent.nextRun && (
+                    <div className="flex items-center gap-1.5 text-[#555]">
+                      <Clock size={10} />
+                      Next: {formatNextRun(agent.nextRun)}
+                    </div>
+                  )}
+                  {agent.metrics && Object.entries(agent.metrics).map(([key, value]) => (
+                    <div key={key} className="flex items-center gap-1.5 text-[#666]">
+                      <span className="text-[#444]">{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}:</span>
+                      <span className="text-white">{value}</span>
+                    </div>
+                  ))}
                   {agent.consecutiveErrors && agent.consecutiveErrors > 0 && (
                     <div className="flex items-center gap-1.5 text-red-400">
                       <AlertCircle size={10} />

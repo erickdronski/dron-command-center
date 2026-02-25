@@ -32,62 +32,92 @@ async function getKalshiStats() {
   try {
     const statePath = path.join(process.cwd(), 'ml_data', 'kalshi_shared_state.json');
     const data = await readJSON(statePath);
-    if (!data) return 0;
+    if (!data) return { trades: 0, spent: 0 };
     
     const wt = data.bots?.weather_trader?.trades_today || 0;
     const pf = data.bots?.price_farmer?.trades_today || 0;
-    return wt + pf;
+    const st = data.bots?.sports_trader?.trades_today || 0;
+    
+    return {
+      trades: wt + pf + st,
+      spent: (data.total_spent_cents || 0) / 100,
+    };
   } catch {
-    return 0;
+    return { trades: 0, spent: 0 };
   }
 }
 
 async function getXPostsToday() {
   try {
-    const statePath = path.join(WORKSPACE, 'agent_state.json');
-    const data = await readJSON(statePath);
-    return data?.agents?.social_poster?.postsToday || 0;
+    // Read from x_posts.json and count today's posts
+    const postsPath = path.join(process.cwd(), 'public', 'data', 'x_posts.json');
+    const posts = await readJSON(postsPath) || [];
+    
+    const today = new Date().toDateString();
+    return posts.filter((p: any) => new Date(p.timestamp).toDateString() === today).length;
   } catch {
     return 0;
   }
 }
 
-async function getDeployments() {
+async function getXEngagement() {
   try {
-    // Count recent git commits as deployments
-    // For now, return a static number that updates on build
-    return 2;
+    // Try dronskierick_bot_state first, fallback to x_bot_state
+    const statePath = path.join(WORKSPACE, 'dronskierick_bot_state.json');
+    const data = await readJSON(statePath);
+    
+    if (data?.daily_stats) {
+      return {
+        likes: data.daily_stats.total_likes || 0,
+        replies: data.daily_stats.total_replies || 0,
+        spent: data.daily_stats.total_spent || 0,
+      };
+    }
+    
+    // Fallback to x_bot_state
+    const xStatePath = path.join(WORKSPACE, 'x_bot_state.json');
+    const xData = await readJSON(xStatePath);
+    
+    return {
+      likes: xData?.likes_today || 0,
+      replies: xData?.replies_today || 0,
+      spent: xData?.daily_budget_spent || 0,
+    };
   } catch {
-    return 0;
+    return { likes: 0, replies: 0, spent: 0 };
   }
 }
 
 export async function GET() {
   try {
-    const [cronStats, trades, posts, deployments] = await Promise.all([
+    const [cronStats, kalshi, posts, xEngagement] = await Promise.all([
       getCronJobs(),
       getKalshiStats(),
       getXPostsToday(),
-      getDeployments(),
+      getXEngagement(),
     ]);
 
     return NextResponse.json({
       posts,
-      trades,
+      trades: kalshi.trades,
+      kalshiSpent: kalshi.spent,
       jobs: cronStats.total,
-      deployments,
+      deployments: 2, // Static for now
       activeJobs: cronStats.active,
       errorJobs: cronStats.errors,
+      xEngagement,
     });
   } catch (error) {
     console.error('Dashboard API error:', error);
     return NextResponse.json({
       posts: 0,
       trades: 0,
+      kalshiSpent: 0,
       jobs: 0,
       deployments: 0,
       activeJobs: 0,
       errorJobs: 0,
+      xEngagement: { likes: 0, replies: 0, spent: 0 },
     });
   }
 }
