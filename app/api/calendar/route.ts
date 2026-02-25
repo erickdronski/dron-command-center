@@ -2,15 +2,24 @@ import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-async function getCronJobs() {
+async function readJSON(filePath: string) {
   try {
-    const cronPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'cron', 'jobs.json');
-    const content = await fs.readFile(cronPath, 'utf-8');
-    const data = JSON.parse(content);
-    return data.jobs || [];
+    const content = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(content);
   } catch {
-    return [];
+    return null;
   }
+}
+
+async function getCronJobs() {
+  // Try local first, fallback to synced
+  const localPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'cron', 'jobs.json');
+  const syncedPath = path.join(process.cwd(), 'public', 'data', 'cron_jobs.json');
+  
+  let data = await readJSON(localPath);
+  if (!data) data = await readJSON(syncedPath);
+  
+  return data?.jobs || [];
 }
 
 function formatSchedule(job: any): string {
@@ -26,22 +35,16 @@ function formatSchedule(job: any): string {
   }
   
   if (schedule.kind === 'cron') {
-    // Convert cron expression to readable format
     const expr = schedule.expr;
-    const tz = schedule.tz || 'UTC';
-    
-    // Common patterns
     if (expr === '0 8 * * *') return 'Daily 8:00 AM';
     if (expr === '0 9 * * *') return 'Daily 9:00 AM';
     if (expr === '0 8,12,15,18,21 * * *') return '5x daily (8a,12p,3p,6p,9p)';
     if (expr === '0 9,12,15,18 * * *') return '4x daily (9a,12p,3p,6p)';
-    if (expr === '0 7,10,13,16,19 * * *') return '5x daily (:00)';
-    if (expr === '30 8,11,14,17,20 * * *') return '5x daily (:30)';
+    if (expr === '0 */2 * * *') return 'Every 2 hours';
+    if (expr === '30 */2 * * *') return 'Every 2 hours (:30)';
     if (expr === '0 9 * * 1') return 'Weekly (Mon 9am)';
     if (expr === '30 9 * * 1') return 'Weekly (Mon 9:30am)';
-    if (expr === '0 8 * * *') return 'Daily 8am';
-    
-    return `${expr} (${tz})`;
+    return `${expr}`;
   }
   
   return 'Scheduled';
@@ -65,7 +68,7 @@ export async function GET() {
           consecutiveErrors: state.consecutiveErrors || 0,
         };
       })
-      .filter((j: any) => j.nextRun) // Only show jobs with next run scheduled
+      .filter((j: any) => j.nextRun)
       .sort((a: any, b: any) => new Date(a.nextRun).getTime() - new Date(b.nextRun).getTime());
 
     return NextResponse.json({ jobs });

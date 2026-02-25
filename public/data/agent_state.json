@@ -1,0 +1,60 @@
+{
+  "lastUpdated": "2026-02-25T00:42:31.844721Z",
+  "agents": {
+    "trading": {
+      "lastRun": "2026-02-19T23:21:42.219378Z",
+      "status": "idle",
+      "lastTrade": null,
+      "totalPnL": 0,
+      "openPositions": 0,
+      "tradesTotal": 2,
+      "alerts": []
+    },
+    "market_detector": {
+      "lastRun": "2026-02-20T00:14:59.744307Z",
+      "status": "idle",
+      "cryptoMarketsLive": false,
+      "marketsFound": 0,
+      "topMarkets": []
+    },
+    "social_poster": {
+      "lastRun": "2026-02-19T22:26:30.259798Z",
+      "status": "posted",
+      "postsToday": 2,
+      "lastPostTime": "",
+      "lastPostContent": "Enterprise transformation vs startup building insights"
+    },
+    "social_engagement": {
+      "lastRun": "2026-02-20T00:01:43.758572Z",
+      "status": "active",
+      "repliesToday": 0,
+      "likesToday": 4,
+      "budgetSpent": 0.077,
+      "budgetLimit": 1.0,
+      "followerCount": 0
+    },
+    "monitor": {
+      "lastRun": "2026-02-25T00:42:31.843942Z",
+      "status": "idle",
+      "allJobsHealthy": true,
+      "errorJobs": [],
+      "totalJobsRunning": 0
+    }
+  },
+  "flags": {
+    "tradingLossAlert": false,
+    "budgetWarning": false,
+    "marketOpportunity": false,
+    "criticalError": false,
+    "criticalErrorMessage": ""
+  },
+  "dailySummary": {
+    "date": "",
+    "tradingPnL": 0,
+    "totalTrades": 0,
+    "newFollowers": 0,
+    "postsPublished": 0,
+    "engagementActions": 0,
+    "budgetSpent": 0
+  }
+}

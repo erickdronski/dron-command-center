@@ -2,23 +2,6 @@ import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const WORKSPACE = path.join(process.cwd(), '..');
-
-interface Agent {
-  emoji: string;
-  name: string;
-  role: string;
-  desc: string;
-  tags: string[];
-  color: string;
-  tagColor: string;
-  status: 'active' | 'idle' | 'error';
-  lastRun?: string;
-  nextRun?: string;
-  consecutiveErrors?: number;
-  metrics?: Record<string, any>;
-}
-
 async function readJSON(filePath: string) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
@@ -29,35 +12,40 @@ async function readJSON(filePath: string) {
 }
 
 async function getCronJobs() {
-  try {
-    const cronPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'cron', 'jobs.json');
-    const data = await readJSON(cronPath);
-    return data?.jobs || [];
-  } catch {
-    return [];
-  }
+  // Try local first, fallback to synced
+  const localPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'cron', 'jobs.json');
+  const syncedPath = path.join(process.cwd(), 'public', 'data', 'cron_jobs.json');
+  
+  let data = await readJSON(localPath);
+  if (!data) data = await readJSON(syncedPath);
+  
+  return data?.jobs || [];
 }
 
 async function getKalshiState() {
-  try {
-    const statePath = path.join(process.cwd(), 'ml_data', 'kalshi_shared_state.json');
-    return await readJSON(statePath);
-  } catch {
-    return null;
-  }
+  // Try local first, fallback to synced
+  const localPath = path.join(process.cwd(), 'ml_data', 'kalshi_shared_state.json');
+  const syncedPath = path.join(process.cwd(), 'public', 'data', 'kalshi_shared_state.json');
+  
+  let data = await readJSON(localPath);
+  if (!data) data = await readJSON(syncedPath);
+  
+  return data;
 }
 
 async function getXState() {
-  try {
-    const statePath = path.join(WORKSPACE, 'dronskierick_bot_state.json');
-    return await readJSON(statePath);
-  } catch {
-    return null;
-  }
+  // Try local first, fallback to synced
+  const localPath = path.join(process.env.HOME || '/Users/dron', '.openclaw', 'workspace', 'dronskierick_bot_state.json');
+  const syncedPath = path.join(process.cwd(), 'public', 'data', 'dronskierick_bot_state.json');
+  
+  let data = await readJSON(localPath);
+  if (!data) data = await readJSON(syncedPath);
+  
+  return data;
 }
 
 // Map cron jobs to agents
-function mapCronToAgent(cronJob: any): Agent | null {
+function mapCronToAgent(cronJob: any): any | null {
   const name = cronJob.name.toLowerCase();
   const state = cronJob.state || {};
   const isActive = state.lastStatus === 'ok' && (state.consecutiveErrors || 0) === 0;
@@ -186,7 +174,7 @@ export async function GET() {
       getXState(),
     ]);
 
-    const agents: Agent[] = [];
+    const agents: any[] = [];
 
     // Add Kalshi bots from shared state
     if (kalshiState?.bots) {

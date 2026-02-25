@@ -1,0 +1,1337 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "d9b166a6-435a-4806-8493-048c8e0a2fde",
+      "agentId": "main",
+      "name": "DronskiErick-X-Content-Bot",
+      "enabled": true,
+      "createdAtMs": 1771228981441,
+      "updatedAtMs": 1771984894455,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,15,18,21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the DronskiErick X Bot for @DronskiErick (personal account).\n\nVoice: Business professional content creator\n- Educational and insightful\n- Professional but approachable  \n- Focus on entrepreneurship, tech, sports analytics, and building in public\n- No overly promotional content — value-first\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --post\n\nAfter posting, update agent state with post details.\nReply with post summary or HEARTBEAT_OK.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "lastRunAtMs": 1771984800042,
+        "lastStatus": "ok",
+        "lastDurationMs": 94413,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772024400000
+      }
+    },
+    {
+      "id": "212e0087-6ecb-492c-a9d1-1461d1cb3fb1",
+      "agentId": "main",
+      "name": "polymarket-fastloop",
+      "enabled": false,
+      "createdAtMs": 1771305390696,
+      "updatedAtMs": 1771310373479,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 30000,
+        "anchorMs": 1771309528913
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run FastLoop BTC trader: cd /Users/dron/.openclaw/workspace/polymarket-fastloop && ./run_fastloop.sh"
+      },
+      "state": {
+        "lastRunAtMs": 1771310308922,
+        "lastStatus": "ok",
+        "lastDurationMs": 64557,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "43825a37-f757-4dac-aada-cf0268c41792",
+      "agentId": "main",
+      "name": "FastLoop V14 - Latency Arb (Polling)",
+      "enabled": false,
+      "createdAtMs": 1771354546977,
+      "updatedAtMs": 1771377726491,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 30000,
+        "anchorMs": 1771354546977
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run V14 latency arbitrage bot (polling mode). Execute: /Users/dron/.openclaw/workspace/polymarket-fastloop/run_v14_latency.sh - Only report back if there's a trade executed (CEX movement >= 0.3%), position closed, or error. If no movement or no trades, respond with HEARTBEAT_OK."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394875826180096"
+      },
+      "state": {
+        "lastRunAtMs": 1771373566991,
+        "lastStatus": "ok",
+        "lastDurationMs": 11030,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "d87ef6d3-0f27-4b1a-8d83-f31b829720c1",
+      "agentId": "main",
+      "name": "Cron Status Monitor",
+      "enabled": true,
+      "createdAtMs": 1771356268571,
+      "updatedAtMs": 1771980154195,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1771620145935
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check cron health: cat ~/.openclaw/cron/jobs.json | python3 -c \"import json,sys;jobs=[j for j in json.load(sys.stdin)['jobs'] if j.get('enabled')];errors=[j['name'] for j in jobs if j.get('state',{}).get('consecutiveErrors',0)>2];print('errors:',errors or 'none')\"\n\nUpdate state: python3 /Users/dron/.openclaw/workspace/update_agent_state.py monitor '{\"allJobsHealthy\":true}'\n\nIf errors found: write 1-line summary as reply. Else: reply HEARTBEAT_OK",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473399326322458838",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771980145967,
+        "lastStatus": "ok",
+        "lastDurationMs": 8228,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1771987345935
+      }
+    },
+    {
+      "id": "0e32a4f0-3aad-4e3e-82ea-aa385d6dc613",
+      "agentId": "main",
+      "name": "DronskiErick X Engagement (Every 2hrs :00)",
+      "enabled": true,
+      "createdAtMs": 1771365800344,
+      "updatedAtMs": 1771981392539,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions  \n- Tech and AI conversations\n- Building in public community\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 3 --max-likes 10 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
+        "timeoutSeconds": 180,
+        "model": "xai/grok-4-fast"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "lastRunAtMs": 1771981212500,
+        "lastStatus": "error",
+        "lastDurationMs": 180039,
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1771988412453,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "4e2b819e-69c4-4ba3-84e6-00a610c929fb",
+      "agentId": "main",
+      "name": "DronskiErick X Engagement (Every 2hrs :30)",
+      "enabled": true,
+      "createdAtMs": 1771365805978,
+      "updatedAtMs": 1771983040727,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 */2 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions\n- Tech and AI conversations\n- Building in public community\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 3 --max-likes 10 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
+        "timeoutSeconds": 180,
+        "model": "xai/grok-4-fast"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "lastRunAtMs": 1771983000055,
+        "lastStatus": "ok",
+        "lastDurationMs": 40672,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1771990200000
+      }
+    },
+    {
+      "id": "62928171-164b-410e-97db-cb7d9973cde3",
+      "agentId": "main",
+      "name": "Copy Trader - Follow Top Wallets",
+      "enabled": false,
+      "createdAtMs": 1771385882627,
+      "updatedAtMs": 1771389714135,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 30000,
+        "anchorMs": 1771385882627
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run copy trader to follow profitable Polymarket wallets. Execute: /Users/dron/.openclaw/workspace/polymarket-fastloop/run_copy_trader.sh - Only report back if a trade is copied, error occurs, or new trade detected from target wallet. If no new trades, respond with HEARTBEAT_OK."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394875826180096"
+      },
+      "state": {
+        "lastRunAtMs": 1771389692650,
+        "lastStatus": "ok",
+        "lastDurationMs": 21485,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "f06d1737-699c-4910-8514-ff41516f5be5",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473824036466458726",
+      "name": "Weekly X Analytics Report",
+      "enabled": true,
+      "createdAtMs": 1771458001682,
+      "updatedAtMs": 1771857335844,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Generate weekly X analytics report for @DronskiErick. Read state: python3 /Users/dron/.openclaw/workspace/update_agent_state.py\n\nSummarize last 7 days: posts, engagement, follower changes, top performing content.\nWrite clean 5-line report as reply.",
+        "timeoutSeconds": 120,
+        "model": "ollama/llama3.2:1b"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1473824036466458726"
+      },
+      "state": {
+        "nextRunAtMs": 1772461800000,
+        "lastRunAtMs": 1771857002707,
+        "lastStatus": "error",
+        "lastDurationMs": 10628,
+        "lastError": "cron delivery target is missing",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "8e760611-5d79-4508-a672-e52da7aa0fc0",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473535322271907840",
+      "name": "Direct Polymarket Weather Trading - Every 2 Hours",
+      "enabled": false,
+      "createdAtMs": 1771464003206,
+      "updatedAtMs": 1771809357369,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1771464003206
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the direct Polymarket weather trading bot:\n\n1. cd ~/.openclaw/skills/polymarket-weather-trader\n2. export $(cat .env | xargs)\n3. python3 weather_trader.py --live\n4. If any trades executed, report to #weather-trader channel:\n   - City + temperature bucket\n   - NOAA forecast vs market price\n   - Edge percentage\n   - Trade details (size, entry price)\n5. If no weather markets found, stay silent (this is expected in Feb-March)\n6. When markets appear (April+), trade automatically and report all activity",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1473535322271907840"
+      },
+      "state": {
+        "lastRunAtMs": 1771808423281,
+        "lastStatus": "ok",
+        "lastDurationMs": 135565,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "3451a97b-56af-44cf-9e3b-ed9bc9364e4c",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473394836521619748",
+      "name": "Price Farmer Trade Notifications",
+      "enabled": false,
+      "createdAtMs": 1771511416695,
+      "updatedAtMs": 1771683598714,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 30000,
+        "anchorMs": 1771511416695
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the Trading Notification Agent.\n\nSTEP 1 - Read shared org state:\nRun: python3 /Users/dron/.openclaw/workspace/update_agent_state.py\nThis shows you what all other agents are doing.\n\nSTEP 2 - Check for new trades:\nRead /Users/dron/.openclaw/workspace/polymarket-fastloop/ml_data/price_farmer_trades.json\nCompare count to /Users/dron/.openclaw/workspace/polymarket-fastloop/ml_data/last_notified_count.txt\nUpdate last_notified_count.txt with the new count.\n\nSTEP 3 - Update shared org state:\nRun: python3 /Users/dron/.openclaw/workspace/update_agent_state.py trading '{\"status\":\"active\",\"tradesTotal\":<count>,\"alerts\":[]}'\nIf a loss > $5 detected, also run: python3 /Users/dron/.openclaw/workspace/update_agent_state.py flags '{\"tradingLossAlert\":true}'\n\nSTEP 4 - Write your reply:\nIf there are NEW trades: write a clear trade alert with the trade details as your reply. This will be automatically posted to Discord.\nIf NO new trades: reply with exactly: HEARTBEAT_OK\n\nDO NOT use the message tool. DO NOT try to send Discord messages yourself.",
+        "timeoutSeconds": 120,
+        "model": "openai/gpt-4o-mini"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394836521619748",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771616675787,
+        "lastStatus": "error",
+        "lastDurationMs": 1268,
+        "consecutiveErrors": 4,
+        "lastError": "Error: All models failed (4): openai/gpt-4o-mini: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | google/gemini-2.5-flash: Provider google is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | anthropic/claude-sonnet-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit)"
+      }
+    },
+    {
+      "id": "61b1f668-030c-49de-86b8-6808affcfbd8",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473394836521619748",
+      "name": "Crypto Market Detector",
+      "enabled": true,
+      "createdAtMs": 1771514083989,
+      "updatedAtMs": 1771985694729,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1771514083989
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run: python3 /Users/dron/.openclaw/workspace/update_agent_state.py\n\nCheck if cryptoMarketsLive is true or marketOpportunity is true.\nIf yes: reply with 1-line market alert.\nIf no: reply HEARTBEAT_OK",
+        "timeoutSeconds": 60,
+        "model": "xai/grok-4-fast"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394836521619748",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771985684062,
+        "lastStatus": "ok",
+        "lastDurationMs": 10667,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1771989283989
+      }
+    },
+    {
+      "id": "5ac0f9a9-9781-4d84-b01d-de0baad1ae51",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473386869390835861",
+      "name": "🌅 Daily Org Briefing",
+      "enabled": true,
+      "createdAtMs": 1771527777414,
+      "updatedAtMs": 1771941945427,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 60,
+        "message": "Read: python3 /Users/dron/.openclaw/workspace/update_agent_state.py\n\nWrite daily briefing as reply:\n🌅 Daily Briefing — [DATE]\n📈 Trading: [status] | [n] trades | $[pnl]\n📣 Social: [n] posts | [n] replies | $[spent]/$1.00\n🔍 Markets: [live] | [n] found\n⚙️ Health: [ok/errors] | Flags: [any/clear]\n\nReset: python3 /Users/dron/.openclaw/workspace/update_agent_state.py dailySummary '{\"date\":\"today\",\"tradingPnL\":0,\"totalTrades\":0,\"postsPublished\":0,\"engagementActions\":0,\"budgetSpent\":0}'"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473823737563578532",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1772028300000,
+        "lastRunAtMs": 1771941908977,
+        "lastStatus": "ok",
+        "lastDurationMs": 36450,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "61056ca7-7641-4ea7-ab6e-35480c78518f",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473386869390835861",
+      "name": "🚨 Alert Monitor",
+      "enabled": true,
+      "createdAtMs": 1771527777430,
+      "updatedAtMs": 1771983756028,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1771620145918
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 30,
+        "message": "Read: python3 /Users/dron/.openclaw/workspace/update_agent_state.py\n\nCheck flags: tradingLossAlert, budgetWarning, marketOpportunity, criticalError.\nIf any true: write alert text as reply, then clear each flag.\nIf none: reply HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473823318317469736",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1771987345918,
+        "lastRunAtMs": 1771983745953,
+        "lastStatus": "ok",
+        "lastDurationMs": 10075,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b1f5467d-bfba-4cbd-b72c-a4b9317d3faa",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
+      "name": "🧹 Session Cleanup",
+      "enabled": true,
+      "createdAtMs": 1771619175350,
+      "updatedAtMs": 1771878405466,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 259200000,
+        "anchorMs": 1771619175350
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "ollama/llama3.2:1b",
+        "timeoutSeconds": 60,
+        "message": "Run session cleanup:\nfind ~/.openclaw/agents -name '*.jsonl' -mtime +7 -delete 2>/dev/null\nfind ~/.openclaw/agents -name '*.json' -path '*/sessions/*' -mtime +7 -delete 2>/dev/null\necho done\n\nReply HEARTBEAT_OK when complete."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772137575350,
+        "lastRunAtMs": 1771878375375,
+        "lastStatus": "ok",
+        "lastDurationMs": 30091,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "4c0bc994-a737-4c14-a94d-d089af3f50e6",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
+      "name": "🔒 Daily Security Audit",
+      "enabled": true,
+      "createdAtMs": 1771619175379,
+      "updatedAtMs": 1771938080303,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "ollama/llama3.2:1b",
+        "timeoutSeconds": 60,
+        "message": "Run security checks:\n1. /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate 2>/dev/null\n2. df -h / | tail -1\n3. ps aux | grep openclaw | grep -v grep | wc -l\n\nIf disk >90% or firewall disabled: write 1-line alert as reply.\nElse: reply HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771938055582,
+        "lastStatus": "ok",
+        "lastDurationMs": 24721,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "58772682-de4f-49e7-b424-4a3f25c94689",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
+      "name": "💾 Silent Workspace Backup",
+      "enabled": true,
+      "createdAtMs": 1771619175402,
+      "updatedAtMs": 1771986405695,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1771619175402
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "ollama/llama3.2:1b",
+        "timeoutSeconds": 60,
+        "message": "Run git backup:\ncd /Users/dron/.openclaw/workspace && git add -A && git diff --cached --quiet || git commit -m \"auto-backup $(date '+%Y-%m-%d %H:%M')\" 2>&1\ncd /Users/dron/.openclaw/workspace/dron-command-center && git add -A && git diff --cached --quiet || git commit -m \"auto-backup $(date '+%Y-%m-%d %H:%M')\" 2>&1\n\nReply HEARTBEAT_OK if done, error text if failed."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771993575402,
+        "lastRunAtMs": 1771986375420,
+        "lastStatus": "ok",
+        "lastDurationMs": 30275,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "af78d288-984e-4401-860e-f79d299478c4",
+      "agentId": "main",
+      "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
+      "name": "Kalshi Price Farmer",
+      "enabled": false,
+      "createdAtMs": 1771621453242,
+      "updatedAtMs": 1771962187191,
+      "schedule": {
+        "everyMs": 120000,
+        "kind": "every",
+        "anchorMs": 1771812709485
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 90,
+        "message": "Run: python3 /Users/dron/.openclaw/workspace/dron-command-center/scripts/kalshi_price_farmer_v2.py --live 2>&1\n\nIf output has '🚨': write trade alert as reply → posts to Discord.\nOtherwise: reply HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394836521619748",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771962109518,
+        "lastStatus": "ok",
+        "lastDurationMs": 12702,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "70283421-eb93-462f-b8ec-75b7cdf6e577",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
+      "name": "💰 Budget Guard",
+      "enabled": true,
+      "createdAtMs": 1771621499528,
+      "updatedAtMs": 1771981529619,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 14400000,
+        "anchorMs": 1771621499528
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 30,
+        "message": "Run: python3 /Users/dron/.openclaw/workspace/budget_guard.py 2>&1\n\nRead output:\n- If '🔴 BUDGET LOCKED': write alert '🔴 OpenAI daily budget hit $10. All cron jobs now falling back to Claude (pro plan). Auto-resets tomorrow.' as reply.\n- If '⚠️ BUDGET WARNING': write '⚠️ OpenAI spend at $8+/day. Approaching $10 cap.' as reply.\n- If '✅ Budget OK': reply HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473823318317469696",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1771995899528,
+        "lastRunAtMs": 1771981499582,
+        "lastStatus": "error",
+        "lastDurationMs": 30037,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "268903d5-dd1d-42ed-927f-f6aa22582dec",
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1473535322271907840",
+      "name": "🌤️ Autonomous Kalshi Weather Trader v4.0",
+      "enabled": false,
+      "createdAtMs": 1771684512470,
+      "updatedAtMs": 1771900697625,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1771684512470
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Autonomous Kalshi Weather Bot v4.0 (LIVE TRADING):\n\ncd ~/.openclaw/skills/kalshi-weather-trader && python3 weather_trader.py --live\n\nFeatures active:\n- Ensemble forecasting (NOAA + OpenWeather)\n- ML-based accuracy prediction\n- Dynamic Kelly sizing with streak adjustment\n- Auto-parameter optimization\n- Circuit breakers (loss limits)\n- Exit monitoring\n\nReport ALL activity to this channel:\n- Trades executed (city, price, edge, size)\n- Exits taken (profit/loss)\n- Circuit breaker triggers\n- Parameter changes\n\nIf no trades: Report \"Scan complete - no opportunities\"\nIf circuit breaker: Report \"Trading halted: [reason]\"",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1473535322271907840",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771900519633,
+        "lastStatus": "ok",
+        "lastDurationMs": 69257,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "d0400f48-913e-42cd-876c-419e67e66a13",
+      "agentId": "main",
+      "sessionKey": "agent:weather-trader:discord:channel:1473535322271907840",
+      "name": "🔄 Weather Bot Weekly Optimization",
+      "enabled": true,
+      "createdAtMs": 1771810271248,
+      "updatedAtMs": 1771862716611,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run weekly optimization for Kalshi Weather Bot:\n\ncd ~/.openclaw/skills/kalshi-weather-trader\nexport $(cat .env | xargs)\n\n# Generate report\npython3 weather_trader.py --report\n\n# Adapt parameters  \npython3 weather_trader.py --adapt\n\n# Show new parameters\ncat data/dynamic_params.json | python3 -c \"import sys,json; d=json.load(sys.stdin); print(f'Kelly: {d[\\\"KELLY_FRACTION\\\"]*100:.0f}%, Entry: {d[\\\"ENTRY_THRESHOLD\\\"]*100:.0f}¢')\"\n\nReply with actual output from these commands.",
+        "timeoutSeconds": 120,
+        "model": "xai/grok-4-fast"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1473535322271907840",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1772460000000,
+        "lastRunAtMs": 1771855202249,
+        "lastStatus": "error",
+        "lastDurationMs": 120005,
+        "lastError": "Error: cron: job execution timed out",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "99f6bd96-04bd-463e-88da-e262ef3afbd9",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "🎯 Precision Algorithms X Bot",
+      "enabled": true,
+      "createdAtMs": 1771815200566,
+      "updatedAtMs": 1771974226454,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,12,15,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120,
+        "message": "You are the Precision Algorithms X Bot for @PrecisionAlgos.\n\nThis is a BRAND account (not personal). Voice should be:\n- Professional but approachable\n- Data-driven and analytical\n- Educational over promotional\n- Focused on prediction markets, weather modeling, and algorithmic edge\n\nCheck if there's a pending content task in #precision-algorithms-x channel.\nIf yes: Draft the content, optimize for engagement, report back.\nIf no: Reply HEARTBEAT_OK.\n\nAlways use marketing psychology principles (authority, specificity, curiosity gaps)."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1475320497490231438",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1772028000000,
+        "lastRunAtMs": 1771974180092,
+        "lastStatus": "ok",
+        "lastDurationMs": 46362,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "032525c8-fa83-4f41-a251-058903508189",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "🏈 Kalshi Sports Trader",
+      "enabled": false,
+      "createdAtMs": 1771817612007,
+      "updatedAtMs": 1771832114782,
+      "schedule": {
+        "everyMs": 1800000,
+        "kind": "every",
+        "anchorMs": 1771817612007
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Kalshi Sports Trader:\ncd /Users/dron/.openclaw/workspace && python3 kalshi_sports_trader.py --live\n\nReport ALL findings:\n- Markets scanned\n- Opportunities found\n- Trades executed\n- Injuries/weather/sharp money detected\n\nIf no opportunities: Report \"Scan complete - no edges found\"",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475334350768832726"
+      },
+      "state": {
+        "lastRunAtMs": 1771832012033,
+        "lastStatus": "ok",
+        "lastDurationMs": 92487,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8a6c5fa6-a793-4e22-8fe1-2e2fadd1a2d0",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1475334350768832726",
+      "name": "kalshi-sports-trader",
+      "enabled": false,
+      "createdAtMs": 1771820822159,
+      "updatedAtMs": 1771962187246,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1771820822159
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Kalshi Sports Trading Bot.\n\nExecute this command and capture the output:\ncd /Users/dron/.openclaw/workspace/dron-command-center && python3 kalshi_sports_trader.py --quiet 2>&1\n\nThen post a summary of the results to the #kalshi-sports Discord channel. Include:\n- Number of markets scanned\n- Number of opportunities found\n- Number of paper trades executed\n- Current portfolio status (bankroll, exposure, P&L)",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1475334350768832726",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771961222193,
+        "lastStatus": "ok",
+        "lastDurationMs": 44883,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "6787345f-215a-4693-92ea-a4c4e0f3fa8c",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "💰 5K MRR App Builder",
+      "enabled": true,
+      "createdAtMs": 1771821048720,
+      "updatedAtMs": 1771907568793,
+      "schedule": {
+        "everyMs": 86400000,
+        "kind": "every",
+        "anchorMs": 1771821048720
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the 5K MRR App Builder agent.\n\nMission: Build a $5,000/month MRR app as a solo founder using no-code/low-code tools.\n\nConstraints:\n- Must be buildable by 1 person\n- Low upfront cost (<$500)\n- Clear pain point / in-demand\n- Can launch in 2-4 weeks\n- $10-50/month pricing (need ~100-500 customers for $5k)\n\nWhen triggered:\n1. Check for app ideas in channel\n2. Research market demand\n3. Suggest build approach (Lovable, etc.)\n4. Track progress toward launch\n5. Report any blockers\n\nReply with status or HEARTBEAT_OK.",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475349043394773092"
+      },
+      "state": {
+        "nextRunAtMs": 1771993848720,
+        "lastRunAtMs": 1771907448766,
+        "lastStatus": "error",
+        "lastDurationMs": 120027,
+        "lastError": "Error: cron: job execution timed out",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "79cb99de-9c63-448b-aa3c-8b04b3d2c3f5",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1475334350768832726",
+      "name": "sports-paper-trading-report",
+      "enabled": true,
+      "createdAtMs": 1771825470874,
+      "updatedAtMs": 1771941730103,
+      "schedule": {
+        "expr": "0 9 * * *",
+        "kind": "cron",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Generate and post the daily paper trading report for Kalshi Sports Trader.\n\nExecute: cd /Users/dron/.openclaw/workspace/dron-command-center && python3 sports_paper_trading.py report\n\nThen post the full report to #kalshi-sports Discord channel.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "channel": "discord",
+        "mode": "announce",
+        "to": "1475334350768832726"
+      },
+      "state": {
+        "nextRunAtMs": 1772028000000,
+        "lastRunAtMs": 1771941670066,
+        "lastStatus": "error",
+        "lastDurationMs": 60037,
+        "consecutiveErrors": 2,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "a9167f91-cf63-43ed-b487-52fb12589351",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "🏛️ Kalshi Politics Trader",
+      "enabled": false,
+      "createdAtMs": 1771865356694,
+      "updatedAtMs": 1771962187215,
+      "schedule": {
+        "everyMs": 3600000,
+        "kind": "every",
+        "anchorMs": 1771865356694
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Kalshi Politics Trader:\ncd /Users/dron/.openclaw/workspace && python3 kalshi_politics_trader.py --live\n\nReport ALL findings:\n- Political markets scanned (Presidential, Congress, Approval, etc.)\n- Opportunities found with edge %\n- Trades executed\n- Polling/market divergences detected\n\nIf no opportunities: Report \"Scan complete - no political edges found\"",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475534678973743266"
+      },
+      "state": {
+        "lastRunAtMs": 1771958956733,
+        "lastStatus": "error",
+        "lastDurationMs": 120034,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "24f2c6fd-8c4d-4da1-ac95-2d40f1e58367",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "📈 Alpaca Momentum Trader",
+      "enabled": false,
+      "createdAtMs": 1771893756687,
+      "updatedAtMs": 1771956359505,
+      "schedule": {
+        "expr": "*/15 9-15 * * 1-5",
+        "kind": "cron",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🤖 ALPACA TRADER STATUS\n\npython3 -c \"import json; d=json.load(open('/tmp/alpaca_daemon_state.json')); print(d['output']) if d.get('has_trades') or d.get('has_positions') or d.get('has_opportunities') else print('No activity')\"\n\nExecute this and announce results to #alpaca-trader if there's trading activity."
+      },
+      "state": {
+        "lastRunAtMs": 1771956001638,
+        "lastStatus": "error",
+        "lastDurationMs": 30003,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "0d728c75-30a9-4bd8-94b8-53c04e280288",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "💱 OANDA Forex Trader",
+      "enabled": false,
+      "createdAtMs": 1771894868041,
+      "updatedAtMs": 1771962152415,
+      "schedule": {
+        "everyMs": 900000,
+        "kind": "every",
+        "anchorMs": 1771894868041
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run OANDA Forex Mean Reversion Trader:\ncd /Users/dron/.openclaw/workspace && python3 oanda_forex_trader.py --live\n\nReport ALL activity:\n- Account balance, NAV, margin available\n- Forex pairs scanned (EUR/USD, GBP/USD, USD/JPY)\n- Z-scores and distance from SMA\n- Mean reversion opportunities\n- Trades executed (buy/sell with units)\n- Open positions with P&L\n- Win rate and total P&L\n\nIf no opportunities: Report \"No mean reversion signals - all pairs near SMA\"",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475658160550187109"
+      },
+      "state": {
+        "lastRunAtMs": 1771961468081,
+        "lastStatus": "ok",
+        "lastDurationMs": 19293,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "21972c7b-a57a-4a56-8a8e-f1a68a8b2fab",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "₿ Coinbase Grid Trader",
+      "enabled": false,
+      "createdAtMs": 1771896890696,
+      "updatedAtMs": 1771899127254,
+      "schedule": {
+        "everyMs": 300000,
+        "kind": "every",
+        "anchorMs": 1771897894324
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Coinbase Grid Trading Bot:\ncd /Users/dron/.openclaw/workspace && python3 coinbase_grid_trader.py --live\n\nReport ALL activity:\n- Account balances (BTC, ETH, USD)\n- Current prices for BTC-USD, ETH-USD\n- Grid levels set up\n- Buy orders placed (price, size)\n- Sell orders placed (price, size, profit %)\n- Any filled orders and P&L\n\nGrid Strategy:\n- Buy below current price, sell above\n- When buy fills, sell one level up\n- When sell fills, buy one level down\n- Profit from price oscillations\n\nNote: Switched from Binance (geo-locked) to Coinbase (US-friendly)\nStatus: 24/7 crypto trading active",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1475666847599956122",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771899094358,
+        "lastStatus": "ok",
+        "lastDurationMs": 32896,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a2a72206-11ad-49d3-9a41-4245767ae859",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #1 - Funding Arbitrage",
+      "enabled": false,
+      "createdAtMs": 1771903275451,
+      "updatedAtMs": 1771905273005,
+      "schedule": {
+        "everyMs": 1800000,
+        "kind": "every",
+        "anchorMs": 1771903275451
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #1: Funding Rate Arbitrage\n\nStrategy: Monitor BTC perpetual funding rates vs spot\nWhen perp trades at premium/discount >0.05%: Execute delta-neutral arbitrage\nExpected: 90% win rate, 0.01-0.1% profit per 8h funding cycle\n\nCheck Coinbase Pro vs spot markets for opportunities\nLog any signals found to tracking system\n\nLow frequency, high certainty trades.",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905153004,
+        "lastStatus": "error",
+        "lastDurationMs": 120001,
+        "lastError": "Error: cron: job execution timed out",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "8f2be09c-14f2-4ba5-8829-fdff523e9bfd",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #2 - Triangular Arbitrage",
+      "enabled": false,
+      "createdAtMs": 1771903275482,
+      "updatedAtMs": 1771905311324,
+      "schedule": {
+        "everyMs": 300000,
+        "kind": "every",
+        "anchorMs": 1771903275482
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #2: Triangular Arbitrage\n\nStrategy: Check BTC-USD, ETH-USD, BTC-ETH for price inconsistencies\nIf BTC/ETH ratio != (BTC/USD) / (ETH/USD): Execute loop trade\nExpected: 90%+ win rate, 0.1-0.5% per trade\n\nMonitor all three pairs simultaneously\nInstant profit when mispricing detected\n\nRequires fast execution (opportunities last seconds)",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905273005,
+        "lastStatus": "ok",
+        "lastDurationMs": 38319,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a3250a3b-2bf0-4fda-9ecb-6fdbb337d3cf",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #3 - Micro Scalping",
+      "enabled": false,
+      "createdAtMs": 1771903302257,
+      "updatedAtMs": 1771905370016,
+      "schedule": {
+        "everyMs": 60000,
+        "kind": "every",
+        "anchorMs": 1771903302257
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #3: Micro-Scalping\n\nStrategy: 1-minute timeframe momentum + pullback bounces\nEntry: 3-candle trend + pullback confirmation\nExit: 0.15% profit or 0.05% stop loss\nExpected: 88% win rate, 20-50 trades/day\n\nHigh frequency, tiny profits, tight stops\nRequires constant market monitoring\nBest during high volatility periods",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905311324,
+        "lastStatus": "ok",
+        "lastDurationMs": 58692,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "70a9887e-d771-4332-9b36-543f4cb1cd44",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #4 - Smart Grid v2",
+      "enabled": false,
+      "createdAtMs": 1771903302286,
+      "updatedAtMs": 1771905391861,
+      "schedule": {
+        "everyMs": 300000,
+        "kind": "every",
+        "anchorMs": 1771903302286
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #4: Smart Grid v2\n\nStrategy: Dynamic grid based on ATR + RSI confirmation\nBuy: Price near grid bottom + RSI < 40\nSell: Price near grid top + RSI > 60\nExpected: 83% win rate, 1-3% per round-trip\n\nTighter ranges than v1, multiple confirmation signals\nAdaptive take-profit based on volatility",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905370016,
+        "lastStatus": "ok",
+        "lastDurationMs": 21845,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "add7890e-0433-4c1c-bc49-b7a857fe8451",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #5 - Statistical Pairs",
+      "enabled": false,
+      "createdAtMs": 1771903302310,
+      "updatedAtMs": 1771905511863,
+      "schedule": {
+        "everyMs": 900000,
+        "kind": "every",
+        "anchorMs": 1771903302310
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #5: Statistical Pairs Trading\n\nStrategy: ETH/BTC ratio mean reversion\nEntry: Z-score >= 2.5 (deviation from historical mean)\nExit: When ratio returns to mean (Z-score ~0)\nExpected: 80% win rate, 2-5% per trade\n\nLong underperformer, short outperformer\nHedged position, market-neutral risk\nRequires correlation monitoring",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905391861,
+        "lastStatus": "error",
+        "lastDurationMs": 120002,
+        "consecutiveErrors": 2,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "19d5bc34-7942-4407-8412-cd3046b4c6ac",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "⚡ ELITE Strategy #6 - Trend Catcher",
+      "enabled": false,
+      "createdAtMs": 1771903302330,
+      "updatedAtMs": 1771905552439,
+      "schedule": {
+        "everyMs": 600000,
+        "kind": "every",
+        "anchorMs": 1771903302330
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run ELITE Strategy #6: Trend-Catcher Elite\n\nStrategy: EMA alignment (20 > 50 > 200) + pullback entries\nBullish: Price > EMA20 > EMA50 > EMA200\nEntry: Pullback to EMA20 in established trend\nExit: RSI divergence or trailing stop\nExpected: 78% win rate, 5-10% per trend\n\nCaptures strong directional moves\nSmart exits prevent giving back profits",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "bestEffort": true,
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1475666847599956122"
+      },
+      "state": {
+        "lastRunAtMs": 1771905511863,
+        "lastStatus": "ok",
+        "lastDurationMs": 40576,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "bbd3b11c-6880-4468-94eb-0585120cca85",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1475666847599956122",
+      "name": "₿ Coinbase Grid Bot v5 - Live",
+      "enabled": false,
+      "createdAtMs": 1771905457992,
+      "updatedAtMs": 1771962152393,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 300000,
+        "anchorMs": 1771905457992
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Coinbase Grid Trading Bot v5:\n\ncd /Users/dron/.openclaw/workspace && python3 coinbase_grid_bot_v5_live.py\n\nReport:\n- Account balances (USD, BTC, ETH)\n- Current BTC and ETH prices\n- Grid levels calculated\n- Buy/sell zones identified\n- Any grid opportunities found\n\nThis is the WORKING version using official Coinbase SDK.",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1475666847599956122",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1771961858031,
+        "lastStatus": "ok",
+        "lastDurationMs": 23035,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8555f3a0-75fc-498f-965e-5b1fa59f0f00",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "LinkedIn Profile Lab - Claude Monitor",
+      "enabled": false,
+      "createdAtMs": 1771982202978,
+      "updatedAtMs": 1771985164242,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 120000,
+        "anchorMs": 1771982202978
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "message": "Check #linkedin-profile-lab Discord channel for new messages.\n\nIf a user has posted:\n- LinkedIn URL: Analyze their profile, suggest headline/about improvements, give 3-5 specific actionable tips\n- Profile section text: Rewrite it for AI-era positioning (stronger, more results-oriented)\n- Questions: Answer with LinkedIn best practices\n\nReply in the same channel with helpful, specific advice. Use a professional but encouraging tone.\nIf no new messages: reply HEARTBEAT_OK",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1476024754132488293"
+      },
+      "state": {
+        "lastRunAtMs": 1771985083019,
+        "lastStatus": "ok",
+        "lastDurationMs": 14320,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2d9cd64f-1b79-42e0-946c-ebab3d79f4b2",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "Resume AI Workshop - Claude Monitor",
+      "enabled": false,
+      "createdAtMs": 1771982203012,
+      "updatedAtMs": 1771985149444,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 120000,
+        "anchorMs": 1771982203012
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "message": "Check #resume-ai-workshop Discord channel for new messages.\n\nIf a user has posted:\n- Resume text: Rewrite for ATS optimization, action verbs, quantified results\n- Job description: Extract keywords, suggest resume tailoring strategy  \n- Cover letter request: Draft tailored cover letter\n- Interview prep: Provide common questions + STAR method answers\n\nReply in the same channel with rewritten content or specific guidance.\nIf no new messages: reply HEARTBEAT_OK",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1476024755466272958"
+      },
+      "state": {
+        "lastRunAtMs": 1771985097443,
+        "lastStatus": "ok",
+        "lastDurationMs": 17712,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7944733b-07fc-46ee-b842-387551387872",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "Content Automation Hub - Claude Monitor",
+      "enabled": false,
+      "createdAtMs": 1771982203040,
+      "updatedAtMs": 1771985149468,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 120000,
+        "anchorMs": 1771982203040
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "message": "Check #content-automation-hub Discord channel for new messages.\n\nIf a user has posted:\n- Topic/niche: Suggest 10 LinkedIn post ideas\n- Draft post: Optimize for engagement (hook, formatting, CTA)\n- Voice samples: Create content guidelines document\n- Automation questions: Explain OpenClaw content workflows\n\nReply in the same channel with actionable content strategy.\nIf no new messages: reply HEARTBEAT_OK",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1476024756456263690"
+      },
+      "state": {
+        "lastRunAtMs": 1771985115155,
+        "lastStatus": "ok",
+        "lastDurationMs": 16066,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "52c6fc91-1e61-48aa-8ab8-c4117e331c93",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "AI Career Pivot - Claude Monitor",
+      "enabled": false,
+      "createdAtMs": 1771982203065,
+      "updatedAtMs": 1771985149496,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 120000,
+        "anchorMs": 1771982203065
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "message": "Check #ai-career-pivot Discord channel for new messages.\n\nIf a user has posted:\n- Current role/skills: Map 3-5 AI-era transition paths\n- Side hustle ideas: Suggest automatable income streams using OpenClaw\n- AI Operator questions: Explain the role and required skills\n- Market concerns: Provide perspective on AI job disruption\n\nReply in the same channel with strategic career guidance.\nIf no new messages: reply HEARTBEAT_OK",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1476024757957820489"
+      },
+      "state": {
+        "lastRunAtMs": 1771985131221,
+        "lastStatus": "ok",
+        "lastDurationMs": 13135,
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}

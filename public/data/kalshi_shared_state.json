@@ -1,0 +1,95 @@
+{
+  "date": "2026-02-24",
+  "daily_limit_cents": 2400,
+  "total_spent_cents": 812,
+  "bots": {
+    "price_farmer": {
+      "daily_budget_cents": 900,
+      "daily_spent_cents": 812,
+      "trades_today": 8,
+      "last_trade": "2026-02-24T06:55:57.280821Z",
+      "last_trade_ticker": "KXXRP15M-26FEB240200-00"
+    },
+    "weather_trader": {
+      "daily_budget_cents": 900,
+      "daily_spent_cents": 0,
+      "trades_today": 0,
+      "last_trade": null,
+      "last_trade_ticker": null
+    },
+    "sports_trader": {
+      "daily_budget_cents": 600,
+      "daily_spent_cents": 0,
+      "trades_today": 0,
+      "last_trade": null,
+      "last_trade_ticker": null
+    }
+  },
+  "trade_log": [
+    {
+      "ts": "2026-02-24T05:25:57.755321Z",
+      "bot": "price_farmer",
+      "ticker": "KXXRP15M-26FEB240030-30",
+      "side": "no",
+      "cost_c": 98,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T05:41:57.231192Z",
+      "bot": "price_farmer",
+      "ticker": "KXETH15M-26FEB240045-45",
+      "side": "yes",
+      "cost_c": 88,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T05:43:57.164784Z",
+      "bot": "price_farmer",
+      "ticker": "KXSOL15M-26FEB240045-45",
+      "side": "no",
+      "cost_c": 90,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T05:55:58.342690Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240100-00",
+      "side": "yes",
+      "cost_c": 90,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T06:11:57.697874Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240115-15",
+      "side": "yes",
+      "cost_c": 83,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T06:25:57.451320Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240130-30",
+      "side": "yes",
+      "cost_c": 97,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T06:41:58.236177Z",
+      "bot": "price_farmer",
+      "ticker": "KXBTC15M-26FEB240145-45",
+      "side": "yes",
+      "cost_c": 168,
+      "order_id": "?"
+    },
+    {
+      "ts": "2026-02-24T06:55:57.280821Z",
+      "bot": "price_farmer",
+      "ticker": "KXXRP15M-26FEB240200-00",
+      "side": "no",
+      "cost_c": 98,
+      "order_id": "?"
+    }
+  ],
+  "last_updated": "2026-02-24T06:55:57.280859Z"
+}
