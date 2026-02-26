@@ -2,99 +2,197 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { CheckSquare, Zap, ThumbsUp, Calendar, TrendingUp, Activity, Rocket, BarChart2, Twitter, DollarSign, Users, CloudSun } from 'lucide-react';
-import { PageHeader } from './components/PageHeader';
-import { ActivityFeedCompact } from './components/ActivityFeed';
+import { Twitter, Linkedin, TrendingUp, Users, DollarSign, Activity, Calendar, ArrowRight, RefreshCw, AlertCircle, UploadCloud } from 'lucide-react';
 
-interface DashboardStats {
+interface DashData {
   posts: number;
-  trades: number;
-  jobs: number;
-  deployments: number;
-  activeJobs: number;
+  xLikes: number;
+  xReplies: number;
+  xBudget: number;
+  kalshiTrades: number;
+  kalshiSpent: number;
+  kalshiSpentPct: number;
+  polymarketPositions: number;
+  polymarketPnl: number;
+  totalJobs: number;
   errorJobs: number;
+  activeBots: number;
+  lastUpdated: string;
 }
 
-const quickLinks = [
-  { href: '/analytics', icon: BarChart2, label: 'Analytics', desc: 'Trading & social metrics' },
-  { href: '/deployments', icon: Rocket, label: 'Deploys', desc: 'Build history' },
-  { href: '/posts', icon: Twitter, label: 'X Posts', desc: 'Content archive' },
-  { href: '/calendar', icon: Calendar, label: 'Schedule', desc: 'Cron jobs' },
-  { href: '/memory', icon: Zap, label: 'Memory', desc: 'AI brain' },
-  { href: '/team', icon: Users, label: 'Team', desc: 'Bot status' },
-  { href: '/weather', icon: CloudSun, label: 'Weather', desc: 'NOAA data' },
-  { href: '/live-feed', icon: Activity, label: 'Live Feed', desc: 'Terminal' },
-];
-
 export default function DashboardPage() {
-  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [data, setData] = useState<DashData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [age, setAge] = useState('');
+
+  const load = async () => {
+    setLoading(true);
+    try {
+      const r = await fetch('/api/dashboard');
+      const d = await r.json();
+      setData(d);
+    } catch {}
+    setLoading(false);
+  };
 
   useEffect(() => {
-    fetch('/api/dashboard')
-      .then(r => r.json())
-      .then(data => {
-        setStats(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    load();
+    const t = setInterval(load, 60000);
+    return () => clearInterval(t);
   }, []);
 
-  const cards = stats ? [
-    { label: 'X Posts Today', value: stats.posts, icon: Twitter, color: 'text-sky-400', href: '/posts' },
-    { label: 'Kalshi Trades', value: stats.trades, icon: DollarSign, color: 'text-green-400', href: '/analytics' },
-    { label: 'Active Jobs', value: stats.activeJobs, icon: Activity, color: 'text-purple-400', href: '/calendar' },
-    { label: 'Error Jobs', value: stats.errorJobs, icon: TrendingUp, color: stats.errorJobs > 0 ? 'text-red-400' : 'text-green-400', href: '/calendar' },
-    { label: 'Total Jobs', value: stats.jobs, icon: Calendar, color: 'text-blue-400', href: '/calendar' },
-    { label: 'Deployments', value: stats.deployments, icon: Rocket, color: 'text-cyan-400', href: '/deployments' },
-  ] : [];
+  useEffect(() => {
+    if (!data?.lastUpdated) return;
+    const update = () => {
+      const diff = Math.floor((Date.now() - new Date(data.lastUpdated).getTime()) / 60000);
+      setAge(diff <= 0 ? 'just now' : `${diff}m ago`);
+    };
+    update();
+    const t = setInterval(update, 30000);
+    return () => clearInterval(t);
+  }, [data?.lastUpdated]);
+
+  const sections = [
+    {
+      href: '/x',
+      label: 'X',
+      icon: Twitter,
+      iconColor: 'text-sky-400',
+      borderColor: 'border-sky-500/20 hover:border-sky-500/50',
+      stats: [
+        { label: 'Posts today', value: data?.posts ?? '—' },
+        { label: 'Likes', value: data?.xLikes ?? '—' },
+        { label: 'Replies', value: data?.xReplies ?? '—' },
+        { label: 'Budget', value: data ? `$${data.xBudget.toFixed(2)}` : '—' },
+      ],
+    },
+    {
+      href: '/polymarket',
+      label: 'Polymarket',
+      icon: TrendingUp,
+      iconColor: 'text-green-400',
+      borderColor: 'border-green-500/20 hover:border-green-500/50',
+      stats: [
+        { label: 'Positions', value: data?.polymarketPositions ?? '—' },
+        { label: 'Daily PnL', value: data ? `$${data.polymarketPnl.toFixed(2)}` : '—' },
+        { label: 'Kalshi trades', value: data?.kalshiTrades ?? '—' },
+        { label: 'Kalshi spent', value: data ? `$${data.kalshiSpent.toFixed(2)}` : '—' },
+      ],
+    },
+    {
+      href: '/team',
+      label: 'Team',
+      icon: Users,
+      iconColor: 'text-purple-400',
+      borderColor: 'border-purple-500/20 hover:border-purple-500/50',
+      stats: [
+        { label: 'Active bots', value: data?.activeBots ?? '—' },
+        { label: 'Scheduled jobs', value: data?.totalJobs ?? '—' },
+        { label: 'Error jobs', value: data?.errorJobs ?? '—', warn: (data?.errorJobs ?? 0) > 0 },
+        { label: 'System', value: data?.errorJobs === 0 ? 'Healthy' : 'Issues', warn: (data?.errorJobs ?? 0) > 0 },
+      ],
+    },
+    {
+      href: '/calendar',
+      label: 'Schedule',
+      icon: Calendar,
+      iconColor: 'text-orange-400',
+      borderColor: 'border-orange-500/20 hover:border-orange-500/50',
+      stats: [
+        { label: 'Total crons', value: data?.totalJobs ?? '—' },
+        { label: 'Errors', value: data?.errorJobs ?? '—', warn: (data?.errorJobs ?? 0) > 0 },
+        { label: 'Status', value: data?.errorJobs === 0 ? '✓ All running' : '⚠ Check needed', warn: (data?.errorJobs ?? 0) > 0 },
+        { label: '', value: '' },
+      ],
+    },
+  ];
 
   return (
-    <div className="p-6 space-y-6">
-      <PageHeader 
-        title="Dashboard"
-        subtitle="Dron Command Center — AI-first operations"
-      />
-
-      {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 lg:grid-cols-6">
-        {loading ? (
-          Array(6).fill(0).map((_, i) => (
-            <div key={i} className="bg-[#111] border border-[#222] rounded-lg p-4 animate-pulse">
-              <div className="h-8 bg-[#222] rounded mb-2"></div>
-              <div className="h-4 bg-[#222] rounded w-20"></div>
-            </div>
-          ))
-        ) : (
-          cards.map((card) => (
-            <Link key={card.label} href={card.href}
-              className="bg-[#111] border border-[#222] rounded-lg p-4 hover:border-[#333] transition-colors"
-            >
-              <div className={`text-2xl font-bold ${card.color}`}>{card.value}</div>
-              <div className="text-xs text-[#555] mt-1">{card.label}</div>
-            </Link>
-          ))
-        )}
-      </div>
-
-      {/* Quick Links */}
-      <div>
-        <h2 className="text-sm font-semibold text-[#555] uppercase tracking-wider mb-3">Quick Access</h2>
-        <div className="grid grid-cols-4 gap-3">
-          {quickLinks.map((link) => (
-            <Link key={link.href} href={link.href}
-              className="bg-[#111] border border-[#222] rounded-lg p-4 hover:border-purple-500/50 hover:bg-[#141414] transition-all group"
-            >
-              <link.icon size={20} className="text-[#555] group-hover:text-purple-400 transition-colors mb-2" />
-              <div className="text-sm font-medium text-white">{link.label}</div>
-              <div className="text-xs text-[#555]">{link.desc}</div>
-            </Link>
-          ))}
+    <div className="p-6 max-w-6xl mx-auto space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-white">Dashboard</h1>
+          <p className="text-sm text-[#555] mt-0.5">Mission Control — all systems at a glance</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <a
+            href="http://localhost:3001/sync"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-xs text-[#555] hover:text-green-400 border border-[#222] hover:border-green-500/40 px-3 py-1.5 rounded-lg transition-all"
+            title="Runs local sync-server.js — syncs data files & pushes to GitHub. Vercel rebuilds in ~60s."
+          >
+            <UploadCloud size={11} />
+            Sync to Vercel
+          </a>
+          <button
+            onClick={load}
+            className="flex items-center gap-2 text-xs text-[#555] hover:text-white border border-[#222] hover:border-[#444] px-3 py-1.5 rounded-lg transition-all"
+          >
+            <RefreshCw size={11} className={loading ? 'animate-spin' : ''} />
+            {age ? `Cached ${age}` : 'Refresh'}
+          </button>
         </div>
       </div>
 
-      {/* Activity Feed */}
-      <ActivityFeedCompact />
+      {/* Error banner */}
+      {(data?.errorJobs ?? 0) > 0 && (
+        <div className="flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 rounded-lg px-4 py-2.5 text-sm text-yellow-400">
+          <AlertCircle size={14} />
+          {data?.errorJobs} cron job{data?.errorJobs !== 1 ? 's' : ''} with errors — check Schedule
+        </div>
+      )}
+
+      {/* Section cards */}
+      <div className="grid grid-cols-2 gap-4">
+        {sections.map((s) => (
+          <Link
+            key={s.href}
+            href={s.href}
+            className={`bg-[#111] border ${s.borderColor} rounded-xl p-5 transition-all group`}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
+                  <s.icon size={16} className={s.iconColor} />
+                </div>
+                <span className="font-semibold text-white">{s.label}</span>
+              </div>
+              <ArrowRight size={14} className="text-[#444] group-hover:text-white transition-colors" />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {s.stats.filter(st => st.label).map((st) => (
+                <div key={st.label}>
+                  <div className={`text-lg font-bold ${st.warn ? 'text-yellow-400' : 'text-white'}`}>
+                    {loading ? <span className="text-[#333]">—</span> : st.value}
+                  </div>
+                  <div className="text-xs text-[#555]">{st.label}</div>
+                </div>
+              ))}
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Bottom row */}
+      <div className="grid grid-cols-3 gap-4">
+        <Link href="/x" className="bg-[#111] border border-[#1a1a1a] hover:border-sky-500/30 rounded-xl p-4 transition-all group">
+          <Twitter size={18} className="text-sky-400 mb-3" />
+          <div className="text-sm font-semibold text-white">X Posts</div>
+          <div className="text-xs text-[#555] mt-0.5">Post archive & engagement</div>
+        </Link>
+        <Link href="/linkedin" className="bg-[#111] border border-[#1a1a1a] hover:border-blue-500/30 rounded-xl p-4 transition-all group">
+          <Linkedin size={18} className="text-blue-500 mb-3" />
+          <div className="text-sm font-semibold text-white">LinkedIn Suite</div>
+          <div className="text-xs text-[#555] mt-0.5">Profile lab, resume, content</div>
+        </Link>
+        <Link href="/value-engineering" className="bg-[#111] border border-[#1a1a1a] hover:border-purple-500/30 rounded-xl p-4 transition-all group">
+          <DollarSign size={18} className="text-purple-400 mb-3" />
+          <div className="text-sm font-semibold text-white">Value Engineering</div>
+          <div className="text-xs text-[#555] mt-0.5">Projects & proposals</div>
+        </Link>
+      </div>
     </div>
   );
 }
