@@ -1,25 +1,22 @@
 {
-  "last_run": "2026-02-24T20:30:00-05:00",
+  "last_run": "2026-02-25T02:30:00-05:00",
   "engagement": {
-    "likes": 2,
+    "likes": 9,
     "replies": 0,
     "processed": 30,
     "errors": 0
   },
   "daily_stats": {
-    "date": "2026-02-24",
-    "total_likes": 9,
-    "total_replies": 4,
-    "total_spent": 0.112
+    "date": "2026-02-25",
+    "total_likes": 14,
+    "total_replies": 0,
+    "total_spent": 0.016
   },
   "topics_engaged": [
-    "AI for sports",
-    "machine learning predictions",
-    "sports betting AI",
-    "sports betting edge",
-    "NBA picks today",
-    "sports betting analytics",
-    "building in public",
-    "building with AI"
+    "indie hacker",
+    "bootstrapped startup",
+    "shipped today",
+    "parlay strategy",
+    "sports betting edge"
   ]
 }
