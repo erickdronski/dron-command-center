@@ -12,9 +12,11 @@ const path = require('path');
 const PORT = 3001;
 const ROOT = path.join(__dirname, '..');
 
-function run(cmd) {
+const GH_TOKEN = process.env.GITHUB_TOKEN || '';
+
+function run(cmd, extraEnv = {}) {
   return new Promise((resolve, reject) => {
-    exec(cmd, { cwd: ROOT }, (err, stdout, stderr) => {
+    exec(cmd, { cwd: ROOT, env: { ...process.env, GITHUB_TOKEN: GH_TOKEN, ...extraEnv } }, (err, stdout, stderr) => {
       if (err) reject({ err, stdout, stderr });
       else resolve(stdout.trim());
     });
@@ -111,5 +113,10 @@ function html(title, body, spinner) {
 
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`\n🔄 Sync server running at http://localhost:${PORT}/sync`);
-  console.log('   Keep this running. Dashboard "Sync Data" button will trigger it.\n');
+  if (!GH_TOKEN) {
+    console.log('   ⚠️  GITHUB_TOKEN not set — set it before syncing:');
+    console.log('   GITHUB_TOKEN=ghp_... node scripts/sync-server.js\n');
+  } else {
+    console.log('   ✓ GITHUB_TOKEN set. Dashboard "Sync Data" button will trigger it.\n');
+  }
 });
