@@ -64,9 +64,9 @@ const server = http.createServer(async (req, res) => {
       log(e.stdout || 'Nothing to commit');
     }
 
-    log('▶ git push');
-    const pushOut = await run('git push');
-    log(pushOut || 'Pushed.');
+    log('▶ api-push.py (GitHub REST API)');
+    const pushOut = await run('python3 scripts/api-push.py');
+    log(pushOut || 'Pushed via API.');
 
     const body = `
       <p class="ok">✓ Synced & pushed</p>
