@@ -2,22 +2,22 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Twitter, Linkedin, TrendingUp, Users, DollarSign, Activity, Calendar, ArrowRight, RefreshCw, AlertCircle, UploadCloud } from 'lucide-react';
+import { Twitter, TrendingUp, Users, DollarSign, Calendar, ArrowRight, RefreshCw, AlertCircle, UploadCloud } from 'lucide-react';
 
 interface DashData {
   posts: number;
-  xLikes: number;
-  xReplies: number;
-  xBudget: number;
-  kalshiTrades: number;
+  trades: number;
   kalshiSpent: number;
-  kalshiSpentPct: number;
-  polymarketPositions: number;
-  polymarketPnl: number;
-  totalJobs: number;
+  jobs: number;
+  deployments: number;
+  activeJobs: number;
   errorJobs: number;
-  activeBots: number;
-  lastUpdated: string;
+  xEngagement: {
+    likes: number;
+    replies: number;
+    spent: number;
+  };
+  lastUpdated?: string;
 }
 
 export default function DashboardPage() {
@@ -44,7 +44,7 @@ export default function DashboardPage() {
   useEffect(() => {
     if (!data?.lastUpdated) return;
     const update = () => {
-      const diff = Math.floor((Date.now() - new Date(data.lastUpdated).getTime()) / 60000);
+      const diff = Math.floor((Date.now() - new Date(data.lastUpdated!).getTime()) / 60000);
       setAge(diff <= 0 ? 'just now' : `${diff}m ago`);
     };
     update();
@@ -54,29 +54,29 @@ export default function DashboardPage() {
 
   const sections = [
     {
-      href: '/x',
-      label: 'X',
+      href: '/posts',
+      label: 'X / Twitter',
       icon: Twitter,
       iconColor: 'text-sky-400',
       borderColor: 'border-sky-500/20 hover:border-sky-500/50',
       stats: [
         { label: 'Posts today', value: data?.posts ?? '—' },
-        { label: 'Likes', value: data?.xLikes ?? '—' },
-        { label: 'Replies', value: data?.xReplies ?? '—' },
-        { label: 'Budget', value: data ? `$${data.xBudget.toFixed(2)}` : '—' },
+        { label: 'Likes', value: data?.xEngagement?.likes ?? '—' },
+        { label: 'Replies', value: data?.xEngagement?.replies ?? '—' },
+        { label: 'Budget spent', value: data ? `$${(data.xEngagement?.spent ?? 0).toFixed(3)}` : '—' },
       ],
     },
     {
-      href: '/polymarket',
-      label: 'Polymarket',
+      href: '/analytics',
+      label: 'Trading',
       icon: TrendingUp,
       iconColor: 'text-green-400',
       borderColor: 'border-green-500/20 hover:border-green-500/50',
       stats: [
-        { label: 'Positions', value: data?.polymarketPositions ?? '—' },
-        { label: 'Daily PnL', value: data ? `$${data.polymarketPnl.toFixed(2)}` : '—' },
-        { label: 'Kalshi trades', value: data?.kalshiTrades ?? '—' },
+        { label: 'Kalshi trades', value: data?.trades ?? '—' },
         { label: 'Kalshi spent', value: data ? `$${data.kalshiSpent.toFixed(2)}` : '—' },
+        { label: 'Deployments', value: data?.deployments ?? '—' },
+        { label: '', value: '' },
       ],
     },
     {
@@ -86,10 +86,10 @@ export default function DashboardPage() {
       iconColor: 'text-purple-400',
       borderColor: 'border-purple-500/20 hover:border-purple-500/50',
       stats: [
-        { label: 'Active bots', value: data?.activeBots ?? '—' },
-        { label: 'Scheduled jobs', value: data?.totalJobs ?? '—' },
+        { label: 'Active bots', value: data?.activeJobs ?? '—' },
+        { label: 'Scheduled jobs', value: data?.jobs ?? '—' },
         { label: 'Error jobs', value: data?.errorJobs ?? '—', warn: (data?.errorJobs ?? 0) > 0 },
-        { label: 'System', value: data?.errorJobs === 0 ? 'Healthy' : 'Issues', warn: (data?.errorJobs ?? 0) > 0 },
+        { label: 'System', value: (data?.errorJobs ?? 0) === 0 ? 'Healthy' : 'Issues', warn: (data?.errorJobs ?? 0) > 0 },
       ],
     },
     {
@@ -99,9 +99,9 @@ export default function DashboardPage() {
       iconColor: 'text-orange-400',
       borderColor: 'border-orange-500/20 hover:border-orange-500/50',
       stats: [
-        { label: 'Total crons', value: data?.totalJobs ?? '—' },
+        { label: 'Total crons', value: data?.jobs ?? '—' },
         { label: 'Errors', value: data?.errorJobs ?? '—', warn: (data?.errorJobs ?? 0) > 0 },
-        { label: 'Status', value: data?.errorJobs === 0 ? '✓ All running' : '⚠ Check needed', warn: (data?.errorJobs ?? 0) > 0 },
+        { label: 'Status', value: (data?.errorJobs ?? 0) === 0 ? '✓ All running' : '⚠ Check needed', warn: (data?.errorJobs ?? 0) > 0 },
         { label: '', value: '' },
       ],
     },
@@ -164,7 +164,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-2 gap-3">
               {s.stats.filter(st => st.label).map((st) => (
                 <div key={st.label}>
-                  <div className={`text-lg font-bold ${st.warn ? 'text-yellow-400' : 'text-white'}`}>
+                  <div className={`text-lg font-bold ${(st as any).warn ? 'text-yellow-400' : 'text-white'}`}>
                     {loading ? <span className="text-[#333]">—</span> : st.value}
                   </div>
                   <div className="text-xs text-[#555]">{st.label}</div>
@@ -177,20 +177,20 @@ export default function DashboardPage() {
 
       {/* Bottom row */}
       <div className="grid grid-cols-3 gap-4">
-        <Link href="/x" className="bg-[#111] border border-[#1a1a1a] hover:border-sky-500/30 rounded-xl p-4 transition-all group">
+        <Link href="/posts" className="bg-[#111] border border-[#1a1a1a] hover:border-sky-500/30 rounded-xl p-4 transition-all group">
           <Twitter size={18} className="text-sky-400 mb-3" />
           <div className="text-sm font-semibold text-white">X Posts</div>
-          <div className="text-xs text-[#555] mt-0.5">Post archive & engagement</div>
+          <div className="text-xs text-[#555] mt-0.5">Post archive &amp; engagement</div>
         </Link>
-        <Link href="/linkedin" className="bg-[#111] border border-[#1a1a1a] hover:border-blue-500/30 rounded-xl p-4 transition-all group">
-          <Linkedin size={18} className="text-blue-500 mb-3" />
-          <div className="text-sm font-semibold text-white">LinkedIn Suite</div>
-          <div className="text-xs text-[#555] mt-0.5">Profile lab, resume, content</div>
+        <Link href="/analytics" className="bg-[#111] border border-[#1a1a1a] hover:border-green-500/30 rounded-xl p-4 transition-all group">
+          <TrendingUp size={18} className="text-green-400 mb-3" />
+          <div className="text-sm font-semibold text-white">Analytics</div>
+          <div className="text-xs text-[#555] mt-0.5">Kalshi &amp; trading data</div>
         </Link>
         <Link href="/value-engineering" className="bg-[#111] border border-[#1a1a1a] hover:border-purple-500/30 rounded-xl p-4 transition-all group">
           <DollarSign size={18} className="text-purple-400 mb-3" />
           <div className="text-sm font-semibold text-white">Value Engineering</div>
-          <div className="text-xs text-[#555] mt-0.5">Projects & proposals</div>
+          <div className="text-xs text-[#555] mt-0.5">Projects &amp; proposals</div>
         </Link>
       </div>
     </div>
