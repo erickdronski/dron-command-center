@@ -5,9 +5,9 @@
       "id": "d9b166a6-435a-4806-8493-048c8e0a2fde",
       "agentId": "main",
       "name": "DronskiErick-X-Content-Bot",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771228981441,
-      "updatedAtMs": 1771984894455,
+      "updatedAtMs": 1772037160168,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,15,18,21 * * *",
@@ -25,11 +25,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1771984800042,
-        "lastStatus": "ok",
-        "lastDurationMs": 94413,
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1772024400000
+        "lastRunAtMs": 1772024400042,
+        "lastStatus": "error",
+        "lastDurationMs": 180022,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -91,9 +91,9 @@
       "id": "d87ef6d3-0f27-4b1a-8d83-f31b829720c1",
       "agentId": "main",
       "name": "Cron Status Monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771356268571,
-      "updatedAtMs": 1771980154195,
+      "updatedAtMs": 1772037160118,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -114,11 +114,11 @@
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1771980145967,
-        "lastStatus": "ok",
-        "lastDurationMs": 8228,
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1771987345935
+        "lastRunAtMs": 1772030545971,
+        "lastStatus": "error",
+        "lastDurationMs": 30025,
+        "consecutiveErrors": 3,
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1771981392539,
+      "updatedAtMs": 1772148055765,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -138,7 +138,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions  \n- Tech and AI conversations\n- Building in public community\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 3 --max-likes 10 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
+        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions  \n- Tech and AI conversations\n- Building in public community\n\nNOTE: X API has blocked replies. LIKES ONLY mode.\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 0 --max-likes 30 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
         "timeoutSeconds": 180,
         "model": "xai/grok-4-fast"
       },
@@ -146,12 +146,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1771981212500,
-        "lastStatus": "error",
-        "lastDurationMs": 180039,
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1771988412453,
-        "lastError": "Error: cron: job execution timed out"
+        "lastRunAtMs": 1772146812487,
+        "lastStatus": "ok",
+        "lastDurationMs": 42196,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772154012453,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -160,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1771983040727,
+      "updatedAtMs": 1772148613040,
       "schedule": {
         "kind": "cron",
         "expr": "30 */2 * * *",
@@ -170,7 +172,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions\n- Tech and AI conversations\n- Building in public community\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 3 --max-likes 10 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
+        "message": "You are the DronskiErick X Engagement Bot for @DronskiErick (personal account).\n\nVoice: Business professional — engage authentically with:\n- Entrepreneurship and startup content\n- Sports analytics and betting discussions\n- Tech and AI conversations\n- Building in public community\n\nNOTE: X API has blocked replies. LIKES ONLY mode.\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --engage --max-replies 0 --max-likes 30 --budget 3.0\n\nUpdate state with engagement stats. Reply summary or HEARTBEAT_OK.",
         "timeoutSeconds": 180,
         "model": "xai/grok-4-fast"
       },
@@ -178,11 +180,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1771983000055,
+        "lastRunAtMs": 1772148600033,
         "lastStatus": "ok",
-        "lastDurationMs": 40672,
+        "lastDurationMs": 13007,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1771990200000
+        "nextRunAtMs": 1772155800000,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -220,9 +225,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:discord:channel:1473824036466458726",
       "name": "Weekly X Analytics Report",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771458001682,
-      "updatedAtMs": 1771857335844,
+      "updatedAtMs": 1772037160318,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * 1",
@@ -242,7 +247,6 @@
         "to": "1473824036466458726"
       },
       "state": {
-        "nextRunAtMs": 1772461800000,
         "lastRunAtMs": 1771857002707,
         "lastStatus": "error",
         "lastDurationMs": 10628,
@@ -322,9 +326,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:discord:channel:1473394836521619748",
       "name": "Crypto Market Detector",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771514083989,
-      "updatedAtMs": 1771985694729,
+      "updatedAtMs": 1772039724726,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -345,11 +349,10 @@
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1771985684062,
+        "lastRunAtMs": 1772039684024,
         "lastStatus": "ok",
-        "lastDurationMs": 10667,
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1771989283989
+        "lastDurationMs": 37109,
+        "consecutiveErrors": 0
       }
     },
     {
@@ -357,9 +360,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:discord:channel:1473386869390835861",
       "name": "🌅 Daily Org Briefing",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771527777414,
-      "updatedAtMs": 1771941945427,
+      "updatedAtMs": 1772037160265,
       "schedule": {
         "kind": "cron",
         "expr": "5 9 * * *",
@@ -380,11 +383,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772028300000,
-        "lastRunAtMs": 1771941908977,
-        "lastStatus": "ok",
-        "lastDurationMs": 36450,
-        "consecutiveErrors": 0
+        "lastRunAtMs": 1772028350555,
+        "lastStatus": "error",
+        "lastDurationMs": 60002,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -392,9 +395,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:discord:channel:1473386869390835861",
       "name": "🚨 Alert Monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771527777430,
-      "updatedAtMs": 1771983756028,
+      "updatedAtMs": 1771998175985,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -415,11 +418,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771987345918,
-        "lastRunAtMs": 1771983745953,
-        "lastStatus": "ok",
-        "lastDurationMs": 10075,
-        "consecutiveErrors": 0
+        "lastRunAtMs": 1771998145961,
+        "lastStatus": "error",
+        "lastDurationMs": 30024,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -429,7 +432,7 @@
       "name": "🧹 Session Cleanup",
       "enabled": true,
       "createdAtMs": 1771619175350,
-      "updatedAtMs": 1771878405466,
+      "updatedAtMs": 1772137606879,
       "schedule": {
         "kind": "every",
         "everyMs": 259200000,
@@ -447,11 +450,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772137575350,
-        "lastRunAtMs": 1771878375375,
+        "nextRunAtMs": 1772396775387,
+        "lastRunAtMs": 1772137575387,
         "lastStatus": "ok",
-        "lastDurationMs": 30091,
-        "consecutiveErrors": 0
+        "lastDurationMs": 31492,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -461,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1771938080303,
+      "updatedAtMs": 1772024604119,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -479,10 +485,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771938055582,
+        "nextRunAtMs": 1772197200000,
+        "lastRunAtMs": 1772024580064,
         "lastStatus": "ok",
-        "lastDurationMs": 24721,
+        "lastDurationMs": 24055,
         "consecutiveErrors": 0
       }
     },
@@ -493,7 +499,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1771986405695,
+      "updatedAtMs": 1772144819837,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -511,11 +517,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771993575402,
-        "lastRunAtMs": 1771986375420,
+        "nextRunAtMs": 1772152007160,
+        "lastRunAtMs": 1772144807160,
         "lastStatus": "ok",
-        "lastDurationMs": 30275,
-        "consecutiveErrors": 0
+        "lastDurationMs": 12677,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -557,9 +566,9 @@
       "agentId": "command-center",
       "sessionKey": "agent:command-center:discord:channel:1473386869390835861",
       "name": "💰 Budget Guard",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771621499528,
-      "updatedAtMs": 1771981529619,
+      "updatedAtMs": 1772037160217,
       "schedule": {
         "kind": "every",
         "everyMs": 14400000,
@@ -580,10 +589,9 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771995899528,
-        "lastRunAtMs": 1771981499582,
+        "lastRunAtMs": 1772024767495,
         "lastStatus": "error",
-        "lastDurationMs": 30037,
+        "lastDurationMs": 30005,
         "consecutiveErrors": 1,
         "lastError": "Error: cron: job execution timed out"
       }
@@ -626,9 +634,9 @@
       "agentId": "main",
       "sessionKey": "agent:weather-trader:discord:channel:1473535322271907840",
       "name": "🔄 Weather Bot Weekly Optimization",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771810271248,
-      "updatedAtMs": 1771862716611,
+      "updatedAtMs": 1772037160294,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
@@ -649,7 +657,6 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772460000000,
         "lastRunAtMs": 1771855202249,
         "lastStatus": "error",
         "lastDurationMs": 120005,
@@ -662,9 +669,9 @@
       "agentId": "general-chat",
       "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
       "name": "🎯 Precision Algorithms X Bot",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771815200566,
-      "updatedAtMs": 1771974226454,
+      "updatedAtMs": 1772037160194,
       "schedule": {
         "kind": "cron",
         "expr": "0 9,12,15,18 * * *",
@@ -685,11 +692,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772028000000,
-        "lastRunAtMs": 1771974180092,
-        "lastStatus": "ok",
-        "lastDurationMs": 46362,
-        "consecutiveErrors": 0
+        "lastRunAtMs": 1772028000044,
+        "lastStatus": "error",
+        "lastDurationMs": 120019,
+        "consecutiveErrors": 1,
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -767,7 +774,7 @@
       "name": "💰 5K MRR App Builder",
       "enabled": true,
       "createdAtMs": 1771821048720,
-      "updatedAtMs": 1771907568793,
+      "updatedAtMs": 1771993906453,
       "schedule": {
         "everyMs": 86400000,
         "kind": "every",
@@ -788,12 +795,11 @@
         "to": "channel:1475349043394773092"
       },
       "state": {
-        "nextRunAtMs": 1771993848720,
-        "lastRunAtMs": 1771907448766,
-        "lastStatus": "error",
-        "lastDurationMs": 120027,
-        "lastError": "Error: cron: job execution timed out",
-        "consecutiveErrors": 1
+        "nextRunAtMs": 1772166648720,
+        "lastRunAtMs": 1771993848756,
+        "lastStatus": "ok",
+        "lastDurationMs": 57697,
+        "consecutiveErrors": 0
       }
     },
     {
@@ -801,9 +807,9 @@
       "agentId": "command-center",
       "sessionKey": "agent:command-center:discord:channel:1475334350768832726",
       "name": "sports-paper-trading-report",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771825470874,
-      "updatedAtMs": 1771941730103,
+      "updatedAtMs": 1772037160242,
       "schedule": {
         "expr": "0 9 * * *",
         "kind": "cron",
@@ -823,12 +829,11 @@
         "to": "1475334350768832726"
       },
       "state": {
-        "nextRunAtMs": 1772028000000,
-        "lastRunAtMs": 1771941670066,
+        "lastRunAtMs": 1772028120063,
         "lastStatus": "error",
-        "lastDurationMs": 60037,
-        "consecutiveErrors": 2,
-        "lastError": "Error: cron: job execution timed out"
+        "lastDurationMs": 54436,
+        "consecutiveErrors": 3,
+        "lastError": "cron announce delivery failed"
       }
     },
     {
@@ -1331,6 +1336,299 @@
         "lastStatus": "ok",
         "lastDurationMs": 13135,
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b962961c-cba0-4bc8-acdb-d95bd69e1198",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "🫀 Orchestrator Heartbeat",
+      "enabled": false,
+      "createdAtMs": 1771987714413,
+      "updatedAtMs": 1772037160145,
+      "schedule": {
+        "everyMs": 600000,
+        "kind": "every",
+        "anchorMs": 1771987714413
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the orchestrator heartbeat agent:\n\ncd /Users/dron/.openclaw/workspace && python3 orchestrator_heartbeat.py\n\nThis checks:\n- Stale tasks (>2 hours unchanged)\n- Failed tasks (3+ errors)\n- Task registry health\n- Intel file timestamps\n\nReport any issues found. If everything healthy, reply HEARTBEAT_OK.",
+        "model": "anthropic/claude-sonnet-4-6",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1473399326322458838"
+      },
+      "state": {
+        "lastRunAtMs": 1772034898932,
+        "lastStatus": "error",
+        "lastDurationMs": 30225,
+        "consecutiveErrors": 6,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
+      "id": "06c2b103-bd98-4802-82bd-2f6622797f53",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "🌤️ Polymarket Weather Scanner",
+      "enabled": false,
+      "createdAtMs": 1771988630347,
+      "updatedAtMs": 1772036615590,
+      "schedule": {
+        "everyMs": 1800000,
+        "kind": "every",
+        "anchorMs": 1771988630347
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Polymarket weather trading bot:\n\ncd /Users/dron/.openclaw/workspace && python3 polymarket_weather_bot.py\n\nThis bot:\n1. Fetches NOAA forecasts for NYC, London, Chicago\n2. Compares to Polymarket temperature markets\n3. Identifies arbitrage opportunities (>15% edge)\n4. Logs findings to intel/DAILY-MARKETS.md\n\nReport any opportunities found with specific trade recommendations.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1476050926803353674"
+      },
+      "state": {
+        "lastRunAtMs": 1772035430389,
+        "lastStatus": "error",
+        "lastDurationMs": 31410,
+        "consecutiveErrors": 1,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
+      "id": "d67369f2-089e-419b-9ba4-be1466f32d33",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "👥 Polymarket Copy Trader",
+      "enabled": false,
+      "createdAtMs": 1771988630388,
+      "updatedAtMs": 1772037160340,
+      "schedule": {
+        "everyMs": 300000,
+        "kind": "every",
+        "anchorMs": 1771988630388
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Polymarket copy trading bot:\n\ncd /Users/dron/.openclaw/workspace && python3 polymarket_copy_trader.py\n\nThis bot:\n1. Scans 4 target wallets (Weather Wizard, AI Bot, Fast Loop Master, Crypto Whale)\n2. Detects new positions in real-time\n3. Filters by win rate, size, daily limits\n4. Generates copy orders with appropriate sizing\n\nWallets tracked:\n- 0x594edB9112f526Fa6A80b8F858A6379C8A2c1C11 (+$39k, 80% WR)\n- automatedAItradingbot (+$72k)\n- distinct-baguette (+$610k)\n- 0x8dxd (+$729k)\n\nReport new trades to copy with entry prices and sizes.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "channel": "discord",
+        "mode": "announce",
+        "to": "channel:1476050929508942010"
+      },
+      "state": {
+        "lastRunAtMs": 1772034830430,
+        "lastStatus": "error",
+        "lastDurationMs": 35907,
+        "consecutiveErrors": 1,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
+      "id": "f020bbe6-1d7f-4822-be40-a9e154d7d578",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1476050926803353674",
+      "name": "weather-trader-scan",
+      "enabled": false,
+      "createdAtMs": 1771990111044,
+      "updatedAtMs": 1771998143932,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1771990111044
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Execute this exact shell command and report the output:\n\ncd ~/.openclaw/skills/polymarket-weather-trader && export $(cat .env | xargs) && python3 weather_trader.py --live --smart-sizing --quiet\n\nIf there is no output or the output says 0 trades executed, reply with just: No NOAA trades this cycle.\nIf trades were executed, report exactly what was bought.\nIf there are errors, report them.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 90
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1476050926803353674"
+      },
+      "state": {
+        "lastRunAtMs": 1771997311095,
+        "lastStatus": "ok",
+        "lastDurationMs": 16104,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "f0978258-0381-4ae9-9afa-b369759288ef",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1476050929508942010",
+      "name": "copy-trader-monitor",
+      "enabled": false,
+      "createdAtMs": 1771994579416,
+      "updatedAtMs": 1772037160360,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 60000,
+        "anchorMs": 1771994579416
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check if copy_trader_worker.py is running. If not, start it with: cd /Users/dron/.openclaw/workspace/dron-command-center && export $(cat /Users/dron/.openclaw/workspace/polymarket-fastloop/.env | xargs) && python3 scripts/copy_trader_worker.py. Log status to the copy-trading Discord channel.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "1476050929508942010"
+      },
+      "state": {
+        "lastRunAtMs": 1772003194514,
+        "lastStatus": "error",
+        "lastDurationMs": 30021,
+        "consecutiveErrors": 7,
+        "lastError": "Error: cron: job execution timed out"
+      }
+    },
+    {
+      "id": "8243238b-780c-4012-85ad-7b03583f1f2a",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1476050926803353674",
+      "name": "lottery-trader-scan",
+      "enabled": false,
+      "createdAtMs": 1771996135592,
+      "updatedAtMs": 1771998143957,
+      "schedule": {
+        "everyMs": 1800000,
+        "kind": "every",
+        "anchorMs": 1771996135592
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Execute this exact shell command and report the output:\n\ncd ~/.openclaw/skills/polymarket-weather-trader && export $(cat .env | xargs) && python3 lottery_trader.py --live --quiet\n\nIf there is no output or the output says 0 trades executed, reply with just: No lottery trades this cycle.\nIf trades were executed, report exactly what was bought.\nIf there are errors, report them.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 90
+      },
+      "delivery": {
+        "channel": "discord",
+        "mode": "announce",
+        "to": "1476050926803353674"
+      },
+      "state": {
+        "lastRunAtMs": 1771998013298,
+        "lastStatus": "ok",
+        "lastDurationMs": 12526,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "3e4618a0-0f46-4cd9-a681-2912fcbd100e",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1473394836521619748",
+      "name": "Kalshi Price Farmer v2",
+      "enabled": false,
+      "createdAtMs": 1772039745297,
+      "updatedAtMs": 1772039963998,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 120000,
+        "anchorMs": 1772039888845
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run Kalshi Price Farmer v2 now: execute python3 /Users/dron/.openclaw/workspace/dron-command-center/scripts/kalshi_price_farmer_v2.py --live 2>&1 — if trades executed post a compact alert to #kalshi (channel 1473394836521619748). If no trades or no opportunities, stay silent (NO_REPLY)."
+      },
+      "state": {
+        "lastRunAtMs": 1772039865340,
+        "lastStatus": "ok",
+        "lastDurationMs": 28373,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "263eccf4-368b-4bb3-860b-59134866b316",
+      "agentId": "x-content",
+      "sessionKey": "agent:x-content:discord:channel:1473394891290841223",
+      "name": "DronskiErick-X-Content-Bot",
+      "enabled": true,
+      "createdAtMs": 1772147203311,
+      "updatedAtMs": 1772147225326,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,15,18,21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are the DronskiErick X Bot for @DronskiErick (personal account).\n\nVoice: Business professional content creator\n- Educational and insightful\n- Professional but approachable\n- Focus on entrepreneurship, tech, sports analytics, and building in public\n- No overly promotional content — value-first\n\nExecute: cd /Users/dron/.openclaw/workspace && python3 dronskierick_x_bot.py --post\n\nAfter posting, update agent state with post details.\nReply with post summary or HEARTBEAT_OK.",
+        "model": "xai/grok-4",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "channel:1473394891290841223",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1772157600000,
+        "lastRunAtMs": 1772147206443,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 18883,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "bbdf7ebd-5177-4e0b-b924-da24850c70a6",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1474125586346676244",
+      "name": "🔄 Command Center Data Sync",
+      "enabled": true,
+      "createdAtMs": 1772148803552,
+      "updatedAtMs": 1772148803552,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1772148803552
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 60,
+        "message": "Sync live data to command center dashboard and push to GitHub.\n\nRun:\ncd /Users/dron/.openclaw/workspace/dron-command-center\n./scripts/sync-data.sh\ngit add public/data/\ngit diff --cached --quiet || (git commit -m \"data-sync $(date '+%H:%M')\" && git push)\n\nReply HEARTBEAT_OK when done, or error if failed."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772150603552
       }
     }
   ]
