@@ -114,6 +114,13 @@ export default function ProjectsPage() {
       status: 'active',
       color: 'border-purple-500/30',
     },
+    {
+      href: '/value-engineering/projects/product-guide',
+      title: 'Ivanti Product Guide',
+      desc: '38 products across ESM, UEM & Security — searchable catalog with capabilities, discovery questions & licensing.',
+      status: 'active',
+      color: 'border-cyan-500/30',
+    },
   ];
 
   return (
