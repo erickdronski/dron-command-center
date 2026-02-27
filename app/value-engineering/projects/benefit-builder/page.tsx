@@ -143,6 +143,35 @@ function calculateBenefitValue(benefitId: string, m: CustomerMetrics): { value: 
         value: m.annualTickets * 0.25 * 0.70 * ahtCostPerTicket * (m.benefitRamp / 100),
         breakdown: `${fmt(m.annualTickets)} tickets × 25% password resets × 70% elimination × $${ahtCostPerTicket.toFixed(2)}/ticket × ${m.benefitRamp}% ramp`,
       };
+    case 'self-service-ticket-deflection':
+      return {
+        value: m.annualTickets * 0.40 * 0.35 * ahtCostPerTicket * (m.benefitRamp / 100),
+        breakdown: `${fmt(m.annualTickets)} tickets × 40% deflectable × 35% deflection rate × $${ahtCostPerTicket.toFixed(2)}/ticket × ${m.benefitRamp}% ramp`,
+      };
+    case 'reduced-escalation-rate':
+      return {
+        value: m.annualTickets * 0.30 * 0.25 * 35 * (m.benefitRamp / 100),
+        breakdown: `${fmt(m.annualTickets)} tickets × 30% escalation rate × 25% reduction × $35 L1/L2 cost differential × ${m.benefitRamp}% ramp`,
+      };
+    case 'improved-mttr':
+      return {
+        value: m.annualTickets * 4 * 0.30 * (m.fteSalary / 2080) * (m.benefitRamp / 100),
+        breakdown: `${fmt(m.annualTickets)} tickets × 4hr avg MTTR × 30% improvement × $${hourlyRate.toFixed(2)}/hr employee cost × ${m.benefitRamp}% ramp`,
+      };
+    case 'automated-change-management': {
+      const annualChanges = Math.round(m.annualTickets * 0.05);
+      const laborSaving = annualChanges * 3 * 0.45 * hourlyRate;
+      const incidentPrevention = annualChanges * 0.10 * 0.20 * 5000;
+      return {
+        value: (laborSaving + incidentPrevention) * (m.benefitRamp / 100),
+        breakdown: `${fmt(annualChanges)} changes: ${fmtCurrency(laborSaving)} labor (3hrs × 45% auto × $${hourlyRate.toFixed(2)}/hr) + ${fmtCurrency(incidentPrevention)} prevented incidents × ${m.benefitRamp}% ramp`,
+      };
+    }
+    case 'proactive-problem-management':
+      return {
+        value: m.annualTickets * 0.25 * 0.30 * ahtCostPerTicket * 8 * (m.benefitRamp / 100),
+        breakdown: `${fmt(m.annualTickets)} tickets × 25% recurring × 30% prevented × $${ahtCostPerTicket.toFixed(2)}/ticket × 8 avg recurrence × ${m.benefitRamp}% ramp`,
+      };
     default:
       return { value: 0, breakdown: 'Calculation not yet mapped' };
   }

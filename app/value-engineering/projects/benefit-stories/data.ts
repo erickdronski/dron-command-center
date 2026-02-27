@@ -1346,6 +1346,321 @@ export const benefits: BenefitStory[] = [
       },
     },
   },
+
+  // ═══════════════════════════════════════════
+  // ITSM BENEFIT 22: Self-Service Portal Ticket Deflection
+  // ═══════════════════════════════════════════
+  {
+    id: 'self-service-ticket-deflection',
+    benefitName: 'Self-Service Portal Ticket Deflection',
+    category: 'financial',
+    subcategory: 'Operational Efficiencies',
+    description: 'Neurons for ITSM enables a modern self-service portal with AI-powered search, guided workflows, and automated fulfillment. By empowering employees to resolve routine requests without contacting IT — password resets, software requests, FAQ lookups — ticket volume drops significantly. Each deflected ticket saves the full cost of agent handling.',
+    formula: 'Annual Tickets × % Deflectable Tickets × Deflection Rate × AHT Cost per Incident × Benefit Ramp',
+    formulaFactors: ['Annual Tickets', 'Deflectable ticket percentage (default: 40%)', 'Self-service deflection success rate (default: 35%)', 'AHT cost per incident', 'Benefit Ramp (default: 100%)'],
+    stories: {
+      'business-services': {
+        scenario: '[Company] runs a 40-person service desk supporting 12,000 employees across multiple offices. About 40% of inbound tickets are routine: VPN setup guides, software access requests, "how do I connect to the printer" questions. Each one takes an agent 12-15 minutes to resolve — even though the answer is usually the same every time.',
+        talkTrack: 'In professional services, your service desk is handling the same 15 questions 200 times a month. VPN setup, printer mapping, software access — these are known-answer problems. A self-service portal with AI search doesn\'t just link to a KB article — it walks the employee through the fix step by step, auto-provisions software, and resolves the request without a human touch. At 40% deflectable volume and a 35% success rate, you\'re removing 14% of your total tickets. That\'s 2-3 FTEs of capacity back.',
+        whyItMatters: 'Business services margins are built on labor efficiency. Every ticket your agents DON\'T handle is a ticket they CAN handle for revenue-generating client work. Self-service deflection isn\'t about cutting heads — it\'s about redirecting capacity to higher-value work like client projects and proactive improvements.',
+        exampleMetric: 'At 60,000 tickets/year with $30/ticket cost, 40% deflectable × 35% deflection = 8,400 deflected tickets = $252K annual savings.',
+      },
+      'non-profit': {
+        scenario: '[Organization] has a 4-person IT team drowning in routine requests from 600 staff and volunteers. "How do I reset my password?" "How do I access the donor database from home?" "The projector in conference room B isn\'t working." Each question pulls a technician away from strategic projects for 15-20 minutes.',
+        talkTrack: 'With only 4 people on IT, every routine ticket is a strategic project that doesn\'t get done. Your team spends half their day answering questions that could be solved with a well-designed self-service portal. Imagine if volunteers could onboard themselves — "I\'m new, I need email and donor database access" triggers an automated workflow that provisions everything in 5 minutes instead of a 2-day wait for a tech to get to it.',
+        whyItMatters: 'Non-profits can\'t hire more IT staff. Self-service deflection is the only realistic path to scaling IT support without scaling headcount. For a 4-person team, deflecting 14% of tickets gives back the equivalent of half a person — that\'s 1,000+ hours per year redirected to mission-critical projects.',
+        exampleMetric: 'At 12,000 tickets/year with $22/ticket cost, 40% × 35% deflection = 1,680 deflected = $37K saved — enough for a critical infrastructure upgrade.',
+      },
+      'retail-wholesale': {
+        scenario: '[Company] supports 15,000 store associates across 400 locations. The top 5 ticket categories are all routine: register login issues, scanner pairing, WiFi connectivity, shift schedule access, and "how do I process a return." These account for 45% of the 90,000 annual tickets.',
+        talkTrack: 'Your store associates aren\'t IT people — they need simple, visual guides that work on a store tablet. A self-service portal with "I need help with..." guided flows lets them fix their own register login, re-pair a scanner, or reconnect WiFi without calling the helpdesk. The key in retail is making it store-floor friendly — big buttons, pictures, 3 clicks to a solution. At 45% deflectable and 35% success, that\'s 14,000+ tickets that never reach your agents.',
+        whyItMatters: 'In retail, every minute a store associate spends on the phone with IT is a minute not serving customers. Self-service doesn\'t just save IT costs — it saves revenue-generating floor time. During peak seasons, the helpdesk can\'t scale fast enough; self-service is the only way to handle 2x volume without 2x staff.',
+        exampleMetric: 'At 90,000 tickets/year with $25/ticket cost, 45% × 35% = 14,175 deflected = $354K annual savings.',
+      },
+      'medical-hospitals': {
+        scenario: 'Clinicians at [Hospital] submit 120,000 IT tickets annually. A staggering 35% are variations of the same requests: EHR access issues after shift changes, badge tap resets, printer mapping for new workstations, and "how do I dictate into Epic from my phone." Each ticket pulls a clinician off patient care for 5-10 minutes to call IT, plus 15 minutes of agent time.',
+        talkTrack: 'Every minute a nurse spends calling IT about a badge tap issue is a minute away from patients. Self-service in a hospital context means: tap your badge on any kiosk, see "I need help with..." and get a guided fix for the top 10 issues — without picking up a phone. For EHR access issues after shift changes, automated workflows detect the role change and pre-provision access before the clinician even notices a problem.',
+        whyItMatters: 'Hospital IT tickets have a hidden multiplier: clinician time is worth 3-5x IT agent time. A $25 IT ticket that takes a $80/hour nurse off the floor for 10 minutes actually costs $38 in combined impact. Self-service deflection saves on both sides simultaneously.',
+        exampleMetric: 'At 120,000 tickets/year with $28/ticket cost, 35% × 35% = 14,700 deflected = $411K in IT savings, plus $196K in recovered clinician time.',
+      },
+      'energy-utilities': {
+        scenario: 'Field technicians at [Company] work at remote substations and pipeline facilities with limited connectivity. When they have an IT issue, calling the helpdesk means a 20-minute phone call over spotty cellular — if they can get through at all. 30% of their tickets are connectivity, VPN, and field app troubleshooting that follows the same resolution steps every time.',
+        talkTrack: 'Your field techs are in the middle of nowhere with a broken VPN. They can\'t sit on hold for 15 minutes. A self-service app that works offline — cached troubleshooting guides for field devices, automated VPN reset, one-tap cellular failover — means they fix it in 2 minutes and get back to the inspection. For energy, self-service isn\'t just cost savings — it\'s safety. A distracted field worker troubleshooting IT at a substation is a safety risk.',
+        whyItMatters: 'Field worker downtime in energy is exceptionally expensive — $150-300/hour when you factor in travel time, equipment idle costs, and compliance schedule impacts. Self-service that works in low-connectivity environments is a force multiplier for field operations.',
+        exampleMetric: 'At 40,000 tickets/year with $35/ticket cost, 30% × 35% = 4,200 deflected = $147K in IT savings, plus significant field productivity recovery.',
+      },
+      'banking-finance': {
+        scenario: '[Bank] processes 150,000 IT tickets annually across 500 branches and corporate offices. 42% are routine: trading platform access resets, branch printer issues, RSA token problems, and "how do I access the new compliance portal." Each ticket averages $42 in handling cost due to the security verification requirements.',
+        talkTrack: 'Banking IT tickets are expensive because every interaction requires identity verification — you can\'t just reset a trader\'s access without confirming who they are. A self-service portal with biometric authentication eliminates that overhead. The trader authenticates once, gets guided through the fix, and is back to generating revenue in 3 minutes instead of 25. For branch staff, a kiosk-based self-service flow handles the top 10 issues without a phone call to corporate IT.',
+        whyItMatters: 'In banking, the security verification overhead on every ticket drives AHT up 40% compared to other industries. Self-service with built-in authentication eliminates that entire cost layer while actually improving security — automated verification is more consistent than human verification.',
+        exampleMetric: 'At 150,000 tickets/year with $42/ticket cost, 42% × 35% = 22,050 deflected = $926K annual savings.',
+      },
+      'healthcare-pharma': {
+        scenario: 'R&D scientists and lab technicians at [Company] submit thousands of tickets about validated system access, instrument connectivity, and LIMS configuration. 28% are routine issues that follow documented resolution procedures — but the scientists don\'t know where those procedures are, and the IT agents spend 20 minutes finding the right validated-system-approved fix.',
+        talkTrack: 'Pharma self-service has a unique twist: every resolution for a validated system must follow an approved procedure. You can\'t just "try things." A self-service portal that surfaces only validated, approved troubleshooting steps for each system means scientists get the right fix immediately — and the resolution is automatically documented for audit purposes. It\'s faster AND more compliant than the phone call.',
+        whyItMatters: 'In pharma, self-service deflection does triple duty: saves IT cost, recovers scientist time (loaded cost $120-200/hour), and improves compliance documentation. Every self-service interaction is logged with the exact approved procedure followed — better audit trail than a phone conversation.',
+        exampleMetric: 'At 55,000 tickets/year with $38/ticket cost, 28% × 35% = 5,390 deflected = $205K in IT savings, plus $430K in recovered scientist productivity.',
+      },
+      'aerospace-defense-manufacturing': {
+        scenario: 'Engineers at [Company] work across classified and unclassified networks with separate credentials, VPN configurations, and access requirements for each program. 38% of IT tickets are access and connectivity issues that follow standard procedures — but the complexity of the environment means agents spend 25 minutes per ticket navigating which network, which clearance level, which program office.',
+        talkTrack: 'Defense IT is complex because every troubleshooting step depends on: which network (classified/unclassified), which program, which clearance level, which facility. A self-service portal that\'s context-aware — "I\'m on the unclassified network at Building C working on Program X" — immediately narrows the resolution path and presents only the approved steps for that specific context. Your agent doesn\'t spend 15 minutes figuring out the context before they can help.',
+        whyItMatters: 'In defense, a mishandled IT ticket on the wrong network can create a security incident. Self-service with built-in context awareness and guardrails actually reduces security risk — the system won\'t let an engineer on an unclassified terminal attempt to troubleshoot a classified system issue. It enforces boundaries automatically.',
+        exampleMetric: 'At 65,000 tickets/year with $40/ticket cost, 38% × 35% = 8,645 deflected = $346K annual savings.',
+      },
+    },
+  },
+
+  // ═══════════════════════════════════════════
+  // ITSM BENEFIT 23: Reduced Escalation Rate (L1→L2→L3)
+  // ═══════════════════════════════════════════
+  {
+    id: 'reduced-escalation-rate',
+    benefitName: 'Reduced Escalation Rate (L1→L2→L3)',
+    category: 'financial',
+    subcategory: 'Operational Efficiencies',
+    description: 'Neurons for ITSM uses AI-powered categorization, suggested resolutions, and automated knowledge surfacing to help L1 agents resolve more tickets at first contact. By reducing unnecessary escalations to expensive L2/L3 teams, organizations save the cost differential between support tiers and accelerate resolution times.',
+    formula: 'Annual Tickets × Current Escalation Rate × % Escalation Reduction × (L2/L3 Cost − L1 Cost) × Benefit Ramp',
+    formulaFactors: ['Annual Tickets', 'Current escalation rate (default: 30%)', 'Escalation reduction with AI assistance (default: 25%)', 'Cost differential between L1 and L2/L3 ($25-50 per escalated ticket)', 'Benefit Ramp (default: 100%)'],
+    stories: {
+      'business-services': {
+        scenario: '[Company] has a tiered support model: L1 handles 70% of tickets, but 30% escalate to L2/L3 specialists who cost 2-3x more per interaction. Many escalations happen not because the issue is complex, but because the L1 agent couldn\'t find the right KB article or didn\'t recognize a known issue pattern.',
+        talkTrack: 'Your L1 agents aren\'t lacking skill — they\'re lacking context. When a ticket comes in about a client\'s SAP integration failing, your L1 agent sees "SAP error" and immediately escalates because they don\'t know SAP. But the issue is actually a known network timeout that L1 has fixed 50 times — just not for SAP specifically. AI-suggested resolutions say: "This matches pattern X — here\'s the fix." The L1 agent resolves it in 10 minutes instead of escalating to an L3 SAP specialist who takes 2 days to get to it.',
+        whyItMatters: 'Every escalation in professional services has a triple cost: the L2/L3 agent is more expensive, the resolution takes longer (queue time), and the client experiences worse SLA performance. Reducing escalation by 25% means your expensive specialists spend time on genuinely complex problems, not recycled known issues.',
+        exampleMetric: 'At 60,000 tickets × 30% escalation × 25% reduction × $35 cost differential = $157K annual savings.',
+      },
+      'non-profit': {
+        scenario: '[Organization]\'s L1 team consists of 2 junior techs who escalate 40% of tickets to the 2 senior staff members. The seniors are also responsible for infrastructure projects, but they spend 60% of their time on escalated tickets that — in hindsight — the junior techs could have handled with better guidance.',
+        talkTrack: 'Your senior techs are your most valuable people, and they\'re stuck doing L1 work because your junior staff don\'t have the knowledge tools to resolve things themselves. AI-assisted resolution means when a junior tech sees "Exchange calendar sync issue," the system immediately surfaces: "This is a known issue. Here\'s the 4-step fix. It was resolved 23 times this quarter." Your senior staff get their project time back.',
+        whyItMatters: 'In a 4-person IT team, the difference between a senior tech doing escalated L1 work and doing infrastructure projects is the difference between the org running smoothly and accumulating technical debt. Every escalation prevented is senior-staff capacity recovered for strategic work.',
+        exampleMetric: 'At 12,000 tickets × 40% escalation × 25% reduction × $20 cost differential = $24K saved — plus 500+ senior tech hours recovered.',
+      },
+      'retail-wholesale': {
+        scenario: '[Company]\'s centralized helpdesk handles POS, inventory, and store operations issues. L1 agents resolve basic "restart the register" problems but escalate anything involving the inventory management system or payment processing — even when the fix is a known 3-step process. 35% of tickets escalate, and L2 agents cost $45/hour vs L1 at $22/hour.',
+        talkTrack: 'Your L1 agents hear "inventory system" and immediately escalate because they\'re afraid of breaking something. But 60% of inventory system escalations are the same 5 issues with documented fixes. AI-powered resolution confidence gives your L1 agents a green light: "This is a known issue with a 98% success rate fix. Here are the steps." They resolve it in 8 minutes instead of escalating to an L2 who won\'t see it for 4 hours.',
+        whyItMatters: 'In retail, escalation delays directly impact store operations. A POS issue escalated to L2 during Saturday peak hours might not get resolved until Monday. L1 resolution with AI guidance means the store is back to selling in minutes, not days.',
+        exampleMetric: 'At 90,000 tickets × 35% escalation × 25% reduction × $30 cost differential = $236K annual savings.',
+      },
+      'medical-hospitals': {
+        scenario: 'The hospital IT helpdesk at [Hospital] escalates 33% of tickets to specialized teams: clinical systems, biomedical engineering, and network operations. Many escalations are for EHR issues that are actually workstation problems — the L1 agent sees "Epic isn\'t working" and routes to the clinical apps team, who discovers it\'s a browser cache issue that L1 could have cleared.',
+        talkTrack: 'Hospital IT escalations are expensive because your specialized teams — clinical apps, biomed, network ops — are small and overwhelmed. When an L1 agent sees "Epic slow" and escalates to clinical apps, that team already has a 48-hour backlog. AI-assisted triage would recognize: "Epic slow + single workstation + no other reports = local workstation issue, not application issue." The L1 clears cache, reboots, and the clinician is back in 5 minutes instead of waiting 2 days.',
+        whyItMatters: 'Hospital L2/L3 teams are scarce specialists — clinical apps engineers, biomed techs, network architects. Every false escalation steals their capacity from genuinely complex problems. In a hospital, that capacity deficit can cascade into patient care impacts.',
+        exampleMetric: 'At 120,000 tickets × 33% escalation × 25% reduction × $40 cost differential = $396K annual savings.',
+      },
+      'energy-utilities': {
+        scenario: 'IT support at [Company] escalates 38% of tickets, with a significant portion going to the OT/SCADA team. Many escalations are triggered by field technicians reporting "control system" issues that are actually IT connectivity problems. The OT team receives these, investigates for 2 hours, then sends it back to IT networking.',
+        talkTrack: 'The IT/OT boundary creates a massive escalation problem. Field techs report symptoms, not root causes. "The SCADA display isn\'t updating" could be a $500,000 OT emergency or a $5 network cable issue. AI triage with device context can differentiate: "SCADA terminal, network connectivity lost, switch port down — this is a networking issue, not OT." Your OT team stops getting false alarms, and the networking team gets the ticket immediately.',
+        whyItMatters: 'In energy, a false escalation to the OT/SCADA team triggers an entire investigation protocol — because you can\'t assume it\'s not a cyber event. Every false OT escalation costs 4-8 hours of highly paid specialist time. Reducing these by 25% recovers massive specialist capacity.',
+        exampleMetric: 'At 45,000 tickets × 38% escalation × 25% reduction × $50 cost differential = $214K annual savings.',
+      },
+      'banking-finance': {
+        scenario: '[Bank] escalates 28% of tickets to specialized teams — trading systems, fraud operations, and core banking. L2/L3 agents in banking cost $65-85/hour due to required certifications and clearances. Many escalations are for "trading platform issues" that are actually workstation or network problems the L1 could handle.',
+        talkTrack: 'Your trading systems team has 6 people supporting a platform that generates millions in daily revenue. When they\'re investigating a ticket that turns out to be "trader forgot to relaunch Bloomberg after the weekend patch," that\'s 45 minutes of an $80/hour specialist wasted. AI-assisted triage separates platform issues from workstation issues at L1, so your trading systems team only sees genuine application problems.',
+        whyItMatters: 'In banking, L2/L3 specialists carry security clearances, regulatory certifications, and deep system knowledge that takes years to develop. Their time is irreplaceable. Every unnecessary escalation is an opportunity cost measured in delayed production deployments, deferred system improvements, and stretched-thin specialist capacity.',
+        exampleMetric: 'At 150,000 tickets × 28% escalation × 25% reduction × $45 cost differential = $472K annual savings.',
+      },
+      'healthcare-pharma': {
+        scenario: 'IT at [Company] escalates 32% of tickets to specialized teams: validated systems, lab systems, and manufacturing IT. The validated systems team — 8 people supporting 200+ validated applications — has a 5-day backlog partly because 40% of their escalations are for issues that don\'t actually require validated system expertise.',
+        talkTrack: 'Your validated systems team is a bottleneck, and it\'s not because they\'re slow — it\'s because they\'re drowning in escalations that shouldn\'t be theirs. "LIMS isn\'t loading" is escalated to validated systems because it has "LIMS" in the title. But it\'s actually a Citrix session timeout — an L1 fix. AI triage recognizes: "LIMS access + single user + Citrix environment = session issue, not application issue." Your validated systems team gets 40% of their time back.',
+        whyItMatters: 'Pharma validated systems teams are the most constrained resource in IT. They require GxP training, FDA audit experience, and application-specific certification. You can\'t just hire more of them. Reducing false escalations by 25% is equivalent to adding 2 people to an 8-person team — without the 6-month ramp-up.',
+        exampleMetric: 'At 55,000 tickets × 32% escalation × 25% reduction × $42 cost differential = $185K annual savings.',
+      },
+      'aerospace-defense-manufacturing': {
+        scenario: 'IT support at [Company] escalates 36% of tickets. The classified systems team (SCIF support) receives escalations for any ticket mentioning "classified" or "secure" — even when the issue is a standard workstation problem that happens to be in a classified space. Each false escalation requires a cleared technician to physically visit the SCIF.',
+        talkTrack: 'Your cleared technicians are a finite resource — there are only so many people with TS/SCI clearance who are also IT-competent. When you burn their time on a "my mouse isn\'t working" ticket just because the mouse is in a SCIF, that\'s a cleared technician not doing actual classified systems work. AI triage with location and asset context can differentiate: "This is a standard hardware issue that happens to be in Building C SCIF — dispatch standard IT with escort" vs "This is a classified network anomaly — dispatch cleared technician immediately."',
+        whyItMatters: 'Defense contractors pay a 40-60% premium for cleared IT staff. Every unnecessary SCIF dispatch costs $200+ in cleared technician time plus escort coordination. Reducing false classified escalations recovers the most expensive labor in the organization.',
+        exampleMetric: 'At 65,000 tickets × 36% escalation × 25% reduction × $55 cost differential = $322K annual savings.',
+      },
+    },
+  },
+
+  // ═══════════════════════════════════════════
+  // ITSM BENEFIT 24: Improved Mean Time to Resolution (MTTR)
+  // ═══════════════════════════════════════════
+  {
+    id: 'improved-mttr',
+    benefitName: 'Improved Mean Time to Resolution (MTTR)',
+    category: 'time-savings',
+    subcategory: 'Productivity Recovery',
+    description: 'Neurons for ITSM reduces end-to-end resolution time through intelligent routing, automated diagnostics, and proactive incident detection. Faster MTTR means employees spend less time waiting for IT to fix problems and more time doing productive work. The benefit is measured in recovered employee productivity hours.',
+    formula: 'Annual Tickets × Current MTTR Hours × % MTTR Improvement × Employee Hourly Cost × Benefit Ramp',
+    formulaFactors: ['Annual Tickets', 'Current average MTTR in hours (default: 4)', 'MTTR improvement percentage (default: 30%)', 'Average employee hourly cost (derived from median salary)', 'Benefit Ramp (default: 100%)'],
+    stories: {
+      'business-services': {
+        scenario: '[Company]\'s average ticket resolution time is 6 hours. For client-facing consultants billing $200/hour, every hour waiting on IT is an hour not billed to clients. With 50,000 tickets per year, that\'s 300,000 hours of potential productivity impact — even a small MTTR improvement translates to significant recovered revenue capacity.',
+        talkTrack: 'Your consultants are your product. When they\'re waiting on IT, they\'re not billing. A 30% MTTR improvement on a 6-hour average means each ticket resolves 1.8 hours faster. Across 50,000 tickets, that\'s 90,000 hours of employee productivity recovered. Even if only 20% of that translates to billable work, you\'re looking at 18,000 recovered billable hours.',
+        whyItMatters: 'In professional services, utilization rate is the core metric. A 1% improvement in consultant utilization across a 5,000-person firm can mean $2-5M in additional revenue. MTTR reduction directly enables utilization improvement by removing IT as a productivity blocker.',
+        exampleMetric: 'At 50,000 tickets × 6hr MTTR × 30% improvement × $45/hr employee cost = $4.05M in recovered productivity value.',
+      },
+      'non-profit': {
+        scenario: '[Organization]\'s MTTR averages 8 hours due to the small IT team. Grant administrators, program managers, and fundraising staff lose half a working day per IT incident. During grant deadline periods, an 8-hour IT delay can mean a missed submission deadline worth $50-500K in funding.',
+        talkTrack: 'When your grant administrator can\'t access the submission portal 6 hours before deadline, an 8-hour MTTR is a grant-killing number. A 30% improvement brings that to 5.6 hours — potentially the difference between submitting on time and missing the deadline. For non-profits, MTTR isn\'t just an IT metric — it\'s a mission-funding metric.',
+        whyItMatters: 'Non-profit staff wear multiple hats. A program manager waiting on IT isn\'t just unproductive — they\'re not delivering services to beneficiaries. MTTR reduction has a direct mission impact that goes far beyond the dollar value of recovered hours.',
+        exampleMetric: 'At 12,000 tickets × 8hr MTTR × 30% improvement × $28/hr employee cost = $806K in recovered productivity value.',
+      },
+      'retail-wholesale': {
+        scenario: '[Company]\'s average MTTR is 5 hours, but for store-level issues, it\'s 7 hours because remote troubleshooting is harder and dispatch may be needed. A POS system down for 7 hours during business hours means that register isn\'t processing sales — directly measurable lost revenue.',
+        talkTrack: 'In retail, MTTR has a direct revenue translation. If register #3 at your busiest store is down for 7 hours, and that register processes $400/hour in sales, you\'ve lost $2,800. A 30% MTTR improvement means that register is back 2 hours sooner — $800 in preserved sales per incident. Multiply across 400 stores and thousands of incidents per year.',
+        whyItMatters: 'Retail MTTR has a unique characteristic: the cost isn\'t just employee productivity — it\'s customer-facing revenue loss. Every hour a system is down during business hours has a measurable sales impact. MTTR reduction is directly tied to revenue protection.',
+        exampleMetric: 'At 90,000 tickets × 5hr MTTR × 30% improvement × $22/hr employee cost = $2.97M in recovered productivity.',
+      },
+      'medical-hospitals': {
+        scenario: '[Hospital]\'s MTTR for clinical system issues averages 3 hours — but those 3 hours affect not one person but entire departments. When the radiology PACS system is down for 3 hours, it\'s not one radiologist waiting — it\'s 15 radiologists, 30 technicians, and 200 patients whose imaging results are delayed.',
+        talkTrack: 'Hospital MTTR has a multiplier effect that no other industry matches. A 3-hour EHR outage doesn\'t affect one user — it affects every clinician on that system. The productivity impact cascades: delayed lab results delay diagnoses, which delay treatments, which extend patient stays. A 30% MTTR improvement means 54 minutes faster resolution on clinical systems — that\'s 54 minutes of a 500-person hospital back to full function.',
+        whyItMatters: 'In healthcare, MTTR has patient outcome implications. Faster resolution of clinical system issues directly contributes to better care delivery, shorter wait times, and reduced patient safety risk. The financial value barely captures the full impact.',
+        exampleMetric: 'At 120,000 tickets × 3hr MTTR × 30% improvement × $55/hr avg clinical cost = $5.94M in recovered productivity value.',
+      },
+      'energy-utilities': {
+        scenario: 'Field operations IT issues at [Company] have an average MTTR of 12 hours — because remote diagnosis is difficult, parts may need shipping, and a technician may need to travel to a remote site. During those 12 hours, a $150/hour field crew may be idle, equipment may be offline, and regulatory inspections may be delayed.',
+        talkTrack: 'Energy field MTTR is uniquely painful because the cost isn\'t just the IT fix — it\'s the entire field operation waiting. A crew of 4 at $150/hour combined, idle at a substation for 12 hours, is $1,800 in wasted labor alone. A 30% MTTR improvement saves 3.6 hours per incident — that\'s $540 per incident in field crew cost alone, before you count equipment idle costs and schedule impacts.',
+        whyItMatters: 'In energy, MTTR at remote facilities compounds rapidly: travel time, weather windows, equipment rental, regulatory scheduling constraints. Reducing MTTR by even 2-3 hours per incident can prevent cascading schedule impacts worth tens of thousands per occurrence.',
+        exampleMetric: 'At 45,000 tickets × 12hr field MTTR × 30% improvement × $38/hr avg cost = $7.39M in recovered productivity.',
+      },
+      'banking-finance': {
+        scenario: '[Bank]\'s average MTTR is 4 hours, but for trading floor and branch systems, the impact is measured in revenue per minute. A trading platform issue with a 4-hour MTTR during market hours means 4 hours of traders unable to execute. A branch system outage means customers walking to the competitor across the street.',
+        talkTrack: 'Banking has zero-tolerance MTTR expectations for revenue systems. A 4-hour trading platform outage during market hours isn\'t just an IT issue — it\'s a P&L event. A 30% improvement brings that to 2.8 hours. But more importantly, the AI-powered diagnostics mean you\'re spending those 2.8 hours actually fixing the problem, not the first 2 hours figuring out what the problem is.',
+        whyItMatters: 'Financial services regulators audit MTTR for critical systems. Your incident response times are part of your regulatory posture. Faster MTTR isn\'t just operational — it\'s a compliance differentiator during OCC and FFIEC examinations.',
+        exampleMetric: 'At 150,000 tickets × 4hr MTTR × 30% improvement × $52/hr avg employee cost = $9.36M in recovered productivity.',
+      },
+      'healthcare-pharma': {
+        scenario: 'Lab system issues at [Company] average 6 hours to resolve. During those 6 hours, lab instruments sit idle, experiments may be invalidated, and manufacturing batches may need to be held. A single batch hold in pharmaceutical manufacturing can cost $100K-$1M per day in delayed production.',
+        talkTrack: 'In pharma manufacturing, MTTR on production-adjacent systems has a cost multiplier of 50-100x the IT cost. A 6-hour lab system outage that delays a manufacturing batch doesn\'t cost $300 in IT time — it costs $25K-$50K in delayed batch release. A 30% MTTR improvement saves 1.8 hours per incident. On production systems, that 1.8 hours can be the difference between releasing a batch on schedule and holding it for another day.',
+        whyItMatters: 'Pharma IT incidents on validated and manufacturing systems have regulatory documentation requirements — every minute of downtime must be documented, investigated, and reported. Faster MTTR means smaller investigation scope, less regulatory documentation, and lower risk of audit findings.',
+        exampleMetric: 'At 55,000 tickets × 6hr MTTR × 30% improvement × $65/hr avg cost = $6.44M in recovered productivity.',
+      },
+      'aerospace-defense-manufacturing': {
+        scenario: 'Manufacturing line IT issues at [Company] average 8 hours to resolve. Production lines running $500K+/day in output sit idle while IT coordinates between shop floor OT systems, corporate IT, and vendor support. ITAR documentation requirements add 1-2 hours to every classified system incident.',
+        talkTrack: 'In defense manufacturing, MTTR is measured in production output lost. A CNC machine control system down for 8 hours on a production line running $500K/day is $167K in delayed output. A 30% improvement saves 2.4 hours — $50K in production value. And for classified systems, faster resolution means a smaller window of potential data exposure, which simplifies the security investigation.',
+        whyItMatters: 'Defense manufacturing operates on fixed-price contracts with delivery penalties. Production delays from IT incidents don\'t just cost idle time — they can trigger contractual penalty clauses and jeopardize future contract awards. MTTR is directly tied to contract performance and competitive positioning.',
+        exampleMetric: 'At 70,000 tickets × 8hr MTTR × 30% improvement × $42/hr avg cost = $7.06M in recovered productivity.',
+      },
+    },
+  },
+
+  // ═══════════════════════════════════════════
+  // ITSM BENEFIT 25: Automated Change Management Efficiency
+  // ═══════════════════════════════════════════
+  {
+    id: 'automated-change-management',
+    benefitName: 'Automated Change Management Efficiency',
+    category: 'financial',
+    subcategory: 'Operational Efficiencies',
+    description: 'Neurons for ITSM automates the change management lifecycle — risk assessment, approval routing, scheduling, and post-implementation review. By reducing manual effort in change processing and preventing change-related incidents through better risk scoring, organizations save both direct labor costs and indirect costs from failed changes.',
+    formula: 'Annual Changes × Manual Hours per Change × % Automation Savings × IT Hourly Rate × Benefit Ramp + (Failed Change Cost × Failure Rate Reduction)',
+    formulaFactors: ['Annual change requests', 'Average manual hours per change (default: 3)', 'Automation efficiency gain (default: 45%)', 'IT staff hourly rate', 'Failed change incident cost (default: $5,000)', 'Failure rate reduction (default: 20%)', 'Benefit Ramp (default: 100%)'],
+    stories: {
+      'business-services': {
+        scenario: '[Company] processes 2,400 change requests annually across client environments. Each change requires manual risk assessment, 3-5 approval signatures, scheduling coordination, and post-implementation verification. The average change takes 4 hours of administrative effort spread across 3 people. 12% of changes cause incidents.',
+        talkTrack: 'Change management in a multi-client environment is especially painful — each client may have different change windows, approval chains, and risk thresholds. Automation handles the 80% of changes that are standard: patches, configuration updates, routine maintenance. Risk scoring auto-classifies them, routes approvals to the right people, schedules within the right window, and generates the compliance documentation. Your team focuses on the 20% of changes that actually need human judgment.',
+        whyItMatters: 'In business services, change-related incidents against client SLAs are relationship-killers. Automated risk scoring catches the 12% of changes most likely to fail BEFORE they\'re approved, preventing the $5K-50K incident cost and the client trust damage that no dollar amount repairs.',
+        exampleMetric: 'At 2,400 changes × 4hrs × 45% automation × $41/hr = $177K labor savings + 12% failure rate × 20% reduction × $5K/incident = $29K in prevented incidents.',
+      },
+      'non-profit': {
+        scenario: '[Organization] manages 600 changes per year with a 2-person IT team. Each change is documented in spreadsheets, approved via email chains, and scheduled on a shared calendar. There\'s no risk assessment — changes go live and the team prays. 18% cause some level of incident.',
+        talkTrack: 'With 2 people managing 600 changes a year, you don\'t have time for proper change management — so you\'re skipping it, and paying for it in incidents. Automated change management gives you a process without adding overhead: submit a change, AI assesses risk, routes to the right approver, schedules it in the maintenance window, and documents everything automatically. You go from "fingers crossed" to auditable change management without hiring a change manager.',
+        whyItMatters: 'Non-profits often skip formal change management due to resource constraints, then pay for it with higher incident rates. Automation bridges that gap — you get proper process controls at a fraction of the manual effort, reducing your 18% failure rate and the incident recovery cost that follows.',
+        exampleMetric: 'At 600 changes × 2hrs × 45% automation × $30/hr = $16K labor savings + incident prevention worth $11K annually.',
+      },
+      'retail-wholesale': {
+        scenario: '[Company] pushes 3,600 changes per year across 400 stores — POS updates, inventory system patches, network changes, security updates. Each store deployment requires coordination with store managers for off-hours windows. 15% of changes cause some level of store-impact incident, typically during peak hours when the change window was rushed.',
+        talkTrack: 'Retail change management at scale is a logistics problem as much as an IT problem. You\'re coordinating change windows across 400 stores in different time zones, each with different peak hours. Automated scheduling analyzes each store\'s transaction patterns and automatically identifies the lowest-impact deployment window. Risk scoring catches the changes most likely to impact POS — flagging them for extra testing before deployment rather than rolling the dice across 400 locations.',
+        whyItMatters: 'A failed change that hits POS systems at 400 stores simultaneously is a catastrophic event. Automated risk scoring and phased deployment prevents the "push everywhere at once and hope" approach that causes chain-wide outages. Even reducing failures from 15% to 12% across 3,600 changes prevents 108 store-impact incidents.',
+        exampleMetric: 'At 3,600 changes × 3hrs × 45% automation × $38/hr = $184K labor + 15% failure × 20% reduction × $5K = $54K prevented incidents.',
+      },
+      'medical-hospitals': {
+        scenario: '[Hospital] processes 1,800 changes annually, including EHR updates, medical device integrations, and network modifications. Every change to a clinical system requires clinical validation, which adds 4-6 hours of manual effort. 10% of changes cause clinical system incidents — each requiring a patient safety review.',
+        talkTrack: 'Hospital change management carries a weight that most industries don\'t face: a failed change on a clinical system isn\'t just an IT incident — it\'s a potential patient safety event requiring investigation and reporting. Automated risk scoring identifies which changes touch clinical pathways and auto-routes them through clinical validation workflows. The 90% of changes that are standard infrastructure get fast-tracked with appropriate approvals, freeing your clinical validation team to focus on the 10% that truly need their expertise.',
+        whyItMatters: 'In healthcare, failed changes on clinical systems trigger patient safety reviews that cost $10K-50K each in investigation effort, documentation, and potential Joint Commission reporting. Preventing even 2-3 of these per year through better risk assessment pays for the entire change management investment.',
+        exampleMetric: 'At 1,800 changes × 5hrs × 45% automation × $45/hr = $182K labor + 10% failure × 20% reduction × $15K clinical incident cost = $54K.',
+      },
+      'energy-utilities': {
+        scenario: '[Company] processes 2,000 changes annually, including SCADA system updates, network modifications, and field device firmware upgrades. NERC CIP requires detailed change documentation, and each change to a critical cyber asset requires a 6-step approval process. 8% of changes cause OT-impacting incidents.',
+        talkTrack: 'NERC CIP change management is a documentation marathon. Each change to a critical cyber asset requires: risk assessment, security review, management approval, implementation plan, test plan, and rollback plan. Automation generates 80% of this documentation from the change request itself — pulling in asset classification, network diagrams, and historical change data. Your engineers spend 45% less time on paperwork and more time ensuring the change is technically sound.',
+        whyItMatters: 'In energy, a failed change on a SCADA system can affect grid reliability. NERC CIP penalties for improper change management range from $10K-$1M per violation. Automated compliance documentation doesn\'t just save time — it ensures every change is properly documented for the next audit.',
+        exampleMetric: 'At 2,000 changes × 6hrs × 45% automation × $48/hr = $259K labor + 8% failure × 20% reduction × $25K OT incident = $80K prevented.',
+      },
+      'banking-finance': {
+        scenario: '[Bank] manages 4,200 changes per year across core banking, trading platforms, branch systems, and ATM networks. SOX compliance requires documented approval chains and segregation of duties for every change. Current process: 5 hours of manual coordination per change, with 3 different approvers in sequence. 7% of changes cause production incidents.',
+        talkTrack: 'Banking change management is dominated by compliance overhead — SOX requires segregation of duties, dual approvals, and complete audit trails for every change touching financial systems. Automation doesn\'t remove the approvals — it orchestrates them. Risk scoring auto-classifies: standard patch to a branch PC? Fast-track with single approval. Core banking database schema change? Full CAB review with security and compliance sign-off. The right process for the right risk level, automatically.',
+        whyItMatters: 'SOX audit findings for improper change management carry significant financial and reputational consequences. Automated change management doesn\'t just save labor — it creates a bulletproof audit trail that SOX auditors love. And reducing your 7% change failure rate protects revenue-generating systems from preventable outages.',
+        exampleMetric: 'At 4,200 changes × 5hrs × 45% automation × $52/hr = $491K labor + 7% failure × 20% reduction × $8K = $47K prevented incidents.',
+      },
+      'healthcare-pharma': {
+        scenario: '[Company] processes 1,500 changes per year, with 40% touching validated systems that require FDA 21 CFR Part 11 compliant change control. Each validated system change requires 8-12 hours of documentation including impact assessment, validation protocol, and test evidence. Standard changes still require 3 hours each.',
+        talkTrack: 'Pharma change control is the most documentation-intensive of any industry. A validated system change that takes 30 minutes to implement requires 10 hours of documentation. Automation generates the impact assessment, pulls validation protocols from templates, auto-captures test evidence, and compiles the change package. Your validation engineers review and approve in 2 hours instead of building from scratch in 10. Standard changes get the same treatment at a lighter level — automated documentation that meets audit requirements without manual effort.',
+        whyItMatters: 'FDA warning letters for inadequate change control are business-threatening events in pharma. Automated documentation ensures consistency and completeness that manual processes can\'t match. And when an auditor asks for change records from 18 months ago, you pull them in 30 seconds instead of 3 days.',
+        exampleMetric: 'At 1,500 changes (600 validated × 10hrs + 900 standard × 3hrs) × 45% automation × $55/hr = $372K labor savings.',
+      },
+      'aerospace-defense-manufacturing': {
+        scenario: '[Company] manages 2,800 changes annually across classified and unclassified environments. Changes to classified systems require security officer review, ISSM approval, and ITAR compliance verification. Each classified change averages 8 hours of administrative overhead. 9% of changes cause incidents, with classified environment incidents requiring full security investigation.',
+        talkTrack: 'Defense change management is uniquely complex: you need to verify ITAR compliance for every change, ensure cleared personnel are performing the work, document everything for CMMC audits, and coordinate with security officers. Automation handles the classification: "This change touches System X in SCIF Building C — requires ISSM approval, cleared technician, and ITAR documentation." The routing, scheduling, and documentation happen automatically. Your security officers approve the right changes instead of being paperwork bottlenecks.',
+        whyItMatters: 'A single improper change to a classified system can trigger a security investigation costing $50K-200K and potentially jeopardizing facility clearance. Automated compliance verification catches ITAR/CMMC issues before the change is approved, not after it\'s implemented.',
+        exampleMetric: 'At 2,800 changes × 6hrs × 45% automation × $50/hr = $378K labor + 9% failure × 20% reduction × $15K = $76K prevented incidents.',
+      },
+    },
+  },
+
+  // ═══════════════════════════════════════════
+  // ITSM BENEFIT 26: Proactive Problem Management
+  // ═══════════════════════════════════════════
+  {
+    id: 'proactive-problem-management',
+    benefitName: 'Proactive Problem Management',
+    category: 'financial',
+    subcategory: 'Incident Prevention',
+    description: 'Neurons for ITSM identifies recurring incident patterns and clusters, enabling IT teams to address root causes before they generate more tickets. By converting reactive incident firefighting into proactive problem resolution, organizations prevent future incidents, reduce ticket volume, and free up service desk capacity for higher-value work.',
+    formula: 'Annual Tickets × Recurring Incident % × Prevention Rate × AHT Cost per Incident × Avg Recurrence × Benefit Ramp',
+    formulaFactors: ['Annual Tickets', 'Percentage of tickets that are recurring patterns (default: 25%)', 'Problem identification and prevention rate (default: 30%)', 'AHT cost per incident', 'Average recurrence count per problem (default: 8)', 'Benefit Ramp (default: 100%)'],
+    stories: {
+      'business-services': {
+        scenario: '[Company]\'s service desk sees the same VPN authentication failure every Monday morning when a client\'s Active Directory sync job conflicts with their backup window. Each Monday, 15-20 tickets come in from that client between 8-9 AM. This has happened every week for 6 months — 500+ identical tickets — because no one connected the dots between the tickets and the root cause.',
+        talkTrack: 'Your service desk is phenomenal at resolving incidents. The problem is, they\'re resolving the SAME incidents over and over. AI-powered problem management detects: "These 20 tickets every Monday from Client X are the same issue." It creates a problem record, correlates the timing with the AD sync/backup conflict, and surfaces it to your engineering team. One 2-hour root cause fix eliminates 1,000+ tickets per year from that single pattern.',
+        whyItMatters: 'In business services, recurring incidents compound across clients. If 5 different clients have similar Monday-morning patterns, you\'re burning 100+ hours per month on preventable incidents. Problem management is the highest-ROI activity a service desk can do — preventing tickets is always cheaper than resolving them.',
+        exampleMetric: 'At 60,000 tickets × 25% recurring × 30% prevented × $30/ticket × 8 avg recurrence factor = $1.08M in prevented incident cost.',
+      },
+      'non-profit': {
+        scenario: '[Organization]\'s donor management system crashes every quarter when the batch donation processing exceeds a memory threshold. Each crash generates 8-12 tickets, takes the system offline for 3 hours, and prevents donation processing during the outage. It\'s happened 4 times, but the 3-person IT team is too busy fighting fires to investigate the pattern.',
+        talkTrack: 'Your small team is stuck in a reactive loop — too busy resolving today\'s incidents to prevent tomorrow\'s. AI-powered pattern detection does the analysis your team doesn\'t have time for: "The donor system has crashed 4 times, always during batch processing when donation count exceeds 10,000." It surfaces the problem record with root cause hypothesis: memory allocation needs to be increased before the next quarter-end batch. A 15-minute config change prevents the next 4 outages.',
+        whyItMatters: 'For non-profits, a 3-hour donor system outage during a fundraising campaign is a revenue-impacting event. Proactive problem management means your tiny IT team stops fighting the same fires and starts preventing them — the only way to scale IT quality without scaling headcount.',
+        exampleMetric: 'At 12,000 tickets × 25% recurring × 30% prevented × $22/ticket × 8 recurrence = $158K in prevented incident cost.',
+      },
+      'retail-wholesale': {
+        scenario: '[Company]\'s WiFi at 60 stores drops every evening at 6 PM when the inventory sync job kicks off and saturates the network. Each store generates 2-3 tickets per occurrence. Over a quarter, that\'s 1,000+ tickets — all for the same root cause. Meanwhile, customers using in-store WiFi lose connectivity, impacting the mobile checkout experience.',
+        talkTrack: 'You have 60 stores generating the same WiFi ticket every evening, and your helpdesk is resolving each one individually. AI pattern detection correlates: "WiFi drops at 60 stores, always at 18:00, always during inventory sync." One problem record, one network QoS change, 1,000 tickets eliminated. That\'s not an incremental improvement — that\'s an entire ticket category removed from your queue permanently.',
+        whyItMatters: 'Retail recurring incidents have a customer experience multiplier. It\'s not just IT cost — it\'s customers who can\'t use mobile checkout, who can\'t check prices, who get frustrated and leave. Proactive problem management doesn\'t just save IT money — it protects the in-store customer experience.',
+        exampleMetric: 'At 90,000 tickets × 25% recurring × 30% prevented × $25/ticket × 8 recurrence = $1.35M in prevented cost.',
+      },
+      'medical-hospitals': {
+        scenario: 'Nurses at [Hospital] submit tickets every shift change about workstation-on-wheels (WOW) units not reconnecting to WiFi after moving between floors. Each floor transition requires a manual WiFi reconnect. With 200 WOW units and 3 shift changes per day, this generates 50+ tickets daily — over 18,000 per year — all from the same roaming configuration issue.',
+        talkTrack: 'Eighteen thousand tickets a year from the same WiFi roaming issue on your WOW units. Each one takes a nurse 5 minutes to call IT and an agent 10 minutes to walk through the reconnect. That\'s 4,500 hours of combined nurse and IT time on a problem that a single WLAN controller configuration change would fix permanently. AI problem management surfaces this pattern in week 1 — not month 18.',
+        whyItMatters: 'In a hospital, recurring IT issues erode clinician trust in technology. After the 10th time their WOW loses WiFi, nurses stop trusting the EHR and create paper workarounds — which create patient safety risks. Proactive problem resolution restores clinician confidence in IT systems.',
+        exampleMetric: 'At 120,000 tickets × 25% recurring × 30% prevented × $28/ticket × 8 recurrence = $2.02M in prevented cost.',
+      },
+      'energy-utilities': {
+        scenario: 'Field technicians at [Company] report the same GPS sync failure on ruggedized tablets every time they enter a specific geographic area — near high-voltage transmission lines that interfere with GPS signals. Each incident triggers a troubleshooting workflow, dispatches are re-routed, and work orders are delayed. Over 6 months, 200+ incidents in the same pattern.',
+        talkTrack: 'Your field techs are reporting the same GPS failure in the same locations, and every time IT troubleshoots it as a new incident. AI correlation detects: "GPS failures cluster at coordinates near transmission lines A, B, and C." The problem record triggers a permanent fix: pre-cached maps and alternative positioning for those known interference zones. Two hundred future incidents eliminated with one proactive change.',
+        whyItMatters: 'In energy, recurring field IT issues compound with travel and scheduling costs. Each repeated GPS failure doesn\'t just cost IT resolution time — it delays the field work order, potentially requiring a return trip to the site. Preventing recurring field issues has a 5-10x multiplier versus office issues.',
+        exampleMetric: 'At 45,000 tickets × 25% recurring × 30% prevented × $35/ticket × 8 recurrence = $945K in prevented cost.',
+      },
+      'banking-finance': {
+        scenario: '[Bank]\'s trading floor reports application freezes every day between 9:25-9:35 AM — the pre-market data load window. Traders submit 5-8 tickets daily. Each resolution is "restart the application," which takes 15 minutes and means the trader misses early market activity. This has continued for 4 months because the tickets are resolved individually and no one has connected 400+ tickets to the same root cause.',
+        talkTrack: 'Four hundred tickets over four months, all the same root cause, all individually resolved with "restart the app." Your traders are losing the first 15 minutes of market open every single day — that\'s arguably the most valuable 15 minutes of the trading day. AI problem management identifies the pattern on day 3, not month 4. One database query optimization to the pre-market data load eliminates the entire cluster.',
+        whyItMatters: 'In trading, the first 30 minutes after market open generate a disproportionate share of daily revenue. Recurring application issues during that window have a revenue impact that dwarfs the IT ticket cost. Problem management on trading systems is revenue protection.',
+        exampleMetric: 'At 150,000 tickets × 25% recurring × 30% prevented × $42/ticket × 8 recurrence = $3.78M in prevented cost.',
+      },
+      'healthcare-pharma': {
+        scenario: 'Lab instruments at [Company] lose connectivity to the LIMS every time the antivirus scan runs — which is daily at 2 PM. Each disconnection requires a validated reconnection procedure taking 45 minutes. With 30 instruments across 3 labs, this generates 90 incidents per week — all from the same AV/LIMS resource conflict.',
+        talkTrack: 'Ninety incidents a week, all because the antivirus scan conflicts with the LIMS connection at 2 PM daily. Each one requires a validated reconnection — that\'s not a 5-minute fix, it\'s a 45-minute documented procedure. AI problem management detects: "LIMS disconnections cluster at 14:00, correlate with AV scan schedule, affect all instruments." One AV exclusion policy change eliminates 4,680 annual incidents and recovers 3,510 hours of lab technician time.',
+        whyItMatters: 'In pharma, recurring issues on validated systems are especially costly because each incident requires documented investigation and resolution. Preventing recurring incidents on lab systems isn\'t just saving IT cost — it\'s saving thousands of hours of GxP documentation effort.',
+        exampleMetric: 'At 55,000 tickets × 25% recurring × 30% prevented × $38/ticket × 8 recurrence = $1.25M in prevented cost.',
+      },
+      'aerospace-defense-manufacturing': {
+        scenario: 'CNC machines at [Company] throw the same error code every time a specific G-code toolpath is loaded from the updated CAM software. Production stops, IT is called, and they restart the machine controller. This happens 3-4 times per week across 12 machines. After 3 months, no one has connected the 150+ incidents to the CAM software update that caused the incompatibility.',
+        talkTrack: 'One hundred fifty production stops, all traced back to a CAM software update that changed the G-code output format. Each stop costs 30-45 minutes of production time plus IT response. AI problem management correlates: "Error code X started occurring after CAM update Y, only on G-code files generated post-update." The fix: a post-processor configuration change in the CAM software. One fix, 150 future production stops eliminated.',
+        whyItMatters: 'Manufacturing problem management has the highest ROI of any industry because production line downtime is measured in thousands of dollars per hour. Preventing recurring production IT issues has a 20-50x multiplier versus the IT ticket cost alone.',
+        exampleMetric: 'At 70,000 tickets × 25% recurring × 30% prevented × $35/ticket × 8 recurrence = $1.47M in prevented cost.',
+      },
+    },
+  },
 ];
 
 // Helper to get benefits for a specific vertical
