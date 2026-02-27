@@ -60,7 +60,7 @@ export default function DashboardPage() {
       iconColor: 'text-sky-400',
       borderColor: 'border-sky-500/20 hover:border-sky-500/50',
       stats: [
-        { label: 'Posts today', value: data?.posts ?? '—' },
+        { label: 'Total posts', value: data?.posts ?? '—' },
         { label: 'Likes', value: data?.xEngagement?.likes ?? '—' },
         { label: 'Replies', value: data?.xEngagement?.replies ?? '—' },
         { label: 'Budget spent', value: data ? `$${(data.xEngagement?.spent ?? 0).toFixed(3)}` : '—' },
