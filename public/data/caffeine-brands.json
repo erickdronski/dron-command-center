@@ -1,0 +1,336 @@
+{
+  "brands": [
+    {
+      "id": "starbucks",
+      "name": "Starbucks",
+      "emoji": "🟢",
+      "color": "#00704A",
+      "drinks": [
+        {
+          "id": "sbux_pike",
+          "name": "Pike Place Drip",
+          "category": "drip",
+          "sizes": [
+            { "id": "short", "label": "Short", "oz": 8,  "mg": 130 },
+            { "id": "tall",  "label": "Tall",  "oz": 12, "mg": 195 },
+            { "id": "grande","label": "Grande","oz": 16, "mg": 310 },
+            { "id": "venti", "label": "Venti", "oz": 20, "mg": 410 }
+          ]
+        },
+        {
+          "id": "sbux_coldbrew",
+          "name": "Cold Brew",
+          "category": "cold",
+          "sizes": [
+            { "id": "tall",   "label": "Tall",   "oz": 12, "mg": 155 },
+            { "id": "grande", "label": "Grande",  "oz": 16, "mg": 205 },
+            { "id": "venti",  "label": "Venti",   "oz": 24, "mg": 310 },
+            { "id": "trenta", "label": "Trenta",  "oz": 30, "mg": 360 }
+          ]
+        },
+        {
+          "id": "sbux_nitro",
+          "name": "Nitro Cold Brew",
+          "category": "cold",
+          "sizes": [
+            { "id": "tall",   "label": "Tall",   "oz": 12, "mg": 215 },
+            { "id": "grande", "label": "Grande",  "oz": 16, "mg": 280 },
+            { "id": "venti",  "label": "Venti",   "oz": 24, "mg": 350 }
+          ]
+        },
+        {
+          "id": "sbux_latte",
+          "name": "Caffè Latte",
+          "category": "espresso",
+          "sizes": [
+            { "id": "short",  "label": "Short",  "oz": 8,  "mg": 75 },
+            { "id": "tall",   "label": "Tall",   "oz": 12, "mg": 75 },
+            { "id": "grande", "label": "Grande",  "oz": 16, "mg": 150 },
+            { "id": "venti",  "label": "Venti",   "oz": 20, "mg": 150 }
+          ]
+        },
+        {
+          "id": "sbux_americano",
+          "name": "Caffè Americano",
+          "category": "espresso",
+          "sizes": [
+            { "id": "short",  "label": "Short",  "oz": 8,  "mg": 75  },
+            { "id": "tall",   "label": "Tall",   "oz": 12, "mg": 150 },
+            { "id": "grande", "label": "Grande",  "oz": 16, "mg": 225 },
+            { "id": "venti",  "label": "Venti",   "oz": 20, "mg": 300 }
+          ]
+        },
+        {
+          "id": "sbux_espresso",
+          "name": "Espresso Shot",
+          "category": "espresso",
+          "sizes": [
+            { "id": "solo",   "label": "Solo (1)",  "oz": 1, "mg": 75  },
+            { "id": "doppio", "label": "Doppio (2)", "oz": 2, "mg": 150 },
+            { "id": "triple", "label": "Triple (3)", "oz": 3, "mg": 225 }
+          ]
+        },
+        {
+          "id": "sbux_matcha",
+          "name": "Matcha Latte",
+          "category": "tea",
+          "sizes": [
+            { "id": "tall",   "label": "Tall",   "oz": 12, "mg": 55  },
+            { "id": "grande", "label": "Grande",  "oz": 16, "mg": 80  },
+            { "id": "venti",  "label": "Venti",   "oz": 20, "mg": 110 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dunkin",
+      "name": "Dunkin'",
+      "emoji": "🟠",
+      "color": "#FF671F",
+      "drinks": [
+        {
+          "id": "ddk_coffee",
+          "name": "Hot Coffee",
+          "category": "drip",
+          "sizes": [
+            { "id": "small",  "label": "Small",  "oz": 10, "mg": 150 },
+            { "id": "medium", "label": "Medium", "oz": 14, "mg": 210 },
+            { "id": "large",  "label": "Large",  "oz": 20, "mg": 300 },
+            { "id": "xl",     "label": "XL",     "oz": 24, "mg": 359 }
+          ]
+        },
+        {
+          "id": "ddk_coldbrew",
+          "name": "Cold Brew",
+          "category": "cold",
+          "sizes": [
+            { "id": "small",  "label": "Small",  "oz": 12, "mg": 174 },
+            { "id": "medium", "label": "Medium", "oz": 16, "mg": 260 },
+            { "id": "large",  "label": "Large",  "oz": 24, "mg": 347 }
+          ]
+        },
+        {
+          "id": "ddk_latte",
+          "name": "Latte",
+          "category": "espresso",
+          "sizes": [
+            { "id": "small",  "label": "Small",  "oz": 10, "mg": 118 },
+            { "id": "medium", "label": "Medium", "oz": 14, "mg": 166 },
+            { "id": "large",  "label": "Large",  "oz": 20, "mg": 252 }
+          ]
+        },
+        {
+          "id": "ddk_espresso",
+          "name": "Espresso",
+          "category": "espresso",
+          "sizes": [
+            { "id": "single", "label": "Single", "oz": 1, "mg": 75  },
+            { "id": "double", "label": "Double", "oz": 2, "mg": 118 }
+          ]
+        },
+        {
+          "id": "ddk_iced",
+          "name": "Iced Coffee",
+          "category": "cold",
+          "sizes": [
+            { "id": "small",  "label": "Small",  "oz": 16, "mg": 198 },
+            { "id": "medium", "label": "Medium", "oz": 24, "mg": 297 },
+            { "id": "large",  "label": "Large",  "oz": 32, "mg": 396 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peets",
+      "name": "Peet's Coffee",
+      "emoji": "🔵",
+      "color": "#003D7A",
+      "drinks": [
+        {
+          "id": "peets_drip",
+          "name": "Drip Coffee",
+          "category": "drip",
+          "sizes": [
+            { "id": "sm",  "label": "Small",  "oz": 12, "mg": 267 },
+            { "id": "md",  "label": "Medium", "oz": 16, "mg": 356 },
+            { "id": "lg",  "label": "Large",  "oz": 20, "mg": 444 }
+          ]
+        },
+        {
+          "id": "peets_coldbrew",
+          "name": "Cold Brew",
+          "category": "cold",
+          "sizes": [
+            { "id": "sm", "label": "Small",  "oz": 12, "mg": 260 },
+            { "id": "md", "label": "Medium", "oz": 16, "mg": 325 }
+          ]
+        },
+        {
+          "id": "peets_latte",
+          "name": "Latte",
+          "category": "espresso",
+          "sizes": [
+            { "id": "sm", "label": "Small",  "oz": 12, "mg": 75  },
+            { "id": "md", "label": "Medium", "oz": 16, "mg": 150 },
+            { "id": "lg", "label": "Large",  "oz": 20, "mg": 225 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "name": "Home Brew",
+      "emoji": "🏠",
+      "color": "#8B5CF6",
+      "drinks": [
+        {
+          "id": "home_drip",
+          "name": "Drip Coffee",
+          "category": "drip",
+          "sizes": [
+            { "id": "sm",  "label": "8 oz",  "oz": 8,  "mg": 95  },
+            { "id": "md",  "label": "12 oz", "oz": 12, "mg": 140 },
+            { "id": "lg",  "label": "16 oz", "oz": 16, "mg": 190 },
+            { "id": "mug", "label": "Mug",   "oz": 14, "mg": 165 }
+          ]
+        },
+        {
+          "id": "home_espresso",
+          "name": "Espresso",
+          "category": "espresso",
+          "sizes": [
+            { "id": "single", "label": "Single", "oz": 1, "mg": 63  },
+            { "id": "double", "label": "Double", "oz": 2, "mg": 126 }
+          ]
+        },
+        {
+          "id": "home_frenchpress",
+          "name": "French Press",
+          "category": "drip",
+          "sizes": [
+            { "id": "sm",  "label": "8 oz",  "oz": 8,  "mg": 107 },
+            { "id": "md",  "label": "12 oz", "oz": 12, "mg": 161 },
+            { "id": "lg",  "label": "16 oz", "oz": 16, "mg": 214 }
+          ]
+        },
+        {
+          "id": "home_pourover",
+          "name": "Pour Over",
+          "category": "drip",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 100 },
+            { "id": "md", "label": "12 oz", "oz": 12, "mg": 150 }
+          ]
+        },
+        {
+          "id": "home_coldbrew",
+          "name": "Cold Brew (Homemade)",
+          "category": "cold",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 150 },
+            { "id": "md", "label": "12 oz", "oz": 12, "mg": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Energy Drinks",
+      "emoji": "⚡",
+      "color": "#EAB308",
+      "drinks": [
+        {
+          "id": "redbull",
+          "name": "Red Bull",
+          "category": "energy",
+          "sizes": [
+            { "id": "sm",  "label": "8.4 oz",  "oz": 8.4,  "mg": 80  },
+            { "id": "md",  "label": "12 oz",   "oz": 12,   "mg": 114 },
+            { "id": "lg",  "label": "16 oz",   "oz": 16,   "mg": 151 },
+            { "id": "can", "label": "12 oz can","oz": 12,  "mg": 114 }
+          ]
+        },
+        {
+          "id": "monster",
+          "name": "Monster",
+          "category": "energy",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 80  },
+            { "id": "md", "label": "16 oz", "oz": 16, "mg": 160 },
+            { "id": "lg", "label": "24 oz", "oz": 24, "mg": 240 }
+          ]
+        },
+        {
+          "id": "bang",
+          "name": "Bang Energy",
+          "category": "energy",
+          "sizes": [
+            { "id": "can", "label": "16 oz", "oz": 16, "mg": 300 }
+          ]
+        },
+        {
+          "id": "celsius",
+          "name": "Celsius",
+          "category": "energy",
+          "sizes": [
+            { "id": "can",  "label": "12 oz", "oz": 12, "mg": 200 },
+            { "id": "heat", "label": "16 oz Heat", "oz": 16, "mg": 300 }
+          ]
+        },
+        {
+          "id": "prime",
+          "name": "Prime Energy",
+          "category": "energy",
+          "sizes": [
+            { "id": "can", "label": "12 oz", "oz": 12, "mg": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tea",
+      "name": "Tea",
+      "emoji": "🍵",
+      "color": "#22C55E",
+      "drinks": [
+        {
+          "id": "tea_green",
+          "name": "Green Tea",
+          "category": "tea",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 28 },
+            { "id": "md", "label": "12 oz", "oz": 12, "mg": 42 }
+          ]
+        },
+        {
+          "id": "tea_black",
+          "name": "Black Tea",
+          "category": "tea",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 47 },
+            { "id": "md", "label": "12 oz", "oz": 12, "mg": 71 },
+            { "id": "lg", "label": "16 oz", "oz": 16, "mg": 95 }
+          ]
+        },
+        {
+          "id": "tea_matcha",
+          "name": "Matcha",
+          "category": "tea",
+          "sizes": [
+            { "id": "sm", "label": "8 oz",  "oz": 8,  "mg": 50 },
+            { "id": "md", "label": "12 oz", "oz": 12, "mg": 70 }
+          ]
+        },
+        {
+          "id": "tea_chai",
+          "name": "Chai Latte",
+          "category": "tea",
+          "sizes": [
+            { "id": "sm", "label": "12 oz", "oz": 12, "mg": 50 },
+            { "id": "md", "label": "16 oz", "oz": 16, "mg": 70 }
+          ]
+        }
+      ]
+    }
+  ]
+}
