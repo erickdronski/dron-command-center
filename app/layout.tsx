@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import {
-  LayoutDashboard, Calendar, Brain, Users, CloudSun, BarChart2, Wrench, Twitter, Linkedin, Coffee
+  LayoutDashboard, Calendar, Brain, Users, CloudSun, BarChart2, Wrench, Twitter, Linkedin, Coffee, VideoOff, PenLine
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -20,7 +20,9 @@ const navItems = [
   { href: '/team', icon: Users, label: 'Team' },
   { href: '/weather', icon: CloudSun, label: 'Weather' },
   { href: '/value-engineering', icon: Wrench, label: 'Value Eng', highlight: true },
-  { href: '/caffeine', icon: Coffee, label: 'Caffeine ☕' },
+  { href: '/caffeine',           icon: Coffee,   label: 'Caffeine ☕' },
+  { href: '/meeting-analyzer',   icon: VideoOff, label: 'Mtg → Email?' },
+  { href: '/buzzword-generator', icon: PenLine,  label: 'Buzzwords ✍️' },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
