@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1772209607476,
+      "updatedAtMs": 1772216807509,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772216807453,
-        "lastRunAtMs": 1772209607453,
+        "nextRunAtMs": 1772224007484,
+        "lastRunAtMs": 1772216807484,
         "lastStatus": "error",
-        "lastDurationMs": 23,
-        "consecutiveErrors": 9,
+        "lastDurationMs": 25,
+        "consecutiveErrors": 10,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772213612413,
+      "updatedAtMs": 1772215411818,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772215405053,
-        "lastRunAtMs": 1772213605053,
+        "nextRunAtMs": 1772217205089,
+        "lastRunAtMs": 1772215405089,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7360,
+        "lastDurationMs": 6729,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772215405080
+        "runningAtMs": 1772217205112
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772215215501,
+      "updatedAtMs": 1772216880866,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1668,7 +1668,7 @@
       "delivery": {
         "mode": "announce",
         "channel": "discord",
-        "to": "1476024756456263690"
+        "to": "1475320497490231438"
       },
       "state": {
         "nextRunAtMs": 1772218800000,
