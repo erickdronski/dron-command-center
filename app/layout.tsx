@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import {
-  LayoutDashboard, Calendar, Brain, Users, CloudSun, BarChart2, Wrench, Twitter, Linkedin, Coffee, VideoOff, PenLine, Flame
+  LayoutDashboard, Calendar, Brain, Users, CloudSun, BarChart2, Wrench, Twitter, Linkedin, Coffee, VideoOff, PenLine, Flame, UserRound
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ const navItems = [
   { href: '/weather', icon: CloudSun, label: 'Weather' },
   { href: '/value-engineering', icon: Wrench, label: 'Value Eng', highlight: true },
   { href: '/goggins',            icon: Flame,    label: 'Goggins 🔥' },
+  { href: '/parent-translator',  icon: UserRound, label: 'Parent Translator 👨‍👩‍👧' },
   { href: '/caffeine',           icon: Coffee,   label: 'Caffeine ☕' },
   { href: '/meeting-analyzer',   icon: VideoOff, label: 'Mtg → Email?' },
   { href: '/buzzword-generator', icon: PenLine,  label: 'Buzzwords ✍️' },
