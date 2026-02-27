@@ -17,192 +17,192 @@ const ROLES: Role[] = [
   {
     id: 'swe', title: 'Software Engineer', emoji: '💻',
     attempts: [
-      "He fixes the computer when it breaks. But also makes things for the computer. Like a mechanic but the cars are invisible and he made the cars too.",
-      "You know how the TV has channels? He makes the channels. But on your phone. And you don't call them channels.",
-      "He types really fast and then things happen on the internet.",
+      "You know how the bank website lets you check your balance? Somebody built that. He builds those. Not that exact one — a different one. For a different company. But same idea. He types things and then a website does something.",
+      "Okay so you know how your phone has apps? And the apps do things when you tap them? He writes the instructions that tell the app what to do when you tap it. The instructions are in a language the phone understands but humans can also technically read. He reads and writes that language all day.",
+      "He sits at a computer and makes the computer do things. It's very important. He makes good money.",
     ],
-    grandma: "He works at the computer place. Is he still at the computer place? I thought he was going to be a doctor.",
-    grandmaMisheard: "He's an engineer. A computer engineer. He fixes computers."
+    grandma: "So he fixes computers? Like when mine freezes? Because mine has been doing a thing where it freezes and I have to unplug it. Can he look at it when he visits?",
+    grandmaMisheard: "He's a computer engineer. Very technical. Fixes computers for a living, I think."
   },
   {
     id: 'pm', title: 'Product Manager', emoji: '📋',
     attempts: [
-      "She's the boss of a thing but not the boss boss. More like... she tells people what to make but doesn't make it herself. She's responsible when it goes wrong but doesn't get credit when it goes right.",
-      "Like a project manager but it's different. Apparently they're very different and it's important that you know they're different.",
-      "She goes to a lot of meetings and then writes down what happened in the meetings.",
+      "She decides what gets built — like which new features go in the app. She talks to customers, figures out what they need, then tells the engineers to build it. She's the one who says 'we should add a button that does this thing' and then everyone has a two-hour meeting about where the button goes.",
+      "Okay, so there's the people who build the thing, and there's the people who sell the thing, and she's in the middle. She makes sure the thing being built is actually what people want to buy. She's like the translator between the business people and the computer people. Neither side fully understands her.",
+      "She's in charge of the product. She goes to a lot of meetings. She makes lists.",
     ],
-    grandma: "She manages something. A product. What's the product? I don't know. Something on the phone.",
-    grandmaMisheard: "She's a manager. Very important. Management."
+    grandma: "She manages people? How many people? Is she a boss? I always knew she'd be a boss. She was very bossy as a child. I mean that as a compliment.",
+    grandmaMisheard: "She's a manager. Upper management I think. Very organized, very important."
   },
   {
     id: 'devops', title: 'DevOps Engineer', emoji: '⚙️',
     attempts: [
-      "He makes sure the website doesn't fall down. And when it falls down he puts it back up. He does this at 3am sometimes.",
-      "You know how the internet works? He's part of why. But not the whole internet. Just some of it. His company's part.",
-      "He works with servers. No not that kind of server. Not like a waiter. A different kind of server. It's a computer.",
+      "You know how when a website crashes, somebody has to fix it at 3am? He's that person. But also he sets things up so websites don't crash in the first place. Think of him as the person who maintains the pipes — you never notice him until the pipes burst, and then he's very important.",
+      "Imagine there's a factory that makes software. He doesn't build the product, he maintains the factory. He makes sure the conveyor belts work, the machines don't break, everything ships on time. The factory is made of computers. The product is invisible. But the factory is very important.",
+      "He keeps the website running. At all hours. Very stressful job.",
     ],
-    grandma: "I've heard of DevOps. I don't know what it is but I've heard of it. Is it good money?",
-    grandmaMisheard: "He does development. And operations. Both."
+    grandma: "Dev... ops? What's ops? Operations? Like a surgery? Is he in the medical field now? I thought it was computers.",
+    grandmaMisheard: "He works in operations. Computer operations. Very behind-the-scenes. Essential."
   },
   {
     id: 'ds', title: 'Data Scientist', emoji: '📊',
     attempts: [
-      "She looks at a lot of numbers and finds patterns. Like a really good accountant but she'd be offended if you called her an accountant.",
-      "Remember when we used to do puzzles? Like that, but the puzzle is made of spreadsheets and when you finish it a company knows something about you that you didn't know about yourself.",
-      "Statistics. She does statistics. With Python.",
+      "Companies collect enormous amounts of information — every click, every purchase, every time someone abandons their cart. She looks at all of that and finds patterns that aren't obvious. Like, she might figure out that people who buy dog food on Tuesdays are more likely to cancel their subscription. That information is somehow worth millions of dollars.",
+      "Remember how dad used to read the sports statistics in the newspaper and could predict which team would win? She does that, but with math so advanced that even she has trouble explaining it, and instead of sports it's things like 'which customer is about to leave us' or 'which email makes people click the buy button.'",
+      "She's a scientist but for numbers. At a company. The numbers are about the company.",
     ],
-    grandma: "A scientist! She was always the smart one. What does she study? Numbers? Like math?",
-    grandmaMisheard: "She's a scientist. At a tech company. Like a research scientist."
+    grandma: "A data scientist! So she studies science? What kind of science? Numbers? I was always terrible at math. She did not get that from my side.",
+    grandmaMisheard: "She's a scientist at a tech company. Research, I think. Very intelligent girl."
   },
   {
     id: 'ux', title: 'UX Designer', emoji: '🎨',
     attempts: [
-      "She makes apps look nice. And also makes them work nice. Those are two different things apparently, and it's two different jobs, and please don't confuse them.",
-      "Interior designer but for websites. She moves the buttons around until it feels right. Then tests it. Then moves them again.",
-      "She draws on a computer and then argues about whether the button should be blue or slightly different blue.",
+      "When you use an app and it just feels easy — like you know exactly where to tap — that's not an accident. Someone designed it to feel that way. She's that person. She figures out how humans think about things and then designs the app to match how their brain expects it to work.",
+      "You know when you go to a website and can't find the checkout button and you get frustrated and leave? That's bad UX. She spends her whole career making sure that doesn't happen. She talks to real people, watches them get confused, and fixes the thing that confused them. Repeat. Forever.",
+      "She makes apps easy to use. She draws a lot. She has opinions about buttons.",
     ],
-    grandma: "A designer! Like fashion? Or more like... interior? She has a good eye, that one.",
-    grandmaMisheard: "She does the graphics. The graphic design."
+    grandma: "A designer! Does she do logos? My church needs a new logo. Could she do something with a cross and maybe a dove? Could she do that as a favor?",
+    grandmaMisheard: "She's a graphic designer. Art and computers. Very creative, always was."
   },
   {
     id: 'mle', title: 'ML Engineer', emoji: '🤖',
     attempts: [
-      "He teaches computers to learn things. Without telling them the answers first. The computer figures it out on its own. Then it's wrong. Then he fixes it. Then it's less wrong.",
-      "You know how Netflix knows what you want to watch before you do? He builds the thing that figures that out. But he'd probably recommend a better movie than Netflix does.",
-      "AI stuff. He does the AI stuff.",
+      "You know how a dog learns that when you pick up the leash it means a walk? Not because you told it — it just figured it out from watching it happen a hundred times? He does that with computers. He shows the computer thousands of examples until the computer learns the pattern itself. Then the computer can predict things.",
+      "The spam folder in your email knows which emails are spam without you telling it. Someone taught it how to figure that out. He builds systems like that. Except instead of spam, it might be 'which loan will get paid back' or 'is this medical scan normal.' The computer learns. He's the one who teaches it.",
+      "He does AI stuff. The math part of AI. It's extremely complicated and if he tries to explain it further everyone's eyes glaze over.",
     ],
-    grandma: "Is that dangerous? I saw something on the news. About the robots taking over. Should I be worried?",
-    grandmaMisheard: "Machine learning. He teaches machines. Like a trainer but for robots."
+    grandma: "Machine learning. So he teaches machines? Like robots? Are we going to have robot butlers? I want one. I'd name him Gerald.",
+    grandmaMisheard: "He works in AI. The artificial intelligence. Builds robots maybe. Very futuristic."
   },
   {
     id: 'prompt', title: 'Prompt Engineer', emoji: '🗣️',
     attempts: [
-      "He talks to the AI and gets it to do things. He's very good at asking it questions the right way. It sounds simple and it isn't, and he has to explain that constantly.",
-      "You know how when you call customer service and you say 'representative' three times to skip the robot? Like that, but the other way around. He makes the robot smarter.",
-      "He asks ChatGPT things. Professionally.",
+      "You know how if you ask someone a question badly, you get a bad answer? But if you ask it the right way, you get exactly what you need? ChatGPT is the same way. He figures out exactly how to phrase things to get the AI to do what you actually want. Some prompts cost a sentence. Some cost a paragraph. Getting it right can save companies millions of dollars.",
+      "Okay you know how Alexa sometimes completely misunderstands you and plays the wrong song? He's the person who studies why that happens and finds the exact phrasing that makes it not happen. Except he does it for much more powerful AI than Alexa, and when he gets it right, the AI writes legal documents or diagnoses problems or runs customer service.",
+      "He's very good at talking to computers. They pay him for this.",
     ],
-    grandma: "A prompt what? Can you spell that? Is that a real job? My friend Carol's son is a doctor.",
-    grandmaMisheard: "He works with that ChatGPT thing. He's very good at it."
+    grandma: "Prompt what? He's a prompter? Like in a play, where they stand at the side and tell the actors their lines? That's a job now? At a tech company?",
+    grandmaMisheard: "He works with ChatGPT. Professionally. He's very good at it. I use ChatGPT too — I asked it for a lasagna recipe."
   },
   {
     id: 'cloud', title: 'Cloud Architect', emoji: '☁️',
     attempts: [
-      "She designs how companies store their stuff on the internet. Not like a USB stick. More like... up there. In the cloud. She decides what shape the cloud is.",
-      "You know Amazon? She uses Amazon, but not for shopping. She rents computers from Amazon and builds things with them. It's expensive.",
-      "She draws pictures of systems that other engineers then build. Very important pictures.",
+      "You know how your photos used to be on your phone, and if your phone broke, the photos were gone? Now they're 'in the cloud,' which means they're on someone else's computer far away. Big companies need millions of those computers. She designs the whole system — which computers go where, how they talk to each other, how to make sure nothing gets lost. It's like being an architect, but for invisible buildings.",
+      "You know Amazon? Massive warehouses full of stuff you order online? She works with Amazon's other business — they also rent out thousands of servers, like storage units but for data. She designs the layout of those storage units for companies. How big, how many, how they connect. If she makes a mistake, websites crash. No pressure.",
+      "She builds things in the cloud. The cloud is not weather. It's computers that belong to Amazon.",
     ],
-    grandma: "The cloud! My photos are in the cloud. Does she know where my photos are? Can she find the ones from 2019?",
-    grandmaMisheard: "She works with clouds. Computing clouds. Amazon, I think she mentioned Amazon."
+    grandma: "The cloud! I put my photos in the cloud. My grandson set it up. Can she tell me if they're safe? The ones from the cruise, I really don't want to lose those.",
+    grandmaMisheard: "She's an architect but for computers. Cloud architect. Something to do with Amazon."
   },
   {
     id: 'scrum', title: 'Scrum Master', emoji: '🏉',
     attempts: [
-      "He runs the team's meetings about what they're going to do, then checks if they did it. He's a referee but nobody's playing a sport.",
-      "Agile. He does Agile. It's a way of working where you work in two-week chunks and he's in charge of the chunks.",
-      "He has a lot of Post-it notes.",
+      "Software teams work in two-week sprints — they pick a set of things to build, build them, then review. He runs those sprints. He makes sure the team knows what they're doing each day, removes anything that's blocking them, and runs the meetings. He's the coach but he doesn't play. He's the one making sure everyone else can play.",
+      "You know how on a project there's always that one problem that nobody wants to deal with, so it just sits there getting worse? He deals with those problems. That's literally his job. Remove obstacles. Keep the team moving. Make sure the meetings don't turn into an hour of people staring at each other.",
+      "He organizes the team. He runs the meetings. He has very good Post-it note handwriting.",
     ],
-    grandma: "A master! Like a grandmaster? Of what? Scrum? Is that like chess? Your uncle plays chess.",
-    grandmaMisheard: "He's a project manager. At a tech company."
+    grandma: "Scrum Master. Is scrum a sport? Like scrimmage? He was always athletic. Though I don't see how sports gets into it at a tech company.",
+    grandmaMisheard: "He's a team manager. Manages the software team. Like a coach."
   },
   {
     id: 'fullstack', title: 'Full Stack Developer', emoji: '🥞',
     attempts: [
-      "She makes the front of the website AND the back of the website. The front is the pretty part you see. The back is the part you don't see that makes the front work. She does both.",
-      "She's a software engineer but she does double the work for the same job title and slightly less respect than specialists who only do one half.",
-      "She codes everything.",
+      "A website has two parts: the part you see — the colors, the buttons, the layout — and the part you don't see, which is all the logic running in the background. Like, what happens when you click 'submit'? Where does your data go? How does it come back? Most engineers do one or the other. She does both.",
+      "The front part of a website is like a restaurant's dining room — pretty, for customers. The back part is the kitchen — messy, technical, where the actual work happens. Most people specialize in one. She works the dining room and the kitchen. By herself. Simultaneously.",
+      "She builds the whole website. Both sides. Yes she knows that's a lot.",
     ],
-    grandma: "Full stack. Like pancakes? Does she work at a restaurant? IHOP?",
-    grandmaMisheard: "She's a developer. Full developer. Very skilled."
+    grandma: "Full stack. Like a full stack of pancakes? She must be very hungry. No but really — she built the whole website herself? Tell her I'm very proud.",
+    grandmaMisheard: "She makes websites. The whole thing, front to back. Very capable."
   },
   {
     id: 'ai', title: 'AI Engineer', emoji: '🧠',
     attempts: [
-      "He builds the AI tools. Like ChatGPT but for companies. He makes companies their own ChatGPT that only talks about their business.",
-      "He teaches computers to be smart and then puts those smart computers inside other computers that do things for companies.",
-      "He does AI.",
+      "You know ChatGPT, the thing you've read about in the newspaper? Companies want their own version — one that only knows about their business, their customers, their products. He builds that. He takes the AI technology and wires it into a company's systems so it can answer questions, write things, make decisions. Like installing a very smart employee who never sleeps.",
+      "Before AI, companies needed people to answer emails, summarize documents, review applications. He builds the software that does those things now, automatically, at 3am, without complaining. He didn't take those people's jobs, technically — he just built a thing that technically could.",
+      "He does the AI. Not ChatGPT itself, but the kind of AI that ChatGPT is. At companies. Very in-demand.",
     ],
-    grandma: "Is the AI going to take his job? I saw that on 60 Minutes. They said AI is taking everyone's jobs. Is he safe?",
-    grandmaMisheard: "He works in artificial intelligence. He's very smart. We always knew."
+    grandma: "Is the AI going to take his job too eventually? I'm asking genuinely. Because I saw something on the news and I've been worried. Does he have a backup plan?",
+    grandmaMisheard: "He does artificial intelligence. Builds it, I think. He's the one making those things smarter. Very scary when you think about it."
   },
   {
     id: 'cyber', title: 'Cybersecurity Analyst', emoji: '🔐',
     attempts: [
-      "She stops hackers. Specifically she's paid by companies to try to hack them before the real hackers do. She is the hacker but she works for the good guys.",
-      "You know when you get that email saying you've won $4 million from a Nigerian prince? She's the reason your bank knows that's not your bank. Usually.",
-      "She makes sure people who aren't supposed to get into computers don't get into computers.",
+      "Companies hire her to try to break into their own systems before the actual criminals do. She's a professional burglar but working for the bank. She finds the unlocked window, reports it, and they lock it. If she doesn't find it, the real hackers will — and they won't report it politely.",
+      "You know how your email somehow knows which messages are scams? Or how the bank catches when someone in Russia is using your card? She builds the systems that catch that, or she's the person testing whether those systems work. Think of her as the person who checks that your door locks actually lock.",
+      "She stops hackers. She is legally also a hacker. It's complicated.",
     ],
-    grandma: "Oh she can help me! I got an email saying I won a prize. There's a link. Should I click the link? Can she look at it?",
-    grandmaMisheard: "She works in security. Computer security. Like a security guard but for the internet."
+    grandma: "Oh! I got an email this morning. It says my Amazon account has been compromised. There's a number to call. Should I call the number? Can she look at this email?",
+    grandmaMisheard: "She works in computer security. Very important job right now with all these hackers. She's basically a detective."
   },
   {
     id: 'coo', title: 'Chief of Staff', emoji: '📎',
     attempts: [
-      "He does whatever the CEO can't get to. He's kind of like the CEO's assistant but that's an insult and you shouldn't say that to him.",
-      "You know how the President has a chief of staff who runs everything while the President does the important stuff? Like that. But for a smaller company. Similar stress.",
-      "He goes to all the meetings so the CEO doesn't have to.",
+      "The CEO has a hundred things on their plate and can only focus on ten of them. He takes the other ninety. Every meeting the CEO can't make, he goes. Every decision that doesn't need the CEO but needs someone senior, he makes it. He is the reason the company doesn't fall apart while the CEO is doing the important stuff.",
+      "You know how the President has a Chief of Staff who basically runs the daily operation while the President handles the big decisions? Like that. Except the president in this case runs a software company and the big decisions are about technology strategy and product roadmaps, not foreign policy. Same stress, slightly smaller blast radius.",
+      "He supports the CEO. Very important support. He's everywhere.",
     ],
-    grandma: "Chief! Like an Indian chief? Or wait — is he a chef? Does he cook? He was always a good cook.",
-    grandmaMisheard: "He works directly with the CEO. Very close to the CEO. Very important."
+    grandma: "Chief of Staff! Like the White House? Does he know anyone famous? Could he put in a good word somewhere? I don't know where. Somewhere good.",
+    grandmaMisheard: "He's very high up. Works directly with the CEO. Chief something. Very important title."
   },
   {
     id: 'growth', title: 'Growth Hacker', emoji: '📈',
     attempts: [
-      "She gets more people to download the app. As fast as possible. Without spending much money. And sometimes the ways she does it are very creative.",
-      "Marketing, but she went to coding school first, so she can actually build the things she's marketing, which makes her twice as dangerous.",
-      "She hacks the growth. It's a thing now.",
+      "She's the reason apps grow from 100 users to 100,000 users in six months. She runs experiments — change the button color, tweak the signup flow, try a different subject line — and figures out what makes more people sign up and stay. Every tiny change gets measured. She's the scientific method applied to getting more customers.",
+      "You know how Dropbox gave you more storage if you referred a friend? And then every single person you know got Dropbox? Someone designed that referral loop. She designs those loops. Not always Dropbox-sized. But that's the job. Find the thing that makes the product spread itself.",
+      "She makes the app grow. Faster than normal. Using clever tricks.",
     ],
-    grandma: "Hacker? Is that legal? I thought hacking was illegal. She's not going to get in trouble, is she?",
-    grandmaMisheard: "She does marketing. And some computer stuff. Growth marketing I think."
+    grandma: "Hacker? That sounds illegal. I hope she's not getting into trouble. Is this legitimate? Should I not mention this at church?",
+    grandmaMisheard: "She does marketing. Tech marketing. Growth something. Good money I hear."
   },
   {
     id: 'revops', title: 'Revenue Operations', emoji: '💰',
     attempts: [
-      "He makes sure the sales team and the marketing team and the customer team are all using the same spreadsheet. This is harder than it sounds.",
-      "You know how companies have sales and marketing and they never talk to each other? He's the one making them talk. They don't always want to. He makes them anyway.",
-      "He does RevOps. Very important spreadsheets.",
+      "Sales and marketing are two different departments and they almost never agree on anything. He's the person who forces them to agree, specifically about what counts as a good lead, what happens when a deal closes, and why the numbers from sales never match the numbers from marketing. He fixes the plumbing between departments.",
+      "Imagine three teams who all own different pieces of a puzzle but nobody told them they had the same puzzle. One team has the data, one has the customer relationships, one has the money. He makes sure all three know what's going on. With spreadsheets. Very important spreadsheets. The company would lose significant money without those spreadsheets.",
+      "He makes sure the business side works smoothly. Lots of data. Lots of coordination.",
     ],
-    grandma: "Revenue! So he counts the money? Like an accountant? Is he an accountant? We have a family accountant, does he know Henry?",
-    grandmaMisheard: "He works in finance. Revenue. Something with the money."
+    grandma: "Revenue. So he handles money? Is he like an accountant? Our accountant Henry could use an assistant. Should I mention him? I'll mention him.",
+    grandmaMisheard: "He works in finance I think. Revenue operations. Something between sales and accounting."
   },
   {
     id: 'se', title: 'Solutions Engineer', emoji: '🤝',
     attempts: [
-      "She sells software but she's not a salesperson. She's an engineer. Who explains the software to people thinking about buying it. She does the scary technical demos.",
-      "Pre-sales. Technical pre-sales. She shows people how it works. If it breaks during the demo, she fixes it while smiling. Very important skill.",
-      "She does demos.",
+      "When a company wants to buy expensive software, they need to see it work first. She does the demo — live, in front of the customer, with their actual data. If the software breaks during the demo, she fixes it without breaking a sweat and keeps talking. She's an engineer who can also close a room. That combination is rare and they pay well for it.",
+      "She's the bridge between the sales people who promise things and the engineers who actually have to build those things. She has to know the technical side well enough to demo it, and the business side well enough to explain why it solves the problem. When the salesperson says 'we can do anything' and the customer asks 'can you do this specific thing?' — she's the one who knows the actual answer.",
+      "She demos software to companies that might buy it. She is not in sales. Please do not call her sales.",
     ],
-    grandma: "A solution engineer. So she solves problems? With engineering? That sounds very useful. More useful than some of the things your cousins do.",
-    grandmaMisheard: "She's in sales. Technical sales. She's very technical."
+    grandma: "Solutions! She solves problems. I like that. Very practical. Not like some of these other computer things. She sounds sensible.",
+    grandmaMisheard: "She's in sales. Technical sales. Demos. Very smart girl, can talk to anyone."
   },
   {
     id: 'vpe', title: 'VP of Engineering', emoji: '👔',
     attempts: [
-      "He's in charge of all the people who write the code. He used to write code. Now he talks about code in meetings. He misses writing code but won't admit it.",
-      "He makes decisions about technology that other people then build. He has opinions about everything and he's allowed to have them now.",
-      "He's the boss. Of the computer people.",
+      "He's the most senior technical person at the company who still goes to meetings instead of writing code. He leads all the engineers, makes decisions about which technology to use, sets the standards for how things get built, and is responsible when major things go wrong. He used to write code himself. Now he writes strategy documents and wishes they were code.",
+      "There's a hundred engineers at the company. Somebody has to make sure they're all working on the right things, not stepping on each other's work, and building things that actually hold together. He's that person. He hires them, organizes them into teams, sets the direction, and carries the pager when production breaks at 2am.",
+      "He runs the whole engineering department. Lots of responsibility. Very good salary.",
     ],
-    grandma: "Vice President! Of the whole company? Does he know the President? Can he get us tickets? To what, I don't know. Something.",
-    grandmaMisheard: "He's a VP. Vice President. Of engineering. He's basically running the place."
+    grandma: "Vice President! I'll tell everyone. Of the whole company? Is he near the top? How many people are above him? Is he going to be President next?",
+    grandmaMisheard: "He's basically running the company. VP of Engineering. High up. Very high up."
   },
   {
     id: 'blockchain', title: 'Blockchain Developer', emoji: '⛓️',
     attempts: [
-      "You know Bitcoin? He makes things that work like Bitcoin but for companies. Sometimes actual Bitcoin. The technology behind it. Not the buying part. Mostly.",
-      "Web3. He does Web3. We're currently on Web2. Web3 is the next one. It's decentralized. That means nobody's in charge. Except everyone is. It's complicated.",
-      "Crypto stuff. He does crypto stuff.",
+      "You know how your bank keeps a record of every transaction? Blockchain is like that record book, except there are thousands of copies all over the world, and nobody owns it, and everyone can see it, and you can't change what's already written. He builds things that use that system instead of a regular bank.",
+      "Bitcoin works because thousands of computers all agree on the same record of who owns what. He builds other things using the same idea — not just money, but contracts, art ownership, voting. It solves the problem of 'how do you trust someone you've never met' without having a bank in the middle. Whether that's actually useful is a conversation the industry is still having.",
+      "He does crypto stuff. Blockchain. He gets passionate if you ask follow-up questions.",
     ],
-    grandma: "I heard you can make a lot of money with that. Is he making a lot of money? Should I invest? Your uncle put $500 in something and lost it all.",
-    grandmaMisheard: "He does the Bitcoin. The crypto. He's very good with computers."
+    grandma: "Bitcoin! My neighbor made money on Bitcoin. Then he lost it. Then he made it again. He's exhausted. Is this the same thing? Should I buy some?",
+    grandmaMisheard: "He does the cryptocurrency. Bitcoin, blockchain, that whole thing. Makes good money. I think."
   },
   {
     id: 'openclaw', title: 'OpenClaw Engineer', emoji: '🏗️',
     attempts: [
-      "He builds autonomous AI agents. The agents run things for him while he's not looking. He watches them from Discord. This is normal now apparently.",
-      "You know how you have to do things yourself? He made robots that do things for him. Trading. Posting. Managing. The robots do it. He approves the robots.",
-      "He built an AI that built other AIs and now the AIs talk to each other and he just... watches.",
+      "He builds AI agents — basically software robots that take actions on their own. Not just answer questions. Actually do things: trade stocks, post on Twitter, send emails, analyze data, make decisions. He watches them work from his phone. The robots run 24/7. He mostly just reviews what they did.",
+      "You know how some people use apps? He built the apps. And then made the apps run themselves. And then made the apps talk to each other and coordinate. He's less a programmer now and more... an AI manager. He has a staff of robots. He does performance reviews on the robots.",
+      "He built robots. Software robots. They run his whole operation. He watches. Sometimes he approves things.",
     ],
-    grandma: "OpenClaw? Is that like a lobster thing? Is he in seafood? I thought he was in computers. Maybe he's in both.",
-    grandmaMisheard: "He has robots. A lot of robots. He controls them from his phone. Very impressive I'm sure."
+    grandma: "OpenClaw? That sounds like something with a lobster. Is he in seafood now? I thought it was computers. Can it be both? Ask him if it's lobster-related.",
+    grandmaMisheard: "He has robots. AI robots. They run everything. He just supervises. Honestly sounds like a good deal."
   },
   {
     id: 'custom', title: 'My Job', emoji: '🫵',
@@ -214,17 +214,18 @@ const ROLES: Role[] = [
 
 // Custom role explanation generator
 function generateCustom(role: string): Role {
+  const word = role.split(' ')[0];
   return {
     id: 'custom',
     title: role,
     emoji: '🫵',
     attempts: [
-      `They do... ${role.toLowerCase()} things. For a company. It's important apparently.`,
-      `You know how companies need people to do the ${role.toLowerCase()} stuff? That's what they do. The ${role.toLowerCase()} stuff.`,
-      `It's hard to explain. You'd have to work there.`,
+      `Okay so it's a tech job. They work at a company and they're in charge of the ${role.toLowerCase()} side of things. It's more complex than it sounds, which is why it pays well.`,
+      `You know how every department at a company needs someone who really understands their specific thing? They're that person for ${role.toLowerCase()}. Very important. Very specialized.`,
+      `It's... honestly hard to explain in a quick way. But they're good at it. The company needs it. That's really all that matters.`,
     ],
-    grandma: `${role}. I'll have to tell my friends at church. They'll know what that is. Or they'll pretend to. Like I'm doing now.`,
-    grandmaMisheard: `They're a ${role.split(' ')[0]}. Something like that. Very good job. Very impressive.`
+    grandma: `${role}. That's a mouthful. I'm going to tell people at church you work in technology. That covers everything, doesn't it? Technology.`,
+    grandmaMisheard: `They're a ${word} person. At a tech company. Does very important ${word} things. Very impressive.`
   };
 }
 
