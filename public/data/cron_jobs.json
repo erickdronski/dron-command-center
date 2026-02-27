@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772211676481,
+      "updatedAtMs": 1772218835202,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772211654764,
+        "lastRunAtMs": 1772218815813,
         "lastStatus": "ok",
-        "lastDurationMs": 21717,
+        "lastDurationMs": 19389,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772218812453,
+        "nextRunAtMs": 1772226012453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772215411818,
+      "updatedAtMs": 1772217212848,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772217205089,
-        "lastRunAtMs": 1772215405089,
+        "nextRunAtMs": 1772219005119,
+        "lastRunAtMs": 1772217205119,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6729,
+        "lastDurationMs": 7729,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772217205112
+        "runningAtMs": 1772219005153
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772216880866,
+      "updatedAtMs": 1772218815743,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,14 +1671,44 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772218800000,
-        "lastRunAtMs": 1772215200049,
+        "nextRunAtMs": 1772222400000,
+        "lastRunAtMs": 1772218800039,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15452,
+        "lastDurationMs": 15704,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
+      }
+    },
+    {
+      "id": "b05820af-74c7-40a6-8d5f-c748b3cd8d59",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1476024756456263690",
+      "name": "☕ Daily Caffeine Cutoff Briefing",
+      "enabled": true,
+      "createdAtMs": 1772217396224,
+      "updatedAtMs": 1772217396224,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 30,
+        "message": "Run the caffeine optimization bot and report today's cutoff time:\n\ncd /Users/dron/.openclaw/workspace/dron-command-center && python3 scripts/caffeine_bot.py --wake 07:00 --sleep 23:00 --coffees 3 --json\n\nThen reply with a single punchy message like:\n☕ Good morning. Your last coffee deadline today is **[TIME]**. You currently have [X]mg of caffeine in your bloodstream from yesterday. Godspeed.\n\nBe slightly sarcastic. Reference Q3 OKRs or quarterly planning at least once."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1475320497490231438"
+      },
+      "state": {
+        "nextRunAtMs": 1772283600000
       }
     }
   ]
