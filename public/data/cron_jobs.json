@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772190031149,
+      "updatedAtMs": 1772197267608,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772190012488,
+        "lastRunAtMs": 1772197254537,
         "lastStatus": "ok",
-        "lastDurationMs": 18661,
+        "lastDurationMs": 13071,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772197212453,
+        "nextRunAtMs": 1772204412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1772024604119,
+      "updatedAtMs": 1772197200054,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772197200000,
-        "lastRunAtMs": 1772024580064,
-        "lastStatus": "ok",
-        "lastDurationMs": 24055,
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1772283600000,
+        "lastRunAtMs": 1772197200030,
+        "lastStatus": "error",
+        "lastDurationMs": 24,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastError": "model not allowed: ollama/llama3.2:1b",
+        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -1575,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772157624224,
+      "updatedAtMs": 1772197226710,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,15,18,21 * * *",
@@ -1596,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772197200000,
-        "lastRunAtMs": 1772157600036,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 24188,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: All models failed (7): xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
+        "nextRunAtMs": 1772211600000,
+        "lastRunAtMs": 1772197200054,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 26656,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -1613,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772193810989,
+      "updatedAtMs": 1772195611639,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1631,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772195604704,
-        "lastRunAtMs": 1772193804704,
+        "nextRunAtMs": 1772197404745,
+        "lastRunAtMs": 1772195604745,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6285,
+        "lastDurationMs": 6894,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772195604734
+        "runningAtMs": 1772197404771
       }
     },
     {
@@ -1649,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772164831217,
+      "updatedAtMs": 1772197254478,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1668,11 +1671,11 @@
         "to": "1476024756456263690"
       },
       "state": {
-        "nextRunAtMs": 1772197200000,
-        "lastRunAtMs": 1772164800033,
+        "nextRunAtMs": 1772200800000,
+        "lastRunAtMs": 1772197226710,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 31184,
+        "lastDurationMs": 27768,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
