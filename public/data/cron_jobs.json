@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772204611946,
+      "updatedAtMs": 1772206412600,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772206404901,
-        "lastRunAtMs": 1772204604901,
+        "nextRunAtMs": 1772208204934,
+        "lastRunAtMs": 1772206404934,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7045,
+        "lastDurationMs": 7666,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772206404927
+        "runningAtMs": 1772208204957
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772204428346,
+      "updatedAtMs": 1772208124638,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1663,7 +1663,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Run the X DM outreach bot to send 1 targeted DM to a sports betting prospect. Run this command and report back what happened:\n\ncd /Users/dron/.openclaw/workspace && python3 x_dm_outreach.py --send --limit 1 --yes 2>&1\n\nIf it succeeded, report who got the DM and their score. If daily limit (20) is hit, just say 'Daily limit reached' and stop.",
-        "timeoutSeconds": 60
+        "timeoutSeconds": 120
       },
       "delivery": {
         "mode": "announce",
@@ -1671,14 +1671,14 @@
         "to": "1476024756456263690"
       },
       "state": {
-        "nextRunAtMs": 1772208000000,
-        "lastRunAtMs": 1772204400080,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 28266,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772211600000,
+        "lastRunAtMs": 1772208000057,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60022,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     }
   ]
