@@ -1630,6 +1630,35 @@
       "state": {
         "nextRunAtMs": 1772150603552
       }
+    },
+    {
+      "id": "24f3423d-5bed-4283-80f0-272fd7a10690",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "X DM Outreach - 1/hour",
+      "enabled": true,
+      "createdAtMs": 1772150449002,
+      "updatedAtMs": 1772150449002,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8-23 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the X DM outreach bot to send 1 targeted DM to a sports betting prospect. Run this command and report back what happened:\n\ncd /Users/dron/.openclaw/workspace && python3 x_dm_outreach.py --send --limit 1 --yes 2>&1\n\nIf it succeeded, report who got the DM and their score. If daily limit (20) is hit, just say 'Daily limit reached' and stop.",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1476024756456263690"
+      },
+      "state": {
+        "nextRunAtMs": 1772154000000
+      }
     }
   ]
 }
