@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Building2, Factory, Heart, Shield, Zap, Landmark, Fuel, ShoppingCart, Handshake, Plane, BookOpen, ChevronRight, Plus, Search } from 'lucide-react';
-import { benefits } from './data';
+import { ArrowLeft, Building2, Factory, Heart, Shield, Zap, Landmark, Fuel, ShoppingCart, Handshake, Plane, BookOpen, ChevronRight, Plus, Search, LayoutGrid, List } from 'lucide-react';
+import { benefits, type Solution } from './data';
 
 type Vertical = {
   id: string;
@@ -108,12 +108,32 @@ const verticals: Vertical[] = [
   },
 ];
 
+const solutionMeta: Record<string, { label: string; color: string; bgColor: string; borderColor: string; icon: string }> = {
+  all: { label: 'All Solutions', color: 'text-purple-400', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/30', icon: '📊' },
+  itsm: { label: 'ITSM', color: 'text-blue-400', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/30', icon: '🎫' },
+  esm: { label: 'ESM', color: 'text-emerald-400', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/30', icon: '🏢' },
+  uem: { label: 'UEM', color: 'text-amber-400', bgColor: 'bg-amber-500/10', borderColor: 'border-amber-500/30', icon: '💻' },
+  security: { label: 'Security', color: 'text-red-400', bgColor: 'bg-red-500/10', borderColor: 'border-red-500/30', icon: '🔒' },
+};
+
 export default function BenefitStoriesPage() {
   const [search, setSearch] = useState('');
+  const [view, setView] = useState<'verticals' | 'solutions'>('verticals');
+  const [solutionFilter, setSolutionFilter] = useState<string>('all');
   const totalBenefits = verticals.reduce((sum, v) => sum + v.benefitCount, 0);
   const filtered = verticals.filter(v =>
     v.name.toLowerCase().includes(search.toLowerCase()) ||
     v.description.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const filteredBenefits = solutionFilter === 'all'
+    ? benefits
+    : benefits.filter(b => b.solution === solutionFilter);
+
+  const searchedBenefits = filteredBenefits.filter(b =>
+    b.benefitName.toLowerCase().includes(search.toLowerCase()) ||
+    b.subcategory.toLowerCase().includes(search.toLowerCase()) ||
+    b.description.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -137,9 +157,28 @@ export default function BenefitStoriesPage() {
             <p className="text-sm text-[#666]">Industry-specific storytelling guides for every Value Cloud benefit</p>
           </div>
         </div>
-        <div className="text-right">
-          <div className="text-xs text-[#555]">Benefits Mapped</div>
-          <div className="text-lg font-bold text-purple-400">{totalBenefits} / TBD</div>
+        <div className="flex items-center gap-4">
+          {/* View Toggle */}
+          <div className="flex items-center bg-[#111] border border-[#222] rounded-lg p-0.5">
+            <button
+              onClick={() => setView('verticals')}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${view === 'verticals' ? 'bg-purple-500/20 text-purple-400' : 'text-[#666] hover:text-white'}`}
+            >
+              <LayoutGrid size={12} className="inline mr-1" />
+              By Vertical
+            </button>
+            <button
+              onClick={() => setView('solutions')}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${view === 'solutions' ? 'bg-purple-500/20 text-purple-400' : 'text-[#666] hover:text-white'}`}
+            >
+              <List size={12} className="inline mr-1" />
+              By Solution
+            </button>
+          </div>
+          <div className="text-right">
+            <div className="text-xs text-[#555]">Benefits Mapped</div>
+            <div className="text-lg font-bold text-purple-400">{benefits.length}</div>
+          </div>
         </div>
       </div>
 
@@ -188,53 +227,128 @@ export default function BenefitStoriesPage() {
         <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#555]" />
         <input
           type="text"
-          placeholder="Search verticals..."
+          placeholder={view === 'verticals' ? 'Search verticals...' : 'Search benefits...'}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full bg-[#111] border border-[#222] rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-[#555] focus:outline-none focus:border-purple-500/30"
         />
       </div>
 
-      {/* Vertical Grid */}
-      <div className="grid grid-cols-2 gap-3">
-        {filtered.map((v) => {
-          const Icon = v.icon;
-          const hasStories = v.benefitCount > 0;
-          return (
-            <Link
-              key={v.id}
-              href={`/value-engineering/projects/benefit-stories/${v.id}`}
-              className={`bg-[#111] border ${v.borderColor} rounded-xl p-5 hover:bg-[#141414] transition-all group`}
-            >
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-lg ${v.bgColor} flex items-center justify-center`}>
-                    <Icon size={20} className={v.color} />
+      {view === 'verticals' ? (
+        <>
+          {/* Vertical Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            {filtered.map((v) => {
+              const Icon = v.icon;
+              const hasStories = v.benefitCount > 0;
+              return (
+                <Link
+                  key={v.id}
+                  href={`/value-engineering/projects/benefit-stories/${v.id}`}
+                  className={`bg-[#111] border ${v.borderColor} rounded-xl p-5 hover:bg-[#141414] transition-all group`}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-lg ${v.bgColor} flex items-center justify-center`}>
+                        <Icon size={20} className={v.color} />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-bold text-white">{v.name}</h3>
+                        <div className="text-[10px] text-[#555] mt-0.5">
+                          {hasStories ? `${v.benefitCount} benefits mapped` : 'Awaiting benefits'}
+                        </div>
+                      </div>
+                    </div>
+                    <ChevronRight size={16} className="text-[#333] group-hover:text-[#666] transition-colors mt-1" />
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white">{v.name}</h3>
-                    <div className="text-[10px] text-[#555] mt-0.5">
-                      {hasStories ? `${v.benefitCount} benefits mapped` : 'Awaiting benefits'}
+                  <p className="text-[11px] text-[#777] leading-relaxed mb-3">{v.description}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {v.examples.map((ex) => (
+                      <span key={ex} className="text-[10px] bg-white/5 text-[#666] px-1.5 py-0.5 rounded">{ex}</span>
+                    ))}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Solution Filter Tabs */}
+          <div className="flex items-center gap-2">
+            {Object.entries(solutionMeta).map(([key, meta]) => {
+              const count = key === 'all' ? benefits.length : benefits.filter(b => b.solution === key).length;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setSolutionFilter(key)}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium border transition-all ${
+                    solutionFilter === key
+                      ? `${meta.bgColor} ${meta.color} ${meta.borderColor}`
+                      : 'border-[#222] text-[#666] hover:text-white hover:border-[#333]'
+                  }`}
+                >
+                  <span>{meta.icon}</span>
+                  <span>{meta.label}</span>
+                  <span className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-full ${solutionFilter === key ? 'bg-white/10' : 'bg-white/5'}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Benefits List */}
+          <div className="space-y-3">
+            {searchedBenefits.map((b) => {
+              const meta = solutionMeta[b.solution] || solutionMeta.all;
+              const verticalCount = Object.keys(b.stories).length;
+              return (
+                <div
+                  key={b.id}
+                  className={`bg-[#111] border ${meta.borderColor} rounded-xl p-5 hover:bg-[#141414] transition-all`}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">{meta.icon}</span>
+                      <div>
+                        <h3 className="text-sm font-bold text-white">{b.benefitName}</h3>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded ${meta.bgColor} ${meta.color}`}>
+                            {meta.label}
+                          </span>
+                          <span className="text-[10px] text-[#555]">{b.subcategory}</span>
+                          <span className="text-[10px] text-[#444]">•</span>
+                          <span className="text-[10px] text-[#555]">{verticalCount} verticals</span>
+                          <span className="text-[10px] text-[#444]">•</span>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded ${b.category === 'financial' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-blue-500/10 text-blue-400'}`}>
+                            {b.category === 'financial' ? '💰 Financial' : '⏱️ Time Savings'}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <p className="text-[11px] text-[#888] leading-relaxed mb-3 ml-8">{b.description}</p>
+                  <div className="ml-8 bg-[#0a0a0a] rounded-lg p-3">
+                    <div className="text-[10px] text-[#555] mb-1">Formula</div>
+                    <div className="text-[11px] text-purple-400 font-mono">{b.formula}</div>
+                  </div>
                 </div>
-                <ChevronRight size={16} className="text-[#333] group-hover:text-[#666] transition-colors mt-1" />
-              </div>
-              <p className="text-[11px] text-[#777] leading-relaxed mb-3">{v.description}</p>
-              <div className="flex flex-wrap gap-1">
-                {v.examples.map((ex) => (
-                  <span key={ex} className="text-[10px] bg-white/5 text-[#666] px-1.5 py-0.5 rounded">{ex}</span>
-                ))}
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+
+          {searchedBenefits.length === 0 && (
+            <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-12 text-center">
+              <div className="text-sm text-[#555]">No benefits found</div>
+            </div>
+          )}
+        </>
+      )}
 
       {/* Status */}
       <div className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl p-4 text-center">
-        <div className="text-xs text-[#555]">🚧 Project Status: <span className="text-amber-400 font-semibold">Foundation Laid — Awaiting Benefit Data</span></div>
-        <div className="text-[10px] text-[#444] mt-1">Feed benefits batch-by-batch. Stories will populate per vertical as data comes in.</div>
+        <div className="text-xs text-[#555]">{benefits.length} benefits across {Object.keys(solutionMeta).length - 1} solutions and {verticals.length} verticals</div>
       </div>
     </div>
   );

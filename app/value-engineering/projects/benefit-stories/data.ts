@@ -2,9 +2,12 @@
 // Each benefit has stories for all 8 verticals
 // [Company] or [Organization] used as placeholders throughout
 
+export type Solution = 'itsm' | 'uem' | 'security' | 'esm' | 'general';
+
 export type BenefitStory = {
   id: string;
   benefitName: string;
+  solution: Solution;
   category: 'financial' | 'time-savings';
   subcategory: string;
   description: string;
@@ -27,6 +30,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'high-priority-ticket-routing',
     benefitName: 'High Priority Ticket Routing',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Penalties & Fines Avoidance',
     description: 'Neurons for ITSM routes high-priority tickets to the right teams without delay. By leveraging workflows and contextual data, it ensures urgent issues are escalated and addressed quickly, reducing compliance penalty exposure and improving service reliability.',
@@ -90,6 +94,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduced-incident-aht',
     benefitName: 'Reduced Incident Average Handle Time (AHT)',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM provides process optimization tools such as quick actions, knowledgebase articles, and automated workflows to lower incident average handle time (AHT). These enhancements enable agents to resolve issues more quickly and efficiently. Faster incident resolution improves both productivity and customer satisfaction.',
@@ -153,6 +158,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'optimized-knowledge',
     benefitName: 'Optimized Knowledge for Improved Service Delivery',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM provides employees with easy access to self-service portals and searchable knowledge base articles, helping them resolve common issues without submitting support tickets. By enabling users to find solutions independently, the platform reduces the number of routine requests. Built-in feedback and analytics help continually improve support content.',
@@ -216,6 +222,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'asset-relationship-management',
     benefitName: 'Asset Relationship Management',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM delivers visibility into assets and their associated users, enabling IT teams to manage relationships more effectively. By linking assets to user profiles, it accelerates issue resolution and improves lifecycle management.',
@@ -279,6 +286,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'energy-utility-cost-optimisation',
     benefitName: 'Energy & Utility Cost Optimisation Through Data-Driven Operations',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Facilities Management',
     description: 'Neurons for FM supports energy optimization by consolidating operational data, monitoring system performance, and providing actionable insights that reduce waste. Through improved forecasting, early detection of inefficiencies, and better decision making, FM teams can drive down energy spend, improve building comfort, and strengthen sustainability performance.',
@@ -342,6 +350,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'vendor-contract-insights',
     benefitName: 'Vendor Contract Insights',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'IT Asset Management',
     description: 'Neurons for ITAM helps IT teams evaluate vendor contracts and renegotiate terms to align with actual usage and performance requirements. Expiring contracts are flagged for review, preventing auto-renewals on unfavorable terms. Organizations save money by improving vendor agreements and ensuring contracts meet service-level needs.',
@@ -405,6 +414,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduce-exploitation-recovery-costs',
     benefitName: 'Reduce Exploitation Recovery Costs',
+    solution: 'security',
     category: 'financial',
     subcategory: 'Risk & Security',
     description: 'Ivanti Neurons for Risk-Based Vulnerability Management (RBVM) helps cut recovery costs by preventing exploitation through proactive vulnerability prioritization. Using threat intelligence and asset criticality, it focuses remediation on the most exploitable risks, reducing the chance of system compromise and avoiding costly rebuilds, data restoration, and downtime.',
@@ -468,6 +478,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'minimise-incident-response-downtime-costs',
     benefitName: 'Minimise Incident Response & Downtime Costs',
+    solution: 'security',
     category: 'financial',
     subcategory: 'Risk & Security',
     description: 'Ivanti Neurons for Risk-Based Vulnerability Management (RBVM) reduces both incident response and downtime costs by preventing exploitation before it occurs. By prioritising vulnerabilities based on threat intelligence and asset criticality, RBVM ensures that the most exploitable risks are remediated first. This proactive approach significantly lowers the likelihood of system compromise, avoiding costly forensic investigations, emergency patching, and extended outages.',
@@ -531,6 +542,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduce-zero-day-defense-cost',
     benefitName: 'Reduce Zero-Day Defense Cost',
+    solution: 'security',
     category: 'financial',
     subcategory: 'Patch Management',
     description: 'Neurons for Patch Management enables rapid zero-day patch deployment without disrupting regular scheduled patch cycles. This enables IT teams to save hours on manual work, reduce emergency resource costs, and maintain a strong security posture with seamless automation.',
@@ -594,6 +606,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduced-energy-consumption',
     benefitName: 'Reduced Energy Consumption',
+    solution: 'uem',
     category: 'financial',
     subcategory: 'IT Asset Management',
     description: 'Neurons for ITAM enables asset managers to identify unused, outdated, or underutilized equipment for potential decommissioning, and supports tracking and adoption of energy-efficient devices based on standards such as IEEE 1680 and ENERGY STAR.',
@@ -660,6 +673,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduced-hardware-maintenance-costs',
     benefitName: 'Reduced Hardware Maintenance Costs',
+    solution: 'uem',
     category: 'financial',
     subcategory: 'IT Asset Management',
     description: 'Neurons for ITAM enables proactive identification of aging or failure-prone assets before they require costly emergency repairs. By using predictive maintenance signals and lifecycle data, IT teams can reduce unplanned maintenance spend and negotiate better support contracts.',
@@ -723,6 +737,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'smarter-device-insights',
     benefitName: 'Smarter Device Insights',
+    solution: 'uem',
     category: 'financial',
     subcategory: 'Digital Workspace',
     description: 'Neurons for Workspace provides deep visibility into device health, usage patterns, and performance across the entire digital workspace. Remote management capabilities reduce the need for hands-on maintenance, lowering costs while improving device reliability and user experience.',
@@ -786,6 +801,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'optimize-remote-access-costs',
     benefitName: 'Optimize Remote Access Costs',
+    solution: 'security',
     category: 'financial',
     subcategory: 'Network & Access',
     description: 'Neurons for Connect Secure enables organizations to right-size and consolidate their remote access infrastructure. By replacing legacy VPN solutions and optimizing access policies, organizations achieve significant reductions in remote access subscription and infrastructure costs.',
@@ -849,6 +865,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'fm-maintenance-efficiency',
     benefitName: 'Improve Maintenance Efficiency via Predictive & Preventative Capabilities',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Facilities Management',
     description: 'Neurons for Facilities Management leverages IoT data and predictive analytics to shift maintenance from reactive break-fix to proactive scheduling. By identifying equipment issues before failure, FM teams spend less time on emergency repairs and more time on planned, efficient maintenance.',
@@ -912,6 +929,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'automated-compliance-management',
     benefitName: 'Automated & Integrated Compliance Management',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Governance, Risk & Compliance',
     description: 'Neurons for GRC automates evidence collection, control monitoring, and reporting across multiple compliance frameworks. By integrating with existing systems and replacing manual compliance workflows, organizations significantly reduce the labor hours required to maintain compliance programs.',
@@ -975,6 +993,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'streamline-employee-onboarding',
     benefitName: 'Streamline Employee Onboarding & Transitions',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'HR Service Management',
     description: 'Neurons for HR Service Management automates the workflows and tasks associated with employee lifecycle events — new hires, role changes, and departures. By eliminating manual handoffs between HR, IT, and business units, organizations reduce the administrative effort and accelerate time-to-productivity.',
@@ -1038,6 +1057,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'improve-project-delivery-predictability',
     benefitName: 'Improve Project Delivery Predictability',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Project & Portfolio Management',
     description: 'Neurons for PPM provides real-time project visibility, resource utilization tracking, and risk flagging across the portfolio. By identifying schedule slippage and resource conflicts early, PMO teams spend less time firefighting and more time on proactive delivery management.',
@@ -1101,6 +1121,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'smarter-portfolio-investment-decisions',
     benefitName: 'Make Smarter Portfolio Investment Decisions',
+    solution: 'esm',
     category: 'financial',
     subcategory: 'Project & Portfolio Management',
     description: 'Neurons for PPM provides portfolio-level analytics and financial modeling that enables leadership to allocate investment toward the highest-value initiatives. By improving the quality of portfolio decisions, organizations reduce waste on low-value projects and accelerate high-impact investments.',
@@ -1164,6 +1185,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'automated-security-compliance-mdm',
     benefitName: 'Automated Security Compliance',
+    solution: 'uem',
     category: 'financial',
     subcategory: 'Mobile Device Management',
     description: 'Neurons for MDM automates the enforcement and monitoring of device security policies across the entire mobile and endpoint fleet. By replacing manual security compliance checks and remediation with automated policy enforcement, IT security teams significantly reduce the hours spent on compliance activities.',
@@ -1227,6 +1249,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduced-it-support-costs-mdm',
     benefitName: 'Reduced IT Support Costs',
+    solution: 'uem',
     category: 'financial',
     subcategory: 'Mobile Device Management',
     description: 'Neurons for MDM reduces IT support ticket volume by enabling self-service capabilities, automated device configuration, and remote troubleshooting. When devices are consistently configured and policies are enforced automatically, the root causes of many common support tickets are eliminated.',
@@ -1290,6 +1313,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'elimination-of-password-resets',
     benefitName: 'Elimination of Password Resets',
+    solution: 'security',
     category: 'financial',
     subcategory: 'Zero Sign-On',
     description: 'Neurons for Zero Sign-On (ZSO) eliminates the need for password-based authentication by leveraging device trust and identity signals to grant seamless, secure access. This eliminates the most common IT support category — password resets — while improving security posture and user experience.',
@@ -1353,6 +1377,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'self-service-ticket-deflection',
     benefitName: 'Self-Service Portal Ticket Deflection',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM enables a modern self-service portal with AI-powered search, guided workflows, and automated fulfillment. By empowering employees to resolve routine requests without contacting IT — password resets, software requests, FAQ lookups — ticket volume drops significantly. Each deflected ticket saves the full cost of agent handling.',
@@ -1416,6 +1441,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'reduced-escalation-rate',
     benefitName: 'Reduced Escalation Rate (L1→L2→L3)',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM uses AI-powered categorization, suggested resolutions, and automated knowledge surfacing to help L1 agents resolve more tickets at first contact. By reducing unnecessary escalations to expensive L2/L3 teams, organizations save the cost differential between support tiers and accelerate resolution times.',
@@ -1479,6 +1505,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'improved-mttr',
     benefitName: 'Improved Mean Time to Resolution (MTTR)',
+    solution: 'itsm',
     category: 'time-savings',
     subcategory: 'Productivity Recovery',
     description: 'Neurons for ITSM reduces end-to-end resolution time through intelligent routing, automated diagnostics, and proactive incident detection. Faster MTTR means employees spend less time waiting for IT to fix problems and more time doing productive work. The benefit is measured in recovered employee productivity hours.',
@@ -1542,6 +1569,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'automated-change-management',
     benefitName: 'Automated Change Management Efficiency',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Operational Efficiencies',
     description: 'Neurons for ITSM automates the change management lifecycle — risk assessment, approval routing, scheduling, and post-implementation review. By reducing manual effort in change processing and preventing change-related incidents through better risk scoring, organizations save both direct labor costs and indirect costs from failed changes.',
@@ -1605,6 +1633,7 @@ export const benefits: BenefitStory[] = [
   {
     id: 'proactive-problem-management',
     benefitName: 'Proactive Problem Management',
+    solution: 'itsm',
     category: 'financial',
     subcategory: 'Incident Prevention',
     description: 'Neurons for ITSM identifies recurring incident patterns and clusters, enabling IT teams to address root causes before they generate more tickets. By converting reactive incident firefighting into proactive problem resolution, organizations prevent future incidents, reduce ticket volume, and free up service desk capacity for higher-value work.',

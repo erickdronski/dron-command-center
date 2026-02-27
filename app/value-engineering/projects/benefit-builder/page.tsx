@@ -3,7 +3,15 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Calculator, Building2, ChevronDown, ChevronUp, DollarSign, Copy, Check, RotateCcw, Sparkles, Info } from 'lucide-react';
-import { benefits } from '../benefit-stories/data';
+import { benefits, type Solution } from '../benefit-stories/data';
+
+const solutionTabs: { key: string; label: string; icon: string; color: string }[] = [
+  { key: 'all', label: 'All', icon: '📊', color: 'text-purple-400' },
+  { key: 'itsm', label: 'ITSM', icon: '🎫', color: 'text-blue-400' },
+  { key: 'esm', label: 'ESM', icon: '🏢', color: 'text-emerald-400' },
+  { key: 'uem', label: 'UEM', icon: '💻', color: 'text-amber-400' },
+  { key: 'security', label: 'Security', icon: '🔒', color: 'text-red-400' },
+];
 
 /* ── Customer Metrics ── */
 type CustomerMetrics = {
@@ -230,6 +238,7 @@ export default function BenefitBuilderPage() {
   const [expandedBenefit, setExpandedBenefit] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showAllBenefits, setShowAllBenefits] = useState(false);
+  const [solutionFilter, setSolutionFilter] = useState<string>('all');
 
   const updateMetric = (key: keyof CustomerMetrics, value: number | string) => {
     setMetrics(prev => ({ ...prev, [key]: value }));
@@ -288,7 +297,8 @@ export default function BenefitBuilderPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const displayedBenefits = showAllBenefits ? benefits : benefits.slice(0, 10);
+  const filteredBySolution = solutionFilter === 'all' ? benefits : benefits.filter(b => b.solution === solutionFilter);
+  const displayedBenefits = showAllBenefits ? filteredBySolution : filteredBySolution.slice(0, 10);
 
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-6">
@@ -410,7 +420,7 @@ export default function BenefitBuilderPage() {
         <div className="col-span-2 space-y-4">
           {/* Benefit Selector */}
           <div className="bg-[#111] border border-[#222] rounded-xl p-5">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-3">
               <h2 className="text-sm font-semibold text-white flex items-center gap-2">
                 <Sparkles size={14} className="text-purple-400" />
                 Select Benefits ({selectedBenefits.length} of {benefits.length})
@@ -420,6 +430,28 @@ export default function BenefitBuilderPage() {
                 <span className="text-[#333]">|</span>
                 <button onClick={clearAll} className="text-[10px] text-[#666] hover:text-[#999]">Clear</button>
               </div>
+            </div>
+
+            {/* Solution Filter */}
+            <div className="flex items-center gap-1.5 mb-3">
+              {solutionTabs.map(tab => {
+                const count = tab.key === 'all' ? benefits.length : benefits.filter(b => b.solution === tab.key).length;
+                return (
+                  <button
+                    key={tab.key}
+                    onClick={() => setSolutionFilter(tab.key)}
+                    className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
+                      solutionFilter === tab.key
+                        ? `border-purple-500/30 bg-purple-500/10 ${tab.color}`
+                        : 'border-[#1a1a1a] text-[#666] hover:text-white hover:border-[#333]'
+                    }`}
+                  >
+                    <span>{tab.icon}</span>
+                    <span>{tab.label}</span>
+                    <span className="text-[9px] opacity-60">({count})</span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="grid grid-cols-2 gap-2">
@@ -454,13 +486,13 @@ export default function BenefitBuilderPage() {
               })}
             </div>
 
-            {benefits.length > 10 && (
+            {filteredBySolution.length > 10 && (
               <button
                 onClick={() => setShowAllBenefits(!showAllBenefits)}
                 className="mt-3 w-full text-center text-xs text-[#666] hover:text-purple-400 transition-colors flex items-center justify-center gap-1"
               >
                 {showAllBenefits ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-                {showAllBenefits ? 'Show Less' : `Show All ${benefits.length} Benefits`}
+                {showAllBenefits ? 'Show Less' : `Show All ${filteredBySolution.length} Benefits`}
               </button>
             )}
           </div>
