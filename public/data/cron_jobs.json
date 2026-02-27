@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1772163023724,
+      "updatedAtMs": 1772170208538,
       "schedule": {
         "kind": "cron",
         "expr": "30 */2 * * *",
@@ -180,14 +180,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772163000040,
-        "lastStatus": "error",
-        "lastDurationMs": 23684,
-        "consecutiveErrors": 2,
-        "nextRunAtMs": 1772170200000,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: All models failed (8): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
+        "lastRunAtMs": 1772170200037,
+        "lastStatus": "ok",
+        "lastDurationMs": 8501,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772177400000,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -1613,7 +1613,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772166812997,
+      "updatedAtMs": 1772168610790,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1631,15 +1631,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772168604170,
-        "lastRunAtMs": 1772166804170,
+        "nextRunAtMs": 1772170404204,
+        "lastRunAtMs": 1772168604204,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8827,
+        "lastDurationMs": 6586,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772168604197
+        "runningAtMs": 1772170404228
       }
     },
     {
