@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772226031516,
+      "updatedAtMs": 1772233259450,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772226014402,
+        "lastRunAtMs": 1772233247530,
         "lastStatus": "ok",
-        "lastDurationMs": 17114,
+        "lastDurationMs": 11920,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772233212453,
+        "nextRunAtMs": 1772240412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772228319792,
+      "updatedAtMs": 1772233222098,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,15,18,21 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772233200000,
-        "lastRunAtMs": 1772228304968,
+        "nextRunAtMs": 1772244000000,
+        "lastRunAtMs": 1772233200043,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 14824,
+        "lastDurationMs": 22055,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772229813430,
+      "updatedAtMs": 1772231614934,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772231605388,
-        "lastRunAtMs": 1772229805388,
+        "nextRunAtMs": 1772233405427,
+        "lastRunAtMs": 1772231605427,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8042,
+        "lastDurationMs": 9507,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772231605416
+        "runningAtMs": 1772233405463
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772229615806,
+      "updatedAtMs": 1772233247450,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772233200000,
-        "lastRunAtMs": 1772229600048,
+        "nextRunAtMs": 1772236800000,
+        "lastRunAtMs": 1772233222098,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15758,
+        "lastDurationMs": 25352,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1709,6 +1709,36 @@
       },
       "state": {
         "nextRunAtMs": 1772283600000
+      }
+    },
+    {
+      "id": "816bf1b8-2afb-4511-8394-7c744c6160ec",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1476024756456263690",
+      "name": "🔥 Goggins Morning Briefing — 6am",
+      "enabled": true,
+      "createdAtMs": 1772232146228,
+      "updatedAtMs": 1772232146228,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "xai/grok-4-fast",
+        "timeoutSeconds": 45,
+        "message": "Run the Goggins morning briefing and deliver it:\n\ncd /Users/dron/.openclaw/workspace/dron-command-center && python3 scripts/goggins_briefing.py --save --discord\n\nThen reply with the EXACT output from the --discord flag as your message. Do not summarize or rewrite it — output it verbatim as your reply. It will be auto-delivered to Discord."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1474125586346676244"
+      },
+      "state": {
+        "nextRunAtMs": 1772276400000
       }
     }
   ]
