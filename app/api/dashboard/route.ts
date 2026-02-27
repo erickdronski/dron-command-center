@@ -48,13 +48,11 @@ async function getKalshiStats() {
   };
 }
 
-async function getXPostsToday() {
+async function getXPostsTotal() {
   try {
     const postsPath = path.join(process.cwd(), 'public', 'data', 'x_posts.json');
     const posts = await readJSON(postsPath) || [];
-    
-    const today = new Date().toDateString();
-    return posts.filter((p: any) => new Date(p.timestamp).toDateString() === today).length;
+    return Array.isArray(posts) ? posts.length : 0;
   } catch {
     return 0;
   }
@@ -84,7 +82,7 @@ export async function GET() {
     const [cronStats, kalshi, posts, xEngagement] = await Promise.all([
       getCronJobs(),
       getKalshiStats(),
-      getXPostsToday(),
+      getXPostsTotal(),
       getXEngagement(),
     ]);
 
