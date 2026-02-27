@@ -121,6 +121,13 @@ export default function ProjectsPage() {
       status: 'active',
       color: 'border-cyan-500/30',
     },
+    {
+      href: '/value-engineering/projects/benefit-builder',
+      title: 'Benefit Builder (ROI Calculator)',
+      desc: 'Input customer metrics, select benefits, get instant ROI calculations with full formula breakdowns. Copy-paste reports.',
+      status: 'active',
+      color: 'border-emerald-500/30',
+    },
   ];
 
   return (
