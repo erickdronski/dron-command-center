@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772298214547,
+      "updatedAtMs": 1772300013553,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772300007725,
-        "lastRunAtMs": 1772298207725,
+        "nextRunAtMs": 1772301807757,
+        "lastRunAtMs": 1772300007757,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6822,
+        "lastDurationMs": 5796,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772300007751
+        "runningAtMs": 1772301807784
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772298050799,
+      "updatedAtMs": 1772301627505,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772301600000,
-        "lastRunAtMs": 1772298034380,
+        "nextRunAtMs": 1772305200000,
+        "lastRunAtMs": 1772301600050,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16419,
+        "lastDurationMs": 27455,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
