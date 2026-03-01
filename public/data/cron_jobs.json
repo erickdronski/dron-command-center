@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1772360808437,
+      "updatedAtMs": 1772368008478,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772368008405,
-        "lastRunAtMs": 1772360808405,
+        "nextRunAtMs": 1772375208446,
+        "lastRunAtMs": 1772368008446,
         "lastStatus": "error",
         "lastDurationMs": 32,
-        "consecutiveErrors": 30,
+        "consecutiveErrors": 31,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772364816196,
+      "updatedAtMs": 1772366616388,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772366609427,
-        "lastRunAtMs": 1772364809427,
+        "nextRunAtMs": 1772368409476,
+        "lastRunAtMs": 1772366609476,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6769,
+        "lastDurationMs": 6912,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772366609465
+        "runningAtMs": 1772368409510
       }
     },
     {
