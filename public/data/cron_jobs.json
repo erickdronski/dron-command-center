@@ -432,7 +432,7 @@
       "name": "🧹 Session Cleanup",
       "enabled": true,
       "createdAtMs": 1771619175350,
-      "updatedAtMs": 1772137606879,
+      "updatedAtMs": 1772396775456,
       "schedule": {
         "kind": "every",
         "everyMs": 259200000,
@@ -450,14 +450,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772396775387,
-        "lastRunAtMs": 1772137575387,
-        "lastStatus": "ok",
-        "lastDurationMs": 31492,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "nextRunAtMs": 1772655975429,
+        "lastRunAtMs": 1772396775429,
+        "lastStatus": "error",
+        "lastDurationMs": 27,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "model not allowed: ollama/llama3.2:1b"
       }
     },
     {
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1772389608599,
+      "updatedAtMs": 1772396808629,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772396808569,
-        "lastRunAtMs": 1772389608569,
+        "nextRunAtMs": 1772404008600,
+        "lastRunAtMs": 1772396808600,
         "lastStatus": "error",
-        "lastDurationMs": 30,
-        "consecutiveErrors": 34,
+        "lastDurationMs": 29,
+        "consecutiveErrors": 35,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772393616514,
+      "updatedAtMs": 1772395417718,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772395410146,
-        "lastRunAtMs": 1772393610146,
+        "nextRunAtMs": 1772397210185,
+        "lastRunAtMs": 1772395410185,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6368,
+        "lastDurationMs": 7533,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772395410174
+        "runningAtMs": 1772397210210
       }
     },
     {
