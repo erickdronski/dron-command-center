@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772463716049,
+      "updatedAtMs": 1772470964140,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772463647965,
+        "lastRunAtMs": 1772470891609,
         "lastStatus": "error",
-        "lastDurationMs": 68084,
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1772470812453,
+        "lastDurationMs": 72531,
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1772478012453,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "Error: All models failed (8): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1772465464772,
+      "updatedAtMs": 1772472623920,
       "schedule": {
         "kind": "cron",
         "expr": "30 */2 * * *",
@@ -180,14 +180,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772465400052,
-        "lastStatus": "error",
-        "lastDurationMs": 64720,
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1772472600000,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: All models failed (8): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
+        "lastRunAtMs": 1772472600047,
+        "lastStatus": "ok",
+        "lastDurationMs": 23873,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772479800000,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1772466288309,
+      "updatedAtMs": 1772473488353,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772473488284,
-        "lastRunAtMs": 1772466288284,
+        "nextRunAtMs": 1772480688325,
+        "lastRunAtMs": 1772473488325,
         "lastStatus": "error",
-        "lastDurationMs": 25,
-        "consecutiveErrors": 43,
+        "lastDurationMs": 28,
+        "consecutiveErrors": 44,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772467698656,
+      "updatedAtMs": 1772470875388,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772470800000,
-        "lastRunAtMs": 1772459088243,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 24179,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772485200000,
+        "lastRunAtMs": 1772470800047,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 75341,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (7): xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772466321259,
+      "updatedAtMs": 1772471772793,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772468112601,
-        "lastRunAtMs": 1772466312601,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 8658,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1772468112638
+        "nextRunAtMs": 1772473512738,
+        "lastRunAtMs": 1772471712738,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60055,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 2,
+        "runningAtMs": 1772473512770
       }
     },
     {
@@ -1652,7 +1651,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772467232259,
+      "updatedAtMs": 1772470891470,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1670,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772470800000,
-        "lastRunAtMs": 1772467200081,
+        "nextRunAtMs": 1772474400000,
+        "lastRunAtMs": 1772470875388,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 32178,
+        "lastDurationMs": 16082,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1761,17 +1760,17 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1772467724058,
+      "updatedAtMs": 1772472720380,
       "schedule": {
         "kind": "cron",
-        "expr": "0 9,11,13,15,17,19,21 * * *",
+        "expr": "0 10,14,18,22 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "You are @DronskiErick's raw, unfiltered inner voice. Post a SHORT shower thought tweet.\n\n## RULES\n- 1-2 lines MAX. Under 140 characters ideally.\n- NO structure, NO lists, NO frameworks\n- Raw, human, stream-of-consciousness\n- Use exaggerated punctuation: ???, !!, ...\n- Lowercase is fine. Imperfect grammar is fine.\n- NO emojis. NO hashtags.\n- NEVER mention Precision Algorithms, Ivanti, or your job\n- This is just a dude thinking out loud about the world\n\n## CONTENT TYPES (pick one randomly)\n\n**AI SHOWER THOUGHTS:**\n- \"does anyone else think its wild that we taught sand to think??\"\n- \"AI can write a novel in 30 seconds but my wifi still drops during zoom calls\"\n- \"we're literally training our replacements and calling it innovation lmao\"\n\n**TECH/DIGITAL CULTURE:**\n- \"we went from 'dont talk to strangers online' to building entire businesses with people we never met\"\n- \"the internet was supposed to make us smarter... what happened\"\n- \"nothing humbles you faster than reading code you wrote 6 months ago\"\n\n**SPICY OBSERVATIONS:**\n- \"unpopular opinion: most productivity tools just give you more ways to procrastinate\"\n- \"why does every startup act like they invented something that already existed\"\n- \"90% of meetings could have been a slack message and we all know it\"\n\n**EXISTENTIAL TECH:**\n- \"we have self-driving cars but I still cant get my bluetooth to connect on the first try\"\n- \"its 2026 and printers are still the most stressful technology in existence\"\n- \"remember when the biggest tech debate was iphone vs android?? simpler times man\"\n\n**RELATABLE MOMENTS:**\n- \"that feeling when your code works on the first try and you immediately dont trust it\"\n- \"nothing scarier than a production deploy on a friday afternoon\"\n- \"the gap between 'I have a great idea' and actually building it is about 6 months of procrastination\"\n\n## IMPORTANT\n- Generate something FRESH every time\n- Vary the tone: funny, philosophical, sarcastic, bewildered, nostalgic\n- These should feel like real tweets from a real person scrolling their phone\n- Think: what would a tech founder tweet at 11pm after 2 beers?\n\n## STEPS\n\nSTEP 1 - Check last 5 shower thoughts to avoid repeats:\nRun: cat /Users/dron/.openclaw/workspace/x_bot_posts_archive.json | python3 -c \"import json,sys; posts=json.load(sys.stdin).get('posts',[]); [print(p.get('content','')[:100]) for p in posts[-5:]]\"\n\nSTEP 2 - Generate ONE short shower thought. Just the text, nothing else.\n\nSTEP 3 - Post it:\nRun: cd /Users/dron/.openclaw/workspace && python3 -c \"\nimport tweepy, json, os\nfrom datetime import datetime\nclient = tweepy.Client(\n    consumer_key='dWYNhhZYNl1NBrM0JDcquTAG5',\n    consumer_secret='wgTCxEBgQS7VwwcI2ai3AhiwNGx2aHaVK4CI8ju5g93Dyvw4pK',\n    access_token='1279926207618985984-FoQx94HNy8bBUGvm9kZh8RzIJSgrsr',\n    access_token_secret='TRC8BfsKEaDm7jOeF7lcCjeETAiThUGNe36YwgFGQVdrX'\n)\ntext = '''YOUR_SHOWER_THOUGHT_HERE'''\ntweet = client.create_tweet(text=text)\ntid = tweet.data['id']\nprint(f'Posted: {tid}')\narchive_file = 'x_bot_posts_archive.json'\narchive = json.load(open(archive_file)) if os.path.exists(archive_file) else {'posts':[],'threads':[]}\narchive['posts'].append({'type':'shower-thought','content':text,'tweet_id':str(tid),'timestamp':datetime.now().isoformat(),'post_number':len(archive['posts'])})\njson.dump(archive, open(archive_file,'w'), indent=2)\nprint('Archived')\n\"\n\nReplace YOUR_SHOWER_THOUGHT_HERE with the actual text.\n\nSTEP 4 - Reply with just the tweet and ID. Keep it short.",
+        "message": "You are @DronskiErick's raw, unfiltered inner voice. Post a SHORT shower thought tweet.\n\n## RULES\n- 1-2 lines MAX. Under 140 characters ideally.\n- NO structure, NO lists, NO frameworks\n- Raw, human, stream-of-consciousness\n- Use exaggerated punctuation: ???, !!, ...\n- Lowercase is fine. Imperfect grammar is fine.\n- NO emojis. NO hashtags.\n- NEVER mention Precision Algorithms, Ivanti, or your job\n- This is just a dude thinking out loud\n- TRY TO GET ENGAGEMENT — ask questions, make people want to reply\n\n## CONTENT TYPES (pick one randomly, vary each time)\n\n**AI SHOWER THOUGHTS:**\n- \"does anyone else think its wild that we taught sand to think??\"\n- \"AI can write a novel in 30 seconds but my wifi still drops during zoom calls\"\n- \"we're literally training our replacements and calling it innovation lmao\"\n- \"chatgpt just explained my own code to me better than I could... should I be impressed or concerned??\"\n\n**TECH/DIGITAL CULTURE:**\n- \"we went from 'dont talk to strangers online' to building entire businesses with people we never met\"\n- \"nothing humbles you faster than reading code you wrote 6 months ago\"\n- \"the internet was a mistake... and also the best thing that ever happened. both are true\"\n\n**FINANCE/CRYPTO:**\n- \"crypto twitter at 3am is either the smartest or dumbest place on the internet and I genuinely cannot tell\"\n- \"the stock market is just astrology for dudes in vests and nobody wants to admit it\"\n- \"bitcoin doesnt care about your feelings and honestly... respect\"\n- \"everyone is a genius in a bull market. bear market is where you find out who actually knows things\"\n- \"the fact that meme coins exist and some people are millionaires from them... what a time to be alive man\"\n\n**VIDEO GAMES:**\n- \"GTA 6 is gonna ruin so many peoples productivity and im gonna be one of them\"\n- \"arc raiders looks like the game ive been waiting for since I was 12\"\n- \"FIFA taught me more about risk management than my MBA honestly\"\n- \"nothing in business prepared me for the rage of losing in the 90th minute on FIFA\"\n- \"GTA online economy is more stable than some real countries and thats not even a joke\"\n- \"the patience required to grind in video games is the same patience required to build a startup... hear me out\"\n\n**SPICY OBSERVATIONS:**\n- \"unpopular opinion: most productivity tools just give you more ways to procrastinate\"\n- \"why does every startup act like they invented something that already existed??\"\n- \"90% of meetings could have been a slack message and we all know it\"\n- \"hot take: the best business advice is in reddit threads not business books\"\n\n**FUNNY ANALOGIES:**\n- \"building a startup is like playing dark souls. you die constantly but for some reason you keep coming back\"\n- \"dating apps are just A/B testing for humans and nobody wants to say it\"\n- \"crypto trading is just fantasy football for finance bros... am I wrong??\"\n- \"linkedin is just twitter for people who are scared of being funny\"\n- \"debugging code is just arguing with your past self and losing\"\n\n**EXISTENTIAL TECH:**\n- \"we have self-driving cars but I still cant get my bluetooth to connect on the first try\"\n- \"its 2026 and printers are still the most stressful technology in existence\"\n- \"remember when the biggest tech debate was iphone vs android?? simpler times man\"\n\n**RELATABLE MOMENTS:**\n- \"that feeling when your code works on the first try and you immediately dont trust it\"\n- \"nothing scarier than a production deploy on a friday afternoon\"\n- \"anyone else refresh their portfolio 47 times a day or is that just me\"\n\n## IMPORTANT\n- Generate something COMPLETELY FRESH every time — never reuse the examples above\n- The examples are just vibes/inspiration for tone\n- Vary the tone: funny, philosophical, sarcastic, bewildered, nostalgic\n- These should feel like real tweets from a real person scrolling their phone\n- Think: what would a tech founder tweet at 11pm after 2 beers?\n- END WITH A QUESTION or hot take that makes people want to reply\n\n## STEPS\n\nSTEP 1 - Check last 5 posts to avoid repeats:\nRun: cat /Users/dron/.openclaw/workspace/x_bot_posts_archive.json | python3 -c \"import json,sys; posts=json.load(sys.stdin).get('posts',[]); [print(p.get('content','')[:100]) for p in posts[-5:]]\"\n\nSTEP 2 - Generate ONE short shower thought. Just the text.\n\nSTEP 3 - Post it:\nRun: cd /Users/dron/.openclaw/workspace && python3 -c \"\nimport tweepy, json, os\nfrom datetime import datetime\nclient = tweepy.Client(\n    consumer_key='dWYNhhZYNl1NBrM0JDcquTAG5',\n    consumer_secret='wgTCxEBgQS7VwwcI2ai3AhiwNGx2aHaVK4CI8ju5g93Dyvw4pK',\n    access_token='1279926207618985984-FoQx94HNy8bBUGvm9kZh8RzIJSgrsr',\n    access_token_secret='TRC8BfsKEaDm7jOeF7lcCjeETAiThUGNe36YwgFGQVdrX'\n)\ntext = '''YOUR_SHOWER_THOUGHT_HERE'''\ntweet = client.create_tweet(text=text)\ntid = tweet.data['id']\nprint(f'Posted: {tid}')\narchive_file = 'x_bot_posts_archive.json'\narchive = json.load(open(archive_file)) if os.path.exists(archive_file) else {'posts':[],'threads':[]}\narchive['posts'].append({'type':'shower-thought','content':text,'tweet_id':str(tid),'timestamp':datetime.now().isoformat(),'post_number':len(archive['posts'])})\njson.dump(archive, open(archive_file,'w'), indent=2)\nprint('Archived')\n\"\n\nReplace YOUR_SHOWER_THOUGHT_HERE with the actual text.\n\nSTEP 4 - Reply with just the tweet and ID.",
         "model": "xai/grok-4-fast",
         "timeoutSeconds": 120
       },
@@ -1782,7 +1781,7 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772474400000
+        "nextRunAtMs": 1772478000000
       }
     }
   ]
