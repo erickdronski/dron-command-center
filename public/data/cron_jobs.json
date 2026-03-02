@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772478080372,
+      "updatedAtMs": 1772485282856,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772478063876,
+        "lastRunAtMs": 1772485266789,
         "lastStatus": "ok",
-        "lastDurationMs": 16496,
+        "lastDurationMs": 16067,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772485212453,
+        "nextRunAtMs": 1772492412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772470875388,
+      "updatedAtMs": 1772485239978,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772485200000,
-        "lastRunAtMs": 1772470800047,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 75341,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: All models failed (7): xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
+        "nextRunAtMs": 1772499600000,
+        "lastRunAtMs": 1772485200048,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 39930,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772482522257,
+      "updatedAtMs": 1772484320446,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772484313027,
-        "lastRunAtMs": 1772482513027,
+        "nextRunAtMs": 1772486113069,
+        "lastRunAtMs": 1772484313069,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9230,
+        "lastDurationMs": 7377,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772484313059
+        "runningAtMs": 1772486113109
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772481615785,
+      "updatedAtMs": 1772485266710,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772485200000,
-        "lastRunAtMs": 1772481600053,
+        "nextRunAtMs": 1772488800000,
+        "lastRunAtMs": 1772485239978,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15732,
+        "lastDurationMs": 26732,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
