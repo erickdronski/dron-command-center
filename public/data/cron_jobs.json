@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772485282856,
+      "updatedAtMs": 1772492460119,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772485266789,
+        "lastRunAtMs": 1772492441023,
         "lastStatus": "ok",
-        "lastDurationMs": 16067,
+        "lastDurationMs": 19096,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772492412453,
+        "nextRunAtMs": 1772499612453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772489727116,
+      "updatedAtMs": 1772491520950,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772491513222,
-        "lastRunAtMs": 1772489713222,
+        "nextRunAtMs": 1772493313291,
+        "lastRunAtMs": 1772491513291,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13894,
+        "lastDurationMs": 7659,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772491513260
+        "runningAtMs": 1772493313331
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772488819310,
+      "updatedAtMs": 1772492422004,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772492400000,
-        "lastRunAtMs": 1772488800053,
+        "nextRunAtMs": 1772496000000,
+        "lastRunAtMs": 1772492400097,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19257,
+        "lastDurationMs": 21907,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1772478063800,
+      "updatedAtMs": 1772492440911,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,11 +1782,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772492400000,
-        "lastRunAtMs": 1772478039408,
+        "nextRunAtMs": 1772506800000,
+        "lastRunAtMs": 1772492422004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24392,
+        "lastDurationMs": 18907,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
