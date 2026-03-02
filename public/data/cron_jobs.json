@@ -153,7 +153,8 @@
         "nextRunAtMs": 1772449212453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -187,7 +188,8 @@
         "nextRunAtMs": 1772451000000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -492,7 +494,7 @@
         "consecutiveErrors": 3,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
-        "lastError": "model not allowed: ollama/llama3.2:1b"
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -527,7 +529,7 @@
         "consecutiveErrors": 41,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
-        "lastError": "model not allowed: ollama/llama3.2:1b"
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -1606,7 +1608,8 @@
         "lastDurationMs": 24592,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -1616,7 +1619,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772444018954,
+      "updatedAtMs": 1772445820526,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1637,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772445811218,
-        "lastRunAtMs": 1772444011218,
+        "nextRunAtMs": 1772447611263,
+        "lastRunAtMs": 1772445811263,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7736,
+        "lastDurationMs": 9263,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772445811253
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -1678,7 +1681,8 @@
         "lastDurationMs": 23298,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -1715,7 +1719,7 @@
         "lastDurationMs": 30033,
         "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out"
+        "runningAtMs": 1772459056441
       }
     },
     {
@@ -1752,7 +1756,8 @@
         "lastDurationMs": 19257,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772459056441
       }
     }
   ]
