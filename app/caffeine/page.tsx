@@ -402,6 +402,35 @@ export default function CaffeinePage() {
     setLog(prev => { const next = prev.filter(e => e.id !== id); saveLog(next); return next; });
   }, []);
 
+  const loadDemo = useCallback(() => {
+    // Build times as local midnight + hour offsets so they're always "today" in local time
+    const localMidnight = new Date();
+    localMidnight.setHours(0, 0, 0, 0);
+    const ts = (h: number, m: number) => new Date(localMidnight.getTime() + (h * 60 + m) * 60_000).toISOString();
+    const demoEntries: LogEntry[] = [
+      {
+        id: 'demo-1',
+        time: ts(7, 15),
+        brandId: 'starbucks', brandName: 'Starbucks', brandEmoji: '🟢', brandColor: '#00704A',
+        drinkName: 'Cold Brew', sizeLabel: 'Venti', oz: 24, mg: 310,
+      },
+      {
+        id: 'demo-2',
+        time: ts(11, 45),
+        brandId: 'nespresso', brandName: 'Nespresso', brandEmoji: '⚫', brandColor: '#2c2c2c',
+        drinkName: 'Espresso', sizeLabel: 'Single', oz: 1.35, mg: 80,
+      },
+      {
+        id: 'demo-3',
+        time: ts(14, 30),
+        brandId: 'monster', brandName: 'Monster', brandEmoji: '🟩', brandColor: '#00d900',
+        drinkName: 'Original', sizeLabel: '16oz Can', oz: 16, mg: 160,
+      },
+    ];
+    saveLog(demoEntries);
+    setLog(demoEntries);
+  }, []);
+
   // Calculations
   const curMg  = currentBloodstream(log);
   const totalMgToday = log.reduce((s, e) => s + e.mg, 0);
@@ -446,6 +475,12 @@ export default function CaffeinePage() {
             <input type="time" value={sleepTarget} onChange={e => setSleepTarget(e.target.value)}
               className="bg-transparent text-white outline-none w-[52px] text-xs" />
           </div>
+          {log.length === 0 && (
+            <button onClick={loadDemo}
+              className="flex items-center gap-1.5 bg-[#1a1a1a] hover:bg-[#222] border border-[#2a2a2a] text-[#888] hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">
+              🎬 Load Demo
+            </button>
+          )}
           <button onClick={() => setPicker(true)}
             className="flex items-center gap-1.5 bg-orange-500 hover:bg-orange-400 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">
             <Plus size={13} /> Add Drink
