@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772495121550,
+      "updatedAtMs": 1772496920142,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772496913378,
-        "lastRunAtMs": 1772495113378,
+        "nextRunAtMs": 1772498713431,
+        "lastRunAtMs": 1772496913431,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8172,
+        "lastDurationMs": 6711,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772496913422
+        "runningAtMs": 1772498713477
       }
     },
     {
@@ -1790,6 +1790,35 @@
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "87c73ab5-6cda-49f2-90a2-48752c05649c",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "📰 The Spiraling Millennial — Auto-Publish",
+      "enabled": true,
+      "createdAtMs": 1772498362049,
+      "updatedAtMs": 1772498362049,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 259200000,
+        "anchorMs": 1772498362049
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Time to publish a new edition of The Spiraling Millennial newsletter. Follow the full pipeline:\n\n1. Check workspace/spiraling-millennial/editions/ to find the next edition number\n2. Pick a fresh topic from NEWSLETTER_BIBLE.md content topics bank (don't repeat recent editions)\n3. Write the full edition following the bible structure: Opener → Main Thing → Quick Hits → Rabbit Hole → The Play → Closer\n4. Generate a DALL-E 3 thumbnail using scripts/generate_thumbnail.py (use OPENAI_API_KEY from .env.openai)\n5. Use browser automation to publish to Beehiiv (pub_6f7b8895-4929-4d0d-a771-defeedf0daca)\n6. Report the live URL to #spiraling-millennial Discord channel (ID: 1478189706482024681)\n\nCredentials in workspace/.env.beehiiv and .env.openai. Author: Erick Dronski.",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1478189706482024681"
+      },
+      "state": {
+        "nextRunAtMs": 1772757562049
       }
     }
   ]
