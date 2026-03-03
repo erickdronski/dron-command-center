@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772557303241,
+      "updatedAtMs": 1772564449845,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772557272083,
+        "lastRunAtMs": 1772564436893,
         "lastStatus": "ok",
-        "lastDurationMs": 31158,
+        "lastDurationMs": 12952,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772564412453,
+        "nextRunAtMs": 1772571612453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772562103554,
+      "updatedAtMs": 1772563902321,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772563895402,
-        "lastRunAtMs": 1772562095402,
+        "nextRunAtMs": 1772565695445,
+        "lastRunAtMs": 1772563895445,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8152,
+        "lastDurationMs": 6876,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772563895438
+        "runningAtMs": 1772565695486
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772560824228,
+      "updatedAtMs": 1772564417510,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772564400000,
-        "lastRunAtMs": 1772560800063,
+        "nextRunAtMs": 1772568000000,
+        "lastRunAtMs": 1772564400044,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24165,
+        "lastDurationMs": 17466,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1772550040721,
+      "updatedAtMs": 1772564436756,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,11 +1782,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772564400000,
-        "lastRunAtMs": 1772550017451,
+        "nextRunAtMs": 1772578800000,
+        "lastRunAtMs": 1772564417510,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23270,
+        "lastDurationMs": 19246,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772561737261,
+      "updatedAtMs": 1772565355532,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,7 +1847,14 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772565337261
+        "nextRunAtMs": 1772568937315,
+        "lastRunAtMs": 1772565337315,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 18217,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
