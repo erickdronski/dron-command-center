@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772564449845,
+      "updatedAtMs": 1772571666680,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772564436893,
+        "lastRunAtMs": 1772571646830,
         "lastStatus": "ok",
-        "lastDurationMs": 12952,
+        "lastDurationMs": 19850,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772571612453,
+        "nextRunAtMs": 1772578812453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772557232630,
+      "updatedAtMs": 1772571629666,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772571600000,
-        "lastRunAtMs": 1772557200061,
+        "nextRunAtMs": 1772586000000,
+        "lastRunAtMs": 1772571600049,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 32569,
+        "lastDurationMs": 29617,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772569312090,
+      "updatedAtMs": 1772571108344,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772571095652,
-        "lastRunAtMs": 1772569295652,
+        "nextRunAtMs": 1772572895705,
+        "lastRunAtMs": 1772571095705,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16438,
+        "lastDurationMs": 12639,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772571095692
+        "runningAtMs": 1772572895735
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772568026922,
+      "updatedAtMs": 1772571646743,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772571600000,
-        "lastRunAtMs": 1772568000056,
+        "nextRunAtMs": 1772575200000,
+        "lastRunAtMs": 1772571629666,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 26866,
+        "lastDurationMs": 17077,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1772564436756,
+      "updatedAtMs": 1772572370315,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1771,7 +1771,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "You are @DronskiErick's raw, unfiltered inner voice. Post a SHORT shower thought tweet.\n\n## RULES\n- 1-2 lines MAX. Under 140 characters ideally.\n- NO structure, NO lists, NO frameworks\n- Raw, human, stream-of-consciousness\n- Use exaggerated punctuation: ???, !!, ...\n- Lowercase is fine. Imperfect grammar is fine.\n- NO emojis. NO hashtags.\n- NEVER mention Precision Algorithms, Ivanti, or your job\n- This is just a dude thinking out loud\n- TRY TO GET ENGAGEMENT — ask questions, make people want to reply\n\n## CONTENT TYPES (pick one randomly, vary each time)\n\n**AI SHOWER THOUGHTS:**\n- \"does anyone else think its wild that we taught sand to think??\"\n- \"AI can write a novel in 30 seconds but my wifi still drops during zoom calls\"\n- \"we're literally training our replacements and calling it innovation lmao\"\n- \"chatgpt just explained my own code to me better than I could... should I be impressed or concerned??\"\n\n**TECH/DIGITAL CULTURE:**\n- \"we went from 'dont talk to strangers online' to building entire businesses with people we never met\"\n- \"nothing humbles you faster than reading code you wrote 6 months ago\"\n- \"the internet was a mistake... and also the best thing that ever happened. both are true\"\n\n**FINANCE/CRYPTO:**\n- \"crypto twitter at 3am is either the smartest or dumbest place on the internet and I genuinely cannot tell\"\n- \"the stock market is just astrology for dudes in vests and nobody wants to admit it\"\n- \"bitcoin doesnt care about your feelings and honestly... respect\"\n- \"everyone is a genius in a bull market. bear market is where you find out who actually knows things\"\n- \"the fact that meme coins exist and some people are millionaires from them... what a time to be alive man\"\n\n**VIDEO GAMES:**\n- \"GTA 6 is gonna ruin so many peoples productivity and im gonna be one of them\"\n- \"arc raiders looks like the game ive been waiting for since I was 12\"\n- \"FIFA taught me more about risk management than my MBA honestly\"\n- \"nothing in business prepared me for the rage of losing in the 90th minute on FIFA\"\n- \"GTA online economy is more stable than some real countries and thats not even a joke\"\n- \"the patience required to grind in video games is the same patience required to build a startup... hear me out\"\n\n**SPICY OBSERVATIONS:**\n- \"unpopular opinion: most productivity tools just give you more ways to procrastinate\"\n- \"why does every startup act like they invented something that already existed??\"\n- \"90% of meetings could have been a slack message and we all know it\"\n- \"hot take: the best business advice is in reddit threads not business books\"\n\n**FUNNY ANALOGIES:**\n- \"building a startup is like playing dark souls. you die constantly but for some reason you keep coming back\"\n- \"dating apps are just A/B testing for humans and nobody wants to say it\"\n- \"crypto trading is just fantasy football for finance bros... am I wrong??\"\n- \"linkedin is just twitter for people who are scared of being funny\"\n- \"debugging code is just arguing with your past self and losing\"\n\n**EXISTENTIAL TECH:**\n- \"we have self-driving cars but I still cant get my bluetooth to connect on the first try\"\n- \"its 2026 and printers are still the most stressful technology in existence\"\n- \"remember when the biggest tech debate was iphone vs android?? simpler times man\"\n\n**RELATABLE MOMENTS:**\n- \"that feeling when your code works on the first try and you immediately dont trust it\"\n- \"nothing scarier than a production deploy on a friday afternoon\"\n- \"anyone else refresh their portfolio 47 times a day or is that just me\"\n\n## IMPORTANT\n- Generate something COMPLETELY FRESH every time — never reuse the examples above\n- The examples are just vibes/inspiration for tone\n- Vary the tone: funny, philosophical, sarcastic, bewildered, nostalgic\n- These should feel like real tweets from a real person scrolling their phone\n- Think: what would a tech founder tweet at 11pm after 2 beers?\n- END WITH A QUESTION or hot take that makes people want to reply\n\n## STEPS\n\nSTEP 1 - Check last 5 posts to avoid repeats:\nRun: cat /Users/dron/.openclaw/workspace/x_bot_posts_archive.json | python3 -c \"import json,sys; posts=json.load(sys.stdin).get('posts',[]); [print(p.get('content','')[:100]) for p in posts[-5:]]\"\n\nSTEP 2 - Generate ONE short shower thought. Just the text.\n\nSTEP 3 - Post it:\nRun: cd /Users/dron/.openclaw/workspace && python3 -c \"\nimport tweepy, json, os\nfrom datetime import datetime\nclient = tweepy.Client(\n    consumer_key='dWYNhhZYNl1NBrM0JDcquTAG5',\n    consumer_secret='wgTCxEBgQS7VwwcI2ai3AhiwNGx2aHaVK4CI8ju5g93Dyvw4pK',\n    access_token='1279926207618985984-FoQx94HNy8bBUGvm9kZh8RzIJSgrsr',\n    access_token_secret='TRC8BfsKEaDm7jOeF7lcCjeETAiThUGNe36YwgFGQVdrX'\n)\ntext = '''YOUR_SHOWER_THOUGHT_HERE'''\ntweet = client.create_tweet(text=text)\ntid = tweet.data['id']\nprint(f'Posted: {tid}')\narchive_file = 'x_bot_posts_archive.json'\narchive = json.load(open(archive_file)) if os.path.exists(archive_file) else {'posts':[],'threads':[]}\narchive['posts'].append({'type':'shower-thought','content':text,'tweet_id':str(tid),'timestamp':datetime.now().isoformat(),'post_number':len(archive['posts'])})\njson.dump(archive, open(archive_file,'w'), indent=2)\nprint('Archived')\n\"\n\nReplace YOUR_SHOWER_THOUGHT_HERE with the actual text.\n\nSTEP 4 - Reply with just the tweet and ID.",
+        "message": "You are @DronskiErick's raw, unfiltered inner voice. Post a SHORT shower thought tweet.\n\n## RULES\n- 1-2 lines MAX. Under 140 characters ideally.\n- NO structure, NO lists, NO frameworks\n- Raw, human, stream-of-consciousness\n- Use exaggerated punctuation: ???, !!, ...\n- Lowercase is fine. Imperfect grammar is fine.\n- NO emojis. NO hashtags.\n- NEVER mention Precision Algorithms, Ivanti, or your job\n- This is just a dude thinking out loud\n- TRY TO GET ENGAGEMENT — ask questions, make people want to reply\n\n## CONTENT TYPES (pick one randomly, vary each time)\n\n**AI SHOWER THOUGHTS** / **TECH/DIGITAL CULTURE** / **FINANCE/CRYPTO** / **VIDEO GAMES** (GTA, FIFA, Arc Raiders) / **SPICY OBSERVATIONS** / **FUNNY ANALOGIES** / **EXISTENTIAL TECH** / **RELATABLE MOMENTS**\n\nNEW FORMATS TO MIX IN:\n- **Hypothetical questions:** \"If all humans lost the ability to lie, what industry collapses first?\"\n- **Farming/connection posts (1x/week MAX):** \"If you're building in AI, let's connect\"\n- **Poll-style questions:** \"Founders — what's harder? Hiring or firing?\"\n- **Shocking stats:** \"[X]% of [thing], per [source]. Wild.\"\n- **Raw vulnerability:** Real talk about the grind, exhaustion, small wins\n- **Greentext storytelling:** > format, build up → punchline\n\n## GIF ATTACHMENT (30% of posts)\nAbout 30% of the time, attach a GIF to amplify the emotion.\n\nTo post WITH a GIF:\n1. Pick a GIF URL from the library based on emotion:\n   - Funny/absurd: https://media.giphy.com/media/NTur7XlVDUdqM/giphy.gif (this is fine dog)\n   - Mind blown: https://media.giphy.com/media/xT0xeJpnrWC3nWcJBm/giphy.gif\n   - Patience/waiting: https://media.giphy.com/media/ISOckXUybVfQ4/giphy.gif (Pablo Escobar)\n   - Celebration: https://media.giphy.com/media/g9582DNuQppxC/giphy.gif (Leo cheers)\n   - Struggle: https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif (Leo Revenant)\n   - Here we go: https://media.giphy.com/media/FnGJfc18tDDHy/giphy.gif (cracking knuckles)\n   - Confused: https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif (math lady)\n   - Dramatic: https://media.giphy.com/media/nrXif9YExO9EI/giphy.gif (fire)\n\n2. Use this code to post WITH gif:\n```\ncd /Users/dron/.openclaw/workspace && python3 -c \"\nimport tweepy, requests, tempfile, os, json\nfrom datetime import datetime\nauth = tweepy.OAuth1UserHandler('dWYNhhZYNl1NBrM0JDcquTAG5','wgTCxEBgQS7VwwcI2ai3AhiwNGx2aHaVK4CI8ju5g93Dyvw4pK','1279926207618985984-FoQx94HNy8bBUGvm9kZh8RzIJSgrsr','TRC8BfsKEaDm7jOeF7lcCjeETAiThUGNe36YwgFGQVdrX')\napi = tweepy.API(auth)\nclient = tweepy.Client(consumer_key='dWYNhhZYNl1NBrM0JDcquTAG5',consumer_secret='wgTCxEBgQS7VwwcI2ai3AhiwNGx2aHaVK4CI8ju5g93Dyvw4pK',access_token='1279926207618985984-FoQx94HNy8bBUGvm9kZh8RzIJSgrsr',access_token_secret='TRC8BfsKEaDm7jOeF7lcCjeETAiThUGNe36YwgFGQVdrX')\ngif_url = 'GIF_URL_HERE'\nresp = requests.get(gif_url, timeout=15)\ntmp = tempfile.NamedTemporaryFile(suffix='.gif', delete=False)\ntmp.write(resp.content)\ntmp.close()\nmedia = api.media_upload(tmp.name)\ntext = '''YOUR_TWEET_HERE'''\ntweet = client.create_tweet(text=text, media_ids=[media.media_id])\ntid = tweet.data['id']\nprint(f'Posted with GIF: {tid}')\narchive_file = 'x_bot_posts_archive.json'\narchive = json.load(open(archive_file)) if os.path.exists(archive_file) else {'posts':[],'threads':[]}\narchive['posts'].append({'type':'shower-thought','content':text,'tweet_id':str(tid),'timestamp':datetime.now().isoformat(),'has_gif':True})\njson.dump(archive, open(archive_file,'w'), indent=2)\nos.unlink(tmp.name)\nprint('Archived')\n\"\n```\n\n3. For text-only posts (70% of the time), use the original code without media.\n\nSTEP 1 - Check last 5 posts. STEP 2 - Generate tweet. STEP 3 - Decide: GIF or no GIF (30% with GIF). STEP 4 - Post using appropriate code. STEP 5 - Reply with tweet + ID.",
         "model": "xai/grok-4-fast",
         "timeoutSeconds": 120
       },
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772568959708,
+      "updatedAtMs": 1772572557529,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,11 +1847,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772572537366,
-        "lastRunAtMs": 1772568937366,
+        "nextRunAtMs": 1772576137416,
+        "lastRunAtMs": 1772572537416,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22342,
+        "lastDurationMs": 20113,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
