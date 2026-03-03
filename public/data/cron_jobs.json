@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772558502421,
+      "updatedAtMs": 1772560302843,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772560295303,
-        "lastRunAtMs": 1772558495303,
+        "nextRunAtMs": 1772562095354,
+        "lastRunAtMs": 1772560295354,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7118,
+        "lastDurationMs": 7489,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772560295341
+        "runningAtMs": 1772562095389
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772557272022,
+      "updatedAtMs": 1772560824228,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,14 +1671,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772560800000,
-        "lastRunAtMs": 1772557232630,
+        "nextRunAtMs": 1772564400000,
+        "lastRunAtMs": 1772560800063,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39392,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 24165,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       }
     },
     {
@@ -1819,6 +1819,35 @@
       },
       "state": {
         "nextRunAtMs": 1772757562049
+      }
+    },
+    {
+      "id": "f291c8ab-1c27-4209-a043-72e953ad44e8",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "Liquidity Maker Watchdog",
+      "enabled": true,
+      "createdAtMs": 1772561737261,
+      "updatedAtMs": 1772561737261,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1772561737261
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check if the Polymarket Liquidity Maker paper trading bot is running (PID file at workspace/trading/state/liq_maker.pid). If the process is dead, restart it with: cd /Users/dron/.openclaw/workspace && nohup python3 polymarket_liquidity_maker.py --run > trading/logs/liq_maker_live.log 2>&1 & Then check the state file at workspace/trading/state/liquidity_maker_state.json and report the current P&L, orders placed, and market count to Discord channel #polymarket-liquidity-maker (ID: 1478451958481162351).",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1478451958481162351"
+      },
+      "state": {
+        "nextRunAtMs": 1772565337261
       }
     }
   ]
