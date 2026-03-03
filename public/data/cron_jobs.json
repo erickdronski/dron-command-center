@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772572901907,
+      "updatedAtMs": 1772574705765,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772574695745,
-        "lastRunAtMs": 1772572895745,
+        "nextRunAtMs": 1772576495799,
+        "lastRunAtMs": 1772574695799,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6162,
+        "lastDurationMs": 9966,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772574695784
+        "runningAtMs": 1772576495824
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772571646743,
+      "updatedAtMs": 1772575217866,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772575200000,
-        "lastRunAtMs": 1772571629666,
+        "nextRunAtMs": 1772578800000,
+        "lastRunAtMs": 1772575200047,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17077,
+        "lastDurationMs": 17819,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772572557529,
+      "updatedAtMs": 1772576159641,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,14 +1847,40 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772576137416,
-        "lastRunAtMs": 1772572537416,
+        "nextRunAtMs": 1772579737484,
+        "lastRunAtMs": 1772576137484,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20113,
+        "lastDurationMs": 22157,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b8332269-192c-4c14-acd2-c5db0f9093ff",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1478451958481162351",
+      "name": "Liquidity Maker EOD Report",
+      "enabled": true,
+      "createdAtMs": 1772575186916,
+      "updatedAtMs": 1772575186916,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 23 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the Polymarket Liquidity Maker paper trading state file at /Users/dron/.openclaw/workspace/trading/state/liquidity_maker_state.json. Also check today's log file at /Users/dron/.openclaw/workspace/trading/logs/ (pick the most recent liq_maker_*.log). Then post a clean EOD P&L report to Discord channel #polymarket-liquidity-maker (channel ID: 1478451958481162351). The report should include: session start time, total orders placed, capital deployed, simulated rewards earned, total P&L ($), adverse fills, successful hedges, and any notable events from today's log. Format it nicely with emojis. Sign it '💸 Liquidity Maker EOD Report — [today's date]'."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772600100000
       }
     }
   ]
