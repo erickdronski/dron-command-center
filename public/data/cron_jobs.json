@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772551278497,
+      "updatedAtMs": 1772553077254,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772553068391,
-        "lastRunAtMs": 1772551268391,
+        "nextRunAtMs": 1772554868439,
+        "lastRunAtMs": 1772553068439,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10106,
+        "lastDurationMs": 8815,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772553068429
+        "runningAtMs": 1772554868471
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772550017451,
+      "updatedAtMs": 1772553650432,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,14 +1671,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772553600000,
-        "lastRunAtMs": 1772550000116,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 17335,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772557200000,
+        "lastRunAtMs": 1772553600047,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 50385,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
