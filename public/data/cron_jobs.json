@@ -432,7 +432,7 @@
       "name": "🧹 Session Cleanup",
       "enabled": true,
       "createdAtMs": 1771619175350,
-      "updatedAtMs": 1772396775456,
+      "updatedAtMs": 1772655975494,
       "schedule": {
         "kind": "every",
         "everyMs": 259200000,
@@ -450,11 +450,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772655975429,
-        "lastRunAtMs": 1772396775429,
+        "nextRunAtMs": 1772915175472,
+        "lastRunAtMs": 1772655975472,
         "lastStatus": "error",
-        "lastDurationMs": 27,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 22,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772653904833,
+      "updatedAtMs": 1772655705588,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772655697840,
-        "lastRunAtMs": 1772653897840,
+        "nextRunAtMs": 1772657497881,
+        "lastRunAtMs": 1772655697881,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6993,
+        "lastDurationMs": 7707,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772655697870
+        "runningAtMs": 1772657497920
       }
     },
     {
