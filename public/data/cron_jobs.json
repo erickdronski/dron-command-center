@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772578930265,
+      "updatedAtMs": 1772586074780,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772578908326,
+        "lastRunAtMs": 1772586057146,
         "lastStatus": "ok",
-        "lastDurationMs": 21939,
+        "lastDurationMs": 17634,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772586012453,
+        "nextRunAtMs": 1772593212453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772578060143,
+      "updatedAtMs": 1772586031024,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772586000000,
-        "lastRunAtMs": 1772571600049,
+        "nextRunAtMs": 1772629200000,
+        "lastRunAtMs": 1772586000041,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 29617,
+        "lastDurationMs": 30983,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772583702650,
+      "updatedAtMs": 1772585501462,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772585495992,
-        "lastRunAtMs": 1772583695992,
+        "nextRunAtMs": 1772587296017,
+        "lastRunAtMs": 1772585496017,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6658,
+        "lastDurationMs": 5445,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772585496009
+        "runningAtMs": 1772587296056
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772582422657,
+      "updatedAtMs": 1772586057074,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772586000000,
-        "lastRunAtMs": 1772582400043,
+        "nextRunAtMs": 1772589600000,
+        "lastRunAtMs": 1772586031024,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22614,
+        "lastDurationMs": 26050,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772583356831,
+      "updatedAtMs": 1772587102203,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1838,7 +1838,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Check if the Polymarket Liquidity Maker paper trading bot is running (PID file at workspace/trading/state/liq_maker.pid). If the process is dead, restart it with: cd /Users/dron/.openclaw/workspace && nohup python3 polymarket_liquidity_maker.py --run > trading/logs/liq_maker_live.log 2>&1 & Then check the state file at workspace/trading/state/liquidity_maker_state.json and report the current P&L, orders placed, and market count to Discord channel #polymarket-liquidity-maker (ID: 1478451958481162351).",
+        "message": "Check if the Polymarket Liquidity Maker paper trading bot is still running.\n\n1. Read PID from /Users/dron/.openclaw/workspace/trading/state/liq_maker.pid\n2. Check if that PID is alive: `ps -p <PID> -o pid= 2>/dev/null`\n3. If dead, restart: `cd /Users/dron/.openclaw/workspace && python3 polymarket_liquidity_maker.py --run > trading/logs/liq_maker_live.log 2>&1 & echo $! > trading/state/liq_maker.pid`\n4. Get current report: `cd /Users/dron/.openclaw/workspace && python3 polymarket_liquidity_maker.py --report 2>/dev/null`\n5. Post a brief status update to Discord channel #polymarket-liquidity-maker (ID: 1478451958481162351). Include: status (running/restarted), PID, total P&L breakdown (rewards + realized), orders placed, fills, hedges. Keep it concise — one watchdog block.",
         "timeoutSeconds": 120
       },
       "delivery": {
@@ -1847,11 +1847,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772586937581,
-        "lastRunAtMs": 1772583337581,
+        "nextRunAtMs": 1772590537607,
+        "lastRunAtMs": 1772586937607,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19250,
+        "lastDurationMs": 19458,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
