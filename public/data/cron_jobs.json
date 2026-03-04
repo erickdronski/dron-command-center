@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772630506549,
+      "updatedAtMs": 1772632304165,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772632297280,
-        "lastRunAtMs": 1772630497280,
+        "nextRunAtMs": 1772634097327,
+        "lastRunAtMs": 1772632297327,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9269,
+        "lastDurationMs": 6838,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772632297318
+        "runningAtMs": 1772634097363
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772629277054,
+      "updatedAtMs": 1772632817460,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772632800000,
-        "lastRunAtMs": 1772629235846,
+        "nextRunAtMs": 1772636400000,
+        "lastRunAtMs": 1772632800048,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 41208,
+        "lastDurationMs": 17412,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772630161087,
+      "updatedAtMs": 1772633760936,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,11 +1847,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772633738240,
-        "lastRunAtMs": 1772630138240,
+        "nextRunAtMs": 1772637338292,
+        "lastRunAtMs": 1772633738292,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22847,
+        "lastDurationMs": 22644,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
