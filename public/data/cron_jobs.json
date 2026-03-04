@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772629322161,
+      "updatedAtMs": 1772636558844,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,14 +146,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772629304942,
-        "lastStatus": "ok",
-        "lastDurationMs": 17219,
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1772636412453,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastRunAtMs": 1772636494456,
+        "lastStatus": "error",
+        "lastDurationMs": 64388,
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1772643612453,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "Error: All models failed (8): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772634144625,
+      "updatedAtMs": 1772635923102,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772635897376,
-        "lastRunAtMs": 1772634097376,
+        "nextRunAtMs": 1772637697402,
+        "lastRunAtMs": 1772635897402,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 47249,
+        "lastDurationMs": 25700,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772635897397
+        "runningAtMs": 1772637697449
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772632817460,
+      "updatedAtMs": 1772636422841,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772636400000,
-        "lastRunAtMs": 1772632800048,
+        "nextRunAtMs": 1772640000000,
+        "lastRunAtMs": 1772636400047,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17412,
+        "lastDurationMs": 22794,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1772593593122,
+      "updatedAtMs": 1772636494390,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,14 +1782,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772636400000,
-        "lastRunAtMs": 1772593551848,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 41274,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772650800000,
+        "lastRunAtMs": 1772636422841,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 71549,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (7): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/x-content/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/x-content/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772633760936,
+      "updatedAtMs": 1772637356215,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,11 +1847,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772637338292,
-        "lastRunAtMs": 1772633738292,
+        "nextRunAtMs": 1772640938337,
+        "lastRunAtMs": 1772637338337,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22644,
+        "lastDurationMs": 17878,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
