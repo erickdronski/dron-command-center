@@ -777,7 +777,7 @@
       "name": "💰 5K MRR App Builder",
       "enabled": true,
       "createdAtMs": 1771821048720,
-      "updatedAtMs": 1772598657008,
+      "updatedAtMs": 1772685052524,
       "schedule": {
         "everyMs": 86400000,
         "kind": "every",
@@ -798,14 +798,14 @@
         "to": "channel:1475349043394773092"
       },
       "state": {
-        "nextRunAtMs": 1772685049064,
-        "lastRunAtMs": 1772598649064,
+        "nextRunAtMs": 1772771449112,
+        "lastRunAtMs": 1772685049112,
         "lastStatus": "ok",
-        "lastDurationMs": 7944,
+        "lastDurationMs": 3412,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered"
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772682709248,
+      "updatedAtMs": 1772684507490,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772684498854,
-        "lastRunAtMs": 1772682698854,
+        "nextRunAtMs": 1772686298891,
+        "lastRunAtMs": 1772684498891,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10394,
+        "lastDurationMs": 8599,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772684498881
+        "runningAtMs": 1772686298925
       }
     },
     {
