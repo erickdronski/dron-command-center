@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772722865376,
+      "updatedAtMs": 1772730053902,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772722835622,
+        "lastRunAtMs": 1772730039996,
         "lastStatus": "ok",
-        "lastDurationMs": 29754,
+        "lastDurationMs": 13906,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772730012453,
+        "nextRunAtMs": 1772737212453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772715651556,
+      "updatedAtMs": 1772730039876,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772730000000,
-        "lastRunAtMs": 1772715600079,
+        "nextRunAtMs": 1772744400000,
+        "lastRunAtMs": 1772730000040,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 51477,
+        "lastDurationMs": 39836,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772727708222,
+      "updatedAtMs": 1772729508643,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772729500062,
-        "lastRunAtMs": 1772727700062,
+        "nextRunAtMs": 1772731300111,
+        "lastRunAtMs": 1772729500111,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8160,
+        "lastDurationMs": 8532,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772729500098
+        "runningAtMs": 1772731300150
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772726465779,
+      "updatedAtMs": 1772730066003,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,13 +1671,13 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772730065779,
-        "lastRunAtMs": 1772726465594,
+        "nextRunAtMs": 1772733666003,
+        "lastRunAtMs": 1772730065820,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 185,
+        "lastDurationMs": 183,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 7,
+        "consecutiveErrors": 8,
         "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-opus-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-sonnet-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit)"
       }
     },
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772727620488,
+      "updatedAtMs": 1772731245838,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,13 +1847,13 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772731220488,
-        "lastRunAtMs": 1772727595757,
+        "nextRunAtMs": 1772734845838,
+        "lastRunAtMs": 1772731220525,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 24731,
+        "lastDurationMs": 25313,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 15,
+        "consecutiveErrors": 16,
         "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
