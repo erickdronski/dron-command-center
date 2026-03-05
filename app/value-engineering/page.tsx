@@ -21,8 +21,7 @@ const frameworks = [
 ];
 
 const quickLinks = [
-  { href: '/value-engineering/prompt-toolkit', label: 'Prompt Toolkit', desc: '6-prompt chain for SEs, CSMs & VEs', icon: BookOpen, color: 'text-purple-400' },
-  { href: '/value-engineering/projects', label: 'Active Projects', desc: 'Customer engagements & hypotheses', icon: FolderOpen, color: 'text-amber-400' },
+  { href: '/value-engineering/projects', label: 'Active Projects', desc: 'Customer engagements, tools & hypotheses', icon: FolderOpen, color: 'text-amber-400' },
 ];
 
 export default function VEOverviewPage() {
@@ -75,13 +74,14 @@ export default function VEOverviewPage() {
       {/* Team */}
       <div className="bg-[#111] border border-[#222] rounded-xl p-5">
         <h2 className="text-sm font-semibold text-[#555] uppercase tracking-wider mb-3">Value Engineering Team</h2>
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-6 gap-3">
           {[
             { name: 'Matt Gacek', role: 'Manager' },
             { name: 'Erick Dronski', role: 'Value Engineer' },
             { name: 'Neal Edrich', role: 'Value Engineer' },
             { name: 'Chad Arjoon', role: 'Value Engineer' },
             { name: 'Diane Holden', role: 'Value Engineer' },
+            { name: 'Omar Shabka', role: 'Value Engineer' },
           ].map((m) => (
             <div key={m.name} className="text-center">
               <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold mx-auto mb-1">
