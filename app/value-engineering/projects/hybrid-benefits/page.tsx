@@ -35,13 +35,16 @@ type HybridBenefit = {
   id: string;
   name: string;
   tag: 'hybrid-itsm' | 'service-mapping';
+  customerScript: string; // brief pitch for customer conversations
   rationale: string;
   conservatismNote: string;
   description: string;
-  ivantiProducts: string[]; // actual Ivanti products enabling this
-  verifiedCapabilities: string[]; // verified against Ivanti reference guide
+  ivantiProducts: string[];
+  capabilities: string[]; // from old benefits or SM deck — no new ones
+  challenges: string[];   // from old benefits or SM deck — no new ones
+  capabilitySources: string[]; // which old benefits/slides the capabilities came from
+  challengeSources: string[]; // which old benefits/slides the challenges came from
   oldSourceBenefits: string[];
-  painPoints: string[];
   factors: Factor[];
   calculation: string;
   totals: { y1: string; y2: string; y3: string };
@@ -203,17 +206,30 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce IT Service Desk Costs Through Intelligent Ticket Automation',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
-    verifiedCapabilities: [
-      'Automated workflows for incident routing and escalation (Neurons for ITSM — Incident module)',
-      'Service Catalog with standardized request templates and automated fulfillment (Neurons for ITSM — Service Catalog)',
-      'Knowledge base with searchable articles reducing agent research time (Neurons for ITSM — Knowledge module)',
-      'SLA management with escalation policies enforcing resolution timelines (Neurons for ITSM — SLA module)',
+    customerScript: 'Today, your IT team spends a significant amount of time handling tickets manually — triaging, categorizing, routing, and researching resolutions. With Neurons for ITSM, we can automate the workflows around incident routing and service request fulfillment so your agents spend less time on repetitive process steps and more time on actual resolution. The knowledge base surfaces relevant articles at the right time, and standardized Service Catalog templates eliminate the back-and-forth on common requests. The net result is a measurable reduction in the hours your team spends handling tickets each year.',
+    capabilities: [
+      'Improved service through relevant information, insights and analytics',
+      'Improved employee satisfaction through higher first call resolution and MTTR',
+      'Improve agent resource bandwidth through ticket deflection',
+      'Improve service task lifecycle management',
+      'Leverage workflows to identify, track, and resolve high impact service requests',
+      'Drive adoption for the organization with one channel for all service request offerings',
     ],
+    capabilitySources: ['Old #4 (Reduced Incidents)', 'Old #5 (Service Request)'],
+    challenges: [
+      'Relieve staff from manual, mundane, repetitive tasks',
+      'Low staff morale, which could lead to employee turnover and higher costs',
+      'Low NPS and employee SAT scores',
+      'Siloed operations, disparate automation capabilities with no end to end approach, complicated data sources to interconnect',
+      'Non-integrated solutions leading to unnecessary resource overhead and lack of confidence in IT',
+      'Missed SLAs',
+    ],
+    challengeSources: ['Old #4 (Reduced Incidents)', 'Old #5 (Service Request)'],
     rationale: 'The old environment valued incidents at $3.75/ticket — the new factor library provides $26 AHT cost per incident, which is realistic for a blended IT agent rate derived from $89K loaded salary. We pair this with the new "Annual Hours Handling Tickets" (30,000 H) driver instead of the old "9K tickets" count. We apply the same 20% improvement rate used in Old #2 (onboarding time reduction) — a proven, existing factor that reflects the efficiency gains from workflow automation and standardized processes. This is more conservative than the 50%/80% used in Old #4/#5 but grounded in an established rate from your library.',
     conservatismNote: 'At 12% improvement, doubling ticket volume only doubles the result linearly. The $52/hr IT rate and 30,000 hour driver are both from the provided new factor library — no invented numbers. Even at 8% improvement, the benefit is $124.8K/yr, still meaningful.',
     description: 'Leverage Neurons for ITSM workflow automation, Knowledge base, and Service Catalog standardization to reduce ticket handling time and volume.',
     oldSourceBenefits: ['Old #4: Improve IT efficiencies through reduced incidents volume', 'Old #5: Reduce service request inefficiencies through automation and workflow'],
-    painPoints: ['High ticket volume consuming agent capacity', 'Inconsistent ticket categorization leading to rework and escalation', 'Agents manually searching KB for known resolutions'],
+    
     factors: [
       { name: 'Annual Hours Handling Tickets', type: 'driver', source: 'current', sourceNote: 'New factor library', value: '30,000 H', y1: '30,000', y2: '30,000', y3: '30,000' },
       { name: '% reduction in time spent on onboarding activities', type: 'improvement', source: 'current', sourceNote: 'Old benefit library — same 20% improvement rate used for onboarding, applied to ticket handling automation', value: '20%', y1: '20%', y2: '20%', y3: '20%' },
@@ -228,17 +244,28 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Recover Employee Productivity Lost to IT Downtime and Support Wait Times',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
-    verifiedCapabilities: [
-      'Incident Management with priority-based routing and escalation (Neurons for ITSM — Incident module)',
-      'SLA management with escalation policies to enforce resolution timelines (Neurons for ITSM — SLA module)',
-      'Self-service portal with Service Catalog for immediate request fulfillment (Neurons for ITSM — Service Catalog)',
-      'Knowledge base for end-user self-help reducing repeat contacts (Neurons for ITSM — Knowledge module)',
+    customerScript: 'Every hour an employee spends waiting on IT is an hour they are not productive. With Neurons for ITSM, we reduce that wait time through better incident routing — tickets get to the right team faster — SLA enforcement that ensures nothing sits in a queue too long, and a self-service portal where employees can resolve common issues themselves without ever opening a ticket. We measure this in actual downtime hours recovered across your organization, not just tickets closed.',
+    capabilities: [
+      'Reduce mean time to resolution (MTTR) and satisfy customers with consistent IT solutions',
+      'Avoid 30% of ticket volume through self service activities and recommendations',
+      'Deflection of incidents through automation or self-service',
+      'Omnichannel',
+      'Empower every employee with self-service to find answers through knowledgebase and request offerings',
     ],
+    capabilitySources: ['Old #6 (User Productivity)', 'Old #3 (Automation Workflow)'],
+    challenges: [
+      'Long hold times for support affect business user productivity',
+      'Poor support experiences result in negative NPS and CSAT scores',
+      'Time inefficiency tracking and tracing service requests',
+      'Lack of visibility into status',
+      'Poor support experience and wasted resource bandwidth',
+    ],
+    challengeSources: ['Old #6 (User Productivity)', 'Old #3 (Automation Workflow)'],
     rationale: 'Old benefit #6 used 9K tickets × 10% × $120/hr — mixing ticket count with per-hour revenue impact creates scaling risk. The new "Addressable Employee Downtime" (33,306 H) is a direct measurement from the new factor library. We apply the same 10% rate from Old #6 (business user hours saved from decreased incident volume) — a proven factor from your library. We use $52/hr IT rate instead of $120 FTE revenue impact to ground the financial factor in actual cost. Ivanti\'s Incident Management (priority routing), SLA enforcement (escalation timelines), and self-service portal (immediate fulfillment) all directly reduce the time employees wait on IT.',
     conservatismNote: '10% of 33,306 hours = 3,331 hours recovered. For 9,000 employees, that\'s ~22 minutes/employee/year saved — still conservative. Using $52 IT rate instead of $120 revenue rate avoids the "does every saved hour generate revenue?" objection. The 10% rate is directly from your existing benefit library.',
     description: 'Reduce addressable employee downtime through faster incident resolution via priority routing, SLA enforcement, and self-service portal.',
     oldSourceBenefits: ['Old #6: Improve business user productivity through decreased incident volume', 'Old #3: Increase business user productivity through automation workflow'],
-    painPoints: ['Employees losing productive hours waiting for IT', 'No measurement of how much downtime IT issues cause', 'Reactive support model means users wait instead of working'],
+    
     factors: [
       { name: 'Addressable Employee Downtime', type: 'driver', source: 'current', sourceNote: 'New factor library', value: '33,306 H', y1: '33,306', y2: '33,306', y3: '33,306' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — same 10% rate for business user productivity recovery', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -253,17 +280,23 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Prevent Service Disruptions Through CMDB-Informed Change Management',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
-    verifiedCapabilities: [
-      'Change Management with dynamic change approval policies (Neurons for ITSM — Change module)',
-      'CMDB with Configuration Items for impact analysis (Neurons for ITSM — CMDB module)',
-      'Problem Management for root cause analysis of recurring disruptions (Neurons for ITSM — Problem module)',
-      'Reporting and dashboards for change success rate tracking (Neurons for ITSM — Reporting)',
+    customerScript: 'Unplanned outages from changes are one of the most preventable sources of disruption. With Neurons for ITSM, your change management process gets a CMDB that shows exactly what is connected to what — so before you approve a change, you can see the potential blast radius. Dynamic approval policies route changes to the right reviewers based on risk, and the Problem module helps you identify patterns in past disruptions so you stop repeating them. The goal is fewer surprises when changes go live.',
+    capabilities: [
+      'Simplify, automate, and accelerate complex change processes',
+      'Accelerate change management using dynamic change approval policies',
     ],
+    capabilitySources: ['Old #1 (Change Mgmt)'],
+    challenges: [
+      'Manual and offline processes for change management',
+      'Lack of documented change management processes',
+      'Lack of visibility and reporting through dashboards and analytics',
+    ],
+    challengeSources: ['Old #1 (Change Mgmt)'],
     rationale: 'Old benefit #1 used $10.6K lost productivity per outage with a 50% improvement — aggressive. The new factor library provides $43,200 per outage (9,000 employees × $120 × 0.04 hrs average impact), which is the full organizational cost. We use the same "% reduction in number of outage impacts" factor from Old #1, but reduce from 50% to a more realistic 20%. Ivanti\'s CMDB provides the configuration item relationships that inform change risk — the Change module enforces approval policies and the Problem module identifies patterns causing disruptions. At 3.96 outages/year, 20% prevented = 0.79 outages — less than one per year. Credible.',
     conservatismNote: 'At 3.96 annual outages, this benefit is naturally capped. 20% means preventing ~0.79 outages/year — still less than one. The 20% rate is a realistic reduction of the existing 50% factor from your library, not an invented number.',
     description: 'Use CMDB-informed change management and dynamic approval policies to reduce change-related service disruptions.',
     oldSourceBenefits: ['Old #1: Reduce core business service disruptions through change management'],
-    painPoints: ['Changes causing unplanned outages due to unknown dependencies', 'Manual change processes missing risk signals', 'No CMDB data to inform change impact assessment'],
+    
     factors: [
       { name: 'Annual outages', type: 'driver', source: 'current', sourceNote: 'Old benefit library + SM factor library (both = 3.96)', value: '3.96', y1: '3.96', y2: '3.96', y3: '3.96' },
       { name: '% reduction in number of outage impacts', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#1) — same factor, reduced from 50% to 20% for conservatism', value: '20%', y1: '20%', y2: '20%', y3: '20%' },
@@ -278,17 +311,24 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Streamline Employee Lifecycle Management (Onboarding + Offboarding)',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM', 'Ivanti Neurons for ITSM Line of Business'],
-    verifiedCapabilities: [
-      'HR Service Management workflows extending ITSM to HR processes (ITSM Line of Business — HRSM module)',
-      'Automated task orchestration with dependency chaining across departments (Neurons for ITSM — workflow engine)',
-      'Service Catalog for standardized onboarding/offboarding request templates (Neurons for ITSM — Service Catalog)',
-      'Real-time dashboards and reports for lifecycle task visibility (Neurons for ITSM — Reporting)',
+    customerScript: 'Onboarding a new employee today touches IT, HR, facilities, and multiple department leads — and most of that coordination is manual. With Neurons for ITSM and the Line of Business extension for HR, the entire lifecycle from day-zero provisioning through offboarding becomes a streamlined, automated workflow. Each step triggers the next automatically, every stakeholder has visibility, and nothing falls through the cracks. The result is faster onboarding, cleaner offboarding, and fewer orphaned accounts.',
+    capabilities: [
+      'Streamlined process across the onboarding lifecycle',
+      'Organization visibility across key stakeholders',
+      'Dependency task creation via automated workflows',
     ],
+    capabilitySources: ['Old #2 (Onboarding)'],
+    challenges: [
+      'Manual processes lead to errors and mistakes',
+      'Lack of end-to-end approach over multiple systems and departments',
+      'Poor day 1 employee experience could lead to turnover',
+    ],
+    challengeSources: ['Old #2 (Onboarding)'],
     rationale: 'Old benefit #2 used 2,200 onboarding hours × 20% × $120/hr. The new factor library provides 500 offboarding hours — combining to 2,700 hours for full lifecycle. We use IT hourly rate ($52) instead of revenue impact ($120) because IT staff performing lifecycle tasks are paid $52/hr — that\'s the actual cost being saved, not theoretical revenue. ITSM Line of Business extends Neurons for ITSM to HR workflows, and the Service Catalog provides standardized templates. We keep the same 20% improvement rate from Old #2 — it is already a realistic, proven factor for workflow automation gains.',
     conservatismNote: 'Using $52/hr vs $120/hr cuts the benefit ~57% but represents actual cost. 20% × 2,700 = 540 hours saved = ~10.4 hrs/week — highly believable for workflow automation. The 20% rate is unchanged from your existing library.',
     description: 'Automate full employee lifecycle using ITSM workflows and HR Service Management. Combines onboarding and offboarding hours.',
     oldSourceBenefits: ['Old #2: Improve New Hire Onboarding Experience through reduced handle time'],
-    painPoints: ['Manual onboarding taking days instead of hours', 'Offboarding gaps leaving orphaned accounts and access', 'No cross-department visibility for lifecycle tasks'],
+    
     factors: [
       { name: 'Hours spent performing onboarding activities (per year)', type: 'driver', source: 'current', sourceNote: 'Old benefit library', value: '2,200 H', y1: '2,200', y2: '2,200', y3: '2,200' },
       { name: 'Annual IT & HR hours spent offboarding employees', type: 'driver', source: 'current', sourceNote: 'New factor library', value: '500 H', y1: '500', y2: '500', y3: '500' },
@@ -304,17 +344,30 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Increase Self-Service Adoption to Deflect Tickets and Reduce Agent Load',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
-    verifiedCapabilities: [
-      'Self-service portal with Service Catalog for standardized request fulfillment (Neurons for ITSM — Service Catalog)',
-      'Knowledge base with searchable articles for end-user self-help (Neurons for ITSM — Knowledge module)',
-      'Automated fulfillment workflows triggered by Service Catalog requests (Neurons for ITSM — Workflow engine)',
-      'Reporting and analytics on self-service adoption and deflection rates (Neurons for ITSM — Reporting)',
+    customerScript: 'A significant portion of your ticket volume comes from requests that have known answers or standard fulfillment steps. With Neurons for ITSM, we stand up a self-service portal where employees can find answers through the knowledge base, request software or access through the Service Catalog, and get automated fulfillment without waiting for an agent. The key is making self-service easy enough that people actually use it — omnichannel access, one place for everything, and immediate results. Every ticket deflected is agent capacity freed for complex work.',
+    capabilities: [
+      'Omnichannel',
+      'Drive adoption of new service offerings and experiences; while deterring employees from seeking alternatives paths and even promoting your services',
+      'Empower every employee with self-service to find answers through knowledgebase and request offerings',
+      'Improve service task lifecycle management',
+      'Leverage workflows to identify, track, and resolve high impact service requests',
+      'Drive adoption for the organization with one channel for all service request offerings',
     ],
+    capabilitySources: ['Old #3 (Automation Workflow)', 'Old #5 (Service Request)'],
+    challenges: [
+      'Time inefficiency tracking and tracing service requests',
+      'Lack of visibility into status',
+      'Poor support experience and wasted resource bandwidth',
+      'Siloed operations, disparate automation capabilities with no end to end approach, complicated data sources to interconnect',
+      'Non-integrated solutions leading to unnecessary resource overhead and lack of confidence in IT',
+      'Missed SLAs',
+    ],
+    challengeSources: ['Old #3 (Automation Workflow)', 'Old #5 (Service Request)'],
     rationale: 'Old benefits #3 and #5 used high improvement % (80%) against small drivers (360 hours, 1,100 requests). The new factor library provides "Annual Hours Handling Tickets" (30,000 H) — a much larger, realistic base. We apply the 10% rate from Old #6 (business user hours saved from decreased incident volume) — an existing factor from your library. This is well below the 30% vendor claims and the 80% from Old #3/#5, making it conservative while using a proven rate. Ivanti\'s Service Catalog, Knowledge module, and automated fulfillment workflows are the core ITSM features enabling deflection.',
     conservatismNote: '10% deflection on 30,000 hours = 3,000 hours freed. The 10% rate comes directly from Old #6 in your benefit library. If self-service adoption grows beyond 10%, the benefit scales linearly — no dramatic jumps.',
     description: 'Drive ticket deflection through self-service portal, Knowledge base, and automated Service Catalog fulfillment.',
     oldSourceBenefits: ['Old #3: Increase business user productivity through automation workflow', 'Old #5: Reduce service request inefficiencies through automation and workflow'],
-    painPoints: ['Agents handling routine, repeatable requests manually', 'Low self-service adoption due to poor portal experience', 'Knowledge base underutilized and outdated'],
+    
     factors: [
       { name: 'Annual Hours Handling Tickets', type: 'driver', source: 'current', sourceNote: 'New factor library', value: '30,000 H', y1: '30,000', y2: '30,000', y3: '30,000' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — 10% rate applied to self-service deflection of handling hours', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -331,16 +384,22 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Manufacturing Downtime Through Application Dependency Visibility',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
-    verifiedCapabilities: [
-      'Auto-discover data center dependencies and visual service maps (Service Mapping — core capability)',
-      'Application dependency mapping showing infrastructure-to-service relationships (Service Mapping — core capability)',
-      'Real-time active/passive scanning to maintain current dependency data (Neurons for Discovery)',
+    customerScript: 'When a technology outage hits your manufacturing environment, the first question is always: what is affected and what caused it? Service Mapping gives your team a visual map of every application dependency so they can trace from the symptom to the root cause without guessing. Instead of spending hours investigating, your team can see exactly which systems are connected, isolate the issue, and restore service faster. That translates directly to less manufacturing downtime.',
+    capabilities: [
+      'Enhance proficiency and accuracy',
     ],
+    capabilitySources: ['SM Slide 2 (Manufacturing)'],
+    challenges: [
+      'Idle time affects productivity and morale',
+      'Lack of visibility & reporting creates extended resolution time',
+      'Undocumented application & infrastructure details',
+    ],
+    challengeSources: ['SM Slide 2 (Manufacturing)'],
     rationale: 'Directly from the Service Mapping deck. Manufacturing environments lose $25K per outage when IT issues hit factory systems. Service Mapping\'s core capability — auto-discovering application dependencies — enables teams to trace root cause faster. With 3.96 outages/year, 12% reduction means preventing ~0.47 outages worth of impact. All factors are from the provided SM factor library.',
     conservatismNote: '12% of 3.96 = 0.47 outages worth of impact reduced. Even rounding up, less than one prevented outage per year. The $25K/outage and 3.96 outage count are from the SM factor library, not assumptions.',
     description: 'Use Service Mapping application dependency discovery to quickly identify root causes and restore factory technology. Reduces manufacturing downtime.',
     oldSourceBenefits: [],
-    painPoints: ['Idle time affects productivity and morale', 'Lack of visibility creates extended resolution time', 'Undocumented application & infrastructure details'],
+    
     factors: [
       { name: 'Annual outages', type: 'driver', source: 'current', sourceNote: 'SM factor library', value: '3.96', y1: '3.96', y2: '3.96', y3: '3.96' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — 10% rate applied to outage impact reduction through dependency visibility', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -355,16 +414,24 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Cyber Incident Impact Through Service-Aware Response',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
-    verifiedCapabilities: [
-      'Visual service maps showing business service-to-infrastructure relationships (Service Mapping — core capability)',
-      'Auto-discovery of data center dependencies for impact assessment (Service Mapping — core capability)',
-      'Real-time infrastructure scanning for current environment state (Neurons for Discovery)',
+    customerScript: 'During a cyber incident, the biggest time sink is figuring out what is impacted. Service Mapping gives your incident response team an immediate view of which business services depend on which infrastructure — so when something is compromised, you know the blast radius in minutes, not hours. That means faster containment, targeted recovery, and less total organizational impact. We are not claiming to prevent breaches — we are saying you respond faster and smarter when they happen.',
+    capabilities: [
+      'Decrease outage impact downtime',
+      'Reduce time searching for impacted environment',
+      'Improved enterprise support experience',
     ],
+    capabilitySources: ['SM Slide 3 (Cyber)'],
+    challenges: [
+      'Idle time affects productivity and morale',
+      'Lack of visibility & reporting creates extended resolution time',
+      'Undocumented application & infrastructure details',
+    ],
+    challengeSources: ['SM Slide 2 (Manufacturing) — applicable to cyber response context'],
     rationale: 'The deck listed this at $2.59M — which implied near-total prevention of a major breach. We reconstruct conservatively using the Estimated Total Organizational Impact Cost ($1,080,000 from SM financial factors) and apply 5% impact reduction. Service Mapping helps identify which business services are affected during a cyber event, enabling targeted containment. 5% faster containment means reducing blast radius — not preventing the event.',
     conservatismNote: 'The deck\'s $2.59M was unrealistic. $1,080,000 × 5% = $54K is a fraction of that but defensible. Service Mapping doesn\'t prevent breaches — it helps you respond faster by understanding which services are impacted.',
     description: 'Service Mapping provides service-relevant insights during cyber incidents — understanding which business services are impacted enables targeted containment and prioritized recovery.',
     oldSourceBenefits: [],
-    painPoints: ['No visibility into which services are impacted during an attack', 'Slow containment due to unknown dependencies', 'Recovery prioritization based on guesswork'],
+    
     factors: [
       { name: 'Estimated Total Organizational Impact Cost', type: 'driver', source: 'current', sourceNote: 'SM financial factor library', value: '$1,080,000', y1: '$1,080,000', y2: '$1,080,000', y3: '$1,080,000' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — 10% rate applied to organizational impact reduction through service-aware containment', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -378,16 +445,24 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Improve Change Success Rate with Dependency-Aware Impact Analysis',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for ITSM'],
-    verifiedCapabilities: [
-      'Application dependency mapping showing what breaks when infrastructure changes (Service Mapping — core capability)',
-      'Visual service maps for change advisory board review (Service Mapping — core capability)',
-      'Change Management integration — service maps inform change risk assessment (ITSM Change module + Service Mapping)',
+    customerScript: 'One of the most common causes of service disruptions is changes that have unintended downstream effects. Service Mapping feeds dependency data directly into your change management process — so when a change is proposed, your team can see exactly what depends on the thing being changed. This means better risk assessment, fewer surprise outages, and more confident change approvals. Combined with ITSM dynamic approval policies, you get the right level of scrutiny for the right level of risk.',
+    capabilities: [
+      'Simplify, automate, and accelerate complex change processes',
+      'Accelerate change management using dynamic change approval policies',
+      'Enhance proficiency and accuracy',
     ],
+    capabilitySources: ['SM Slide 4 (Change Mgmt)'],
+    challenges: [
+      'Manual and offline processes for change management',
+      'Lack of documented change management processes',
+      'Lack of visibility and reporting through dashboards and analytics',
+    ],
+    challengeSources: ['Old #1 (Change Mgmt) — same challenges apply to dependency-aware changes'],
     rationale: 'Maps to the deck\'s "Improve Change Management Operations" benefit ($51.3K at 60% ramp). We reconstruct using outage prevention: 3.96 outages × 10% prevented × $43,200 per outage. Service Mapping feeds dependency data into ITSM\'s Change module — change managers can see downstream impact before approving. 10% is conservative vs the deck\'s higher implied improvement.',
     conservatismNote: '3.96 × 10% = 0.396 outages prevented × $43,200 = $17.1K at full ramp. Intentionally below deck\'s $51.3K to allow room to adjust up with customer data.',
     description: 'Service Mapping dependency data feeds into ITSM Change Management to assess impact before implementation. Reduces change-related outages.',
     oldSourceBenefits: [],
-    painPoints: ['Changes causing unexpected downstream failures', 'Change Advisory Board lacking accurate dependency data', 'Manual impact assessment missing hidden dependencies'],
+    
     factors: [
       { name: 'Annual outages', type: 'driver', source: 'current', sourceNote: 'SM factor library + Old benefit library', value: '3.96', y1: '3.96', y2: '3.96', y3: '3.96' },
       { name: '% reduction in number of outage impacts', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#1) — same factor reduced from 50% to 20% for dependency-aware change planning', value: '20%', y1: '20%', y2: '20%', y3: '20%' },
@@ -402,16 +477,24 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Business User Downtime Through Proactive Service Health Monitoring',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
-    verifiedCapabilities: [
-      'Visual service maps identifying bottlenecks and single points of failure (Service Mapping — stated capability from deck)',
-      'Auto-discovery providing real-time accurate infrastructure data (Neurons for Discovery — real-time active/passive scanning)',
-      'Service-to-infrastructure dependency tracking for proactive alerting (Service Mapping — core capability)',
+    customerScript: 'Most IT organizations operate reactively — they find out about outages when users start calling. Service Mapping changes that by giving you visibility into service dependencies, bottlenecks, and single points of failure before they cause an outage. When an upstream component starts degrading, your team can see which business services are at risk and take action before users are impacted. The goal is to shift from firefighting to prevention.',
+    capabilities: [
+      'Reduce schedule and budget devoted to unplanned work',
+      'Decrease outage impact downtime',
+      'Reduction on over capacity work on IT staff',
     ],
+    capabilitySources: ['SM Slide 5 (Business User Downtime)'],
+    challenges: [
+      'Unplanned work affects planned work',
+      'Lost productivity while waiting on end user to report impacts',
+      'Idle time affects productivity and morale',
+    ],
+    challengeSources: ['SM Slide 5 (Business User Downtime)', 'SM Slide 2 (Manufacturing)'],
     rationale: 'The deck\'s equivalent benefit was $11.5K. We anchor to Addressable Employee Downtime (33,306 H from new factor library) and apply 2% — service mapping visibility enables detection of degrading upstream services before full outage. At 2%, we\'re claiming 666 hours recovered across the entire organization per year — ~4.4 minutes per employee. Extremely conservative.',
     conservatismNote: '2% of 33,306 hours = 666 hours for 9,000 employees = 4.4 min/employee/year. Almost impossibly conservative. Significant upside room if the customer validates even 5% improvement.',
     description: 'Service Mapping identifies bottlenecks and single points of failure proactively. Detect service degradation before it impacts business users.',
     oldSourceBenefits: [],
-    painPoints: ['Users reporting outages before IT detects them', 'No understanding of which services depend on which infrastructure', 'Lost productivity while waiting on end user to report impacts'],
+    
     factors: [
       { name: 'Addressable Employee Downtime', type: 'driver', source: 'current', sourceNote: 'New factor library', value: '33,306 H', y1: '33,306', y2: '33,306', y3: '33,306' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — 10% rate applied to proactive downtime reduction through service health monitoring', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -426,16 +509,26 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Prevent Revenue Loss from Cyber or Virus Service Interruption Events',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping'],
-    verifiedCapabilities: [
-      'Service-to-business mapping identifying revenue-critical services (Service Mapping — core capability)',
-      'Visual dependency maps for prioritized recovery sequencing (Service Mapping — core capability)',
-      'Proactive identification of single points of failure in revenue-critical service chains (Service Mapping — stated capability from deck)',
+    customerScript: 'When a cyber or virus event interrupts your services, recovery prioritization is critical — you need to know which services to bring back first based on revenue impact. Service Mapping maps your infrastructure to business services so your team can prioritize recovery of the services that matter most to revenue. Instead of recovering systems in random order, you recover the ones that generate money first. Even a small improvement in response targeting reduces the total revenue hours lost.',
+    capabilities: [
+      'Decrease outage impact downtime',
+      'Reduce time searching for impacted environment',
+      'Improved enterprise support experience',
+      'Enhance proficiency and accuracy',
     ],
+    capabilitySources: ['SM Slide 3 (Cyber)', 'SM Slide 2 (Manufacturing)'],
+    challenges: [
+      'Idle time affects productivity and morale',
+      'Lack of visibility & reporting creates extended resolution time',
+      'Undocumented application & infrastructure details',
+      'Unplanned work affects planned work',
+    ],
+    challengeSources: ['SM Slide 2 (Manufacturing)', 'SM Slide 5 (Business User Downtime)'],
     rationale: 'From the deck. Uses "Potential revenue hours impacted from cyber/virus event" (2,500 H) and "Revenue impact per FTE per hour" ($120) — both from the SM factor library. We apply 3% prevention, meaning service mapping visibility helps the organization respond 3% faster — targeted containment, not full prevention. $9K/year is deliberately modest.',
     conservatismNote: '3% of (2,500 × $120) = $9K. Full exposure is $300K; we claim 3%. This avoids the "you\'re claiming to prevent a breach" objection — we\'re saying faster targeted response.',
     description: 'Service Mapping enables identification of revenue-critical services and prioritized recovery during cyber or virus interruption events.',
     oldSourceBenefits: [],
-    painPoints: ['No visibility into which services generate revenue', 'Recovery prioritization based on gut feel, not data', 'Lengthy post-incident triage to understand business impact'],
+    
     factors: [
       { name: 'Potential revenue hours impacted from cyber/virus event', type: 'driver', source: 'current', sourceNote: 'SM driver factor library', value: '2,500 H', y1: '2,500', y2: '2,500', y3: '2,500' },
       { name: '% business user hours saved from decreased incident volume', type: 'improvement', source: 'current', sourceNote: 'Old benefit library (#6) — 10% rate applied to revenue impact prevention through service-aware response', value: '10%', y1: '10%', y2: '10%', y3: '10%' },
@@ -584,15 +677,43 @@ function HybridBenefitCard({ benefit }: { benefit: HybridBenefit }) {
         <>
           <p className="text-[11px] text-[#999] leading-relaxed">{benefit.description}</p>
 
-          {/* Verified Ivanti Capabilities */}
-          <div className="bg-[#0a0a0a] border border-blue-500/10 rounded-lg p-3">
-            <div className="flex items-center gap-1.5 mb-1.5">
-              <Tag size={12} className="text-blue-400" />
-              <span className="text-[10px] font-semibold text-blue-400">Verified Ivanti Capabilities</span>
+          {/* Customer Script */}
+          <div className="bg-[#0d1117] border border-[#222] rounded-lg p-4">
+            <div className="flex items-center gap-1.5 mb-2">
+              <span className="text-sm">💬</span>
+              <span className="text-[10px] font-semibold text-white">Customer Script</span>
+              <span className="text-[9px] text-[#555] ml-1">— How to explain this benefit</span>
             </div>
-            {benefit.verifiedCapabilities.map((c, i) => (
-              <div key={i} className="text-[10px] text-[#888] leading-relaxed ml-4">• {c}</div>
-            ))}
+            <p className="text-[11px] text-[#bbb] leading-relaxed italic">&ldquo;{benefit.customerScript}&rdquo;</p>
+          </div>
+
+          {/* Capabilities & Challenges side by side */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-[#0a0a0a] border border-blue-500/10 rounded-lg p-3">
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <Tag size={12} className="text-blue-400" />
+                <span className="text-[10px] font-semibold text-blue-400">Capabilities</span>
+              </div>
+              {benefit.capabilities.map((c, i) => (
+                <div key={i} className="text-[10px] text-[#888] leading-relaxed ml-4">• {c}</div>
+              ))}
+              <div className="mt-2 pt-1.5 border-t border-[#1a1a1a]">
+                {benefit.capabilitySources.map((s, i) => (
+                  <div key={i} className="text-[9px] text-[#555] ml-4">↳ {s}</div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#0a0a0a] border border-red-500/10 rounded-lg p-3">
+              <div className="text-[10px] font-semibold text-red-400 mb-1.5">Challenges</div>
+              {benefit.challenges.map((c, i) => (
+                <div key={i} className="text-[10px] text-[#888] leading-relaxed ml-4">• {c}</div>
+              ))}
+              <div className="mt-2 pt-1.5 border-t border-[#1a1a1a]">
+                {benefit.challengeSources.map((s, i) => (
+                  <div key={i} className="text-[9px] text-[#555] ml-4">↳ {s}</div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Rationale */}
@@ -613,26 +734,16 @@ function HybridBenefitCard({ benefit }: { benefit: HybridBenefit }) {
             <p className="text-[11px] text-[#888] leading-relaxed">{benefit.conservatismNote}</p>
           </div>
 
-          {/* Source + Pain Points */}
-          <div className="grid grid-cols-2 gap-3">
-            {benefit.oldSourceBenefits.length > 0 && (
-              <div className="bg-[#0a0a0a] rounded-lg p-3">
-                <div className="flex items-center gap-1.5 mb-1.5">
-                  <RefreshCw size={12} className="text-purple-400" />
-                  <span className="text-[10px] font-semibold text-purple-400">Replaces Old Benefits</span>
-                </div>
-                {benefit.oldSourceBenefits.map((b, i) => (
-                  <div key={i} className="text-[10px] text-[#777] leading-relaxed">• {b}</div>
-                ))}
+          {/* Replaces Old Benefits */}
+          {benefit.oldSourceBenefits.length > 0 && (
+            <div className="flex items-start gap-2">
+              <RefreshCw size={12} className="text-purple-400 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-[10px] font-semibold text-purple-400">Replaces: </span>
+                <span className="text-[10px] text-[#777]">{benefit.oldSourceBenefits.join(' | ')}</span>
               </div>
-            )}
-            <div className={`bg-[#0a0a0a] rounded-lg p-3 ${benefit.oldSourceBenefits.length === 0 ? 'col-span-2' : ''}`}>
-              <div className="text-[10px] font-semibold text-red-400 mb-1.5">Pain Points Addressed</div>
-              {benefit.painPoints.map((p, i) => (
-                <div key={i} className="text-[10px] text-[#777] leading-relaxed">• {p}</div>
-              ))}
             </div>
-          </div>
+          )}
 
           {/* Formula with source tags */}
           <div className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-3">
