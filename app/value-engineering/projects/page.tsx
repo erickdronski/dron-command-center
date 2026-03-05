@@ -128,6 +128,13 @@ export default function ProjectsPage() {
       status: 'active',
       color: 'border-emerald-500/30',
     },
+    {
+      href: '/value-engineering/projects/hybrid-benefits',
+      title: 'Hybrid Benefits & Service Mapping',
+      desc: '5 hybrid ITSM + 5 Service Mapping benefits — old/new factor fusion with conservative assumptions, rationale, and scaling guards.',
+      status: 'active',
+      color: 'border-blue-500/30',
+    },
   ];
 
   return (
