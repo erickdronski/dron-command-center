@@ -36,6 +36,7 @@ type HybridBenefit = {
   name: string;
   tag: 'hybrid-itsm' | 'service-mapping';
   customerScript: string; // brief pitch for customer conversations
+  calculationScript: string; // plain-English walkthrough of the math for customer conversations
   rationale: string;
   conservatismNote: string;
   description: string;
@@ -206,6 +207,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce IT Service Desk Costs Through Intelligent Ticket Automation',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
+    calculationScript: 'Here is how we get to this number. We start with the total hours your IT team spends handling tickets each year — in this case, 30,000 hours. That is your starting point, the size of the problem. Now, we are not saying we eliminate all of that. We are saying that through better workflows, standardized templates, and a knowledge base that helps agents resolve things faster — you can realistically reduce that by about 20%. That gives us 6,000 hours saved. Then we multiply that by what those hours cost you — your IT hourly rate of $52. So 6,000 hours times $52 is about $312,000 in annual value. In year one, we apply a 60% ramp because you are still rolling things out, so you see about $187K. By year two, you are at full value.',
     customerScript: 'Today, your IT team spends a significant amount of time handling tickets manually — triaging, categorizing, routing, and researching resolutions. With Neurons for ITSM, we can automate the workflows around incident routing and service request fulfillment so your agents spend less time on repetitive process steps and more time on actual resolution. The knowledge base surfaces relevant articles at the right time, and standardized Service Catalog templates eliminate the back-and-forth on common requests. The net result is a measurable reduction in the hours your team spends handling tickets each year.',
     capabilities: [
       'Improved service through relevant information, insights and analytics',
@@ -244,6 +246,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Recover Employee Productivity Lost to IT Downtime and Support Wait Times',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
+    calculationScript: 'Let me walk you through this one. Your organization has about 33,000 hours of addressable employee downtime per year — that is time people are stuck waiting on IT instead of working. We are saying that with better incident routing, SLA enforcement, and self-service options, you can recover about 10% of that time. So 10% of 33,000 is roughly 3,300 hours. We value each of those hours at your IT rate of $52 — not a revenue projection, just what that time actually costs. That gives you about $173,000 in recovered productivity per year. Year one is about $104K with the ramp. The nice thing about this number is it is grounded in actual measured downtime, not a theoretical estimate.',
     customerScript: 'Every hour an employee spends waiting on IT is an hour they are not productive. With Neurons for ITSM, we reduce that wait time through better incident routing — tickets get to the right team faster — SLA enforcement that ensures nothing sits in a queue too long, and a self-service portal where employees can resolve common issues themselves without ever opening a ticket. We measure this in actual downtime hours recovered across your organization, not just tickets closed.',
     capabilities: [
       'Reduce mean time to resolution (MTTR) and satisfy customers with consistent IT solutions',
@@ -280,6 +283,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Prevent Service Disruptions Through CMDB-Informed Change Management',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
+    calculationScript: 'This one is straightforward. You experience roughly 4 outages per year — about one every 3 months. Each outage costs your organization about $43,000 in lost productivity when you factor in how many people are affected and for how long. We are saying that with proper change management and CMDB visibility, you can prevent about 20% of those outages — so roughly one fewer outage per year. One prevented outage at $43,000 gives you about $34,000 in annual savings. In year one with the ramp it is about $20K. This is conservative because we are not saying you prevent all outages — just one out of every five that were caused by changes going wrong.',
     customerScript: 'Unplanned outages from changes are one of the most preventable sources of disruption. With Neurons for ITSM, your change management process gets a CMDB that shows exactly what is connected to what — so before you approve a change, you can see the potential blast radius. Dynamic approval policies route changes to the right reviewers based on risk, and the Problem module helps you identify patterns in past disruptions so you stop repeating them. The goal is fewer surprises when changes go live.',
     capabilities: [
       'Simplify, automate, and accelerate complex change processes',
@@ -311,6 +315,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Streamline Employee Lifecycle Management (Onboarding + Offboarding)',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM', 'Ivanti Neurons for ITSM Line of Business'],
+    calculationScript: 'Here is the math. Your organization spends about 2,200 hours per year on onboarding activities and another 500 hours on offboarding — so 2,700 hours total on employee lifecycle tasks. With automated workflows that trigger each step in sequence and give every stakeholder visibility, we estimate a 20% reduction in that time. That is about 540 hours saved per year. At your IT hourly rate of $52, that is roughly $28,000 annually. With the year one ramp, you are looking at about $17K. We use the IT cost rate here, not a revenue figure — so this is real, hard-dollar savings from your team spending less time on manual coordination.',
     customerScript: 'Onboarding a new employee today touches IT, HR, facilities, and multiple department leads — and most of that coordination is manual. With Neurons for ITSM and the Line of Business extension for HR, the entire lifecycle from day-zero provisioning through offboarding becomes a streamlined, automated workflow. Each step triggers the next automatically, every stakeholder has visibility, and nothing falls through the cracks. The result is faster onboarding, cleaner offboarding, and fewer orphaned accounts.',
     capabilities: [
       'Streamlined process across the onboarding lifecycle',
@@ -344,6 +349,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Increase Self-Service Adoption to Deflect Tickets and Reduce Agent Load',
     tag: 'hybrid-itsm',
     ivantiProducts: ['Ivanti Neurons for ITSM'],
+    calculationScript: 'We start with the same 30,000 hours of annual ticket handling. The question is: how many of those hours can you eliminate by letting employees help themselves? With a well-designed self-service portal, a solid knowledge base, and automated fulfillment for common requests, we estimate 10% deflection — meaning 3,000 hours where an agent never has to get involved. At $52 per hour, that is $156,000 in annual capacity freed up. Year one with the ramp is about $94K. And 10% is intentionally modest — if you get your self-service adoption higher, this number grows, but we want to start with what is realistic out of the gate.',
     customerScript: 'A significant portion of your ticket volume comes from requests that have known answers or standard fulfillment steps. With Neurons for ITSM, we stand up a self-service portal where employees can find answers through the knowledge base, request software or access through the Service Catalog, and get automated fulfillment without waiting for an agent. The key is making self-service easy enough that people actually use it — omnichannel access, one place for everything, and immediate results. Every ticket deflected is agent capacity freed for complex work.',
     capabilities: [
       'Omnichannel',
@@ -384,6 +390,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Manufacturing Downtime Through Application Dependency Visibility',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
+    calculationScript: 'In manufacturing, every outage has a direct revenue impact. You average about 4 outages per year, and each one costs roughly $25,000 in lost production. With Service Mapping giving your team visibility into application dependencies, they can find the root cause faster and restore service sooner. We estimate a 10% reduction in that outage impact — meaning you recover about $10,000 per year. It is a modest number, but it only accounts for the IT visibility improvement, not the broader operational gains. And because you already have the outage data, this is easy to validate.',
     customerScript: 'When a technology outage hits your manufacturing environment, the first question is always: what is affected and what caused it? Service Mapping gives your team a visual map of every application dependency so they can trace from the symptom to the root cause without guessing. Instead of spending hours investigating, your team can see exactly which systems are connected, isolate the issue, and restore service faster. That translates directly to less manufacturing downtime.',
     capabilities: [
       'Enhance proficiency and accuracy',
@@ -414,6 +421,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Cyber Incident Impact Through Service-Aware Response',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
+    calculationScript: 'This is about reducing the blast radius when something bad happens. Your total organizational impact cost from a major incident is estimated at about $1 million — that accounts for all employees affected, their hourly impact, and the duration. We are not saying Service Mapping prevents the incident. We are saying that because your team can immediately see which services are connected to what, they contain it 10% faster. 10% of a million dollars is $108,000 per year at full ramp. Year one at 60% is about $65K. The key selling point here is speed of response — knowing what is impacted in minutes instead of hours.',
     customerScript: 'During a cyber incident, the biggest time sink is figuring out what is impacted. Service Mapping gives your incident response team an immediate view of which business services depend on which infrastructure — so when something is compromised, you know the blast radius in minutes, not hours. That means faster containment, targeted recovery, and less total organizational impact. We are not claiming to prevent breaches — we are saying you respond faster and smarter when they happen.',
     capabilities: [
       'Decrease outage impact downtime',
@@ -445,6 +453,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Improve Change Success Rate with Dependency-Aware Impact Analysis',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for ITSM'],
+    calculationScript: 'This is similar to our ITSM change management benefit, but from the Service Mapping angle. You have roughly 4 outages per year costing $43,000 each. Service Mapping adds the dependency layer — before a change is approved, your team can see exactly what is downstream. We estimate 20% of outages are preventable with that visibility. So about one fewer outage per year, saving roughly $34,000 annually. Year one with ramp is about $20K. The reason this is separate from the ITSM benefit is that Service Mapping provides the data, while ITSM provides the process — they work together but the value is distinct.',
     customerScript: 'One of the most common causes of service disruptions is changes that have unintended downstream effects. Service Mapping feeds dependency data directly into your change management process — so when a change is proposed, your team can see exactly what depends on the thing being changed. This means better risk assessment, fewer surprise outages, and more confident change approvals. Combined with ITSM dynamic approval policies, you get the right level of scrutiny for the right level of risk.',
     capabilities: [
       'Simplify, automate, and accelerate complex change processes',
@@ -477,6 +486,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Reduce Business User Downtime Through Proactive Service Health Monitoring',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping', 'Ivanti Neurons for Discovery'],
+    calculationScript: 'Your organization loses about 33,000 hours per year in employee downtime related to IT. Right now, most of that is discovered after the fact — users call in, tickets pile up, and then IT scrambles. Service Mapping lets you see when upstream services are degrading before they cause a full outage. We apply a 10% improvement — meaning you catch and address issues that would have caused about 3,300 hours of downtime. At $52 per hour, that is roughly $173,000 per year. There is no ramp on this one because the visibility is immediate once the service maps are in place.',
     customerScript: 'Most IT organizations operate reactively — they find out about outages when users start calling. Service Mapping changes that by giving you visibility into service dependencies, bottlenecks, and single points of failure before they cause an outage. When an upstream component starts degrading, your team can see which business services are at risk and take action before users are impacted. The goal is to shift from firefighting to prevention.',
     capabilities: [
       'Reduce schedule and budget devoted to unplanned work',
@@ -509,6 +519,7 @@ const hybridBenefits: HybridBenefit[] = [
     name: 'Prevent Revenue Loss from Cyber or Virus Service Interruption Events',
     tag: 'service-mapping',
     ivantiProducts: ['Ivanti Neurons for Service Mapping'],
+    calculationScript: 'During a cyber or virus event, your organization could lose up to 2,500 hours of revenue-generating activity. We multiply that by $120 per hour — which is the revenue impact per employee hour, not just the IT cost. With Service Mapping, your team knows which services drive revenue and recovers those first instead of restoring systems randomly. We estimate a 10% improvement in targeted response, which saves about 250 revenue hours. At $120 per hour, that is $30,000 per year. It is a relatively small number, but remember — this is just the targeted response improvement. The real value is avoiding the scenario where you restore the wrong systems first while revenue-critical services stay down.',
     customerScript: 'When a cyber or virus event interrupts your services, recovery prioritization is critical — you need to know which services to bring back first based on revenue impact. Service Mapping maps your infrastructure to business services so your team can prioritize recovery of the services that matter most to revenue. Instead of recovering systems in random order, you recover the ones that generate money first. Even a small improvement in response targeting reduces the total revenue hours lost.',
     capabilities: [
       'Decrease outage impact downtime',
@@ -685,6 +696,16 @@ function HybridBenefitCard({ benefit }: { benefit: HybridBenefit }) {
               <span className="text-[9px] text-[#555] ml-1">— How to explain this benefit</span>
             </div>
             <p className="text-[11px] text-[#bbb] leading-relaxed italic">&ldquo;{benefit.customerScript}&rdquo;</p>
+          </div>
+
+          {/* Calculation Script */}
+          <div className="bg-[#0d1117] border border-emerald-500/15 rounded-lg p-4">
+            <div className="flex items-center gap-1.5 mb-2">
+              <span className="text-sm">🧮</span>
+              <span className="text-[10px] font-semibold text-emerald-400">How to Explain the Calculation</span>
+              <span className="text-[9px] text-[#555] ml-1">— Walk through the math in plain English</span>
+            </div>
+            <p className="text-[11px] text-[#bbb] leading-relaxed italic">&ldquo;{benefit.calculationScript}&rdquo;</p>
           </div>
 
           {/* Capabilities & Challenges side by side */}
