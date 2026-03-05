@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772673704500,
+      "updatedAtMs": 1772675504959,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772675498601,
-        "lastRunAtMs": 1772673698601,
+        "nextRunAtMs": 1772677298669,
+        "lastRunAtMs": 1772675498669,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5899,
+        "lastDurationMs": 6290,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772675498657
+        "runningAtMs": 1772677298708
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772672474976,
+      "updatedAtMs": 1772676025497,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1671,14 +1671,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772676000000,
-        "lastRunAtMs": 1772672451841,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 23135,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772679600000,
+        "lastRunAtMs": 1772676000026,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 25471,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | openai/gpt-4o-mini: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1828,7 +1828,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772673358197,
+      "updatedAtMs": 1772676967449,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1847,14 +1847,14 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772676938785,
-        "lastRunAtMs": 1772673338785,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 19412,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772680538812,
+        "lastRunAtMs": 1772676938812,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 28637,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | openai/gpt-4o-mini: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************2wMA. You can find your API key at https://platform.openai.com/account/api-keys. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/general-chat/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/general-chat/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
