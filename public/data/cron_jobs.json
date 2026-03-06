@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772774760993,
+      "updatedAtMs": 1772776560486,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772776553254,
-        "lastRunAtMs": 1772774753254,
+        "nextRunAtMs": 1772778353308,
+        "lastRunAtMs": 1772776553308,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7739,
+        "lastDurationMs": 7178,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772776553298
+        "runningAtMs": 1772778353349
       }
     },
     {
@@ -1835,7 +1835,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772774715878,
+      "updatedAtMs": 1772778320382,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1854,11 +1854,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772778296232,
-        "lastRunAtMs": 1772774696232,
+        "nextRunAtMs": 1772781896280,
+        "lastRunAtMs": 1772778296280,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19646,
+        "lastDurationMs": 24102,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
