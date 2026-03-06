@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1772818233812,
+      "updatedAtMs": 1772825421653,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772818200161,
+        "lastRunAtMs": 1772825400066,
         "lastStatus": "ok",
-        "lastDurationMs": 33651,
+        "lastDurationMs": 21587,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772825400000,
+        "nextRunAtMs": 1772832600000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1772819440305,
+      "updatedAtMs": 1772826640835,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772826640248,
-        "lastRunAtMs": 1772819440248,
+        "nextRunAtMs": 1772833840343,
+        "lastRunAtMs": 1772826640343,
         "lastStatus": "error",
-        "lastDurationMs": 57,
-        "consecutiveErrors": 88,
+        "lastDurationMs": 492,
+        "consecutiveErrors": 89,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772823389112,
+      "updatedAtMs": 1772825200072,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772825180315,
-        "lastRunAtMs": 1772823380315,
+        "nextRunAtMs": 1772826980532,
+        "lastRunAtMs": 1772825180532,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8797,
+        "lastDurationMs": 19540,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772825180494
+        "runningAtMs": 1772826980606
       }
     },
     {
