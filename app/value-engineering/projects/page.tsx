@@ -24,10 +24,14 @@ const frameworkMeta: Record<Framework, { label: string; color: string; bgColor: 
 
 const strategicProjects: StrategicProject[] = [
   // Value Cloud
-  { href: '/value-engineering/projects/benefit-stories', title: 'Value Cloud Benefit Stories', desc: 'Industry-specific storytelling guides for every Value Cloud benefit. 8 verticals.', status: 'active', color: 'border-green-500/30', framework: 'value-cloud' },
+  { href: '/value-engineering/projects/benefit-stories', title: 'Benefit Stories Playbook', desc: '21 benefits, one universal story each. Scenario, talk track, formula, and tips — ready for any customer.', status: 'active', color: 'border-green-500/30', framework: 'value-cloud' },
   { href: '/value-engineering/projects/benefit-builder', title: 'Benefit Builder (ROI Calculator)', desc: 'Input customer metrics, select benefits, get instant ROI calculations.', status: 'active', color: 'border-emerald-500/30', framework: 'value-cloud' },
   { href: '/value-engineering/projects/hybrid-benefits', title: 'Hybrid Benefits & Service Mapping', desc: '5 hybrid ITSM + 5 Service Mapping benefits with factor fusion.', status: 'active', color: 'border-blue-500/30', framework: 'value-cloud' },
+  { href: '/value-engineering/projects/discovery-questions', title: 'Discovery Question Bank', desc: '40+ questions by solution area that uncover pain and open the door to each benefit.', status: 'active', color: 'border-amber-500/30', framework: 'value-cloud' },
+  { href: '/value-engineering/projects/product-benefit-map', title: 'Product ↔ Benefit Map', desc: 'Two-way map: click a product to see its benefits, or click a benefit to see which products drive it.', status: 'active', color: 'border-teal-500/30', framework: 'value-cloud' },
   { href: '/value-engineering/projects/glasgow', title: 'Univ. of Glasgow — Value Hypothesis', desc: '£503K/yr financial + 5,735 hrs saved. ITSM Enterprise Premium.', status: 'active', color: 'border-blue-500/30', framework: 'value-cloud' },
+  // Maturity Assessment
+  { href: '/value-engineering/projects/capability-map', title: 'Capability Maturity Map', desc: 'Up to 5 maturity framework capabilities per product. Current state → what Ivanti enables → target level.', status: 'active', color: 'border-blue-500/30', framework: 'maturity-assessment' },
   // General
   { href: '/value-engineering/prompt-toolkit', title: 'Prompt Toolkit', desc: '6-prompt sales knowledge chain for SEs, CSMs & VEs.', status: 'active', color: 'border-purple-500/30', framework: 'general' },
   { href: '/value-engineering/projects/product-guide', title: 'Ivanti Product Guide', desc: '38 products across ESM, UEM & Security — searchable catalog.', status: 'active', color: 'border-cyan-500/30', framework: 'general' },

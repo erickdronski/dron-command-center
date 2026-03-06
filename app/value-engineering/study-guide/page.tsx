@@ -662,9 +662,15 @@ export default function StudyGuidePage() {
       {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-white">📚 ROI Benefit Study Guide</h2>
-        <p className="text-sm text-[#666] mt-1">
-          Micro-learning cards for every benefit. Review before customer calls — know the story, the math, and how to explain it.
-        </p>
+        <div className="flex items-center gap-3 mt-1">
+          <p className="text-sm text-[#666]">
+            Micro-learning cards for every benefit. Review before customer calls — know the story, the math, and how to explain it.
+          </p>
+          <a href="/value-engineering/study-guide/flashcards"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 transition-colors">
+            🃏 Flashcard Mode
+          </a>
+        </div>
         <div className="flex items-center gap-4 mt-3">
           <div className="bg-[#111] border border-[#222] rounded-lg px-3 py-1.5 text-center">
             <div className="text-lg font-bold text-emerald-400 font-mono">$30.9M</div>
