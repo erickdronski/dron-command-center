@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772834188489,
+      "updatedAtMs": 1772835990156,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772835980913,
-        "lastRunAtMs": 1772834180913,
+        "nextRunAtMs": 1772837781005,
+        "lastRunAtMs": 1772835981005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7576,
+        "lastDurationMs": 9151,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772835980981
+        "runningAtMs": 1772837781029
       }
     },
     {
@@ -1834,9 +1834,9 @@
       "agentId": "general-chat",
       "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
       "name": "Liquidity Maker Watchdog",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772835921490,
+      "updatedAtMs": 1772836504606,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1855,7 +1855,6 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772839497165,
         "lastRunAtMs": 1772835897165,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1870,9 +1869,9 @@
       "agentId": "general-chat",
       "sessionKey": "agent:general-chat:discord:channel:1478451958481162351",
       "name": "Liquidity Maker EOD Report",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772575186916,
-      "updatedAtMs": 1772772953105,
+      "updatedAtMs": 1772836504849,
       "schedule": {
         "kind": "cron",
         "expr": "55 23 * * *",
@@ -1888,7 +1887,6 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772859300000,
         "lastRunAtMs": 1772772900055,
         "lastRunStatus": "ok",
         "lastStatus": "ok",

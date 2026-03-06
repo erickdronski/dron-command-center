@@ -179,5 +179,907 @@
     "condition_id": "0xe3fc2b4c3f7d28f08981b55cb140d91509c3eb6c3e31bd34b2ab8ff63d59ceec",
     "timestamp": "2026-03-06T22:23:30.330563+00:00",
     "logged_at": "2026-03-06T22:23:30.334062+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Ivan Cepeda Castro win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.76,
+    "our_size": 2.2,
+    "logged_at": "2026-03-06T22:27:15.205959+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Oliver Bearman win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 10.989,
+    "our_size": 5.09,
+    "logged_at": "2026-03-06T22:28:24.146276+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Charles Leclerc win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.13,
+    "our_size": 4.25,
+    "logged_at": "2026-03-06T22:28:27.410613+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Fernando Alonso win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.988,
+    "our_size": 5.09,
+    "logged_at": "2026-03-06T22:28:30.915371+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Max Verstappen win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.35,
+    "our_size": 4.35,
+    "logged_at": "2026-03-06T22:28:34.658523+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Pierre Gasly win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.988,
+    "our_size": 5.09,
+    "logged_at": "2026-03-06T22:29:04.838816+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lewis Hamilton win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.16,
+    "our_size": 4.75,
+    "logged_at": "2026-03-06T22:29:07.464478+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Gabriel Bortoleto win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.988,
+    "our_size": 5.09,
+    "logged_at": "2026-03-06T22:29:10.338167+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Carlos Sainz win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.952,
+    "our_size": 5.08,
+    "logged_at": "2026-03-06T22:29:13.997936+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Kimi Antonelli win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 10.68,
+    "our_size": 4.55,
+    "logged_at": "2026-03-06T22:29:18.029938+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lando Norris win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 11.316,
+    "our_size": 4.81,
+    "logged_at": "2026-03-06T22:29:21.698731+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 46-47\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.981,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:20.951627+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be 45\u00b0F or below on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:27.048554+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 56-57\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.874,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:31.516129+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 52-53\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.81,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:38.162940+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 58-59\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.01,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:43.520616+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 54-55\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.164,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:34:48.002877+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 48-49\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:35:02.426881+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 50-51\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.905,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:35:07.680672+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be 60\u00b0F or higher on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.51,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:35:11.298247+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Claudia L\u00f3pez win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 27.608,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:38:09.173245+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will NVIDIA be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 8.16,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:22.758253+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Apple be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 129.648041,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:30.872103+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Microsoft be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 135.864,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:37.587046+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Alphabet be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 134.368,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:45.869035+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Tesla be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 135.864,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:50.596331+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Amazon be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 135.864,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:39:55.221726+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Saudi Aramco be the largest company in the world by market cap on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 135.592,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:40:10.932577+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.298701,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:43:05.173154+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Fidesz \u2013 Hungarian Civic Alliance (Fidesz) win the most seats in the next Hungarian parliamentary election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 8.255789,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:43:53.691329+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Max Verstappen win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 22.1,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:44:22.437297+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Oliver Bearman win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:44:30.986697+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Carlos Sainz win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:44:39.985848+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Oscar Piastri win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 22.275,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:45:06.951073+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Charles Leclerc win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 5.2788,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:45:26.397576+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Gabriel Bortoleto win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:45:34.007337+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will George Russell win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 17.68,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:45:46.409774+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lewis Hamilton win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 23.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:45:58.714927+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Kimi Antonelli win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 22.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:06.604968+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Fernando Alonso win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:11.772155+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Isack Hadjar win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.896,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:17.302538+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Arvid Lindblad win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:21.764103+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Pierre Gasly win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:26.457833+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Lille OSC win on 2026-03-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 23.282,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:37.362832+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Aston Villa FC win on 2026-03-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.6234,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:46:41.383649+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Lille OSC vs. Aston Villa FC end in a draw?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 23.282,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:22.730719+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will One Battle After Another win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 6.76,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:39.385026+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Marty Supreme win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:44.459644+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Hamnet win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.55,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:48.422949+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Train Dreams win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.948,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:52.338722+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sinners win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:47:57.875135+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Frankenstein win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.925,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:48:02.654128+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Bugonia win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.948,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:48:06.399758+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sentimental Value win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.925,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:48:11.535672+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will F1 win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.948,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:48:16.642254+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will The Secret Agent win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:48:21.796815+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Charles Leclerc win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "condition_id": "0x2bb3b87ef5e1a97d3023f0858724e0f242a870140ca4e7755ce8c887d2724b1c",
+    "timestamp": "2026-03-06T22:48:38.394159+00:00",
+    "logged_at": "2026-03-06T22:48:38.394977+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Paloma Valencia win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 24.192,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:01.842565+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Charles Leclerc win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "condition_id": "0x2bb3b87ef5e1a97d3023f0858724e0f242a870140ca4e7755ce8c887d2724b1c",
+    "timestamp": "2026-03-06T22:49:12.342297+00:00",
+    "logged_at": "2026-03-06T22:49:12.344808+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.597402,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:17.798748+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will The Greens win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 275.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:23.089946+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will AfD win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 650.696,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:28.823223+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will CDU win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 291.85,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:36.031918+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be between 50-51\u00b0F on March 6?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.627106,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:43.805883+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be between 52-53\u00b0F on March 6?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.6321,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:49:50.880822+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be 54\u00b0F or higher on March 6?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.6321,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:50:08.432009+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Wagner Moura win Best Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 23.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:50:49.727465+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Ethan Hawke win Best Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.675,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:50:57.491017+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Leonardo DiCaprio win Best Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 99.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:03.197370+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Timoth\u00e9e Chalamet win Best Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 12.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:25.307964+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sentimental Value win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.934,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:32.224538+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Hamnet win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.604,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:39.458869+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will One Battle After Another win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.72,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:46.072567+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will The Secret Agent win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 22.954,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:51:50.135318+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Frankenstein win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.934,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:07.463739+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will F1 win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.956,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:12.587597+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Marty Supreme win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.78,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:16.366653+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Bugonia win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.956,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:23.005634+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Train Dreams win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.956,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:28.263414+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sinners win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.16,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:52:33.827696+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be 54\u00b0F or higher on March 6?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 41.382,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:53:10.427565+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be between 52-53\u00b0F on March 6?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 41.382,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:53:17.404978+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Abelardo de la Espriella  win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 20.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:53:46.603283+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.597402,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:53:52.207298+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lando Norris win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 21.91626,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:54:06.734465+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will there be exactly 0 earthquakes of magnitude 6.5 or higher worldwide by March 15?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.449275,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:54:25.435140+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the price of Bitcoin be between $70,000 and $72,000 on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 10.875,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:55:24.799163+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the price of Bitcoin be between $60,000 and $62,000 on March 8?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 12.4,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:55:42.401442+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the price of Bitcoin be between $72,000 and $74,000 on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 12.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:55:47.324217+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the price of Bitcoin be between $64,000 and $66,000 on March 8?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 11.71918,
+    "our_size": 3.0,
+    "logged_at": "2026-03-06T22:56:09.788302+00:00"
   }
 ]
