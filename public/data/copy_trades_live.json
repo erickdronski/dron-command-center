@@ -83,5 +83,101 @@
     "their_size": 26.571428,
     "our_size": 2.66,
     "logged_at": "2026-03-06T21:47:30.488405+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Isack Hadjar win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.999,
+    "condition_id": "0xbcb04d575866752c64128260918057973289f9add565c13c2174f4374257aa9a",
+    "timestamp": "2026-03-06T22:18:13.760535+00:00",
+    "logged_at": "2026-03-06T22:18:13.761160+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be between 41.0 and 41.4 on March 6, 2026?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.999,
+    "condition_id": "0xdf497ad5badfff07d04b597cb688d99d3cc49a65c7257482d120f611fd6580e9",
+    "timestamp": "2026-03-06T22:18:34.195961+00:00",
+    "logged_at": "2026-03-06T22:18:34.196621+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be between 42.0 and 42.4 on March 6, 2026?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.99,
+    "condition_id": "0x037017974973622e3894c66f930303e46c99cfe4f13c7927cf65fd1012f26b5e",
+    "timestamp": "2026-03-06T22:18:36.762592+00:00",
+    "logged_at": "2026-03-06T22:18:36.764235+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be between 42.5 and 42.9 on March 6, 2026?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.999,
+    "condition_id": "0xc4bf95969aea71a73dd7cb946f81658e75dc841edd93fe2cb79be290594f50d7",
+    "timestamp": "2026-03-06T22:18:39.399778+00:00",
+    "logged_at": "2026-03-06T22:18:39.401021+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be between 41.5 and 41.9 on March 6, 2026?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.99,
+    "condition_id": "0x190eca0685fb657fe3bc5aefde59786cfc04071e8344831911a782a21c7a66c3",
+    "timestamp": "2026-03-06T22:18:42.033429+00:00",
+    "logged_at": "2026-03-06T22:18:42.033663+00:00"
+  },
+  {
+    "wallet": "Big Buyer",
+    "market": "Spread: Spurs (-7.5)",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.99,
+    "condition_id": "0x6eb960b6408f5b7195b79759b8432d304e143c06206c885ee19fb9f36fb94479",
+    "timestamp": "2026-03-06T22:19:03.063317+00:00",
+    "logged_at": "2026-03-06T22:19:03.063913+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Dallas be 64\u00b0F or higher on March 7?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.999,
+    "condition_id": "0xe3fc2b4c3f7d28f08981b55cb140d91509c3eb6c3e31bd34b2ab8ff63d59ceec",
+    "timestamp": "2026-03-06T22:19:29.334969+00:00",
+    "logged_at": "2026-03-06T22:19:29.335711+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Dallas be 64\u00b0F or higher on March 7?",
+    "side": "buy",
+    "our_size": 1.0,
+    "order_id": "?",
+    "status": "EXECUTED",
+    "best_ask": 0.999,
+    "condition_id": "0xe3fc2b4c3f7d28f08981b55cb140d91509c3eb6c3e31bd34b2ab8ff63d59ceec",
+    "timestamp": "2026-03-06T22:23:30.330563+00:00",
+    "logged_at": "2026-03-06T22:23:30.334062+00:00"
   }
 ]
