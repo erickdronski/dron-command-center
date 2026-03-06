@@ -1,0 +1,87 @@
+[
+  {
+    "wallet": "Whale Alpha",
+    "market": "Bitcoin Up or Down - March 1, 11:35AM-11:40AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "no_orderbook",
+    "their_size": 7.68,
+    "our_size": 1.0,
+    "condition_id": "0x6bf9167c3599ae521e69e6c3ad72da817312301c23e62986ed5c9d77dd93b446",
+    "logged_at": "2026-03-06T21:47:13.416460+00:00"
+  },
+  {
+    "wallet": "Whale Alpha",
+    "market": "Bitcoin Up or Down - March 1, 11:25AM-11:30AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "no_orderbook",
+    "their_size": 90.24,
+    "our_size": 3.0,
+    "condition_id": "0x46a8bbd408e7333a3adaf076f76b292fa5b386c6cdd1f4bf16719520456a74f4",
+    "logged_at": "2026-03-06T21:47:15.656171+00:00"
+  },
+  {
+    "wallet": "Whale Alpha",
+    "market": "Bitcoin Up or Down - March 1, 11:15AM-11:30AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "no_orderbook",
+    "their_size": 0.96,
+    "our_size": 1.0,
+    "condition_id": "0x4796fcad6b164421db6907884419196561671540a78c4e70e91fa4d19f5dac81",
+    "logged_at": "2026-03-06T21:47:17.853594+00:00"
+  },
+  {
+    "wallet": "Whale Alpha",
+    "market": "Bitcoin Up or Down - March 1, 11:00AM-11:15AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "no_orderbook",
+    "their_size": 0.96,
+    "our_size": 1.0,
+    "condition_id": "0x5ce5b0d45c3ab45b217440617c4bdce45959b95c425a2f204537e116d9c141fe",
+    "logged_at": "2026-03-06T21:47:20.091173+00:00"
+  },
+  {
+    "wallet": "Whale Alpha",
+    "market": "Bitcoin Up or Down - March 1, 11:00AM-11:05AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "no_orderbook",
+    "their_size": 72.8238,
+    "our_size": 3.0,
+    "condition_id": "0xf0b54b7bac19ebdaafae153cb62646e822ecbde5e713bd87432f4904f2e65db8",
+    "logged_at": "2026-03-06T21:47:22.292144+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "XRP Up or Down - March 6, 4PM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "MarketOrderArgs.__init__() missing 1 required positional argument: 'side'",
+    "their_size": 0.548764,
+    "our_size": 1.0,
+    "logged_at": "2026-03-06T21:47:26.048073+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Ethereum Up or Down - March 6, 4PM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "MarketOrderArgs.__init__() missing 1 required positional argument: 'side'",
+    "their_size": 0.88,
+    "our_size": 1.0,
+    "logged_at": "2026-03-06T21:47:28.279466+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Solana Up or Down - March 6, 4PM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "MarketOrderArgs.__init__() missing 1 required positional argument: 'side'",
+    "their_size": 26.571428,
+    "our_size": 2.66,
+    "logged_at": "2026-03-06T21:47:30.488405+00:00"
+  }
+]
