@@ -2,354 +2,284 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Building2, Factory, Heart, Shield, Zap, Landmark, Fuel, ShoppingCart, Handshake, Plane, BookOpen, ChevronRight, Plus, Search, LayoutGrid, List } from 'lucide-react';
+import { ArrowLeft, Search, ChevronDown, ChevronUp, BookOpen, Calculator, MessageSquare, Lightbulb, Zap, Shield, Settings, Monitor } from 'lucide-react';
 import { benefits, type Solution } from './data';
 
-type Vertical = {
-  id: string;
-  name: string;
-  icon: React.ElementType;
+/* ────────────────────────────────────────────
+   SOLUTION CONFIG
+   ──────────────────────────────────────────── */
+
+type SolutionConfig = {
+  label: string;
+  icon: React.ReactNode;
   color: string;
   bgColor: string;
   borderColor: string;
-  description: string;
-  examples: string[];
-  benefitCount: number;
 };
 
-const verticals: Vertical[] = [
-  {
-    id: 'business-services',
-    name: 'Business Services',
-    icon: Building2,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/20',
-    description: 'Consulting, staffing, outsourcing, professional services, IT services, legal, accounting. High ticket volumes, distributed workforce, client-facing SLAs.',
-    examples: ['Accenture', 'Deloitte', 'ADP', 'Cognizant', 'Infosys'],
-    benefitCount: benefits.filter(b => b.stories['business-services']).length,
-  },
-  {
-    id: 'non-profit',
-    name: 'Non-Profit',
-    icon: Handshake,
-    color: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/20',
-    description: 'Charities, NGOs, foundations, associations, government-adjacent orgs. Budget-constrained, lean IT, donor/grant compliance, mission-critical uptime.',
-    examples: ['Red Cross', 'WWF', 'Salvation Army', 'United Way', 'Habitat for Humanity'],
-    benefitCount: benefits.filter(b => b.stories['non-profit']).length,
-  },
-  {
-    id: 'retail-wholesale',
-    name: 'Retail / Wholesale',
-    icon: ShoppingCart,
-    color: 'text-amber-400',
-    bgColor: 'bg-amber-500/10',
-    borderColor: 'border-amber-500/20',
-    description: 'Brick-and-mortar, e-commerce, distribution, supply chain. POS systems, seasonal spikes (Black Friday, holidays), store-level IT, high endpoint counts.',
-    examples: ['Walmart', 'Target', 'Costco', 'Tesco', 'Home Depot'],
-    benefitCount: benefits.filter(b => b.stories['retail-wholesale']).length,
-  },
-  {
-    id: 'medical-hospitals',
-    name: 'Medical & Surgical Hospitals',
-    icon: Heart,
-    color: 'text-red-400',
-    bgColor: 'bg-red-500/10',
-    borderColor: 'border-red-500/20',
-    description: 'Hospital systems, surgical centers, clinical networks. 24/7 operations, life-critical systems, HIPAA/regulatory, clinical devices, shift-based staff.',
-    examples: ['HCA Healthcare', 'Mayo Clinic', 'Kaiser Permanente', 'NHS Trusts', 'Cleveland Clinic'],
-    benefitCount: benefits.filter(b => b.stories['medical-hospitals']).length,
-  },
-  {
-    id: 'energy-utilities',
-    name: 'Energy / Utilities',
-    icon: Fuel,
-    color: 'text-yellow-400',
-    bgColor: 'bg-yellow-500/10',
-    borderColor: 'border-yellow-500/20',
-    description: 'Power generation, oil & gas, water, renewables, grid operators. OT/IT convergence, NERC CIP compliance, field workers, SCADA systems, critical infrastructure.',
-    examples: ['Duke Energy', 'ExxonMobil', 'NextEra', 'National Grid', 'Shell'],
-    benefitCount: benefits.filter(b => b.stories['energy-utilities']).length,
-  },
-  {
-    id: 'banking-finance',
-    name: 'Banking / Finance / Insurance',
-    icon: Landmark,
-    color: 'text-emerald-400',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/20',
-    description: 'Banks, credit unions, investment firms, insurance carriers. Heavy regulation (SOX, PCI-DSS, GDPR), branch networks, trading floor uptime, fraud sensitivity.',
-    examples: ['JPMorgan', 'Bank of America', 'Allianz', 'State Farm', 'Goldman Sachs'],
-    benefitCount: benefits.filter(b => b.stories['banking-finance']).length,
-  },
-  {
-    id: 'healthcare-pharma',
-    name: 'Healthcare / Pharma',
-    icon: Shield,
-    color: 'text-pink-400',
-    bgColor: 'bg-pink-500/10',
-    borderColor: 'border-pink-500/20',
-    description: 'Pharma companies, biotech, health insurers, clinical research. FDA/EMA validation, GxP compliance, R&D environments, global trial coordination.',
-    examples: ['Pfizer', 'Johnson & Johnson', 'Roche', 'UnitedHealth', 'AstraZeneca'],
-    benefitCount: benefits.filter(b => b.stories['healthcare-pharma']).length,
-  },
-  {
-    id: 'aerospace-defense-manufacturing',
-    name: 'Aerospace & Defense / Manufacturing',
-    icon: Plane,
-    color: 'text-slate-400',
-    bgColor: 'bg-slate-500/10',
-    borderColor: 'border-slate-500/20',
-    description: 'Defense contractors, aerospace OEMs, heavy manufacturing. ITAR/CMMC compliance, classified environments, shop floor IT/OT, supply chain complexity.',
-    examples: ['Lockheed Martin', 'Boeing', 'Raytheon', 'BAE Systems', 'General Electric'],
-    benefitCount: benefits.filter(b => b.stories['aerospace-defense-manufacturing']).length,
-  },
-];
-
-const solutionMeta: Record<string, { label: string; color: string; bgColor: string; borderColor: string; icon: string }> = {
-  all: { label: 'All Solutions', color: 'text-purple-400', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/30', icon: '📊' },
-  itsm: { label: 'ITSM', color: 'text-blue-400', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/30', icon: '🎫' },
-  esm: { label: 'ESM', color: 'text-emerald-400', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/30', icon: '🏢' },
-  uem: { label: 'UEM', color: 'text-amber-400', bgColor: 'bg-amber-500/10', borderColor: 'border-amber-500/30', icon: '💻' },
-  security: { label: 'Security', color: 'text-red-400', bgColor: 'bg-red-500/10', borderColor: 'border-red-500/30', icon: '🔒' },
+const solutionConfig: Record<Solution, SolutionConfig> = {
+  itsm: { label: 'ITSM', icon: <Settings size={14} />, color: 'text-blue-400', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/20' },
+  esm: { label: 'ESM / LOB', icon: <Zap size={14} />, color: 'text-amber-400', bgColor: 'bg-amber-500/10', borderColor: 'border-amber-500/20' },
+  uem: { label: 'UEM', icon: <Monitor size={14} />, color: 'text-green-400', bgColor: 'bg-green-500/10', borderColor: 'border-green-500/20' },
+  security: { label: 'Security', icon: <Shield size={14} />, color: 'text-red-400', bgColor: 'bg-red-500/10', borderColor: 'border-red-500/20' },
+  general: { label: 'General', icon: <BookOpen size={14} />, color: 'text-purple-400', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/20' },
 };
+
+const solutionOrder: Solution[] = ['itsm', 'esm', 'uem', 'security', 'general'];
+
+/* ────────────────────────────────────────────
+   BENEFIT CARD
+   ──────────────────────────────────────────── */
+
+function BenefitCard({ benefit }: { benefit: typeof benefits[0] }) {
+  const [expanded, setExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState<'scenario' | 'track' | 'formula' | 'tips'>('scenario');
+  const config = solutionConfig[benefit.solution];
+
+  return (
+    <div className="border border-[#222] rounded-lg bg-[#111] overflow-hidden">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#161616] transition-colors text-left"
+      >
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span className={`text-xs px-2 py-0.5 rounded-full ${config.bgColor} ${config.color} font-medium`}>
+              {config.label}
+            </span>
+            <span className="text-[#444] text-xs">·</span>
+            <span className="text-[#555] text-xs">{benefit.subcategory}</span>
+          </div>
+          <h4 className="text-white text-sm font-medium">{benefit.benefitName}</h4>
+        </div>
+        <div className="ml-3 shrink-0">
+          {expanded ? <ChevronUp size={16} className="text-[#555]" /> : <ChevronDown size={16} className="text-[#555]" />}
+        </div>
+      </button>
+
+      {expanded && (
+        <div className="border-t border-[#222] px-4 py-4">
+          {/* Description */}
+          <p className="text-[#777] text-sm mb-4">{benefit.description}</p>
+
+          {/* Tabs */}
+          <div className="flex gap-1 mb-4 flex-wrap">
+            {[
+              { key: 'scenario' as const, label: 'Scenario', icon: <BookOpen size={12} /> },
+              { key: 'track' as const, label: 'Talk Track', icon: <MessageSquare size={12} /> },
+              { key: 'formula' as const, label: 'Formula & Metric', icon: <Calculator size={12} /> },
+              { key: 'tips' as const, label: 'Tips', icon: <Lightbulb size={12} /> },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-md transition-colors ${
+                  activeTab === tab.key
+                    ? 'bg-[#222] text-white'
+                    : 'text-[#555] hover:text-[#888] hover:bg-[#1a1a1a]'
+                }`}
+              >
+                {tab.icon}
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          {activeTab === 'scenario' && (
+            <div className="bg-[#0a0a0a] border border-[#222] rounded-lg p-4">
+              <p className="text-[#ccc] text-sm leading-relaxed">{benefit.scenario}</p>
+            </div>
+          )}
+
+          {activeTab === 'track' && (
+            <div className="space-y-4">
+              <div className="bg-[#0a0a0a] border border-[#222] rounded-lg p-4">
+                <p className="text-[#ccc] text-sm leading-relaxed italic">{benefit.talkTrack}</p>
+              </div>
+              <div className="bg-[#0d1117] border border-emerald-500/20 rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-emerald-400 text-xs font-semibold">💡 Why It Matters</span>
+                </div>
+                <p className="text-[#999] text-sm">{benefit.whyItMatters}</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'formula' && (
+            <div className="space-y-3">
+              <div className="bg-[#0a0a0a] border border-[#222] rounded-lg p-4">
+                <div className="text-[#555] text-xs font-semibold mb-2 uppercase tracking-wider">Formula</div>
+                <p className="text-white text-sm font-mono">{benefit.formula}</p>
+              </div>
+              <div>
+                <div className="text-[#555] text-xs font-semibold mb-2 uppercase tracking-wider">Factors</div>
+                <ul className="space-y-1">
+                  {benefit.formulaFactors.map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className="text-blue-400 mt-0.5">→</span>
+                      <span className="text-[#999]">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-[#0d1117] border border-emerald-500/20 rounded-lg p-3">
+                <div className="text-emerald-400 text-xs font-semibold mb-1">📊 Example</div>
+                <p className="text-[#ccc] text-sm">{benefit.exampleMetric}</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'tips' && (
+            <ul className="space-y-2">
+              {benefit.tips.map((tip, i) => (
+                <li key={i} className="flex items-start gap-2 bg-[#0a0a0a] border border-[#222] rounded-lg p-3">
+                  <span className="text-amber-400 mt-0.5">💡</span>
+                  <span className="text-[#ccc] text-sm">{tip}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────
+   MAIN PAGE
+   ──────────────────────────────────────────── */
 
 export default function BenefitStoriesPage() {
   const [search, setSearch] = useState('');
-  const [view, setView] = useState<'verticals' | 'solutions'>('verticals');
-  const [solutionFilter, setSolutionFilter] = useState<string>('all');
-  const totalBenefits = verticals.reduce((sum, v) => sum + v.benefitCount, 0);
-  const filtered = verticals.filter(v =>
-    v.name.toLowerCase().includes(search.toLowerCase()) ||
-    v.description.toLowerCase().includes(search.toLowerCase())
-  );
+  const [filterSolution, setFilterSolution] = useState<Solution | 'all'>('all');
 
-  const filteredBenefits = solutionFilter === 'all'
-    ? benefits
-    : benefits.filter(b => b.solution === solutionFilter);
+  // Filter benefits
+  const filtered = benefits.filter((b) => {
+    const matchesSearch = !search.trim() || 
+      b.benefitName.toLowerCase().includes(search.toLowerCase()) ||
+      b.description.toLowerCase().includes(search.toLowerCase()) ||
+      b.subcategory.toLowerCase().includes(search.toLowerCase()) ||
+      b.talkTrack.toLowerCase().includes(search.toLowerCase());
+    const matchesSolution = filterSolution === 'all' || b.solution === filterSolution;
+    return matchesSearch && matchesSolution;
+  });
 
-  const searchedBenefits = filteredBenefits.filter(b =>
-    b.benefitName.toLowerCase().includes(search.toLowerCase()) ||
-    b.subcategory.toLowerCase().includes(search.toLowerCase()) ||
-    b.description.toLowerCase().includes(search.toLowerCase())
-  );
+  // Group by solution
+  const grouped = solutionOrder
+    .map((sol) => ({
+      solution: sol,
+      config: solutionConfig[sol],
+      benefits: filtered.filter((b) => b.solution === sol),
+    }))
+    .filter((g) => g.benefits.length > 0);
+
+  // Stats
+  const solCounts = solutionOrder.map(s => ({
+    solution: s,
+    count: benefits.filter(b => b.solution === s).length,
+  })).filter(s => s.count > 0);
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-6">
+    <div className="p-6 max-w-5xl mx-auto">
       {/* Back */}
-      <div className="flex items-center gap-2">
-        <Link href="/value-engineering/projects" className="text-[#555] hover:text-white transition-colors">
-          <ArrowLeft size={16} />
-        </Link>
-        <span className="text-xs text-[#555]">Projects /</span>
-      </div>
+      <Link href="/value-engineering/projects" className="inline-flex items-center gap-1.5 text-[#555] hover:text-white text-sm mb-4 transition-colors">
+        <ArrowLeft size={14} />
+        Back to Projects
+      </Link>
 
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
-            <BookOpen size={24} className="text-purple-400" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-white">Value Cloud Benefit Stories</h1>
-            <p className="text-sm text-[#666]">Industry-specific storytelling guides for every Value Cloud benefit</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          {/* View Toggle */}
-          <div className="flex items-center bg-[#111] border border-[#222] rounded-lg p-0.5">
-            <button
-              onClick={() => setView('verticals')}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${view === 'verticals' ? 'bg-purple-500/20 text-purple-400' : 'text-[#666] hover:text-white'}`}
-            >
-              <LayoutGrid size={12} className="inline mr-1" />
-              By Vertical
-            </button>
-            <button
-              onClick={() => setView('solutions')}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${view === 'solutions' ? 'bg-purple-500/20 text-purple-400' : 'text-[#666] hover:text-white'}`}
-            >
-              <List size={12} className="inline mr-1" />
-              By Solution
-            </button>
-          </div>
-          <div className="text-right">
-            <div className="text-xs text-[#555]">Benefits Mapped</div>
-            <div className="text-lg font-bold text-purple-400">{benefits.length}</div>
-          </div>
-        </div>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-white mb-1">🎯 Benefit Stories Playbook</h2>
+        <p className="text-[#555] text-sm">
+          Quick-reference enablement for sales &amp; CSM. One story per benefit — scenario, talk track, formula, and tips you can adapt to any customer.
+        </p>
       </div>
 
-      {/* How It Works */}
-      <div className="bg-[#111] border border-purple-500/20 rounded-xl p-5">
-        <h2 className="text-sm font-semibold text-purple-400 mb-3">📖 How This Works</h2>
-        <div className="grid grid-cols-3 gap-4">
-          <div>
-            <div className="text-xs font-semibold text-white mb-1">1. Pick a Vertical</div>
-            <p className="text-[11px] text-[#888] leading-relaxed">Select the customer's industry. Each vertical has tailored stories that resonate with that world.</p>
-          </div>
-          <div>
-            <div className="text-xs font-semibold text-white mb-1">2. Find the Benefit</div>
-            <p className="text-[11px] text-[#888] leading-relaxed">Browse by Value Cloud benefit. Each one has a short, punchy scenario written for that industry.</p>
-          </div>
-          <div>
-            <div className="text-xs font-semibold text-white mb-1">3. Tell the Story</div>
-            <p className="text-[11px] text-[#888] leading-relaxed">Use the scenario on a call, in a deck, or in a Lucidchart board. It's your cheat sheet to sound like you live in their world.</p>
-          </div>
+      {/* Stats Bar */}
+      <div className="flex items-center gap-4 mb-5 px-4 py-3 bg-[#111] border border-[#222] rounded-lg overflow-x-auto">
+        <div className="text-center shrink-0">
+          <div className="text-white font-bold text-lg">{benefits.length}</div>
+          <div className="text-[#555] text-xs">Benefits</div>
         </div>
-      </div>
-
-      {/* Audience */}
-      <div className="bg-[#111] border border-[#222] rounded-xl p-4 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <div className="text-center">
-            <div className="text-xs text-[#555]">For</div>
-            <div className="text-sm font-semibold text-white">Value Engineers</div>
-          </div>
-          <div className="w-px h-6 bg-[#222]" />
-          <div className="text-center">
-            <div className="text-xs text-[#555]">For</div>
-            <div className="text-sm font-semibold text-white">Sales Reps</div>
-          </div>
-          <div className="w-px h-6 bg-[#222]" />
-          <div className="text-center">
-            <div className="text-xs text-[#555]">For</div>
-            <div className="text-sm font-semibold text-white">CSMs & SEs</div>
-          </div>
-        </div>
-        <div className="text-xs text-[#666] max-w-xs text-right">General enough that most orgs in the vertical connect the dots. Specific enough that you sound like you put yourself in their shoes.</div>
-      </div>
-
-      {/* Search */}
-      <div className="relative">
-        <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#555]" />
-        <input
-          type="text"
-          placeholder={view === 'verticals' ? 'Search verticals...' : 'Search benefits...'}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full bg-[#111] border border-[#222] rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-[#555] focus:outline-none focus:border-purple-500/30"
-        />
-      </div>
-
-      {view === 'verticals' ? (
-        <>
-          {/* Vertical Grid */}
-          <div className="grid grid-cols-2 gap-3">
-            {filtered.map((v) => {
-              const Icon = v.icon;
-              const hasStories = v.benefitCount > 0;
-              return (
-                <Link
-                  key={v.id}
-                  href={`/value-engineering/projects/benefit-stories/${v.id}`}
-                  className={`bg-[#111] border ${v.borderColor} rounded-xl p-5 hover:bg-[#141414] transition-all group`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg ${v.bgColor} flex items-center justify-center`}>
-                        <Icon size={20} className={v.color} />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-bold text-white">{v.name}</h3>
-                        <div className="text-[10px] text-[#555] mt-0.5">
-                          {hasStories ? `${v.benefitCount} benefits mapped` : 'Awaiting benefits'}
-                        </div>
-                      </div>
-                    </div>
-                    <ChevronRight size={16} className="text-[#333] group-hover:text-[#666] transition-colors mt-1" />
-                  </div>
-                  <p className="text-[11px] text-[#777] leading-relaxed mb-3">{v.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {v.examples.map((ex) => (
-                      <span key={ex} className="text-[10px] bg-white/5 text-[#666] px-1.5 py-0.5 rounded">{ex}</span>
-                    ))}
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </>
-      ) : (
-        <>
-          {/* Solution Filter Tabs */}
-          <div className="flex items-center gap-2">
-            {Object.entries(solutionMeta).map(([key, meta]) => {
-              const count = key === 'all' ? benefits.length : benefits.filter(b => b.solution === key).length;
-              return (
-                <button
-                  key={key}
-                  onClick={() => setSolutionFilter(key)}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium border transition-all ${
-                    solutionFilter === key
-                      ? `${meta.bgColor} ${meta.color} ${meta.borderColor}`
-                      : 'border-[#222] text-[#666] hover:text-white hover:border-[#333]'
-                  }`}
-                >
-                  <span>{meta.icon}</span>
-                  <span>{meta.label}</span>
-                  <span className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-full ${solutionFilter === key ? 'bg-white/10' : 'bg-white/5'}`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Benefits List */}
-          <div className="space-y-3">
-            {searchedBenefits.map((b) => {
-              const meta = solutionMeta[b.solution] || solutionMeta.all;
-              const verticalCount = Object.keys(b.stories).length;
-              return (
-                <div
-                  key={b.id}
-                  className={`bg-[#111] border ${meta.borderColor} rounded-xl p-5 hover:bg-[#141414] transition-all`}
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="flex items-center gap-3">
-                      <span className="text-lg">{meta.icon}</span>
-                      <div>
-                        <h3 className="text-sm font-bold text-white">{b.benefitName}</h3>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded ${meta.bgColor} ${meta.color}`}>
-                            {meta.label}
-                          </span>
-                          <span className="text-[10px] text-[#555]">{b.subcategory}</span>
-                          <span className="text-[10px] text-[#444]">•</span>
-                          <span className="text-[10px] text-[#555]">{verticalCount} verticals</span>
-                          <span className="text-[10px] text-[#444]">•</span>
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded ${b.category === 'financial' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-blue-500/10 text-blue-400'}`}>
-                            {b.category === 'financial' ? '💰 Financial' : '⏱️ Time Savings'}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-[#888] leading-relaxed mb-3 ml-8">{b.description}</p>
-                  <div className="ml-8 bg-[#0a0a0a] rounded-lg p-3">
-                    <div className="text-[10px] text-[#555] mb-1">Formula</div>
-                    <div className="text-[11px] text-purple-400 font-mono">{b.formula}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {searchedBenefits.length === 0 && (
-            <div className="bg-[#111] border border-[#1a1a1a] rounded-xl p-12 text-center">
-              <div className="text-sm text-[#555]">No benefits found</div>
+        {solCounts.map(({ solution, count }) => {
+          const cfg = solutionConfig[solution];
+          return (
+            <div key={solution} className="flex items-center gap-2 shrink-0">
+              <div className="w-px h-8 bg-[#222]" />
+              <div className="text-center">
+                <div className={`font-bold text-lg ${cfg.color}`}>{count}</div>
+                <div className="text-[#555] text-xs">{cfg.label}</div>
+              </div>
             </div>
-          )}
-        </>
-      )}
-
-      {/* Status */}
-      <div className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl p-4 text-center">
-        <div className="text-xs text-[#555]">{benefits.length} benefits across {Object.keys(solutionMeta).length - 1} solutions and {verticals.length} verticals</div>
+          );
+        })}
       </div>
+
+      {/* Search + Filter */}
+      <div className="flex gap-3 mb-6 flex-col sm:flex-row">
+        <div className="relative flex-1">
+          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#555]" />
+          <input
+            type="text"
+            placeholder="Search benefits, keywords, talk tracks..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-10 pr-4 py-2.5 bg-[#111] border border-[#222] rounded-lg text-white text-sm placeholder:text-[#444] focus:outline-none focus:border-[#333]"
+          />
+        </div>
+        <div className="flex gap-1 flex-wrap">
+          <button
+            onClick={() => setFilterSolution('all')}
+            className={`px-3 py-2 text-xs rounded-lg transition-colors ${
+              filterSolution === 'all' ? 'bg-[#222] text-white' : 'text-[#555] hover:text-[#888] hover:bg-[#111]'
+            }`}
+          >
+            All
+          </button>
+          {solutionOrder.filter(s => benefits.some(b => b.solution === s)).map((sol) => {
+            const cfg = solutionConfig[sol];
+            return (
+              <button
+                key={sol}
+                onClick={() => setFilterSolution(sol)}
+                className={`flex items-center gap-1.5 px-3 py-2 text-xs rounded-lg transition-colors ${
+                  filterSolution === sol
+                    ? `${cfg.bgColor} ${cfg.color}`
+                    : 'text-[#555] hover:text-[#888] hover:bg-[#111]'
+                }`}
+              >
+                {cfg.icon}
+                {cfg.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Benefits grouped by solution */}
+      <div className="space-y-6">
+        {grouped.map((group) => (
+          <div key={group.solution}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className={group.config.color}>{group.config.icon}</span>
+              <h3 className={`text-sm font-semibold ${group.config.color}`}>{group.config.label}</h3>
+              <span className="text-[#444] text-xs">({group.benefits.length})</span>
+            </div>
+            <div className="space-y-2">
+              {group.benefits.map((b) => (
+                <BenefitCard key={b.id} benefit={b} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="text-center py-12 text-[#555]">
+          No benefits match your search.
+        </div>
+      )}
     </div>
   );
 }
