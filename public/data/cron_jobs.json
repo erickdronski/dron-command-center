@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772803557167,
+      "updatedAtMs": 1772805651642,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772803507579,
+        "lastRunAtMs": 1772805630328,
         "lastStatus": "ok",
-        "lastDurationMs": 49588,
+        "lastDurationMs": 21314,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772805612453,
+        "nextRunAtMs": 1772812812453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772803565348,
+      "updatedAtMs": 1772805366608,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772805354136,
-        "lastRunAtMs": 1772803554136,
+        "nextRunAtMs": 1772807154195,
+        "lastRunAtMs": 1772805354195,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11212,
+        "lastDurationMs": 12413,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772805354180
+        "runningAtMs": 1772807154236
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772802127236,
+      "updatedAtMs": 1772805630263,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772805600000,
-        "lastRunAtMs": 1772802051657,
+        "nextRunAtMs": 1772809200000,
+        "lastRunAtMs": 1772805600066,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17896,
+        "lastDurationMs": 30197,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1836,7 +1836,7 @@
       "name": "Liquidity Maker Watchdog",
       "enabled": true,
       "createdAtMs": 1772561737261,
-      "updatedAtMs": 1772803521098,
+      "updatedAtMs": 1772807118786,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -1855,11 +1855,11 @@
         "to": "1478451958481162351"
       },
       "state": {
-        "nextRunAtMs": 1772807096666,
-        "lastRunAtMs": 1772803496666,
+        "nextRunAtMs": 1772810696698,
+        "lastRunAtMs": 1772807096698,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24432,
+        "lastDurationMs": 22088,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
