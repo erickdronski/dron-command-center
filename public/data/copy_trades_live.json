@@ -1,385 +1,5 @@
 [
   {
-    "wallet": "HFT Bot B",
-    "market": "Will Greczula win Melodifestivalen 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 28.6488,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:23:58.819677+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Felicia win Melodifestivalen 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.048364,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:24:54.214889+00:00"
-  },
-  {
-    "wallet": "Mega Whale",
-    "market": "Will the price of Bitcoin be above $70,000 on March 7?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 401.40819,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:25:53.201916+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Ethereum Up or Down - March 7, 10:00AM-10:15AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 19.6,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:26:45.633212+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Solana Up or Down - March 7, 10:10AM-10:15AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 610.8597,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:26:55.366602+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Leonardo DiCaprio win Best Actor at the 98th Academy Awards?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 23.75,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:27:53.955525+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Michael B. Jordan win Best Actor at the 98th Academy Awards?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Position would be $6.00, exceeding your $5.00 per-position limit ($3.00 already invested). $2.00 remaining.",
-    "their_size": 13.312,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:28:02.939426+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Timoth\u00e9e Chalamet win Best Actor at the 98th Academy Awards?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 14.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:28:19.427524+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Wagner Moura win Best Actor at the 98th Academy Awards?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 25.09,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:29:10.837232+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Ethan Hawke win Best Actor at the 98th Academy Awards?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 25.61,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:30:04.291164+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will CD win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 27.748,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:30:55.779232+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will PH win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 7.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:31:47.895232+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Conservative win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.85,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:33:07.728174+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will CR win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:34:07.084033+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will PLC win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 73.96,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:34:57.604555+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by \u22642.1% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.825,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:35:47.808357+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by \u22652.7% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.3,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:36:41.118783+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by 2.2% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.175,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:37:32.602112+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by 2.3% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 22.75,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:38:24.107679+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by 2.5% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.75,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:39:13.265188+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by 2.4% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.75,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:40:05.621577+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will annual inflation increase by 2.6% in February?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.4,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:40:56.496530+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will James Talarico win the Texas Democratic Senate Primary by between 6.50% and 7.00%?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.65,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:41:49.117390+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "2026 Balance of Power: R Senate, R House",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.9224,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:42:43.288926+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "2026 Balance of Power: D Senate, R House",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.78382,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:43:35.827668+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "2026 Balance of Power: Other",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.82484,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:44:26.716422+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "2026 Balance of Power: D Senate, D House",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 3.3988,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:45:18.997560+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "2026 Balance of Power: R Senate, D House",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 1.439024,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:46:10.873614+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will James Talarico and Ken Paxton be the candidates for the Texas Senate Election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 76,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:47:02.813401+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will James Talarico and John Cornyn be the candidates for the Texas Senate Election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 23,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:47:55.618539+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will David Njoku play for Chicago Bears in 2026-27?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 43.12,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:49:44.543434+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will David Njoku play for Washington Commanders in 2026-27?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 21.56,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:50:39.155856+00:00"
-  },
-  {
-    "wallet": "Mega Whale",
-    "market": "Will the price of Bitcoin be above $66,000 on March 7?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 249.7485,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:51:37.427938+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 7, 10:30AM-10:45AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:52:31.877202+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 7, 10:35AM-10:40AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:53:23.707582+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Bitcoin Up or Down - March 7, 10:45AM-10:50AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 999.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:53:33.742641+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 7, 10:40AM-10:45AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 987.3241,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:53:44.523679+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 7, 10:25AM-10:30AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 2.1681,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T15:53:52.866683+00:00"
-  },
-  {
     "wallet": "HFT Bot A",
     "market": "Will Lars Boje Mathiesen be the next prime minister of Denmark after the 2026 parliamentary elections?",
     "side": "buy",
@@ -4998,5 +4618,385 @@
     "their_size": 4.7775,
     "our_size": 3.0,
     "logged_at": "2026-03-07T21:55:56.932714+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 48-49\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.2395,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T21:56:48.635307+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 56-57\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.16093,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T21:57:39.670152+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 52-53\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.2395,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T21:58:32.774309+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be between 54-55\u00b0F on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.17125,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T21:59:23.315651+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in New York City be 45\u00b0F or below on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.24475,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:00:15.628773+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 7, 4:35PM-4:40PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 189.65,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:01:19.735760+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 7, 4:45PM-4:50PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 4.9401,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:01:27.000648+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Mette Frederiksen be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 12.54,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:02:25.579097+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Mona Juul be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 50.949,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:03:16.269164+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Troels Lund Poulsen be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 43.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:04:06.861103+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lars L\u00f8kke Rasmussen be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 65.995,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:04:57.955446+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Morten Messerschmidt be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:05:49.837936+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Martin Lidegaard be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 50.949,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:06:42.095916+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Alex Vanopslagh be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 47.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:07:33.912084+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Pelle Dragsted be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:08:25.432131+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lars Boje Mathiesen be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 50.949,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:09:18.461052+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Pia Olsen Dyhr be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 51.896,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:10:10.690473+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Inger St\u00f8jberg be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 50.949,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:11:03.916485+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Revolutionary Socialist Party (RSP) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:11:58.693303+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Bharatiya Janata Party (BJP) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:12:51.645945+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Communist Party of India (CPI) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:13:44.096303+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Nationalist Congress Party (NCP) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:14:36.192560+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Indian National Congress (INC) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.7902,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:15:29.909074+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Indian Union Muslim League (IUML) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:16:21.807658+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Janata Dal (Secular) (JD(S)) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 48.91282,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:17:14.122470+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Bahujan Samaj Party (BSP) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:18:08.770620+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Kerala Congress (M) (KEC(M)) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.01094,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:19:00.747646+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Communist Party of India (Marxist) (CPI(M)) win the most seats in the 2026 Kerala Legislative Assembly election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 33.8514,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:19:51.531061+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Democratic Party win the TN-05 House seat?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 40.67,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:20:41.396449+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Republican Party win the TN-05 House seat?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 7.84,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:21:31.140204+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 7, 5:15PM-5:20PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
+    "their_size": 177.936583,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:21:45.920893+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 7, 5:15PM-5:20PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
+    "their_size": 242.1039,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:21:58.769286+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Ethereum Up or Down - March 7, 5:15PM-5:20PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 244.85,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:22:48.978144+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Ethereum Up or Down - March 7, 5:05PM-5:10PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 245.0954,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:23:39.461073+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 7, 5:00PM-5:05PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 249.48,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:23:44.164794+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Athletic Bilbao win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 803.39,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:24:43.872167+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Villarreal win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 798.4,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:25:34.432675+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 152,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T22:26:26.376528+00:00"
   }
 ]
