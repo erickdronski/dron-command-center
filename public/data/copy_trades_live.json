@@ -1522,5 +1522,371 @@
     "condition_id": "0x7054a1f29cbe11e526e47da0ebe9d84c4be6c8231279dde76229f8425a94a995",
     "timestamp": "2026-03-06T23:11:09.176820+00:00",
     "logged_at": "2026-03-06T23:11:09.178301+00:00"
+  },
+  {
+    "wallet": "Whale Trader",
+    "market": "Pacers vs. Lakers",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1466.52,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:35:44.540975+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will George Russell get pole position at the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 14.686,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:36:26.721568+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will V.J. Edgecombe win the 2025\u201326 NBA Rookie of the Year award?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.974,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:37:04.108452+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Cooper Flagg win the 2025\u201326 NBA Rookie of the Year award?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:37:36.607226+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be less than 41.0 on March 13, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 0.40845,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:38:18.448786+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Donald Trump post 180-199 Truth Social posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 39.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:39:32.601615+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Donald Trump post 160-179 Truth Social posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "FAK order not filled at price 0.2243 \u2014 no liquidity on the order book. Try GTC for a limit order, or adjust your price to cross the spread.",
+    "their_size": 116.358,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:39:52.472244+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Donald Trump post 140-159 Truth Social posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "FAK order not filled at price 0.2243 \u2014 no liquidity on the order book. Try GTC for a limit order, or adjust your price to cross the spread.",
+    "their_size": 49.98,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:40:08.015102+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Donald Trump post 200+ Truth Social posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "FAK order not filled at price 0.2243 \u2014 no liquidity on the order book. Try GTC for a limit order, or adjust your price to cross the spread.",
+    "their_size": 15.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:40:22.128298+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Quintavius \"Q\" Burdette be voted off Survivor Season 50 this week?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 12.87,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:42:01.276613+00:00"
+  },
+  {
+    "wallet": "Whale Trader",
+    "market": "Trail Blazers vs. Rockets",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1999.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:43:02.814870+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 0-99 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 3.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:03.718921+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 310-339 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: invalid signature",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:26.478694+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 340-369 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:36.713018+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 490-519 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:42.799345+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 220-249 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:50.044314+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 130-159 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.775,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:44:57.394650+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 100-129 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "4012eb16-237a-46d9-a61f-1db19f0cfdc7",
+    "status": "EXECUTED",
+    "condition_id": "0x6aa4187ee38a259cd3daf55af211f41e6d58a0eefa3a07fbd97f1d4c096982b7",
+    "timestamp": "2026-03-07T00:45:18.560014+00:00",
+    "logged_at": "2026-03-07T00:45:18.564067+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 370-399 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:45:26.263912+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 190-219 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:45:35.215428+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Kimi Antonelli get pole position at the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "f5917fb6-4a27-4477-bdec-609e05b64787",
+    "status": "EXECUTED",
+    "condition_id": "0x1bbce320aa47a3b9efce00a32324e74508df043d1707cae41dded8186ddf3eff",
+    "timestamp": "2026-03-07T00:45:56.897317+00:00",
+    "logged_at": "2026-03-07T00:45:56.898571+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be between 42.5 and 42.9 on March 13, 2026?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "6e0032db-e4ae-40c6-83ec-963fee5233a6",
+    "status": "EXECUTED",
+    "condition_id": "0xba1e2266c85599c985fdec8d13e3a1b8b5e65dfb2d9da10ca18a7a3a0c50d7f7",
+    "timestamp": "2026-03-07T00:46:10.328704+00:00",
+    "logged_at": "2026-03-07T00:46:10.329611+00:00"
+  },
+  {
+    "wallet": "Whale Trader",
+    "market": "Clippers vs. Spurs",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "4ea4918d-f80a-41ba-b37b-70929bbe7f01",
+    "status": "EXECUTED",
+    "condition_id": "0xb9a3d6051d6c6f725f7943933d06df5491475ffce27bda24823b5d12c246d3aa",
+    "timestamp": "2026-03-07T00:46:29.147769+00:00",
+    "logged_at": "2026-03-07T00:46:29.150116+00:00"
+  },
+  {
+    "wallet": "Whale Trader",
+    "market": "Pelicans vs. Suns",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4132.92,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:47:02.141036+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will global temperature increase by between 1.05\u00baC and 1.09\u00baC in February 2026?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "90322f55-fc57-4207-b385-5ff3e695b5bd",
+    "status": "EXECUTED",
+    "condition_id": "0x03e97e4d5c56f87a4fe42483de5ca77bc835a0aa7b0e48f7254e94a648737cd9",
+    "timestamp": "2026-03-07T00:47:31.302991+00:00",
+    "logged_at": "2026-03-07T00:47:31.304284+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will George Russell get pole position at the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "our_size": 3.0,
+    "order_id": "d526749f-5ffa-47c8-af47-40e29a16b6a9",
+    "status": "EXECUTED",
+    "condition_id": "0x336f35ff6661d6cb3b35433c44cc75a92b61dd70ebf4d334ac011a890fd43c92",
+    "timestamp": "2026-03-07T00:47:44.631316+00:00",
+    "logged_at": "2026-03-07T00:47:44.641235+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will global temperature increase by more than 1.24\u00baC in February 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 12.03,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:47:55.676156+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will global temperature increase by between 1.15\u00baC and 1.19\u00baC in February 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 10.65,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:48:13.475581+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Carlos Sainz get pole position at the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 48.902,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:48:35.959950+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will global temperature increase by less than 1.05\u00baC in February 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 14.79,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:48:54.453611+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 65-89 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 50,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:55:00.546450+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 165-189 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 99.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:55:11.609591+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 115-139 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 99.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:55:26.337215+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 140-164 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 99.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:55:41.709451+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 90-114 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 96.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:55:58.998664+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 40-64 tweets from March 5 to March 7, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
+    "their_size": 53,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T00:56:11.485189+00:00"
   }
 ]
