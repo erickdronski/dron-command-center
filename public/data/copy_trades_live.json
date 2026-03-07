@@ -1,376 +1,6 @@
 [
   {
     "wallet": "HFT Bot B",
-    "market": "Will Jonathan Young be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:41:24.580950+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Cirie Fields be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:42:01.437460+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Christian Hubicki be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:42:37.401356+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Genevieve Mushaluk be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:43:12.925882+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Charlie Davis be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:43:50.625336+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Stephenie LaGrossa Kendrick be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:44:28.410376+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Angelina Keeley be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:45:06.439236+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Chrissy Hofbeck be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:45:48.653575+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Colby Donaldson be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.67,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:46:26.081422+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Quintavius \"Q\" Burdette be voted off Survivor Season 50 this week?",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 4.19 shares after rounding is below minimum (5)",
-    "their_size": 5.28,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:46:31.762587+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 7, 6:40AM-6:45AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
-    "their_size": 191.0335,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:46:49.249126+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Ethereum Up or Down - March 7, 6:30AM-6:45AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 18.8,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:47:24.968468+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Ethereum Up or Down - March 7, 6:30AM-6:45AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 999.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:48:02.942342+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Ethereum Up or Down - March 7, 6:35AM-6:40AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 958.8348,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:48:39.646962+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Robert Golob be the next Prime Minister of Slovenia?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 2.571428,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:49:24.725527+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Vladimir Prebili\u010d be the next Prime Minister of Slovenia?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 74.925,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:50:02.275176+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Janez Jan\u0161a be the next Prime Minister of Slovenia?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 15,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:50:40.776649+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will An\u017ee Logar be the next Prime Minister of Slovenia?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 40.41088,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:51:18.170758+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 0 earthquakes of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 0.545454,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:51:53.688562+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 125.1,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:52:31.475747+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 74.925,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:53:08.135242+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 74.404,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:53:45.921634+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 5 earthquakes of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 74.925,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:54:25.448634+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide by March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 74.7,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:55:01.906425+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Our Country (ND) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:55:38.765315+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Prerod \u2013 Party of Vladimir Prebili\u010d (PVP) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:56:16.395082+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will the Social Democrats (SD) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:56:52.476966+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will the Democrats (D) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 50.796,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:57:29.464209+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will the Slovenian Democratic Party (SDS) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:58:05.156341+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will the Freedom Movement (GS) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 46,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:58:40.837194+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Slovenian Democratic Party (SDS) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 7.6,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:59:19.031490+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Democrats (D) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 94.62,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T11:59:55.078295+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Our Country (ND) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 94.905,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T12:00:31.346789+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Prerod \u2013 Party of Vladimir Prebili\u010d (PVP) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 94.905,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T12:01:09.422938+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Social Democrats (SD) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 94.905,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T12:01:47.209070+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Freedom Movement (GS) win the most seats in the 2026 Slovenian parliamentary election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 87.4,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T12:02:24.970300+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Gr\u00fcne win the most seats in the 2026 Mecklenburg-Vorpommern parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 6.55368,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T12:03:00.938332+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
     "market": "Will CDU win the most seats in the 2026 Mecklenburg-Vorpommern parliamentary elections?",
     "side": "buy",
     "status": "failed",
@@ -4998,5 +4628,375 @@
     "their_size": 999.9,
     "our_size": 3.0,
     "logged_at": "2026-03-07T16:56:37.002706+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 7, 11:40AM-11:45AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 999.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T16:57:27.853684+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Ethereum Up or Down - March 7, 11:40AM-11:45AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 996.6452,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T16:58:19.016851+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 7, 11:35AM-11:40AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 499.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T16:59:11.590152+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 7, 11:35AM-11:40AM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 534.6,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T16:59:24.425906+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 7, 11:30AM-11:35AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.1857,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:00:14.977987+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 7, 11:30AM-11:35AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 23.7897,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:01:08.633935+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 7, 11:30AM-11:35AM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.01 shares after rounding is below minimum (5)",
+    "their_size": 999.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:01:13.200431+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 7, 11:15AM-11:30AM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 977.0597,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:01:18.845654+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 27.811,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:02:18.718180+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Isack Hadjar win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 26.325,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:03:10.532434+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 7.8735,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:04:04.356883+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 520-539 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 27.972,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:04:55.498670+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 500-519 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 26.973,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:05:46.143479+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 260-279 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.312,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:06:39.803978+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 220-239 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 26.757,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:07:31.009708+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 123.20973,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:08:22.818536+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 480-499 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 26.919,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:09:13.584942+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 200-219 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 676.323,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:10:06.453196+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 21.708,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:10:58.058562+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 460-479 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.922,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:11:49.939918+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 32.88292,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:12:42.208316+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 560-579 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 85.914,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:13:32.379600+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 580+ tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 192.807,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:14:22.719400+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 440-459 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 27.776,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:15:12.834311+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 420-439 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.725,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:16:03.213917+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 400-419 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.55,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:16:54.484284+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 240-259 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.69,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:17:45.667774+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Franco Colapinto be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.808,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:18:38.865859+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Fernando Alonso be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.744,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:19:31.295580+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Arvid Lindblad be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.808,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:20:22.906122+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Oliver Bearman be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.744,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:21:15.129980+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Charles Leclerc be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 60.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:22:06.302774+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will George Russell be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 32.64,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:22:58.736084+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Valtteri Bottas be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.808,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:23:50.305496+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Lando Norris be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 60.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:24:39.930045+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Liam Lawson be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.744,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:25:32.091185+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Alexander Albon be the 2026 F1 Drivers' Champion?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 63.808,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T17:26:23.867863+00:00"
   }
 ]
