@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772892052821,
+      "updatedAtMs": 1772899339091,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772892030372,
+        "lastRunAtMs": 1772899320315,
         "lastStatus": "ok",
-        "lastDurationMs": 22449,
+        "lastDurationMs": 18776,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772899212453,
+        "nextRunAtMs": 1772906412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772897193113,
+      "updatedAtMs": 1772898992955,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772898982619,
-        "lastRunAtMs": 1772897182619,
+        "nextRunAtMs": 1772900782653,
+        "lastRunAtMs": 1772898982653,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10494,
+        "lastDurationMs": 10302,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772898982646
+        "runningAtMs": 1772900782675
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772895640423,
+      "updatedAtMs": 1772899320145,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,14 +1672,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772899200000,
-        "lastRunAtMs": 1772895600031,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 40392,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772902800000,
+        "lastRunAtMs": 1772899200110,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120035,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
