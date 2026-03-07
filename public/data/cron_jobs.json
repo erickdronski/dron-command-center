@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772862987507,
+      "updatedAtMs": 1772864832833,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772864781879,
-        "lastRunAtMs": 1772862981879,
+        "nextRunAtMs": 1772866581915,
+        "lastRunAtMs": 1772864781915,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5628,
+        "lastDurationMs": 50918,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772864781906
+        "runningAtMs": 1772866581941
       }
     },
     {
