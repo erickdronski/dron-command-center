@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772841612999,
+      "updatedAtMs": 1772848851792,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,14 +146,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772841612520,
-        "lastStatus": "error",
-        "lastDurationMs": 479,
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1772848812453,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: All models failed (8): xai/grok-4-fast: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-opus-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-sonnet-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | openai/gpt-4o-mini: No API key found for provider \"openai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | xai/grok-4: No API key found for provider \"xai\". Auth store: /Users/dron/.openclaw/agents/command-center/agent/auth-profiles.json (agentDir: /Users/dron/.openclaw/agents/command-center/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir. (auth) | anthropic/claude-haiku-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-sonnet-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit)"
+        "lastRunAtMs": 1772848822113,
+        "lastStatus": "ok",
+        "lastDurationMs": 29679,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772884812453,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772846795554,
+      "updatedAtMs": 1772848591004,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772848581417,
-        "lastRunAtMs": 1772846781417,
+        "nextRunAtMs": 1772850381564,
+        "lastRunAtMs": 1772848581564,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 14137,
+        "lastDurationMs": 9440,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772848581550
+        "runningAtMs": 1772850381591
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772845356132,
+      "updatedAtMs": 1772848821818,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772848800000,
-        "lastRunAtMs": 1772845322413,
+        "nextRunAtMs": 1772852400000,
+        "lastRunAtMs": 1772848800096,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33719,
+        "lastDurationMs": 21722,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
