@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1772848851792,
+      "updatedAtMs": 1772884848886,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772848822113,
+        "lastRunAtMs": 1772884812487,
         "lastStatus": "ok",
-        "lastDurationMs": 29679,
+        "lastDurationMs": 36399,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772884812453,
+        "nextRunAtMs": 1772892012453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772882793055,
+      "updatedAtMs": 1772884590089,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772884582280,
-        "lastRunAtMs": 1772882782280,
+        "nextRunAtMs": 1772886382352,
+        "lastRunAtMs": 1772884582352,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10775,
+        "lastDurationMs": 7737,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772884582331
+        "runningAtMs": 1772886382381
       }
     },
     {
