@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772902980112,
+      "updatedAtMs": 1772917317744,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772917200000,
-        "lastRunAtMs": 1772902800080,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180032,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1772931600000,
+        "lastRunAtMs": 1772917200080,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 117664,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772915192294,
+      "updatedAtMs": 1772917008330,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772916982998,
-        "lastRunAtMs": 1772915182998,
+        "nextRunAtMs": 1772918783052,
+        "lastRunAtMs": 1772916983052,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9296,
+        "lastDurationMs": 25278,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772916983045
+        "runningAtMs": 1772918783081
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772913625068,
+      "updatedAtMs": 1772917349628,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772917200000,
-        "lastRunAtMs": 1772913600074,
+        "nextRunAtMs": 1772920800000,
+        "lastRunAtMs": 1772917317744,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24994,
+        "lastDurationMs": 31884,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
