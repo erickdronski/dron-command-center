@@ -3990,5 +3990,545 @@
     "their_size": 15.246,
     "our_size": 3.0,
     "logged_at": "2026-03-07T02:26:10.463937+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Crude Oil (CL) settle at $70-$77 in June?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.22906,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:26:47.945080+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Crude Oil (CL) settle at $63-$70 in June?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.4154,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:27:24.605667+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Crude Oil (CL) settle at >$84 in June?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 6.949152,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:28:00.613101+00:00"
+  },
+  {
+    "wallet": "Mega Whale",
+    "market": "Will the price of Bitcoin be above $74,000 on March 7?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1109.25963,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:28:44.260827+00:00"
+  },
+  {
+    "wallet": "Mega Whale",
+    "market": "Will the price of Bitcoin be above $62,000 on March 7?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1127.74,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:29:22.209132+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 6, 9:20PM-9:25PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 198,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:29:34.147119+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Ethereum Up or Down - March 6, 9:00PM-9:15PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.4,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:30:10.621397+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Ethereum Up or Down - March 6, 9:10PM-9:15PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 138.6,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:30:26.885578+00:00"
+  },
+  {
+    "wallet": "Sports+Crypto",
+    "market": "Pelicans vs. Suns",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.999999,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:31:06.058353+00:00"
+  },
+  {
+    "wallet": "Sports+Crypto",
+    "market": "Knicks vs. Nuggets",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.999998,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:31:45.228185+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 70.892,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:32:27.318011+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 280-299 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 79.9198,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:33:03.057268+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 200-219 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 126.021901,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:33:38.720606+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 180-199 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 146.4,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:34:14.439699+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Frankenstein win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.943,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:34:52.108212+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Bugonia win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:35:30.112813+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will The Secret Agent win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.96,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:36:07.392719+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Hamnet win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.639,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:36:44.159559+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sentimental Value win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.943,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:37:18.821193+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will One Battle After Another win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 5.13,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:37:56.757745+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Marty Supreme win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.772,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:38:35.245026+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will F1 win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:39:14.512041+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Train Dreams win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 18.962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:39:53.526319+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sinners win Best Picture at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 14.687,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:40:33.513605+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1.493506,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:41:10.066919+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 160-179 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 150.245,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:41:46.869161+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will \"The Bride!\" Opening Weekend Box Office be less than 10m?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.19 shares after rounding is below minimum (5)",
+    "their_size": 0.1455,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:41:52.129547+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 148.65,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:42:28.000451+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 113.575269,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:43:04.170221+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be at least 43.0 on March 13, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 8.9585,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:43:40.121944+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Trump\u2019s approval rating be less than 41.0 on March 13, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 4.433962,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:43:50.336064+00:00"
+  },
+  {
+    "wallet": "Whale Trader",
+    "market": "Clippers vs. Spurs",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Position would be $6.03, exceeding your $5.00 per-position limit ($3.03 already invested). $1.97 remaining.",
+    "their_size": 3576.6,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:43:59.856058+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 6, 9:35PM-9:40PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 198,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:44:22.284721+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 6, 9:30PM-9:35PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 186.2685,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:44:58.431722+00:00"
+  },
+  {
+    "wallet": "Sports+Crypto",
+    "market": "Knicks vs. Nuggets",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 59.999999,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:45:36.800214+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 240-259 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.6,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:46:18.935408+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will It Was Just an Accident win Best Original Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 16.636224,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:46:54.344099+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Marty Supreme win Best Original Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 16.881,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:47:33.086464+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Blue Moon win Best Original Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 15.80856,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:48:09.793785+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sentimental Value win Best Original Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 16.83,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:48:47.244034+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Sinners win Best Original Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1.032,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:49:24.240035+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will annual inflation increase by 2.7% in March?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 12.2529,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:49:59.930294+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 38m and 42m?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 16.02,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:50:37.644762+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 74.1,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:51:16.101718+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 74.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:51:51.671546+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Barcelona win the 2025\u201326 La Liga?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.298701,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:52:31.417276+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 280-299 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.9402,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:53:07.320733+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.86562,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:53:43.553141+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Ethereum Up or Down - March 6, 9:30PM-9:45PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 433.684,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:54:31.490112+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 6, 9:45PM-9:50PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 953.2314,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:54:41.136117+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Lando Norris win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 25.584,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:54:58.832347+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Charles Leclerc win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Position would be $9.36, exceeding your $5.00 per-position limit ($6.36 already invested). Limit reached.",
+    "their_size": 20.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:55:05.289691+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Oliver Bearman win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:55:39.847179+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Isack Hadjar win the 2026 F1 Australian Grand Prix?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.922,
+    "our_size": 3.0,
+    "logged_at": "2026-03-07T02:56:16.918905+00:00"
   }
 ]
