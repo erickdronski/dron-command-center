@@ -1,445 +1,5 @@
 [
   {
-    "wallet": "HFT Bot A",
-    "market": "Will Real Madrid win the 2025\u201326 La Liga?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 600,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:32:22.815522+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 86-87\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.6358,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:33:16.217019+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 78-79\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.5752,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:34:07.192431+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be 73\u00b0F or below on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 6.0297,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:35:01.811803+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 74-75\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 6.02364,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:35:53.734514+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 76-77\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.83356,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:36:47.323170+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be 88\u00b0F or higher on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.94486,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:37:36.981735+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 82-83\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.3632,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:38:30.048300+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 80-81\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.060606,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:39:21.052851+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 84-85\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.7874,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:40:13.726836+00:00"
-  },
-  {
-    "wallet": "Whale Trader",
-    "market": "Jazz vs. Bucks",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 1399.86,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:41:08.292378+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 7, 3:35PM-3:40PM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
-    "their_size": 4.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:41:22.518307+00:00"
-  },
-  {
-    "wallet": "Sports+Crypto",
-    "market": "Counter-Strike: Spirit vs B8 (BO3) - ESL Pro League Stage 2",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 27.999999,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:42:15.672802+00:00"
-  },
-  {
-    "wallet": "Sports+Crypto",
-    "market": "Magic vs. Timberwolves",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 199.999998,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:42:26.727851+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will CDU win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.625,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:43:28.270481+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will The Greens win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 27.54,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:44:21.662283+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Kimi Antonelli win the 2026 F1 Australian Grand Prix?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 12.264,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:44:32.470604+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Alex Vanopslagh be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 8.523,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:45:24.688247+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Roy Barreras win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 40.446,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:46:19.171447+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Mauricio Cardenas win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.958,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:47:11.884642+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Abelardo de la Espriella  win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 28.14,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:47:22.693916+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Germ\u00e1n Vargas Lleras win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.958,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:48:14.784906+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Enrique Pe\u00f1alosa win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.958,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:49:07.011908+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Juan Manuel Gal\u00e1n win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.958,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:49:58.596102+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Carlos Felipe C\u00f3rdoba win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.832,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:50:53.752823+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Gustavo Bol\u00edvar win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 41.958,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:51:44.339168+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Juan Carlos Pinz\u00f3n win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 42.914,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:52:36.319414+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Luis Gilberto Murillo win the 2026 Colombian presidential election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 42.957,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:53:27.832121+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Anthropic have the top AI model at the end of March 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 17.3,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:54:24.457651+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Barcelona win the 2025\u201326 La Liga?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 39.5382,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:55:15.985126+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Athletic Bilbao win the 2025\u201326 La Liga?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.995,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:56:05.635006+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Real Madrid win the 2025\u201326 La Liga?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 3.7,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:56:58.261768+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Reserve Bank of New Zealand decrease the official cash rate after the May decision?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 10.2048,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:57:50.793299+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the Reserve Bank of New Zealand increase the official cash rate after the May decision?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.638297,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:58:40.667351+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Newcastle United FC vs. Manchester City FC: Draw at halftime?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 1.18,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T20:59:31.754695+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Europe win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.7374,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:00:22.121434+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Asia win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 46.73182,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:01:14.486519+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will South America win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 37.5566,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:02:04.442100+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Oceania win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 47.34984,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:02:55.228361+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will North America win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 46.20888,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:03:46.543932+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Africa win the 2026 FIFA World Cup?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 45.06792,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:04:39.430453+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 74-75\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 6.02364,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:05:29.779842+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be 73\u00b0F or below on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 6.0297,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:06:19.637107+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Dallas be between 76-77\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 5.8782,
-    "our_size": 3.0,
-    "logged_at": "2026-03-07T21:07:10.323044+00:00"
-  },
-  {
     "wallet": "HFT Bot B",
     "market": "Will the highest temperature in Dallas be between 78-79\u00b0F on March 9?",
     "side": "buy",
@@ -4998,5 +4558,445 @@
     "their_size": 17.982,
     "our_size": 3.0,
     "logged_at": "2026-03-08T02:26:09.695223+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Cynthia Nixon be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.982,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:27:02.203072+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Brad Hoylman-Sigal be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.982,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:27:53.321398+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Chelsea Clinton be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.982,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:28:48.924459+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Scott Stringer be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.982,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:29:45.787697+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Julie Menin be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.964,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:30:37.676236+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Alex Bores be the democratic nominee for NY-12?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 13.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:31:31.721249+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Ethereum Up or Down - March 7, 9:00PM-9:15PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:32:31.136984+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Ethereum Up or Down - March 7, 8:45PM-9:00PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:33:22.758000+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 7, 9:00PM-9:15PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 495,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:33:37.036354+00:00"
+  },
+  {
+    "wallet": "Sports+Crypto",
+    "market": "Jazz vs. Bucks",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.00 shares after rounding is below minimum (5)",
+    "their_size": 24,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:33:43.325977+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will USA win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 14.79,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:34:02.994721+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will MrBeast's next video get between 30 and 35 million views on day 1?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 13.285714,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:34:07.149591+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will MrBeast's next video get less than 20 million views on day 1?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 49.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:34:33.891284+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will MrBeast's next video get between 25 and 30 million views on day 1?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.65 shares after rounding is below minimum (5)",
+    "their_size": 5.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:34:39.052926+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will MrBeast's next video get between 20 and 25 million views on day 1?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 48.767,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:34:55.017706+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will MrBeast's next video get between 35 and 40 million views on day 1?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 49.85,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:35:05.047121+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will One Battle After Another win Best Adapted Screenplay at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.74,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:35:55.734763+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Germ\u00e1n Vargas Lleras win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.995,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:36:46.521631+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Ivan Cepeda Castro win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.546612,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:37:39.364793+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Carlos Felipe C\u00f3rdoba win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 351.941,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:38:30.017608+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Vicky D\u00e1vila win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.99,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:39:21.459233+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Enrique Pe\u00f1alosa win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 352.647,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:40:13.289437+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Roy Barreras win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.815,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:41:04.680991+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Abelardo de la Espriella  win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 240.04,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:41:15.325579+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Daniel Quintero win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.985,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:42:10.757964+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Juan Manuel Gal\u00e1n win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.995,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:43:02.133356+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Paloma Valencia win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 4.48,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:43:17.865548+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Gustavo Bol\u00edvar win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 352.647,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:44:10.329724+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Claudia L\u00f3pez win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.945,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:45:04.565261+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Cuba win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 9.98,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:45:15.886541+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the price of XRP be between $1.30 and $1.40 on March 8?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.083533,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:46:08.918147+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Paloma Valencia win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 70.942,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:46:25.405285+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Vicky D\u00e1vila win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.842,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:47:16.501463+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Roy Barreras win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 76.077,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:48:06.780373+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will David Luna S\u00e1nchez win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:48:57.880774+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Mauricio Cardenas win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:49:54.406077+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Gustavo Bol\u00edvar win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:50:44.580452+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Juan Daniel Oviedo win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 77.262,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:50:56.660364+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Juan Manuel Gal\u00e1n win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:51:48.800159+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Carlos Felipe C\u00f3rdoba win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.763,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:52:41.627484+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Luis Gilberto Murillo win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:53:33.442626+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Sergio Fajardo win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.763,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:54:25.071174+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Claudia L\u00f3pez win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.289,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:55:27.312709+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Germ\u00e1n Vargas Lleras win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 78.921,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T02:56:20.181068+00:00"
   }
 ]
