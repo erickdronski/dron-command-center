@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1772888400120,
+      "updatedAtMs": 1772971200070,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772971200000,
-        "lastRunAtMs": 1772888400042,
+        "nextRunAtMs": 1773057600000,
+        "lastRunAtMs": 1772971200039,
         "lastStatus": "error",
-        "lastDurationMs": 78,
-        "consecutiveErrors": 9,
+        "lastDurationMs": 31,
+        "consecutiveErrors": 10,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1772931780230,
+      "updatedAtMs": 1772971288347,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772971200000,
-        "lastRunAtMs": 1772931600154,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180076,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1772985600000,
+        "lastRunAtMs": 1772971200070,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 88277,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1772969191286,
+      "updatedAtMs": 1772970995543,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772970984285,
-        "lastRunAtMs": 1772969184285,
+        "nextRunAtMs": 1772972784314,
+        "lastRunAtMs": 1772970984314,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7001,
+        "lastDurationMs": 11229,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1772970984306
+        "runningAtMs": 1772972784345
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1772942419207,
+      "updatedAtMs": 1772971321705,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772971200000,
-        "lastRunAtMs": 1772942400055,
+        "nextRunAtMs": 1772974800000,
+        "lastRunAtMs": 1772971288347,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19152,
+        "lastDurationMs": 33358,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1689,7 +1689,7 @@
       "name": "☕ Daily Caffeine Cutoff Briefing",
       "enabled": true,
       "createdAtMs": 1772217396224,
-      "updatedAtMs": 1772888593323,
+      "updatedAtMs": 1772971348729,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1709,11 +1709,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1772971200000,
-        "lastRunAtMs": 1772888564618,
+        "nextRunAtMs": 1773057600000,
+        "lastRunAtMs": 1772971321705,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 28705,
+        "lastDurationMs": 27024,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
