@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773003658845,
+      "updatedAtMs": 1773010863402,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773003633838,
+        "lastRunAtMs": 1773010837864,
         "lastStatus": "ok",
-        "lastDurationMs": 25007,
+        "lastDurationMs": 25538,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773010812453,
+        "nextRunAtMs": 1773018012453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773007485979,
+      "updatedAtMs": 1773009284155,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773009276159,
-        "lastRunAtMs": 1773007476159,
+        "nextRunAtMs": 1773011076200,
+        "lastRunAtMs": 1773009276200,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9820,
+        "lastDurationMs": 7955,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773009276191
+        "runningAtMs": 1773011076229
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773007222209,
+      "updatedAtMs": 1773010837814,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773010800000,
-        "lastRunAtMs": 1773007200057,
+        "nextRunAtMs": 1773014400000,
+        "lastRunAtMs": 1773010800082,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22152,
+        "lastDurationMs": 37732,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1894,6 +1894,35 @@
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
+      }
+    },
+    {
+      "id": "3b45db28-4cbc-4cad-835e-65cd01a53c87",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
+      "name": "PA Daily Carousel — 11 AM ET",
+      "enabled": true,
+      "createdAtMs": 1773009738514,
+      "updatedAtMs": 1773009738514,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## Daily Task: Generate and Post PA Signal Carousel\n\nGenerate today's Precision Algorithms sports signal carousel and post all 5 slides to Discord channel #precision-tiktok (ID: 1477431773678932131).\n\n### Steps\n\n**1. Ensure assets exist in /tmp (re-download if missing)**\n\n```bash\n# Bull logo\nif [ ! -f /tmp/pa_precision-bull-logo--zJKZRR1.png ]; then\n  curl -sL 'https://precisionalgorithms.com/assets/precision-bull-logo--zJKZRR1.png' -o /tmp/pa_precision-bull-logo--zJKZRR1.png\nfi\n\n# Inter fonts\nif [ ! -f /tmp/inter_fonts/extras/ttf/Inter-Black.ttf ]; then\n  curl -sL 'https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip' -o /tmp/inter.zip\n  mkdir -p /tmp/inter_fonts\n  cd /tmp && unzip -q inter.zip -d inter_fonts\nfi\n\n# Twemoji cache dir\nmkdir -p /tmp/twemoji\n```\n\n**2. Run the carousel generator**\n\n```bash\ncd /Users/dron/.openclaw/workspace\npython3 pa_carousel_v16.py\n```\n\nOutput goes to `/tmp/pa_carousel_v16/` — 5 PNG files:\n- slide_01_cover.png\n- slide_02_{sport}.png\n- slide_03_{sport}.png\n- slide_04_{sport}.png\n- slide_05_cta.png\n\n**3. Copy slides to workspace**\n\n```bash\nmkdir -p /Users/dron/.openclaw/workspace/pa_carousel/daily\ncp /tmp/pa_carousel_v16/*.png /Users/dron/.openclaw/workspace/pa_carousel/daily/\n```\n\n**4. Post all 5 slides to Discord #precision-tiktok (channel ID: 1477431773678932131)**\n\nUse the message tool with action=send, channel=discord, target=1477431773678932131.\n\nSend slides in this order with these captions:\n1. filePath: `/Users/dron/.openclaw/workspace/pa_carousel/daily/slide_01_cover.png` — message: \"🎯 **TODAY'S FREE PICKS** — {today's date} | AI-powered sports signals from Precision Algorithms\"\n2. filePath: slide_02 — message: \"📊 **Pick 1**\"\n3. filePath: slide_03 — message: \"📊 **Pick 2**\"\n4. filePath: slide_04 — message: \"📊 **Pick 3**\"\n5. filePath: slide_05 — message: \"🔒 **Follow @PrecisionAlgos for daily free picks** | precisionalgorithms.com\"\n\n### Key context\n- Generator: `/Users/dron/.openclaw/workspace/pa_carousel_v16.py`\n- Supabase fetches live signals automatically (NBA/NFL/NHL/MLB/NCAAB/Soccer/UFC)\n- NCAAB logos auto-fetched from ESPN API (all 362 D1 schools)\n- Twemoji PNGs cached to /tmp/twemoji/ (auto-downloaded per emoji as needed)\n- If generator exits with error, post a message to Discord saying carousel generation failed and include the error\n- Today's date for the caption: use Python `from datetime import date; date.today().strftime('%B %d, %Y')`\n\n### On success\nPost a brief summary to Discord: how many signals were fetched, which sports, and confirm slides posted.",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477431773678932131"
+      },
+      "state": {
+        "nextRunAtMs": 1773068400000
       }
     }
   ]
