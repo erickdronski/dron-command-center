@@ -1,296 +1,6 @@
 [
   {
     "wallet": "HFT Bot A",
-    "market": "Will Cho Kuk win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 99.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:19:22.943204+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Park Yong-jin win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 100.899,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:20:14.129217+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Han Dong-hoon win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 99.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:21:08.317006+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Kang Hoon-sik win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 100.899,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:21:59.497522+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Chong Won-oh win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 18,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:22:51.412796+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Oh Se-hoon win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 88,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:23:43.842513+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Ahn Cheol-soo win the 2026 Seoul Mayoral Election",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 99.283,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:24:34.837643+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Seoul be 4\u00b0C on March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 0.2658,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:25:31.365905+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Seoul be 5\u00b0C on March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 66.3171,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:26:27.480543+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Seoul be 7\u00b0C on March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 66.1842,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:27:25.680893+00:00"
-  },
-  {
-    "wallet": "Mega Whale",
-    "market": "Will the price of Bitcoin be above $64,000 on March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 990,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:28:31.455726+00:00"
-  },
-  {
-    "wallet": "Mega Whale",
-    "market": "Will the price of Bitcoin be above $70,000 on March 8?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 99.1,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:29:22.566156+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 8, 8:25AM-8:30AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
-    "their_size": 9.7,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:29:31.494642+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 8, 8:20AM-8:25AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 9.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:29:38.750877+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 8, 8:15AM-8:20AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.7,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:30:29.328186+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 8, 8:10AM-8:15AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:31:21.582733+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Ethereum Up or Down - March 8, 8:15AM-8:20AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 499.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:32:13.190329+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Solana Up or Down - March 8, 8:15AM-8:20AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 496.1238,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:32:26.651888+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Japan win Pool C at the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 4.65,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:33:26.994946+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will MrBeast's next video get between 30 and 35 million views on day 1?",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 3.22 shares after rounding is below minimum (5)",
-    "their_size": 23.225,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:33:32.336942+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will MrBeast's next video get between 25 and 30 million views on day 1?",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 3.22 shares after rounding is below minimum (5)",
-    "their_size": 1.82,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:33:38.173348+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will MrBeast's next video get between 20 and 25 million views on day 1?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 24.975,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:33:47.793283+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Google have the best AI model at the end of March 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 0.122857,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:34:40.647560+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Green Alliance win the most seats in the 2026 Colombian Chamber of Representatives election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 99.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:35:30.926042+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 46m and 50m?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.273,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:36:25.200598+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 50m and 54m?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 55.944,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:37:15.480505+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 38m and 42m?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 55.776,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:38:09.109962+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 42m and 46m?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 39.2,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:39:01.781445+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Mexico win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 16.898,
-    "our_size": 3.0,
-    "logged_at": "2026-03-08T12:39:12.712034+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
     "market": "Will Cooper Flagg win the 2025\u201326 NBA Rookie of the Year award?",
     "side": "buy",
     "status": "failed",
@@ -4998,5 +4708,295 @@
     "their_size": 25.82824,
     "our_size": 3.0,
     "logged_at": "2026-03-08T17:55:50.680004+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Coco Gauff win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 23.5508,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T17:56:43.944756+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Qinwen Zheng win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.44004,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T17:57:33.896866+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Daria Kasatkina win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T17:58:25.225170+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Mark\u00e9ta Vondrou\u0161ov\u00e1 win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T17:59:17.123724+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Anna Kalinskaya win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.77648,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:00:08.670312+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Marta Kostyuk win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.7506,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:00:59.010794+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Lo\u00efs Boisson win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:01:51.903529+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Mirra Andreeva win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.586,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:02:44.688269+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Emma Raducanu win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:03:36.497106+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Jelena Ostapenko win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.69884,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:04:30.151411+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Clara Tauson win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.69884,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:05:20.645961+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Victoria Azarenka win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:06:11.340183+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Karol\u00edna Pl\u00ed\u0161kov\u00e1 win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 25.82824,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:07:03.766546+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elena Rybakina win the 2026 Women\u2019s French Open?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 24.53424,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:07:57.156201+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 8, 2:00PM-2:15PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 3.395022,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:08:56.512826+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 8, 1:45PM-2:00PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 2.095019,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:09:47.710305+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 8, 2:00PM-2:05PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 261.3897,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:10:40.341446+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 8, 1:45PM-2:00PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 0.9108,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:10:48.530570+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 8, 1:55PM-2:00PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 495,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:10:56.642349+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 8, 1:50PM-1:55PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 494.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:11:46.880741+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 8, 1:50PM-1:55PM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 28.6902,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:12:04.309386+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Ethereum Up or Down - March 8, 1:45PM-1:50PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 499.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:12:55.206290+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 8, 1:40PM-1:45PM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 769.2201,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:13:45.585093+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Juan Daniel Oviedo win the 2026 Colombian presidential election?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 27.73952,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:14:16.686303+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 46m and 50m?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 1.1122,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:15:08.114263+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will \"Hoppers\" Opening Weekend Box Office be between 38m and 42m?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.995,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:16:00.192089+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Fidesz \u2013 Hungarian Civic Alliance (Fidesz) win the most seats in the next Hungarian parliamentary election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 40.32,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T18:16:51.200641+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will the Momentum Movement (Momentum) win the most seats in the next Hungarian parliamentary election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 61.938,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T19:33:05.185387+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Our Homeland Movement (Mi Haz\u00e1nk) win the most seats in the next Hungarian parliamentary election?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 61.876,
+    "our_size": 3.0,
+    "logged_at": "2026-03-08T19:33:58.488208+00:00"
   }
 ]
