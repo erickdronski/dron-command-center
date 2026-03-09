@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1772971200070,
+      "updatedAtMs": 1773057600142,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773057600000,
-        "lastRunAtMs": 1772971200039,
+        "nextRunAtMs": 1773144000000,
+        "lastRunAtMs": 1773057600105,
         "lastStatus": "error",
-        "lastDurationMs": 31,
-        "consecutiveErrors": 10,
+        "lastDurationMs": 37,
+        "consecutiveErrors": 11,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773049841702,
+      "updatedAtMs": 1773057041763,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773057041673,
-        "lastRunAtMs": 1773049841673,
+        "nextRunAtMs": 1773064241712,
+        "lastRunAtMs": 1773057041712,
         "lastStatus": "error",
-        "lastDurationMs": 29,
-        "consecutiveErrors": 120,
+        "lastDurationMs": 51,
+        "consecutiveErrors": 121,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1773014490048,
+      "updatedAtMs": 1773057780172,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,14 +1599,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773057600000,
-        "lastRunAtMs": 1773014400047,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 90001,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1773072000000,
+        "lastRunAtMs": 1773057600142,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180030,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773054293406,
+      "updatedAtMs": 1773056087063,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773056077233,
-        "lastRunAtMs": 1773054277233,
+        "nextRunAtMs": 1773057877288,
+        "lastRunAtMs": 1773056077288,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16173,
+        "lastDurationMs": 9775,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773056077265
+        "runningAtMs": 1773057877318
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773025232026,
+      "updatedAtMs": 1773057825606,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1672,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773057600000,
-        "lastRunAtMs": 1773025200129,
+        "nextRunAtMs": 1773061200000,
+        "lastRunAtMs": 1773057780173,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 31897,
+        "lastDurationMs": 45433,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1689,7 +1689,7 @@
       "name": "☕ Daily Caffeine Cutoff Briefing",
       "enabled": true,
       "createdAtMs": 1772217396224,
-      "updatedAtMs": 1772971348729,
+      "updatedAtMs": 1773057855610,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1709,14 +1709,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773057600000,
-        "lastRunAtMs": 1772971321705,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 27024,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1773144000000,
+        "lastRunAtMs": 1773057825606,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 30004,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
