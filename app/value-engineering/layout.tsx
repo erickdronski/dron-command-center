@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BookOpen, FolderOpen, Wrench, GraduationCap } from 'lucide-react';
+import { BookOpen, FolderOpen, Wrench, GraduationCap, Layers } from 'lucide-react';
 
 const tabs = [
   { href: '/value-engineering', label: 'Overview', icon: Wrench },
   { href: '/value-engineering/projects', label: 'Projects', icon: FolderOpen },
   { href: '/value-engineering/study-guide', label: 'Study Guide', icon: GraduationCap },
+  { href: '/value-engineering/capability-cards', label: 'Capability Cards', icon: Layers },
 ];
 
 export default function VELayout({ children }: { children: React.ReactNode }) {

@@ -670,6 +670,10 @@ export default function StudyGuidePage() {
             className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 transition-colors">
             🃏 Flashcard Mode
           </a>
+          <a href="/value-engineering/study-guide/capabilities"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 transition-colors">
+            🎓 Capability Workshop Guide
+          </a>
         </div>
         <div className="flex items-center gap-4 mt-3">
           <div className="bg-[#111] border border-[#222] rounded-lg px-3 py-1.5 text-center">
