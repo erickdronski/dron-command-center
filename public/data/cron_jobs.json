@@ -153,7 +153,8 @@
         "nextRunAtMs": 1773068412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1773068700122
       }
     },
     {
@@ -1616,7 +1617,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773065089718,
+      "updatedAtMs": 1773066888602,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1635,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773066877571,
-        "lastRunAtMs": 1773065077571,
+        "nextRunAtMs": 1773068677602,
+        "lastRunAtMs": 1773066877602,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12147,
+        "lastDurationMs": 11000,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773066877593
+        "runningAtMs": 1773068700122
       }
     },
     {
@@ -1652,7 +1653,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773064831698,
+      "updatedAtMs": 1773068520163,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,14 +1673,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773068400000,
-        "lastRunAtMs": 1773064800055,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 31643,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
+        "nextRunAtMs": 1773072000000,
+        "lastRunAtMs": 1773068400057,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120106,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -1903,7 +1904,7 @@
       "name": "PA Daily Carousel — 11 AM ET",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773009738514,
+      "updatedAtMs": 1773068699925,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1922,7 +1923,14 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773068400000
+        "nextRunAtMs": 1773154800000,
+        "lastRunAtMs": 1773068520163,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 179762,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
