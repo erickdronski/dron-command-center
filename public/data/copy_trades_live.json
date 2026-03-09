@@ -1,16 +1,6 @@
 [
   {
     "wallet": "Crypto Whale B",
-    "market": "Ethereum Up or Down - March 9, 6:15AM-6:20AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 499.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T10:50:23.170512+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
     "market": "XRP Up or Down - March 9, 6:15AM-6:20AM ET",
     "side": "buy",
     "status": "failed",
@@ -4998,5 +4988,15 @@
     "their_size": 99.9,
     "our_size": 3.0,
     "logged_at": "2026-03-09T16:35:02.933783+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be more than 5 earthquakes of magnitude 6.5 or higher worldwide by March 15?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T16:35:53.164365+00:00"
   }
 ]
