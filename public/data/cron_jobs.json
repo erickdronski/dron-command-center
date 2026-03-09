@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773016218634,
+      "updatedAtMs": 1773023423803,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773016200060,
+        "lastRunAtMs": 1773023400109,
         "lastStatus": "ok",
-        "lastDurationMs": 18574,
+        "lastDurationMs": 23694,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773023400000,
+        "nextRunAtMs": 1773059400000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773020084609,
+      "updatedAtMs": 1773023736630,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773021876454,
-        "lastRunAtMs": 1773020076454,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 8155,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1773021876484
+        "nextRunAtMs": 1773025476536,
+        "lastRunAtMs": 1773023676536,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60094,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "runningAtMs": 1773025476560
       }
     },
     {
@@ -1652,7 +1651,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773021638957,
+      "updatedAtMs": 1773025232026,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,11 +1671,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773025200000,
-        "lastRunAtMs": 1773021601290,
+        "nextRunAtMs": 1773057600000,
+        "lastRunAtMs": 1773025200129,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 37667,
+        "lastDurationMs": 31897,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
