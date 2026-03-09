@@ -1,75 +1,5 @@
 [
   {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 9, 4:00AM-4:05AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 499.95,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:19:18.690322+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Bitcoin Up or Down - March 9, 4:00AM-4:05AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 207.7416,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:20:12.167897+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Pia Olsen Dyhr be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 11.976,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:21:12.244368+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Martin Lidegaard be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 11.988,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:22:07.703751+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Morten Messerschmidt be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 10.967,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:22:57.325125+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Lars Boje Mathiesen be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 12.922,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:23:49.545006+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Lars L\u00f8kke Rasmussen be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 10.692,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:24:41.323808+00:00"
-  },
-  {
     "wallet": "HFT Bot A",
     "market": "Will Mette Frederiksen be the next prime minister of Denmark after the 2026 parliamentary elections?",
     "side": "buy",
@@ -4998,5 +4928,75 @@
     "their_size": 49.95,
     "our_size": 3.0,
     "logged_at": "2026-03-09T13:34:10.891984+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be between 48-49\u00b0F on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 17.663,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T13:57:55.597924+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Seattle be between 46-47\u00b0F on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 16.839047,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T13:58:46.229926+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the next Prime Minister of Hungary be L\u00e1szl\u00f3 Toroczkai?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 81.098,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T13:59:01.110452+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 51.578015,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T13:59:09.454882+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the next Prime Minister of Hungary be J\u00e1nos L\u00e1z\u00e1r?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 81.918,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T13:59:17.715040+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the next Prime Minister of Hungary be Istv\u00e1n Kapit\u00e1ny?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 81.672,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:00:09.098928+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 31.163147,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:00:20.602675+00:00"
   }
 ]
