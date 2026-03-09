@@ -1,56 +1,6 @@
 [
   {
     "wallet": "HFT Bot A",
-    "market": "Will Mette Frederiksen be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 3.08,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:25:32.211328+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Alex Vanopslagh be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 27.144,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:26:23.276977+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Troels Lund Poulsen be the next prime minister of Denmark after the 2026 parliamentary elections?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.097578,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:27:13.425175+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Opendoor (OPEN) close at $9.00-$10 on the final day of trading of the week of Mar 9 \u2013 Mar 13?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 32.901,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:28:02.717218+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Christian Estrosi win the 2026 Nice mayoral election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 2.125,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T08:28:52.666008+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
     "market": "Will OpenAI have the #2 AI model at the end of March 2026?",
     "side": "buy",
     "status": "failed",
@@ -4998,5 +4948,55 @@
     "their_size": 31.163147,
     "our_size": 3.0,
     "logged_at": "2026-03-09T14:00:20.602675+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Ireland win?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.515151,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:01:11.194281+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Wellington be 15\u00b0C on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.88,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:02:02.835805+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Wellington be 16\u00b0C on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.77,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:02:55.942986+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Wellington be 17\u00b0C on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 8.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:03:46.641104+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the highest temperature in Wellington be 13\u00b0C or below on March 11?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-09T14:04:38.836543+00:00"
   }
 ]

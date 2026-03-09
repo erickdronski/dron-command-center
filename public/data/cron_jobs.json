@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773057041763,
+      "updatedAtMs": 1773064242295,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773064241712,
-        "lastRunAtMs": 1773057041712,
+        "nextRunAtMs": 1773071442242,
+        "lastRunAtMs": 1773064242242,
         "lastStatus": "error",
-        "lastDurationMs": 51,
-        "consecutiveErrors": 121,
+        "lastDurationMs": 53,
+        "consecutiveErrors": 122,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773061485277,
+      "updatedAtMs": 1773063288257,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773063277395,
-        "lastRunAtMs": 1773061477395,
+        "nextRunAtMs": 1773065077531,
+        "lastRunAtMs": 1773063277531,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7882,
+        "lastDurationMs": 10726,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773063277500
+        "runningAtMs": 1773065077557
       }
     },
     {
@@ -1652,7 +1652,7 @@
       "name": "X DM Outreach - 1/hour",
       "enabled": true,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773061227287,
+      "updatedAtMs": 1773064831698,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,14 +1672,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773064800000,
-        "lastRunAtMs": 1773061200132,
+        "nextRunAtMs": 1773068400000,
+        "lastRunAtMs": 1773064800055,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27155,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 31643,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": false
       }
     },
     {
@@ -1762,7 +1762,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773021666784,
+      "updatedAtMs": 1773064910513,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1783,11 +1783,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773064800000,
-        "lastRunAtMs": 1773021638957,
+        "nextRunAtMs": 1773079200000,
+        "lastRunAtMs": 1773064831698,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27827,
+        "lastDurationMs": 78815,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
