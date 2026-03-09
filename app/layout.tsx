@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import {
-  LayoutDashboard, Calendar, Brain, Users, BarChart2, Wrench, Twitter, Linkedin, Bot, AppWindow
+  LayoutDashboard, Calendar, Brain, Users, BarChart2, Wrench, Twitter, Linkedin, Bot, AppWindow, BookOpen
 } from 'lucide-react';
 
 export const metadata: Metadata = {
