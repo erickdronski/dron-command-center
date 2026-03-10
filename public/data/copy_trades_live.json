@@ -1,45 +1,5 @@
 [
   {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Seattle be 46\u00b0F or higher on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 21.2268,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T21:40:09.623677+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will the highest temperature in Seattle be between 44-45\u00b0F on March 9?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 0.28158,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T21:41:01.089880+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 9, 5:30PM-5:35PM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T21:42:01.048369+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Bitcoin Up or Down - March 9, 5:35PM-5:40PM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
-    "their_size": 49,
-    "our_size": 3.0,
-    "logged_at": "2026-03-09T21:42:07.263633+00:00"
-  },
-  {
     "wallet": "Crypto Whale B",
     "market": "XRP Up or Down - March 9, 5:20PM-5:25PM ET",
     "side": "buy",
@@ -4998,5 +4958,45 @@
     "their_size": 31.968,
     "our_size": 3.0,
     "logged_at": "2026-03-10T02:01:27.791572+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Hong Ihk-pyo win the 2026 Seoul Mayoral Election",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 31.968,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T02:02:19.697346+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Ahn Cheol-soo win the 2026 Seoul Mayoral Election",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 30.659,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T02:03:09.691606+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Cho Kuk win the 2026 Seoul Mayoral Election",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 31.968,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T02:04:25.146727+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Kang Hoon-sik win the 2026 Seoul Mayoral Election",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 30.969,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T02:05:15.731012+00:00"
   }
 ]
