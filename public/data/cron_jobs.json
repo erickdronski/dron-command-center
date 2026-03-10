@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773102945431,
+      "updatedAtMs": 1773104754422,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773104733822,
-        "lastRunAtMs": 1773102933822,
+        "nextRunAtMs": 1773106533863,
+        "lastRunAtMs": 1773104733863,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11609,
+        "lastDurationMs": 20559,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773104733853
+        "runningAtMs": 1773106533895
       }
     },
     {
@@ -1930,6 +1930,35 @@
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7d8e04ab-17fe-4ad4-a797-833ce812e3b6",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
+      "name": "PA Weekly Report — Monday 9 AM ET",
+      "enabled": true,
+      "createdAtMs": 1773104813256,
+      "updatedAtMs": 1773104813256,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Precision Algorithms weekly performance report. Steps:\n\n1. Run: `python3 /Users/dron/.openclaw/workspace/pa_weekly_report.py`\n2. Capture the output paths (cover_path and card_path)\n3. Post BOTH images to Discord channel #precision-tiktok (channel ID: 1477431773678932131) with this caption on the first image: '**📈 Weekly Report is out! Last week's results ↓**'\n4. Reply here confirming the record (W-L and win%) that was posted.\n\nIf the script returns 'No results yet' — reply HEARTBEAT_OK, the week's games may not be finalized yet.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "1477431773678932131",
+        "channel": "discord"
+      },
+      "state": {
+        "nextRunAtMs": 1773666000000
       }
     }
   ]
