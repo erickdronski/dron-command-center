@@ -777,7 +777,7 @@
       "name": "💰 5K MRR App Builder",
       "enabled": true,
       "createdAtMs": 1771821048720,
-      "updatedAtMs": 1773030690261,
+      "updatedAtMs": 1773117090184,
       "schedule": {
         "everyMs": 86400000,
         "kind": "every",
@@ -798,10 +798,10 @@
         "to": "channel:1475349043394773092"
       },
       "state": {
-        "nextRunAtMs": 1773117049257,
-        "lastRunAtMs": 1773030649257,
+        "nextRunAtMs": 1773203449295,
+        "lastRunAtMs": 1773117049295,
         "lastStatus": "ok",
-        "lastDurationMs": 41004,
+        "lastDurationMs": 40889,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": true,
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773113742743,
+      "updatedAtMs": 1773115543156,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773115534127,
-        "lastRunAtMs": 1773113734127,
+        "nextRunAtMs": 1773117334164,
+        "lastRunAtMs": 1773115534164,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8616,
+        "lastDurationMs": 8992,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773115534156
+        "runningAtMs": 1773117334202
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773114633367,
+      "updatedAtMs": 1773116463366,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1986,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773116413618,
-        "lastRunAtMs": 1773114613618,
+        "nextRunAtMs": 1773118213659,
+        "lastRunAtMs": 1773116413659,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19749,
+        "lastDurationMs": 49707,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
