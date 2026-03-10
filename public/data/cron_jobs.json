@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773143442711,
+      "updatedAtMs": 1773150642751,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773150642690,
-        "lastRunAtMs": 1773143442690,
+        "nextRunAtMs": 1773157842723,
+        "lastRunAtMs": 1773150642723,
         "lastStatus": "error",
-        "lastDurationMs": 21,
-        "consecutiveErrors": 133,
+        "lastDurationMs": 28,
+        "consecutiveErrors": 134,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773147943551,
+      "updatedAtMs": 1773149741359,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773149735040,
-        "lastRunAtMs": 1773147935040,
+        "nextRunAtMs": 1773151535079,
+        "lastRunAtMs": 1773149735079,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8511,
+        "lastDurationMs": 6280,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773149735070
+        "runningAtMs": 1773151535113
       }
     },
     {
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773108139289,
+      "updatedAtMs": 1773151234697,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,11 +1782,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773151200000,
-        "lastRunAtMs": 1773108120192,
+        "nextRunAtMs": 1773165600000,
+        "lastRunAtMs": 1773151200060,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19097,
+        "lastDurationMs": 34637,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773148823323,
+      "updatedAtMs": 1773150626846,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1986,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773150614426,
-        "lastRunAtMs": 1773148814426,
+        "nextRunAtMs": 1773152414465,
+        "lastRunAtMs": 1773150614465,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8897,
+        "lastDurationMs": 12381,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
