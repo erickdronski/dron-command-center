@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773110142545,
+      "updatedAtMs": 1773111942666,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773111934024,
-        "lastRunAtMs": 1773110134024,
+        "nextRunAtMs": 1773113734092,
+        "lastRunAtMs": 1773111934092,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8521,
+        "lastDurationMs": 8574,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773111934081
+        "runningAtMs": 1773113734118
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773111041210,
+      "updatedAtMs": 1773112828171,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,14 +1986,101 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773112813509,
-        "lastRunAtMs": 1773111013509,
+        "nextRunAtMs": 1773114613576,
+        "lastRunAtMs": 1773112813576,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27701,
+        "lastDurationMs": 14595,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "595e5555-cc60-4ec8-975c-fe765a37fe75",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
+      "name": "PA X — Daily Signals (11 AM ET)",
+      "enabled": true,
+      "createdAtMs": 1773112405564,
+      "updatedAtMs": 1773112405564,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Precision Algorithms daily X signals post. Execute: `cd ~/.openclaw/workspace && python3 pa_x_daily.py --mode signals`. If it posts successfully, react to the output. If no signals found today or it errors, post a brief note to Discord #precision-tiktok (channel ID 1477431773678932131).",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477431773678932131"
+      },
+      "state": {
+        "nextRunAtMs": 1773154800000
+      }
+    },
+    {
+      "id": "a72e2362-9187-41f7-bec9-0e3433a1f089",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
+      "name": "PA X — Pick of the Day (12 PM ET)",
+      "enabled": true,
+      "createdAtMs": 1773112411293,
+      "updatedAtMs": 1773112411293,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Precision Algorithms Pick of the Day X post. Execute: `cd ~/.openclaw/workspace && python3 pa_x_daily.py --mode potd`. If it posts successfully, note the tweet URL. If no signals found or it errors, post a brief note to Discord #precision-tiktok (channel ID 1477431773678932131).",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477431773678932131"
+      },
+      "state": {
+        "nextRunAtMs": 1773158400000
+      }
+    },
+    {
+      "id": "ee267efc-74c7-49a4-a244-c779a022a55a",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
+      "name": "PA X — Weekly Recap (Mon 9:05 AM ET)",
+      "enabled": true,
+      "createdAtMs": 1773112415883,
+      "updatedAtMs": 1773112415883,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 9 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Precision Algorithms weekly recap X post. Execute: `cd ~/.openclaw/workspace && python3 pa_x_daily.py --mode weekly`. If it posts successfully, note the tweet URL. If no settled picks found or it errors, post a brief note to Discord #precision-tiktok (channel ID 1477431773678932131).",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477431773678932131"
+      },
+      "state": {
+        "nextRunAtMs": 1773666300000
       }
     }
   ]
