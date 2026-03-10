@@ -1,586 +1,6 @@
 [
   {
     "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 23.928,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:21:59.320115+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 18.696682,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:22:08.054826+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Junaid Ahmed be the Democratic Nominee for IL-08?",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 4.58 shares after rounding is below minimum (5)",
-    "their_size": 12.166666,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:22:12.740057+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 11.85,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:02.086922+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 14.955,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:09.360496+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 400-419 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 15.984,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:12.027205+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 15.264,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:18.674381+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 6.81685,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:27.328100+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 12.06,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:23:33.018965+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 10, 12:20AM-12:25AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 5.7915,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:25:39.302055+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will the ECB announce no change at the March 2026 meeting?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 0.035496,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:25:57.250516+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 10.925,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:27:34.173944+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 20.904,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:27:42.519730+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 23.875,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:27:51.494886+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 25.922,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:28:07.354012+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get between 51 and 53 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.97,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:29:01.218632+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get between 53 and 55 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.97,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:29:53.647479+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get less than 49 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.985,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:30:46.042458+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get between 49 and 51 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.985,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:31:39.169601+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get between 55 and 57 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 14.955,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:32:33.753744+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get 59 million or more views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 2.85,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:33:29.203210+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will MrBeast's next video get between 57 and 59 million views on day 4?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 12,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:34:21.355967+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 10, 12:30AM-12:35AM ET",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 3.20 shares after rounding is below minimum (5)",
-    "their_size": 9.6,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:34:33.046006+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Bitcoin Up or Down - March 10, 12:15AM-12:30AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 34.2978,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:35:27.097709+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 10, 12:25AM-12:30AM ET",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 3.01 shares after rounding is below minimum (5)",
-    "their_size": 49.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:35:30.427828+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 19.849,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:35:46.717026+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 21.61992,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:35:56.150160+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 400-419 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 24.975,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:36:48.453718+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 9.875,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:36:55.428042+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 24.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:37:05.690543+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 38.2,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:37:18.613415+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win 44+ seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 21.0079,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:38:12.051109+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win 32-35 seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 10.104,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:39:06.046826+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win <28 seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 20.18695,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:39:57.105530+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win 28-31 seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 13.893,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:40:48.996205+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win 40-43 seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 21.0079,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:41:38.524154+00:00"
-  },
-  {
-    "wallet": "HFT Bot B",
-    "market": "Will Partido Popular win 36-39 seats in the 2026 Castilla y Le\u00f3n regional election?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 18.527226,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:42:30.579455+00:00"
-  },
-  {
-    "wallet": "Crypto Whale A",
-    "market": "Bitcoin Up or Down - March 10, 12:35AM-12:40AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 9.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:43:29.786275+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will monthly inflation increase by 0.1% in February?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 6.692,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:43:45.690838+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 320-339 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 4.334,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:44:02.444337+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 5.467,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:44:12.075072+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 11.424,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:44:21.166532+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 300-319 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 5.124,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:44:29.577270+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
-    "their_size": 7.968,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:44:36.531944+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Elon Musk post 400-419 tweets from March 3 to March 10, 2026?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 7.992,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:45:27.035856+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Ethereum Up or Down - March 10, 12:40AM-12:45AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:46:30.043567+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 10, 12:40AM-12:45AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order cost too low: $0.00 is below Polymarket minimum ($1)",
-    "their_size": 49.0437,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:46:39.296316+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will USA win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 25,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:04.982240+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Korea win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 50.796,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:23.255279+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Japan win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Position would be $6.00, exceeding your $5.00 per-position limit ($3.00 already invested). $2.00 remaining.",
-    "their_size": 39.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:29.908767+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Italy win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 49.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:36.475797+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Puerto Rico win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 19.53275,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:45.513095+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Canada win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 49.9,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:47:52.800593+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Mexico win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
-    "their_size": 50.388,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:48:09.724600+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will Cuba win the 2026 World Baseball Classic?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 50.898,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:48:17.426284+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will monthly inflation increase by 0.1% in February?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 108.367,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:48:27.337520+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will monthly inflation increase by 0.2% in February?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 68.4,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:48:43.552392+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will monthly inflation increase by 0.4% or more in February?",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
-    "their_size": 112.8,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T04:48:58.871481+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
     "market": "Will monthly inflation increase by 0.0% or less in February?",
     "side": "buy",
     "status": "rejected",
@@ -4998,5 +4418,585 @@
     "their_size": 93.575,
     "our_size": 3.0,
     "logged_at": "2026-03-10T09:05:26.240088+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 76.95,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:05:49.064163+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Ethereum Up or Down - March 10, 5:05AM-5:10AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 14.25,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:06:45.523385+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "XRP Up or Down - March 10, 5:00AM-5:15AM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 4.51 shares after rounding is below minimum (5)",
+    "their_size": 2.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:06:50.186754+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Bitcoin Up or Down - March 10, 5:05AM-5:10AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 2.016,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:07:44.405744+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Bitcoin Up or Down - March 10, 5:00AM-5:15AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.66,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:08:36.121383+00:00"
+  },
+  {
+    "wallet": "Mega Whale",
+    "market": "Will the price of Bitcoin be above $64,000 on March 10?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.00 shares after rounding is below minimum (5)",
+    "their_size": 654.78456,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:08:45.713162+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Solana Up or Down - March 10, 4:55AM-5:00AM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
+    "their_size": 48.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:09:04.106785+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "XRP Up or Down - March 10, 4:55AM-5:00AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 49.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:09:58.544320+00:00"
+  },
+  {
+    "wallet": "Crypto Whale B",
+    "market": "Bitcoin Up or Down - March 10, 4:55AM-5:00AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 40.6,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:10:53.937325+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be 60 or more average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 38.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:11:54.410575+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 10 and 20 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 40,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:12:47.703773+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 50 and 60 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 43,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:13:41.541771+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 40 and 50 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 45.5,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:14:33.501491+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 30 and 40 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 45.75,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:15:27.874671+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 0 and 10 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 42,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:16:21.125196+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will there be between 20 and 30 average daily transits of the Strait of Hormuz on March 31?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 45,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:14.986691+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Luka Doncic win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 24.775,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:19.979607+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Donovan Mitchell win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 16.983,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:24.611154+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Nikola Jokic win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 14.6046,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:33.515096+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Shai Gilgeous-Alexander win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 1.308,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:37.513218+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Jaylen Brown win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 4.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:43.140430+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Victor Wembanyama win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 4.77,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:47.333834+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Anthony Edwards win the 2025\u20132026 NBA MVP?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.35 shares after rounding is below minimum (5)",
+    "their_size": 4.985,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:17:56.290532+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "2026 Balance of Power: R Senate, D House",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 80.64,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:18:48.273973+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "2026 Balance of Power: R Senate, R House",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.095009,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:19:39.681102+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "2026 Balance of Power: D Senate, R House",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.955,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:20:31.253776+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "2026 Balance of Power: Other",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 4.975,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:21:33.637452+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.42 shares after rounding is below minimum (5)",
+    "their_size": 15.6106,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:21:38.906072+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.42 shares after rounding is below minimum (5)",
+    "their_size": 4.925,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:21:47.537160+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will the Democratic Party of Korea (DP) win the 2026 South Korean local elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.041666,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:22:41.077653+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "XRP Up or Down - March 10, 5AM ET",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 4.22 shares after rounding is below minimum (5)",
+    "their_size": 0.7218,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:22:50.699245+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Ethereum Up or Down - March 10, 5:20AM-5:25AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 3.215172,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:23:41.025782+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "XRP Up or Down - March 10, 5:20AM-5:25AM ET",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Order book query failed: No asks in order book - cannot execute BUY",
+    "their_size": 0.374693,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:23:53.589394+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Bitcoin Up or Down - March 10, 5:15AM-5:30AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.551628,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:24:45.554614+00:00"
+  },
+  {
+    "wallet": "Trader 0xE594",
+    "market": "Ethereum Up or Down - March 10, 5:15AM-5:30AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 3.052258,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:25:36.177973+00:00"
+  },
+  {
+    "wallet": "Mega Whale",
+    "market": "Will the price of Bitcoin be above $66,000 on March 10?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 529.51884,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:26:30.615386+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 10, 5:15AM-5:30AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:26:34.666679+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 10, 5:20AM-5:25AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.9,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:27:26.681204+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 10, 5:00AM-5:15AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 19.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:28:17.124005+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Dominican Republic win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 7.090909,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:28:50.229470+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Mexico win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 78.95108,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:28:59.225185+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Mette Frederiksen be the next prime minister of Denmark after the 2026 parliamentary elections?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 2.97,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:29:49.572485+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Delroy Lindo win Best Supporting Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 10.23,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:30:04.328647+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 100-129 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 3.33 shares after rounding is below minimum (5)",
+    "their_size": 1,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:30:12.194160+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 0-99 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 5.34,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:30:17.971396+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Andrew Tate post 130-159 posts from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 317.682,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:30:25.826689+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Japan win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Position would be $6.00, exceeding your $5.00 per-position limit ($3.00 already invested). $2.00 remaining.",
+    "their_size": 71.1,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:30:51.428788+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will USA win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 47.84,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:31:08.894394+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Puerto Rico win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 88.11,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:31:19.212715+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Italy win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 90.909,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:31:29.937746+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Canada win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 89.91,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:32:11.905580+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Korea win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 89.37,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:32:45.726476+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Cuba win the 2026 World Baseball Classic?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 89.82,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:32:56.256078+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Benicio Del Toro win Best Supporting Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 24.625,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:33:08.683308+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will the Fed decrease interest rates by 50+ bps after the June 2026 meeting?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "ORDER_REJECTED: not enough balance / allowance. This error can also indicate Polymarket geoblocking \u2014 verify your IP is not in a restricted region (US, EU, etc.).",
+    "their_size": 114.466,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:33:37.330056+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Jacob Elordi win Best Supporting Actor at the 98th Academy Awards?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Recent trade rejected for insufficient balance/allowance. Deposit funds and retry shortly.",
+    "their_size": 24.825,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:33:46.739548+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will FK Oleksandriya win on 2026-03-14?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 10.4295,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:34:37.827794+00:00"
+  },
+  {
+    "wallet": "HFT Bot B",
+    "market": "Will FK LNZ Cherkasy win on 2026-03-14?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 3.5583,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T09:35:28.278100+00:00"
   }
 ]
