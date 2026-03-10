@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773102616566,
+      "updatedAtMs": 1773109825683,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773102600061,
+        "lastRunAtMs": 1773109800150,
         "lastStatus": "ok",
-        "lastDurationMs": 16505,
+        "lastDurationMs": 25533,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773109800000,
+        "nextRunAtMs": 1773145800000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773106539566,
+      "updatedAtMs": 1773108351040,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773108333905,
-        "lastRunAtMs": 1773106533905,
+        "nextRunAtMs": 1773110133961,
+        "lastRunAtMs": 1773108333961,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5661,
+        "lastDurationMs": 17079,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773108333947
+        "runningAtMs": 1773110134015
       }
     },
     {
@@ -1650,9 +1650,9 @@
       "agentId": "command-center",
       "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
       "name": "X DM Outreach - 1/hour",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772150449002,
-      "updatedAtMs": 1773108120192,
+      "updatedAtMs": 1773108549857,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23 * * *",
@@ -1672,7 +1672,6 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773111600000,
         "lastRunAtMs": 1773108000091,
         "lastRunStatus": "error",
         "lastStatus": "error",
@@ -1959,6 +1958,35 @@
       },
       "state": {
         "nextRunAtMs": 1773666000000
+      }
+    },
+    {
+      "id": "f4787c0a-9ef3-40b5-8b32-cd113962632c",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1477428291961884773",
+      "name": "moltlaunch inbox check",
+      "enabled": true,
+      "createdAtMs": 1773109213472,
+      "updatedAtMs": 1773109213472,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1773109213472
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check the moltlaunch inbox for agent 28435 by running: mltl inbox --agent 28435 --json 2>&1\n\nIf there are new task requests (status 'requested'), review them and quote a price using: mltl quote --task <id> --price <eth> --message \"...\"\n\nIf there are accepted tasks (status 'accepted'), do the work and submit using: mltl submit --task <id> --result \"...\"\n\nIf inbox is empty or nothing needs action, do nothing. Only report to Discord channel 1477428291961884773 if there is actual activity (new requests or updates)."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477428291961884773",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773111013472
       }
     }
   ]
