@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>PA Signals — March 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060B14;
+    --surface: #0D1522;
+    --surface2: #131F30;
+    --cyan: #06B6D4;
+    --cyan-glow: #22D3EE;
+    --green: #22C55E;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --text: #F0F6FF;
+    --muted: #4A6080;
+    --border: #1A2D44;
+    --slide-w: 390px;
+    --slide-h: 693px; /* 9:16 ratio at 390px wide */
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* WRAPPER */
+  .phone {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 0 80px rgba(6,182,212,0.15);
+  }
+
+  /* SLIDES TRACK */
+  .track {
+    display: flex;
+    width: calc(var(--slide-w) * 9);
+    height: var(--slide-h);
+    transition: transform 0.42s cubic-bezier(0.77,0,0.18,1);
+  }
+
+  /* SLIDE BASE */
+  .slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    flex-shrink: 0;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── GRID PATTERN ── */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(6,182,212,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6,182,212,0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  .slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .slide > * { position: relative; z-index: 1; }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--cyan), #0EA5E9);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 14px;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: var(--cyan);
+  }
+
+  .slide-counter {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  /* ── SLIDE NAV DOTS ── */
+  .dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: all 0.3s;
+  }
+
+  .dot.active {
+    background: var(--cyan);
+    width: 18px;
+    border-radius: 3px;
+  }
+
+  /* ═══════════════════════════════════════
+     SLIDE 1 — COVER
+  ═══════════════════════════════════════ */
+  .s-cover {
+    background: linear-gradient(160deg, #060B14 0%, #0B1930 50%, #060B14 100%);
+  }
+
+  .s-cover .cover-glow {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(6,182,212,0.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .s-cover .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 24px;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .cover-headline {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px;
+    line-height: 0.9;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
+
+  .cover-headline span {
+    color: var(--cyan);
+    display: block;
+  }
+
+  .cover-date {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    margin: 14px 0;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 28px;
+    margin-top: 4px;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat-num {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    color: var(--cyan);
+    line-height: 1;
+  }
+
+  .cover-stat-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .cover-cta {
+    margin-top: 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .cover-swipe {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    animation: pulse-swipe 2s infinite;
+  }
+
+  .cover-swipe span {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .swipe-arrow {
+    font-size: 16px;
+    color: var(--cyan);
+  }
+
+  @keyframes pulse-swipe {
+    0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(4px); }
+  }
+
+  /* ═══════════════════════════════════════
+     SIGNAL SLIDES
+  ═══════════════════════════════════════ */
+  .s-signal {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signal-sport-bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .sport-nba .signal-sport-bar { background: linear-gradient(90deg, #22C55E, #16A34A); }
+  .sport-nhl .signal-sport-bar { background: linear-gradient(90deg, #06B6D4, #0891B2); }
+  .sport-soccer .signal-sport-bar { background: linear-gradient(90deg, #F59E0B, #D97706); }
+
+  .signal-header {
+    padding: 14px 20px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sport-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .sport-nba .sport-badge { background: rgba(34,197,94,0.15); color: #22C55E; border: 1px solid rgba(34,197,94,0.3); }
+  .sport-nhl .sport-badge { background: rgba(6,182,212,0.15); color: #06B6D4; border: 1px solid rgba(6,182,212,0.3); }
+  .sport-soccer .sport-badge { background: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3); }
+
+  .signal-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-left: auto;
+    letter-spacing: 0.5px;
+  }
+
+  .signal-matchup {
+    padding: 0 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .team-block {
+    flex: 1;
+    text-align: center;
+  }
+
+  .team-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
+
+  .team-name.picked {
+    color: var(--cyan);
+  }
+
+  .sport-nba .team-name.picked { color: #22C55E; }
+  .sport-soccer .team-name.picked { color: #F59E0B; }
+
+  .team-role {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .vs-divider {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 0 4px;
+  }
+
+  /* CONFIDENCE RING */
+  .confidence-ring {
+    margin: 0 20px 16px;
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ring-svg {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+
+  .ring-bg {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 6;
+  }
+
+  .ring-fill {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1s ease;
+  }
+
+  .ring-nba .ring-fill { stroke: #22C55E; }
+  .ring-nhl .ring-fill { stroke: #06B6D4; }
+  .ring-soccer .ring-fill { stroke: #F59E0B; }
+
+  .ring-text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    fill: var(--text);
+  }
+
+  .ring-info {
+    flex: 1;
+  }
+
+  .ring-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .ring-pick {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 26px;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .ring-odds {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    color: var(--cyan);
+    font-weight: 700;
+  }
+
+  .sport-nba .ring-odds { color: #22C55E; }
+  .sport-soccer .ring-odds { color: #F59E0B; }
+
+  /* SIGNAL TAGS */
+  .signal-tags {
+    display: flex;
+    gap: 8px;
+    margin: 0 20px 14px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .tag-value { background: rgba(6,182,212,0.12); color: var(--cyan); border: 1px solid rgba(6,182,212,0.25); }
+  .tag-dog { background: rgba(245,158,11,0.12); color: #F59E0B; border: 1px solid rgba(245,158,11,0.25); }
+  .tag-hot { background: rgba(239,68,68,0.12); color: #EF4444; border: 1px solid rgba(239,68,68,0.25); }
+  .tag-rivals { background: rgba(168,85,247,0.12); color: #A855F7; border: 1px solid rgba(168,85,247,0.25); }
+  .tag-ucl { background: rgba(234,179,8,0.12); color: #EAB308; border: 1px solid rgba(234,179,8,0.25); }
+
+  /* SIGNAL REASON */
+  .signal-reason {
+    margin: 0 20px 16px;
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--cyan);
+  }
+
+  .sport-nba .signal-reason { border-left-color: #22C55E; }
+  .sport-soccer .signal-reason { border-left-color: #F59E0B; }
+
+  .reason-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .reason-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .signal-footer {
+    margin-top: auto;
+    padding: 12px 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .footer-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--cyan);
+    letter-spacing: 0.5px;
+  }
+
+  /* ═══════════════════════════════════════
+     SLIDE 9 — CTA
+  ═══════════════════════════════════════ */
+  .s-cta {
+    background: linear-gradient(160deg, #060B14 0%, #0B1930 60%, #060B14 100%);
+  }
+
+  .cta-glow {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cta-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .cta-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+  }
+
+  .cta-headline {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 52px;
+    line-height: 0.95;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 280px;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .cta-divider {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    margin: 10px 0;
+  }
+
+  .cta-btn {
+    background: linear-gradient(135deg, var(--cyan), #0EA5E9);
+    color: #000;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    border-radius: 8px;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .cta-free-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .cta-free-label strong {
+    color: var(--green);
+  }
+
+  .cta-url {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
+
+  .cta-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+  }
+
+  .social-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════
+     CLICK ZONES
+  ═══════════════════════════════════════ */
+  .zone-prev, .zone-next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 35%;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  .zone-prev { left: 0; }
+  .zone-next { right: 0; }
+</style>
+</head>
+<body>
+
+<div class="phone" id="phone">
+  <div class="track" id="track">
+
+    <!-- ═══ SLIDE 1: COVER ═══ -->
+    <div class="slide s-cover" data-index="0">
+      <div class="cover-glow"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">1 / 9</span>
+      </div>
+      <div class="cover-body">
+        <div class="cover-eyebrow">AI Sports Signals</div>
+        <div class="cover-headline">
+          TODAY'S<br>
+          <span>EDGE</span>
+        </div>
+        <div class="cover-date">TUESDAY • MARCH 10, 2026</div>
+        <div class="cover-divider"></div>
+        <div class="cover-stats">
+          <div class="cover-stat">
+            <div class="cover-stat-num">7</div>
+            <div class="cover-stat-label">Signals</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">87%</div>
+            <div class="cover-stat-label">Avg Conf.</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">3</div>
+            <div class="cover-stat-label">Sports</div>
+          </div>
+        </div>
+        <div class="cover-cta">Swipe for today's picks →</div>
+      </div>
+      <div class="cover-swipe">
+        <span>Swipe</span>
+        <div class="swipe-arrow">›</div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 2: NBA – Atlanta Hawks ═══ -->
+    <div class="slide s-signal sport-nba" data-index="1">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">2 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">NBA</div>
+        <div class="signal-time">7:40 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name">DALLAS<br>MAVERICKS</div>
+          <div class="team-role">Away</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name picked">ATLANTA<br>HAWKS</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-nba">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="0"/>
+          <text class="ring-text" x="36" y="36">100%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">HAWKS ML</div>
+          <div class="ring-odds">-370</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-value">📊 VALUE</div>
+        <div class="tag tag-hot">🔥 TOP LOCK</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">Heavy consensus across all model inputs. Hawks massive home favorite; model highest confidence of the day at 100%.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 3: NBA – Phoenix Suns ═══ -->
+    <div class="slide s-signal sport-nba" data-index="2">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">3 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">NBA</div>
+        <div class="signal-time">8:10 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name picked">PHOENIX<br>SUNS</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name">MILWAUKEE<br>BUCKS</div>
+          <div class="team-role">Home</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-nba">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="1.76"/>
+          <text class="ring-text" x="36" y="36">99%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">SUNS ML</div>
+          <div class="ring-odds">-116</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-value">📊 VALUE</div>
+        <div class="tag tag-hot">🔥 HIGH CONF</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">99% model confidence with -116 line signals massive mispricing. Suns road form aligns with all quantitative inputs.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 4: NBA – Sacramento Kings ═══ -->
+    <div class="slide s-signal sport-nba" data-index="3">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">4 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">NBA</div>
+        <div class="signal-time">10:10 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name">INDIANA<br>PACERS</div>
+          <div class="team-role">Away</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name picked">SACRAMENTO<br>KINGS</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-nba">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="8.8"/>
+          <text class="ring-text" x="36" y="36">95%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">KINGS ML</div>
+          <div class="ring-odds">-154</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-value">📊 VALUE</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">Kings dominant at home this stretch. 95% confidence at -154 — model sees significant edge vs market pricing.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 5: NHL – New York Rangers ═══ -->
+    <div class="slide s-signal sport-nhl" data-index="4">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">5 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">NHL</div>
+        <div class="signal-time">7:10 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name">CALGARY<br>FLAMES</div>
+          <div class="team-role">Away</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name picked">NEW YORK<br>RANGERS</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-nhl">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="10.6"/>
+          <text class="ring-text" x="36" y="36">94%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">RANGERS ML</div>
+          <div class="ring-odds">-134</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-value">📊 VALUE</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">Rangers at MSG — model shows 94% confidence. Strong home ice advantage compounds with Calgary's road struggles.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 6: NHL – Detroit Red Wings ═══ -->
+    <div class="slide s-signal sport-nhl" data-index="5">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">6 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">NHL</div>
+        <div class="signal-time">7:10 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name picked">DETROIT<br>RED WINGS</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name">FLORIDA<br>PANTHERS</div>
+          <div class="team-role">Home</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-nhl">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="22.9"/>
+          <text class="ring-text" x="36" y="36">87%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">WINGS ML</div>
+          <div class="ring-odds">+112</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-value">📊 VALUE</div>
+        <div class="tag tag-dog">🐶 DOG</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">Best value play of the night — dog at +112 with 87% model confidence. Market severely underrating Detroit here.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 7: Soccer – Arsenal vs Leverkusen (UCL) ═══ -->
+    <div class="slide s-signal sport-soccer" data-index="6">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">7 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">UCL ⚽</div>
+        <div class="signal-time">3:45 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name">ARSENAL</div>
+          <div class="team-role">Away</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name picked">BAYER<br>LEVERKUSEN</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-soccer">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="84.4"/>
+          <text class="ring-text" x="36" y="36">53%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">LEVERKUSEN ML</div>
+          <div class="ring-odds">+460</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-ucl">🏆 UCL</div>
+        <div class="tag tag-dog">🐶 DOG</div>
+        <div class="tag tag-value">📊 VALUE</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">Champions League knockout — Leverkusen at home vs Arsenal at +460. Market underpricing defending Bundesliga champions.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 8: Soccer – Man City vs Real Madrid (UCL) ═══ -->
+    <div class="slide s-signal sport-soccer" data-index="7">
+      <div class="signal-sport-bar"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">8 / 9</span>
+      </div>
+      <div class="signal-header">
+        <div class="sport-badge">UCL ⚽</div>
+        <div class="signal-time">3:45 PM ET</div>
+      </div>
+      <div class="signal-matchup">
+        <div class="team-block">
+          <div class="team-name">MAN CITY</div>
+          <div class="team-role">Away</div>
+        </div>
+        <div class="vs-divider">@</div>
+        <div class="team-block">
+          <div class="team-name picked">REAL<br>MADRID</div>
+          <div class="team-role">← OUR PICK</div>
+        </div>
+      </div>
+      <div class="confidence-ring ring-soccer">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="28"/>
+          <circle class="ring-fill" cx="36" cy="36" r="28"
+            stroke-dasharray="175.9" stroke-dashoffset="82.7"/>
+          <text class="ring-text" x="36" y="36">54%</text>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-label">Model Confidence</div>
+          <div class="ring-pick">REAL MADRID ML</div>
+          <div class="ring-odds">+175</div>
+        </div>
+      </div>
+      <div class="signal-tags">
+        <div class="tag tag-ucl">🏆 UCL</div>
+        <div class="tag tag-dog">🐶 DOG</div>
+        <div class="tag tag-value">📊 VALUE</div>
+      </div>
+      <div class="signal-reason">
+        <div class="reason-label">Model Edge</div>
+        <div class="reason-text">The biggest game of the day. Real Madrid at home vs Man City — model edge at +175 with 54% win probability. Bernabéu factor.</div>
+      </div>
+      <div class="signal-footer">
+        <span class="footer-brand">@precisionalgo</span>
+        <span class="footer-link">precisionalgorithms.com</span>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 9: CTA ═══ -->
+    <div class="slide s-cta" data-index="8">
+      <div class="cta-glow"></div>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-icon">PA</div>
+          <span class="brand-name">PRECISION ALGORITHMS</span>
+        </div>
+        <span class="slide-counter">9 / 9</span>
+      </div>
+      <div class="cta-body">
+        <div class="cta-tagline">Free Daily Picks</div>
+        <div class="cta-headline">GET THE<br>FULL EDGE</div>
+        <div class="cta-sub">All 7 signals + model reasoning + live line tracking. Free picks every day.</div>
+        <div class="cta-divider"></div>
+        <div class="cta-btn">JOIN FREE →</div>
+        <div class="cta-free-label"><strong>Free tier available</strong> · Premium from $40/mo</div>
+        <div class="cta-url">precisionalgorithms.com</div>
+        <div class="cta-socials">
+          <div class="social-pill">@precisionalgo</div>
+          <div class="social-pill">@PrecisionAlgos</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /track -->
+
+  <!-- NAV ZONES -->
+  <div class="zone-prev" id="prev"></div>
+  <div class="zone-next" id="next"></div>
+
+  <!-- DOTS -->
+  <div class="dots" id="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div><!-- /phone -->
+
+<script>
+  const track = document.getElementById('track');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  const total = 9;
+  const W = 390;
+
+  function goTo(n) {
+    if (n < 0 || n >= total) return;
+    current = n;
+    track.style.transform = `translateX(${-current * W}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+  });
+
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+  }, {passive: true});
+</script>
+</body>
+</html>

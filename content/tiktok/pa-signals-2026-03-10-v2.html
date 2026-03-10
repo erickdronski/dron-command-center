@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=540, initial-scale=1.0">
+<title>PA Signals — March 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2EEAAD;
+    --teal-dim: rgba(46,234,173,0.18);
+    --teal-border: rgba(46,234,173,0.35);
+    --bg-dark: #0D1520;
+    --bg-mid: #151F2B;
+    --bg-card: #162029;
+    --white: #FFFFFF;
+    --gray: #7A8A9A;
+    --gray-dim: #556672;
+    --cta-dark: #0F1923;
+    --sz: 540px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── VIEWPORT WRAPPER ── */
+  .viewport {
+    width: var(--sz);
+    height: var(--sz);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .track {
+    display: flex;
+    width: calc(var(--sz) * 9);
+    height: var(--sz);
+    transition: transform 0.38s cubic-bezier(0.77,0,0.18,1);
+  }
+
+  /* ── SLIDE BASE ── */
+  .slide {
+    width: var(--sz);
+    height: var(--sz);
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Radial vignette matching the template */
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 30%, #1A2735 0%, #0D1520 65%, #080E18 100%);
+    overflow: hidden;
+  }
+
+  /* ── PA LOGO BLOCK ── */
+  .pa-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-top: 22px;
+  }
+
+  .pa-icon {
+    width: 52px;
+    height: 52px;
+    background: #0D1A2A;
+    border-radius: 12px;
+    border: 1px solid rgba(46,234,173,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .pa-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .pa-icon-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pa-wordmark {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .pa-wordmark .pre { color: var(--teal); }
+  .pa-wordmark .pipe { color: rgba(46,234,173,0.5); margin: 0 5px; }
+  .pa-wordmark .alg { color: var(--white); }
+
+  /* ── FOOTER ── */
+  .slide-footer {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .footer-handles {
+    font-size: 9px;
+    font-weight: 500;
+    color: #6B7F8E;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-disclaimer {
+    font-size: 8px;
+    font-weight: 400;
+    color: #4A5A68;
+    letter-spacing: 0.2px;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta-btn {
+    background: var(--teal);
+    color: var(--cta-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    border-radius: 30px;
+    display: inline-block;
+  }
+
+  .cta-btn-wide {
+    width: 82%;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 30px;
+  }
+
+  /* ═══════════════════════════════════════
+     SLIDE 1 — COVER: TODAY'S SIGNALS
+  ═══════════════════════════════════════ */
+  .s-cover .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    padding: 0 40px;
+    margin-top: -20px;
+  }
+
+  .cover-emoji {
+    font-size: 52px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+
+  .cover-line1 {
+    font-size: 58px;
+    font-weight: 900;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .cover-rule {
+    width: 70%;
+    height: 2px;
+    background: var(--teal);
+    margin: 6px auto 8px;
+  }
+
+  .cover-line2 {
+    font-size: 62px;
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .cover-sub1 {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+  }
+
+  .cover-sub2 {
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray);
+    letter-spacing: 0.3px;
+  }
+
+  .cover-cta-wrap {
+    margin-top: 32px;
+  }
+
+  /* ═══════════════════════════════════════
+     PICK SLIDES — base layout
+  ═══════════════════════════════════════ */
+  .s-pick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Sport/date row */
+  .pick-meta {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pick-meta .dot { color: var(--teal); }
+
+  /* Badge: "TODAY'S TOP PICK" */
+  .pick-badge {
+    margin-top: 10px;
+    background: rgba(46,234,173,0.12);
+    border: 1px solid rgba(46,234,173,0.35);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* Team matchup */
+  .pick-matchup {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 90%;
+  }
+
+  .pick-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .pick-team-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    /* subtle ring on picked team — applied via .picked class */
+  }
+
+  .pick-team-logo.picked-logo {
+    filter: drop-shadow(0 0 12px rgba(46,234,173,0.6));
+  }
+
+  .pick-team-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+
+  .pick-team-name.picked-name {
+    color: var(--teal);
+  }
+
+  .vs-badge {
+    background: #1A3530;
+    border: 1px solid rgba(46,234,173,0.3);
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  /* "UPCOMING" + time */
+  .pick-upcoming {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .pick-upcoming-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .pick-upcoming-time {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-top: 2px;
+  }
+
+  /* Our Pick line */
+  .our-pick-line {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  .our-pick-line .pick-team-val {
+    font-weight: 900;
+  }
+
+  /* Odds / confidence boxes */
+  .pick-boxes {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    width: 86%;
+  }
+
+  .pick-box {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--teal-border);
+    border-radius: 8px;
+    padding: 12px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .box-value {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .box-value.white { color: var(--white); }
+  .box-value.teal { color: var(--teal); }
+
+  .box-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* CTA strip at bottom of pick slide */
+  .pick-cta-wrap {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Logo fallbacks */
+  .logo-fallback {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.2;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+
+  /* ═══════════════════════════════════════
+     CLICK ZONES
+  ═══════════════════════════════════════ */
+  .zone-prev, .zone-next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    z-index: 20;
+    cursor: pointer;
+  }
+  .zone-prev { left: 0; }
+  .zone-next { right: 0; }
+</style>
+</head>
+<body>
+
+<div class="viewport" id="vp">
+  <div class="track" id="track">
+
+    <!-- ══════════════════════════════════
+         SLIDE 1 — TODAY'S SIGNALS COVER
+    ══════════════════════════════════ -->
+    <div class="slide s-cover">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-emoji">📊</div>
+        <div class="cover-line1">Today's</div>
+        <div class="cover-rule"></div>
+        <div class="cover-line2">Signals</div>
+        <div class="cover-sub1">7 games · 3 sports · Mar 10 only</div>
+        <div class="cover-sub2">Tuesday, March 10 · 2026</div>
+        <div class="cover-cta-wrap">
+          <div class="cta-btn">SWIPE FOR PICKS →</div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 2 — NBA: Atlanta Hawks 100%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">NBA <span class="dot">·</span> March 10, 2026</div>
+
+      <div class="pick-badge">🔒 #1 LOCK OF THE DAY</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/dal.png" alt="DAL"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#002B5E; color:#00538C;\'>DAL<br>MAVS</div>'">
+          <div class="pick-team-name">Dallas<br>Mavericks</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/atl.png" alt="ATL"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#C1D32F; color:#E03A3E;\'>ATL<br>HAWKS</div>'">
+          <div class="pick-team-name picked-name">Atlanta<br>Hawks</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Atlanta Hawks</div>
+      </div>
+
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">
+        7:40 PM ET · Upcoming
+      </div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">-370</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">100%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 3 — NBA: Phoenix Suns 99%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">NBA <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">🔥 HIGH CONFIDENCE</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/phx.png" alt="PHX"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#1D1160; color:#E56020;\'>PHX<br>SUNS</div>'">
+          <div class="pick-team-name picked-name">Phoenix<br>Suns</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/mil.png" alt="MIL"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#00471B; color:#EEE1C6;\'>MIL<br>BUCKS</div>'">
+          <div class="pick-team-name">Milwaukee<br>Bucks</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Phoenix Suns</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">8:10 PM ET · Upcoming</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">-116</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">99%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 4 — NBA: Sacramento Kings 95%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">NBA <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">📊 VALUE PLAY</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/ind.png" alt="IND"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#002D62; color:#FDBB30;\'>IND<br>PACERS</div>'">
+          <div class="pick-team-name">Indiana<br>Pacers</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/sac.png" alt="SAC"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#5A2D81; color:#63727A;\'>SAC<br>KINGS</div>'">
+          <div class="pick-team-name picked-name">Sacramento<br>Kings</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Sacramento Kings</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">10:10 PM ET · Upcoming</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">-154</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">95%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 5 — NHL: New York Rangers 94%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">NHL <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">🏒 PICK OF THE DAY</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/nhl/500/cgy.png" alt="CGY"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#C8102E; color:#F1BE48;\'>CGY<br>FLAMES</div>'">
+          <div class="pick-team-name">Calgary<br>Flames</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/nhl/500/nyr.png" alt="NYR"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#0038A8; color:#CE1126;\'>NYR<br>RANGERS</div>'">
+          <div class="pick-team-name picked-name">New York<br>Rangers</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">New York Rangers</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">7:10 PM ET · Upcoming</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">-134</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">94%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 6 — NHL: Detroit Red Wings 87% (DOG)
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">NHL <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">🐶 BEST DOG PLAY</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/nhl/500/det.png" alt="DET"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#CE1126; color:#FFFFFF;\'>DET<br>WINGS</div>'">
+          <div class="pick-team-name picked-name">Detroit<br>Red Wings</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/nhl/500/fla.png" alt="FLA"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#041E42; color:#C8102E;\'>FLA<br>PANTHERS</div>'">
+          <div class="pick-team-name">Florida<br>Panthers</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Detroit Red Wings</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">7:10 PM ET · Upcoming</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">+112</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">87%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 7 — UCL: Arsenal vs Leverkusen 53%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">UCL Soccer <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">🏆 CHAMPIONS LEAGUE</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/359.png" alt="ARS"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#EF0107; color:#FFFFFF;\'>ARS<br>ENAL</div>'">
+          <div class="pick-team-name">Arsenal</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131.png" alt="B04"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#E32221; color:#000000;\'>LEVER<br>KUSEN</div>'">
+          <div class="pick-team-name picked-name">Bayer<br>Leverkusen</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Bayer Leverkusen</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">3:45 PM ET · Upcoming</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">+460</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">53%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 8 — UCL: Man City vs Real Madrid 54%
+    ══════════════════════════════════ -->
+    <div class="slide s-pick">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="pick-meta">UCL Soccer <span class="dot">·</span> March 10, 2026</div>
+      <div class="pick-badge">🏟️ GAME OF THE DAY</div>
+
+      <div class="pick-matchup">
+        <div class="pick-team">
+          <img class="pick-team-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/382.png" alt="MCI"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#6CABDD; color:#FFFFFF;\'>MAN<br>CITY</div>'">
+          <div class="pick-team-name">Man City</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="pick-team">
+          <img class="pick-team-logo picked-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/86.png" alt="MAD"
+            onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background:#FEBE10; color:#00529F;\'>REAL<br>MADRID</div>'">
+          <div class="pick-team-name picked-name">Real<br>Madrid</div>
+        </div>
+      </div>
+
+      <div class="pick-upcoming">
+        <div class="pick-upcoming-label">Our Pick</div>
+        <div class="pick-upcoming-time">Real Madrid</div>
+      </div>
+      <div class="our-pick-line" style="font-size:12px; color:var(--gray); font-weight:500;">3:45 PM ET · Bernabéu</div>
+
+      <div class="pick-boxes">
+        <div class="pick-box">
+          <div class="box-value white">+175</div>
+          <div class="box-label">Odds</div>
+        </div>
+        <div class="pick-box">
+          <div class="box-value teal">54%</div>
+          <div class="box-label">Confidence</div>
+        </div>
+      </div>
+
+      <div class="pick-cta-wrap">
+        <div class="cta-btn cta-btn-wide">Follow @PrecisionAlgos for daily free picks</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 9 — CTA COVER
+    ══════════════════════════════════ -->
+    <div class="slide s-cover">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/></svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span><span class="pipe">|</span><span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-emoji">🎯</div>
+        <div class="cover-line1">Get The</div>
+        <div class="cover-rule"></div>
+        <div class="cover-line2">Full Edge</div>
+        <div class="cover-sub1">Free picks every single day</div>
+        <div class="cover-sub2">Premium signals from $40/month</div>
+        <div class="cover-cta-wrap">
+          <div class="cta-btn">JOIN FREE → precisionalgorithms.com</div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+  </div><!-- /track -->
+
+  <!-- NAV ZONES -->
+  <div class="zone-prev" id="prev"></div>
+  <div class="zone-next" id="next"></div>
+</div>
+
+<script>
+  const track = document.getElementById('track');
+  let cur = 0;
+  const total = 9;
+  const W = 540;
+
+  function goTo(n) {
+    if (n < 0 || n >= total) return;
+    cur = n;
+    track.style.transform = `translateX(${-cur * W}px)`;
+  }
+
+  document.getElementById('next').addEventListener('click', () => goTo(cur + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(cur - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(cur + 1);
+    if (e.key === 'ArrowLeft') goTo(cur - 1);
+  });
+
+  let sx = 0;
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const d = sx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) goTo(cur + (d > 0 ? 1 : -1));
+  }, {passive:true});
+</script>
+</body>
+</html>

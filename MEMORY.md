@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Memory
 
-_Last updated: 2026-02-19_
+_Last updated: 2026-03-10_
 
 ---
 
@@ -148,3 +148,68 @@ An AI-first autonomous operation — treating AI agents like actual employees of
 - The `value-engineering` agent (Dron Analyst 💡) is separate — different channel, opus model
 - When Dron says "pushed through X tasks" he means approved items in the Approvals queue
 - Memory page API path safety: only serve files within the workspace directory
+
+---
+
+## 🎨 Precision Algorithms TikTok Carousel — APPROVED DESIGN TEMPLATE
+
+**Locked in 2026-03-10. Dron loves this. Do not deviate from this design.**
+
+### Format
+- **Square 1:1** (1080×1080px, displayed at 540×540px)
+- **NOT vertical/portrait** — must be square
+
+### Colors
+- Background: `#0D1520` darkest corners → `#1A2735` center (radial vignette)
+- Primary accent: `#2EEAAD` (teal/mint green) — used everywhere
+- White text: `#FFFFFF`
+- Gray/muted: `#7A8A9A` (subtitles, dates)
+- Footer text: `#6B7F8E` / `#4A5A68`
+- CTA button fill: `#2EEAAD`, text: `#0F1923` (dark navy)
+- Box backgrounds: `#162029`, borders: `rgba(46,234,173,0.35)`
+
+### Typography
+- Font: **Montserrat** (weights 500–900)
+- Headlines: Montserrat Black/900, uppercase
+- Cover line 1 (e.g. "TODAY'S"): teal `#2EEAAD`, ~58px, 900 weight
+- Cover line 2 (e.g. "SIGNALS"): white, ~62px, 900 weight
+- Thin teal horizontal rule between the two headline lines
+- PA wordmark: "PRECISION" teal | pipe | "ALGORITHMS" white, 700 weight, letter-spaced
+
+### Header (every slide)
+- PA bull icon (from precisionalgorithms.com favicon) in dark rounded-square box
+- "PRECISION | ALGORITHMS" centered below icon
+- Icon ~52px, rounded 12px border-radius
+
+### Pick Card Slides (individual signals)
+- Sport + date row (gray, small, letter-spaced)
+- Badge pill (e.g. "🔒 #1 LOCK OF THE DAY") — teal border/bg, teal text
+- Team matchup: two team logos side-by-side (ESPN CDN) with "VS" teal pill between
+- Picked team name in teal, unpicked in white
+- Picked team logo gets teal glow drop-shadow
+- "OUR PICK" label (teal, small) + team name (white, large bold) below matchup
+- Game time + upcoming status (gray, small)
+- Two side-by-side boxes: **ODDS** (white value) | **CONFIDENCE** (teal value + teal label)
+- Full-width teal pill CTA: "FOLLOW @PRECISIONALGOS FOR DAILY FREE PICKS"
+
+### Cover Slides
+- Emoji icon (~52px) + large two-line teal/white headline + teal rule
+- Subtitle line in teal, date line in gray
+- Teal pill CTA: "SWIPE FOR PICKS →"
+
+### Footer (every slide)
+- "@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com" (gray)
+- "For entertainment only. Must be 21+. gambleaware.org" (darker gray)
+
+### Team Logos — ESPN CDN
+- NBA: `https://a.espncdn.com/i/teamlogos/nba/500/{abbr}.png` (atl, dal, phx, mil, sac, ind, etc.)
+- NHL: `https://a.espncdn.com/i/teamlogos/nhl/500/{abbr}.png` (nyr, cgy, det, fla, etc.)
+- Soccer: `https://a.espncdn.com/i/teamlogos/soccer/500/{id}.png` (Arsenal=359, Leverkusen=131, ManCity=382, RealMadrid=86)
+
+### File Location
+- `content/tiktok/pa-signals-YYYY-MM-DD-v2.html`
+- Reference implementation: `content/tiktok/pa-signals-2026-03-10-v2.html`
+
+### Signal Filtering Rule
+- **TODAY'S SIGNALS ONLY** — never include upcoming/future-dated games
+- Filter strictly by today's date from PA website scrape
