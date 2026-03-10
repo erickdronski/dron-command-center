@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773145834897,
+      "updatedAtMs": 1773153035700,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773145800050,
+        "lastRunAtMs": 1773153000078,
         "lastStatus": "ok",
-        "lastDurationMs": 34847,
+        "lastDurationMs": 35622,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773153000000,
+        "nextRunAtMs": 1773160200000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773149741359,
+      "updatedAtMs": 1773151544484,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773151535079,
-        "lastRunAtMs": 1773149735079,
+        "nextRunAtMs": 1773153335126,
+        "lastRunAtMs": 1773151535126,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6280,
+        "lastDurationMs": 9358,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773151535113
+        "runningAtMs": 1773153335162
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773150626846,
+      "updatedAtMs": 1773152440175,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773152414465,
-        "lastRunAtMs": 1773150614465,
+        "nextRunAtMs": 1773154214543,
+        "lastRunAtMs": 1773152414543,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12381,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 25632,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2081,6 +2081,40 @@
       },
       "state": {
         "nextRunAtMs": 1773666300000
+      }
+    },
+    {
+      "id": "049e6bcf-f538-4d31-a782-94f824c44edc",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "polymarket-lmsr-edge-scanner",
+      "enabled": true,
+      "createdAtMs": 1773152327890,
+      "updatedAtMs": 1773153279022,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 900000,
+        "anchorMs": 1773152327890
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the LMSR edge scanner: execute `cd /Users/dron/.openclaw/workspace && python3 polymarket_lmsr_edge.py` and capture the output. Then post the full results to Discord channel #polymarket-lmsr-edge (channel ID: 1480932833546473614). If the script errors, post the error too so we can debug. Keep the message under 2000 chars; if longer, trim to top 5 opportunities.",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773154127955,
+        "lastRunAtMs": 1773153227955,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 51067,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
