@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773115543156,
+      "updatedAtMs": 1773117341721,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773117334164,
-        "lastRunAtMs": 1773115534164,
+        "nextRunAtMs": 1773119134211,
+        "lastRunAtMs": 1773117334211,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8992,
+        "lastDurationMs": 7510,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773117334202
+        "runningAtMs": 1773119134239
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773116463366,
+      "updatedAtMs": 1773118265271,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1977,7 +1977,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Check the moltlaunch inbox for agent 28435 by running: mltl inbox --agent 28435 --json 2>&1\n\nIf there are new task requests (status 'requested'), review them and quote a price using: mltl quote --task <id> --price <eth> --message \"...\"\n\nIf there are accepted tasks (status 'accepted'), do the work and submit using: mltl submit --task <id> --result \"...\"\n\nIf inbox is empty or nothing needs action, do nothing. Only report to Discord channel 1477428291961884773 if there is actual activity (new requests or updates)."
+        "message": "Check the moltlaunch inbox for agent 28435. Run this shell command:\n\nexec: export PATH=\"$PATH:/Users/dron/.nvm/versions/node/v25.6.1/bin\" && mltl inbox --agent 28435 --json 2>&1\n\nIf there are tasks with status 'requested', quote them with a fair ETH price. If tasks are 'accepted', do the work and submit. If inbox is empty, do nothing and do NOT post to Discord. Only report to Discord channel 1477428291961884773 if there is real activity (new task requests, accepted tasks, or completed tasks)."
       },
       "delivery": {
         "mode": "announce",
@@ -1986,11 +1986,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773118213659,
-        "lastRunAtMs": 1773116413659,
+        "nextRunAtMs": 1773120013698,
+        "lastRunAtMs": 1773118213698,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 49707,
+        "lastDurationMs": 51573,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
