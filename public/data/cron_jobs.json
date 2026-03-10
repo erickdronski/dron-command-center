@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1773057600142,
+      "updatedAtMs": 1773144000077,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773144000000,
-        "lastRunAtMs": 1773057600105,
+        "nextRunAtMs": 1773230400000,
+        "lastRunAtMs": 1773144000043,
         "lastStatus": "error",
-        "lastDurationMs": 37,
-        "consecutiveErrors": 11,
+        "lastDurationMs": 34,
+        "consecutiveErrors": 12,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773136242675,
+      "updatedAtMs": 1773143442711,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773143442652,
-        "lastRunAtMs": 1773136242652,
+        "nextRunAtMs": 1773150642690,
+        "lastRunAtMs": 1773143442690,
         "lastStatus": "error",
-        "lastDurationMs": 23,
-        "consecutiveErrors": 132,
+        "lastDurationMs": 21,
+        "consecutiveErrors": 133,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1773100875957,
+      "updatedAtMs": 1773144118718,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773144000000,
-        "lastRunAtMs": 1773100800053,
+        "nextRunAtMs": 1773158400000,
+        "lastRunAtMs": 1773144000077,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 75904,
+        "lastDurationMs": 118641,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773140745976,
+      "updatedAtMs": 1773142542417,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773142534730,
-        "lastRunAtMs": 1773140734730,
+        "nextRunAtMs": 1773144334763,
+        "lastRunAtMs": 1773142534763,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11246,
+        "lastDurationMs": 7654,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773142534755
+        "runningAtMs": 1773144334799
       }
     },
     {
@@ -1688,7 +1688,7 @@
       "name": "☕ Daily Caffeine Cutoff Briefing",
       "enabled": true,
       "createdAtMs": 1772217396224,
-      "updatedAtMs": 1773057855610,
+      "updatedAtMs": 1773144135467,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1708,14 +1708,14 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773144000000,
-        "lastRunAtMs": 1773057825606,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 30004,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1773230400000,
+        "lastRunAtMs": 1773144118718,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 16749,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773141623036,
+      "updatedAtMs": 1773143420943,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1986,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773143414253,
-        "lastRunAtMs": 1773141614253,
+        "nextRunAtMs": 1773145214296,
+        "lastRunAtMs": 1773143414296,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8783,
+        "lastDurationMs": 6647,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
