@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=540, initial-scale=1.0">
+<title>PA Intro Carousel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2EEAAD;
+    --teal-dim: rgba(46,234,173,0.18);
+    --teal-border: rgba(46,234,173,0.35);
+    --bg-dark: #0D1520;
+    --bg-mid: #151F2B;
+    --bg-card: #162029;
+    --white: #FFFFFF;
+    --gray: #7A8A9A;
+    --gray-dim: #556672;
+    --cta-dark: #0F1923;
+    --sz: 540px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── VIEWPORT WRAPPER ── */
+  .viewport {
+    width: var(--sz);
+    height: var(--sz);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .track {
+    display: flex;
+    width: calc(var(--sz) * 6);
+    height: var(--sz);
+    transition: transform 0.38s cubic-bezier(0.77,0,0.18,1);
+  }
+
+  /* ── SLIDE BASE ── */
+  .slide {
+    width: var(--sz);
+    height: var(--sz);
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Radial vignette matching the template */
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 30%, #1A2735 0%, #0D1520 65%, #080E18 100%);
+    overflow: hidden;
+  }
+
+  /* ── PA LOGO BLOCK ── */
+  .pa-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-top: 22px;
+  }
+
+  .pa-icon {
+    width: 52px;
+    height: 52px;
+    background: #0D1A2A;
+    border-radius: 12px;
+    border: 1px solid rgba(46,234,173,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .pa-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .pa-icon-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pa-wordmark {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .pa-wordmark .pre { color: var(--teal); }
+  .pa-wordmark .pipe { color: rgba(46,234,173,0.5); margin: 0 5px; }
+  .pa-wordmark .alg { color: var(--white); }
+
+  /* ── FOOTER ── */
+  .slide-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 22px 0 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+
+  .footer-handles {
+    font-size: 9px;
+    font-weight: 500;
+    color: #6B7F8E;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-disclaimer {
+    font-size: 8px;
+    font-weight: 400;
+    color: #4A5A68;
+    letter-spacing: 0.2px;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta-btn {
+    background: var(--teal);
+    color: var(--cta-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    border-radius: 30px;
+    display: inline-block;
+  }
+
+  .cta-btn-wide {
+    width: 82%;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 30px;
+  }
+
+  /* ═══════════════════════════════════════
+     INTRO SLIDES — base layout
+  ═══════════════════════════════════════ */
+  .s-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Headline area */
+  .intro-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    padding: 0 40px;
+  }
+
+  .intro-emoji {
+    font-size: 34px;
+    margin-bottom: 32px;
+    margin-top: 8px;
+    line-height: 1;
+  }
+
+  .intro-line1 {
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .intro-rule {
+    width: 70%;
+    height: 2px;
+    background: var(--teal);
+    margin: 5px auto 7px;
+  }
+
+  .intro-line2 {
+    font-size: 54px;
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .intro-sub1 {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+  }
+
+  .intro-sub2 {
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray);
+    letter-spacing: 0.3px;
+    max-width: 80%;
+    line-height: 1.3;
+  }
+
+  .intro-cta-wrap {
+    margin-top: 32px;
+  }
+
+  /* ── Bullet lists ── */
+  .bullet-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+  }
+
+  .bullet-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .bullet-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .bullet-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* ── Stat blocks ── */
+  .stat-block {
+    background: var(--bg-card);
+    border: 1px solid var(--teal-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 120px;
+  }
+
+  .stat-value {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .stat-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+  }
+
+  /* ── Click zones ── */
+  .zone-prev, .zone-next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    z-index: 20;
+    cursor: pointer;
+  }
+  .zone-prev { left: 0; }
+  .zone-next { right: 0; }
+</style>
+</head>
+<body>
+
+<div class="viewport" id="vp">
+  <div class="track" id="track">
+
+    <!-- ══════════════════════════════════
+         SLIDE 1 — COVER: DISCOVER PA
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">🎯</div>
+        <div class="intro-line1">Discover</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">Precision</div>
+        <div class="intro-sub1">AI-Powered Sports Betting Edge</div>
+        <div class="intro-sub2">Daily free signals. Premium analysis. Win more.</div>
+        <div class="intro-cta-wrap">
+          <div class="cta-btn">SWIPE TO LEARN MORE →</div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 2 — WHO WE ARE
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">🤖</div>
+        <div class="intro-line1">Who</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">We Are</div>
+        <div class="intro-sub1">AI for Sports Betting</div>
+        <div class="intro-sub2">We use advanced AI to analyze games and deliver winning signals.</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">🏀</div>
+            <div class="bullet-text">NBA, NHL, Soccer & more</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">📈</div>
+            <div class="bullet-text">87% average confidence</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">💰</div>
+            <div class="bullet-text">Proven value plays</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 3 — FREE DAILY PICKS
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">🆓</div>
+        <div class="intro-line1">Free</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">Daily Picks</div>
+        <div class="intro-sub1">3 Top Signals Every Day — Free</div>
+        <div class="intro-sub2">No card required. Sign up in seconds.</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">📅</div>
+            <div class="bullet-text">Daily signals — NBA, NHL & Soccer</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🔒</div>
+            <div class="bullet-text">High-confidence picks every day</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">📊</div>
+            <div class="bullet-text">Odds, value plays & analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 4 — PREMIUM EDGE
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">💎</div>
+        <div class="intro-line1">Premium</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">Edge</div>
+        <div class="intro-sub1">From $40/month</div>
+        <div class="intro-sub2">Unlock full access to every tool.</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">📊</div>
+            <div class="bullet-text">All signals + player props</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🔮</div>
+            <div class="bullet-text">Parlay builder</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🛒</div>
+            <div class="bullet-text">Line shopping — best odds</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🧠</div>
+            <div class="bullet-text">Deep model analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 5 — WHY JOIN
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">🏆</div>
+        <div class="intro-line1">Why</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">Join Us</div>
+        <div class="intro-sub1">AI-Powered Edge</div>
+        <div class="intro-sub2">Join hundreds using our signals to bet smarter.</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">📡</div>
+            <div class="bullet-text">94+ live signals every day</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🎯</div>
+            <div class="bullet-text">NBA, NHL, Soccer & more</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon">🆓</div>
+            <div class="bullet-text">Start free — no card required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SLIDE 6 — CTA
+    ══════════════════════════════════ -->
+    <div class="slide s-intro">
+      <div class="pa-logo">
+        <div class="pa-icon">
+          <img src="https://precisionalgorithms.com/favicon.ico" alt="PA"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="pa-icon-fallback" style="display:none; background:#0D1A2A; width:100%; height:100%; border-radius:11px; align-items:center; justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 L20 14 L30 14 L22 20 L25 30 L16 24 L7 30 L10 20 L2 14 L12 14 Z" fill="#2EEAAD" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pa-wordmark">
+          <span class="pre">Precision</span>
+          <span class="pipe">|</span>
+          <span class="alg">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="intro-body">
+        <div class="intro-emoji">🚀</div>
+        <div class="intro-line1">Get</div>
+        <div class="intro-rule"></div>
+        <div class="intro-line2">Started</div>
+        <div class="intro-sub1">Free Sign Up</div>
+        <div class="intro-sub2">Join now and start winning today.</div>
+        <div class="intro-cta-wrap">
+          <div class="cta-btn cta-btn-wide">SIGN UP FREE → precisionalgorithms.com</div>
+        </div>
+        <div class="intro-sub2" style="margin-top: 16px;">Premium from $40/month</div>
+      </div>
+
+      <div class="slide-footer">
+        <div class="footer-handles">@PrecisionAlgos · @precisionalgorithms · precisionalgorithms.com</div>
+        <div class="footer-disclaimer">For entertainment only. Must be 21+. gambleaware.org</div>
+      </div>
+    </div>
+
+  </div><!-- /track -->
+
+  <!-- NAV ZONES -->
+  <div class="zone-prev" id="prev"></div>
+  <div class="zone-next" id="next"></div>
+</div>
+
+<script>
+  const track = document.getElementById('track');
+  let cur = 0;
+  const total = 6;
+  const W = 540;
+
+  function goTo(n) {
+    if (n < 0 || n >= total) return;
+    cur = n;
+    track.style.transform = `translateX(${-cur * W}px)`;
+  }
+
+  document.getElementById('next').addEventListener('click', () => goTo(cur + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(cur - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(cur + 1);
+    if (e.key === 'ArrowLeft') goTo(cur - 1);
+  });
+
+  let sx = 0;
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const d = sx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) goTo(cur + (d > 0 ? 1 : -1));
+  }, {passive:true});
+</script>
+</body>
+</html>
