@@ -1,95 +1,5 @@
 [
   {
-    "wallet": "Trader 0xE594",
-    "market": "Bitcoin Up or Down - March 10, 5:05AM-5:10AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 2.016,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:07:44.405744+00:00"
-  },
-  {
-    "wallet": "Trader 0xE594",
-    "market": "Bitcoin Up or Down - March 10, 5:00AM-5:15AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 0.66,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:08:36.121383+00:00"
-  },
-  {
-    "wallet": "Mega Whale",
-    "market": "Will the price of Bitcoin be above $64,000 on March 10?",
-    "side": "buy",
-    "status": "error",
-    "reason": "Order too small: 3.00 shares after rounding is below minimum (5)",
-    "their_size": 654.78456,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:08:45.713162+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Solana Up or Down - March 10, 4:55AM-5:00AM ET",
-    "side": "buy",
-    "status": "rejected",
-    "reason": "Order book query failed: Market is closed on Polymarket \u2014 order book no longer available",
-    "their_size": 48.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:09:04.106785+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "XRP Up or Down - March 10, 4:55AM-5:00AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 49.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:09:58.544320+00:00"
-  },
-  {
-    "wallet": "Crypto Whale B",
-    "market": "Bitcoin Up or Down - March 10, 4:55AM-5:00AM ET",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 40.6,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:10:53.937325+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be 60 or more average daily transits of the Strait of Hormuz on March 31?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 38.5,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:11:54.410575+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be between 10 and 20 average daily transits of the Strait of Hormuz on March 31?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 40,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:12:47.703773+00:00"
-  },
-  {
-    "wallet": "HFT Bot A",
-    "market": "Will there be between 50 and 60 average daily transits of the Strait of Hormuz on March 31?",
-    "side": "buy",
-    "status": "failed",
-    "reason": "market_not_found",
-    "their_size": 43,
-    "our_size": 3.0,
-    "logged_at": "2026-03-10T09:13:41.541771+00:00"
-  },
-  {
     "wallet": "HFT Bot A",
     "market": "Will there be between 40 and 50 average daily transits of the Strait of Hormuz on March 31?",
     "side": "buy",
@@ -4998,5 +4908,95 @@
     "their_size": 49.5,
     "our_size": 3.0,
     "logged_at": "2026-03-10T14:35:26.051887+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 10, 10:20AM-10:25AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.290033,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:36:16.683865+00:00"
+  },
+  {
+    "wallet": "Crypto Whale A",
+    "market": "Bitcoin Up or Down - March 10, 10:15AM-10:20AM ET",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.8,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:37:10.650855+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 360-379 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 4.52 shares after rounding is below minimum (5)",
+    "their_size": 20.274,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:37:25.393131+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 540-559 tweets from March 6 to March 13, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 9.97,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:38:17.237489+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 340-359 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "error",
+    "reason": "Order too small: 4.52 shares after rounding is below minimum (5)",
+    "their_size": 25.56905,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:38:23.545513+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 400-419 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 86.826,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:39:14.477450+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 380-399 tweets from March 3 to March 10, 2026?",
+    "side": "buy",
+    "status": "rejected",
+    "reason": "Market is resolved, not active. Use POST /api/sdk/redeem if you hold winning shares.",
+    "their_size": 49.674,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:39:23.861722+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Trump\u2019s approval rating be between 41.5 and 41.9 on March 13, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 0.8549,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:40:16.595767+00:00"
+  },
+  {
+    "wallet": "HFT Bot A",
+    "market": "Will Elon Musk post 340-359 tweets from March 6 to March 13, 2026?",
+    "side": "buy",
+    "status": "failed",
+    "reason": "market_not_found",
+    "their_size": 6.194244,
+    "our_size": 3.0,
+    "logged_at": "2026-03-10T14:41:05.661343+00:00"
   }
 ]
