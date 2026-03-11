@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import {
-  LayoutDashboard, Calendar, Brain, Users, BarChart2, Wrench, Twitter, Linkedin, Bot, AppWindow
+  LayoutDashboard, Calendar, Brain, Users, BarChart2, Wrench, Twitter, Linkedin, Bot, AppWindow, Globe
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ const navItems = [
   { href: '/team', icon: Users, label: 'Team' },
 
   { href: '/value-engineering', icon: Wrench, label: 'Value Eng', highlight: true },
+  { href: '/polymarket-universe', icon: Globe, label: '⬡ Universe', highlight: true },
   { href: '/bots', icon: Bot, label: 'Bots 🤖' },
   { href: '/apps', icon: AppWindow, label: 'Apps' },
 ];
