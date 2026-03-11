@@ -777,7 +777,7 @@
       "name": "💰 5K MRR App Builder",
       "enabled": true,
       "createdAtMs": 1771821048720,
-      "updatedAtMs": 1773117090184,
+      "updatedAtMs": 1773203477938,
       "schedule": {
         "everyMs": 86400000,
         "kind": "every",
@@ -798,10 +798,10 @@
         "to": "channel:1475349043394773092"
       },
       "state": {
-        "nextRunAtMs": 1773203449295,
-        "lastRunAtMs": 1773117049295,
+        "nextRunAtMs": 1773289849351,
+        "lastRunAtMs": 1773203449351,
         "lastStatus": "ok",
-        "lastDurationMs": 40889,
+        "lastDurationMs": 28587,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": true,
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773200154661,
+      "updatedAtMs": 1773201955166,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773201946976,
-        "lastRunAtMs": 1773200146976,
+        "nextRunAtMs": 1773203747033,
+        "lastRunAtMs": 1773201947033,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7685,
+        "lastDurationMs": 8133,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773201947022
+        "runningAtMs": 1773203747074
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773201052324,
+      "updatedAtMs": 1773202851281,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1986,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773202835122,
-        "lastRunAtMs": 1773201035122,
+        "nextRunAtMs": 1773204635156,
+        "lastRunAtMs": 1773202835156,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17202,
+        "lastDurationMs": 16125,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773201888437,
+      "updatedAtMs": 1773203685368,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2121,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773202740119,
-        "lastRunAtMs": 1773201840119,
+        "nextRunAtMs": 1773204540217,
+        "lastRunAtMs": 1773203640217,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 48318,
+        "lastDurationMs": 45151,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
