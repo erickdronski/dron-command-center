@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773196222067,
+      "updatedAtMs": 1773232230415,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773196200086,
+        "lastRunAtMs": 1773232200105,
         "lastStatus": "ok",
-        "lastDurationMs": 21981,
+        "lastDurationMs": 30310,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773232200000,
+        "nextRunAtMs": 1773239400000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773228954500,
+      "updatedAtMs": 1773230754267,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773230747680,
-        "lastRunAtMs": 1773228947680,
+        "nextRunAtMs": 1773232547745,
+        "lastRunAtMs": 1773230747745,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6820,
+        "lastDurationMs": 6522,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773230747730
+        "runningAtMs": 1773232547768
       }
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773229844370,
+      "updatedAtMs": 1773231650092,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773231636030,
-        "lastRunAtMs": 1773229836030,
+        "nextRunAtMs": 1773233436084,
+        "lastRunAtMs": 1773231636084,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8340,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 14008,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773230690182,
+      "updatedAtMs": 1773232487196,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2121,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773231541647,
-        "lastRunAtMs": 1773230641647,
+        "nextRunAtMs": 1773233341765,
+        "lastRunAtMs": 1773232441765,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 48535,
+        "lastDurationMs": 45431,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
