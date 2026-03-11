@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773258683018,
+      "updatedAtMs": 1773265889099,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773265882969,
-        "lastRunAtMs": 1773258682969,
+        "nextRunAtMs": 1773273089097,
+        "lastRunAtMs": 1773265889097,
         "lastStatus": "error",
-        "lastDurationMs": 49,
-        "consecutiveErrors": 149,
+        "lastDurationMs": 2,
+        "consecutiveErrors": 150,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773263170136,
+      "updatedAtMs": 1773264972289,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773264963493,
-        "lastRunAtMs": 1773263163493,
+        "nextRunAtMs": 1773266763558,
+        "lastRunAtMs": 1773264963558,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6643,
+        "lastDurationMs": 8731,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773264963545
+        "runningAtMs": 1773266763596
       }
     },
     {
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773252042624,
+      "updatedAtMs": 1773266469372,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,14 +1782,15 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773266400000,
-        "lastRunAtMs": 1773252000066,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 42558,
+        "nextRunAtMs": 1773280800000,
+        "lastRunAtMs": 1773266400074,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 69298,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/temp_post.py (1417 chars)` failed"
       }
     },
     {
@@ -1967,7 +1968,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773264065345,
+      "updatedAtMs": 1773265889043,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1987,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773265841310,
-        "lastRunAtMs": 1773264041310,
+        "nextRunAtMs": 1773267641360,
+        "lastRunAtMs": 1773265841360,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24035,
+        "lastDurationMs": 47683,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2104,7 +2105,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773264925721,
+      "updatedAtMs": 1773266738211,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2122,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773265743688,
-        "lastRunAtMs": 1773264843688,
+        "nextRunAtMs": 1773267543779,
+        "lastRunAtMs": 1773266643779,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 82033,
+        "lastDurationMs": 94432,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
