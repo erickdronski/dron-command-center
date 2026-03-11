@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773234048034,
+      "updatedAtMs": 1773241310460,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773234012643,
+        "lastRunAtMs": 1773241292075,
         "lastStatus": "ok",
-        "lastDurationMs": 35391,
+        "lastDurationMs": 18385,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773241212453,
+        "nextRunAtMs": 1773248412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773237953913,
+      "updatedAtMs": 1773239756395,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773239748428,
-        "lastRunAtMs": 1773237948428,
+        "nextRunAtMs": 1773241548461,
+        "lastRunAtMs": 1773239748461,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5485,
+        "lastDurationMs": 7934,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773239748453
+        "runningAtMs": 1773241548484
       }
     },
     {
@@ -1902,7 +1902,7 @@
       "name": "PA Daily Carousel — 11 AM ET",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773154883880,
+      "updatedAtMs": 1773241273313,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1921,11 +1921,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773241200000,
-        "lastRunAtMs": 1773154800076,
+        "nextRunAtMs": 1773327600000,
+        "lastRunAtMs": 1773241200057,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 83804,
+        "lastDurationMs": 73256,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773238862138,
+      "updatedAtMs": 1773240645750,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773240636247,
-        "lastRunAtMs": 1773238836247,
+        "nextRunAtMs": 1773242436296,
+        "lastRunAtMs": 1773240636296,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 25891,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 9454,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2003,7 +2003,7 @@
       "name": "PA X — Daily Signals (11 AM ET)",
       "enabled": true,
       "createdAtMs": 1773112405564,
-      "updatedAtMs": 1773154907436,
+      "updatedAtMs": 1773241291949,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -2022,11 +2022,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773241200000,
-        "lastRunAtMs": 1773154883880,
+        "nextRunAtMs": 1773327600000,
+        "lastRunAtMs": 1773241273313,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23556,
+        "lastDurationMs": 18636,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773239689469,
+      "updatedAtMs": 1773241494147,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2121,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773240542207,
-        "lastRunAtMs": 1773239642207,
+        "nextRunAtMs": 1773242342293,
+        "lastRunAtMs": 1773241442293,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 47262,
+        "lastDurationMs": 51854,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
