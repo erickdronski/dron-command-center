@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773244264367,
+      "updatedAtMs": 1773251482938,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773251464309,
-        "lastRunAtMs": 1773244264309,
+        "nextRunAtMs": 1773258682915,
+        "lastRunAtMs": 1773251482915,
         "lastStatus": "error",
-        "lastDurationMs": 58,
-        "consecutiveErrors": 147,
+        "lastDurationMs": 23,
+        "consecutiveErrors": 148,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773248754829,
+      "updatedAtMs": 1773250567364,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773250548641,
-        "lastRunAtMs": 1773248748641,
+        "nextRunAtMs": 1773252348687,
+        "lastRunAtMs": 1773250548687,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6188,
+        "lastDurationMs": 18677,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773250548675
+        "runningAtMs": 1773252363094
       }
     },
     {
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773237625038,
+      "updatedAtMs": 1773252042624,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,11 +1782,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773252000000,
-        "lastRunAtMs": 1773237600134,
+        "nextRunAtMs": 1773266400000,
+        "lastRunAtMs": 1773252000066,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24904,
+        "lastDurationMs": 42558,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773249658972,
+      "updatedAtMs": 1773251482577,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773251436670,
-        "lastRunAtMs": 1773249636670,
+        "nextRunAtMs": 1773253236715,
+        "lastRunAtMs": 1773251436715,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22302,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 45862,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773250486210,
+      "updatedAtMs": 1773252363003,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,14 +2121,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773251342764,
-        "lastRunAtMs": 1773250442764,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 43446,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773253142873,
+        "lastRunAtMs": 1773252242873,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120130,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     }
   ]
