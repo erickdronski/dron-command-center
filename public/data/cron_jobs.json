@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773229864232,
+      "updatedAtMs": 1773237064297,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773237064204,
-        "lastRunAtMs": 1773229864204,
+        "nextRunAtMs": 1773244264254,
+        "lastRunAtMs": 1773237064254,
         "lastStatus": "error",
-        "lastDurationMs": 28,
-        "consecutiveErrors": 145,
+        "lastDurationMs": 43,
+        "consecutiveErrors": 146,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773234359598,
+      "updatedAtMs": 1773236158148,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773236148341,
-        "lastRunAtMs": 1773234348341,
+        "nextRunAtMs": 1773237948403,
+        "lastRunAtMs": 1773236148403,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11257,
+        "lastDurationMs": 9745,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773236148386
+        "runningAtMs": 1773237948420
       }
     },
     {
@@ -1761,7 +1761,7 @@
       "name": "DronskiErick-Shower-Thoughts",
       "enabled": true,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773194429986,
+      "updatedAtMs": 1773237625038,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,11 +1782,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773237600000,
-        "lastRunAtMs": 1773194400061,
+        "nextRunAtMs": 1773252000000,
+        "lastRunAtMs": 1773237600134,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 29925,
+        "lastDurationMs": 24904,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773235252806,
+      "updatedAtMs": 1773237044458,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773237036183,
-        "lastRunAtMs": 1773235236183,
+        "nextRunAtMs": 1773238836216,
+        "lastRunAtMs": 1773237036216,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16623,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 8242,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773236091772,
+      "updatedAtMs": 1773237884700,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2121,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773236941993,
-        "lastRunAtMs": 1773236041993,
+        "nextRunAtMs": 1773238742082,
+        "lastRunAtMs": 1773237842082,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 49779,
+        "lastDurationMs": 42618,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
