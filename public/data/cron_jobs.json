@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1773144000077,
+      "updatedAtMs": 1773230400098,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773230400000,
-        "lastRunAtMs": 1773144000043,
+        "nextRunAtMs": 1773316800000,
+        "lastRunAtMs": 1773230400068,
         "lastStatus": "error",
-        "lastDurationMs": 34,
-        "consecutiveErrors": 12,
+        "lastDurationMs": 30,
+        "consecutiveErrors": 13,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773222664185,
+      "updatedAtMs": 1773229864232,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773229864149,
-        "lastRunAtMs": 1773222664149,
+        "nextRunAtMs": 1773237064204,
+        "lastRunAtMs": 1773229864204,
         "lastStatus": "error",
-        "lastDurationMs": 36,
-        "consecutiveErrors": 144,
+        "lastDurationMs": 28,
+        "consecutiveErrors": 145,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1578,7 +1578,7 @@
       "name": "DronskiErick-X-Content-Bot",
       "enabled": true,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1773187316423,
+      "updatedAtMs": 1773230527452,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,11 +1599,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773230400000,
-        "lastRunAtMs": 1773187200053,
+        "nextRunAtMs": 1773244800000,
+        "lastRunAtMs": 1773230400098,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 116370,
+        "lastDurationMs": 127354,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1616,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773227155744,
+      "updatedAtMs": 1773228954500,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773228947627,
-        "lastRunAtMs": 1773227147627,
+        "nextRunAtMs": 1773230747680,
+        "lastRunAtMs": 1773228947680,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8117,
+        "lastDurationMs": 6820,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773228947669
+        "runningAtMs": 1773230747730
       }
     },
     {
@@ -1688,7 +1688,7 @@
       "name": "☕ Daily Caffeine Cutoff Briefing",
       "enabled": true,
       "createdAtMs": 1772217396224,
-      "updatedAtMs": 1773144135467,
+      "updatedAtMs": 1773230548653,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1708,11 +1708,11 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773230400000,
-        "lastRunAtMs": 1773144118718,
+        "nextRunAtMs": 1773316800000,
+        "lastRunAtMs": 1773230527452,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16749,
+        "lastDurationMs": 21201,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -1967,7 +1967,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773228051498,
+      "updatedAtMs": 1773229844370,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,13 +1986,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773229835971,
-        "lastRunAtMs": 1773228035971,
+        "nextRunAtMs": 1773231636030,
+        "lastRunAtMs": 1773229836030,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15527,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 8340,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -2104,7 +2104,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773228891588,
+      "updatedAtMs": 1773230690182,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2121,11 +2121,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773229741565,
-        "lastRunAtMs": 1773228841565,
+        "nextRunAtMs": 1773231541647,
+        "lastRunAtMs": 1773230641647,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 50023,
+        "lastDurationMs": 48535,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
