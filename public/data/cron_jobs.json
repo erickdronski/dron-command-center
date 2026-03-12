@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773281730479,
+      "updatedAtMs": 1773283531167,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773283523546,
-        "lastRunAtMs": 1773281723546,
+        "nextRunAtMs": 1773285323606,
+        "lastRunAtMs": 1773283523606,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6933,
+        "lastDurationMs": 7561,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773283523595
+        "runningAtMs": 1773285323645
       }
     },
     {
@@ -1685,9 +1685,9 @@
       "agentId": "command-center",
       "sessionKey": "agent:command-center:discord:channel:1476024756456263690",
       "name": "☕ Daily Caffeine Cutoff Briefing",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772217396224,
-      "updatedAtMs": 1773230548653,
+      "updatedAtMs": 1773284040272,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1707,7 +1707,6 @@
         "to": "1475320497490231438"
       },
       "state": {
-        "nextRunAtMs": 1773316800000,
         "lastRunAtMs": 1773230527452,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1966,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773282289772,
+      "updatedAtMs": 1773283872250,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1985,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773283864593,
-        "lastRunAtMs": 1773282064593,
+        "nextRunAtMs": 1773285664645,
+        "lastRunAtMs": 1773283864645,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 225179,
+        "lastDurationMs": 7605,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2103,7 +2102,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773282703313,
+      "updatedAtMs": 1773284512872,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2120,14 +2119,42 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773283564118,
-        "lastRunAtMs": 1773282664118,
+        "nextRunAtMs": 1773285364213,
+        "lastRunAtMs": 1773284464213,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39195,
+        "lastDurationMs": 48659,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
+      }
+    },
+    {
+      "id": "f85b3743-25f9-433c-9943-c0c5781477df",
+      "agentId": "value-engineering",
+      "sessionKey": "agent:value-engineering:discord:channel:1474125704454078610",
+      "name": "Switch agents back to Sonnet",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1773283664966,
+      "updatedAtMs": 1773283664966,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-14T03:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "The Sonnet rate limit has reset. Switch these agents back to anthropic/claude-sonnet-4-6: command-center, general-chat, orchestrator, claude-ops. Edit /Users/dron/.openclaw/openclaw.json and change their model fields, then restart the gateway. Confirm the switch was made.",
+        "model": "anthropic/claude-opus-4-6"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "1474125704454078610"
+      },
+      "state": {
+        "nextRunAtMs": 1773457200000
       }
     }
   ]
