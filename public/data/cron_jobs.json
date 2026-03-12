@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773283531167,
+      "updatedAtMs": 1773285351520,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773285323606,
-        "lastRunAtMs": 1773283523606,
+        "nextRunAtMs": 1773287123656,
+        "lastRunAtMs": 1773285323656,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7561,
+        "lastDurationMs": 27864,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773285323645
+        "runningAtMs": 1773287123707
       }
     },
     {
@@ -1897,10 +1897,10 @@
       "id": "3b45db28-4cbc-4cad-835e-65cd01a53c87",
       "agentId": "general-chat",
       "sessionKey": "agent:general-chat:discord:channel:1477431773678932131",
-      "name": "PA Daily Carousel — 11 AM ET",
+      "name": "PA Daily Carousel — 11 AM ET (HTML Template)",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773241273313,
+      "updatedAtMs": 1773285825325,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1910,8 +1910,8 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "## Daily Task: Generate and Post PA Signal Carousel\n\nGenerate today's Precision Algorithms sports signal carousel and post all 5 slides to Discord channel #precision-tiktok (ID: 1477431773678932131).\n\n### Steps\n\n**1. Ensure assets exist in /tmp (re-download if missing)**\n\n```bash\n# Bull logo\nif [ ! -f /tmp/pa_precision-bull-logo--zJKZRR1.png ]; then\n  curl -sL 'https://precisionalgorithms.com/assets/precision-bull-logo--zJKZRR1.png' -o /tmp/pa_precision-bull-logo--zJKZRR1.png\nfi\n\n# Inter fonts\nif [ ! -f /tmp/inter_fonts/extras/ttf/Inter-Black.ttf ]; then\n  curl -sL 'https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip' -o /tmp/inter.zip\n  mkdir -p /tmp/inter_fonts\n  cd /tmp && unzip -q inter.zip -d inter_fonts\nfi\n\n# Twemoji cache dir\nmkdir -p /tmp/twemoji\n```\n\n**2. Run the carousel generator**\n\n```bash\ncd /Users/dron/.openclaw/workspace\npython3 pa_carousel_v16.py\n```\n\nOutput goes to `/tmp/pa_carousel_v16/` — 5 PNG files:\n- slide_01_cover.png\n- slide_02_{sport}.png\n- slide_03_{sport}.png\n- slide_04_{sport}.png\n- slide_05_cta.png\n\n**3. Copy slides to workspace**\n\n```bash\nmkdir -p /Users/dron/.openclaw/workspace/pa_carousel/daily\ncp /tmp/pa_carousel_v16/*.png /Users/dron/.openclaw/workspace/pa_carousel/daily/\n```\n\n**4. Post all 5 slides to Discord #precision-tiktok (channel ID: 1477431773678932131)**\n\nUse the message tool with action=send, channel=discord, target=1477431773678932131.\n\nSend slides in this order with these captions:\n1. filePath: `/Users/dron/.openclaw/workspace/pa_carousel/daily/slide_01_cover.png` — message: \"🎯 **TODAY'S FREE PICKS** — {today's date} | AI-powered sports signals from Precision Algorithms\"\n2. filePath: slide_02 — message: \"📊 **Pick 1**\"\n3. filePath: slide_03 — message: \"📊 **Pick 2**\"\n4. filePath: slide_04 — message: \"📊 **Pick 3**\"\n5. filePath: slide_05 — message: \"🔒 **Follow @PrecisionAlgos for daily free picks** | precisionalgorithms.com\"\n\n### Key context\n- Generator: `/Users/dron/.openclaw/workspace/pa_carousel_v16.py`\n- Supabase fetches live signals automatically (NBA/NFL/NHL/MLB/NCAAB/Soccer/UFC)\n- NCAAB logos auto-fetched from ESPN API (all 362 D1 schools)\n- Twemoji PNGs cached to /tmp/twemoji/ (auto-downloaded per emoji as needed)\n- If generator exits with error, post a message to Discord saying carousel generation failed and include the error\n- Today's date for the caption: use Python `from datetime import date; date.today().strftime('%B %d, %Y')`\n\n### On success\nPost a brief summary to Discord: how many signals were fetched, which sports, and confirm slides posted.",
-        "timeoutSeconds": 300
+        "message": "## Daily Task: Generate PA Signal Carousel from HTML Template\n\nGenerate today's Precision Algorithms sports signal carousel using the PROVEN HTML template, then post all slides to Discord #precision-tiktok (ID: 1477431773678932131).\n\n### Steps\n\n**1. Scrape today's signals from PA website**\n\nFetch https://www.precisionalgorithms.com/ and extract today's signals. Look for games dated TODAY only. For each signal capture:\n- Sport (NBA, NHL, Soccer, NCAAB, etc.)\n- Away team @ Home team\n- Picked team name\n- Odds (moneyline format like +108, -145)\n- Confidence % (from the site)\n- Game time (ET)\n- Badge type: highest confidence = '🔒 PICK OF THE DAY', 2nd highest = '🔥 HIGH CONFIDENCE', rest = '📊 {SPORT} SIGNAL'\n\nIf no signals found for today, post a message saying 'No signals today' and stop.\n\n**2. Copy the proven template**\n\nThe reference template is at:\n`/Users/dron/.openclaw/workspace/dron-command-center/content/tiktok/pa-signals-2026-03-10-v2.html`\n\nCopy it to a new file:\n`/Users/dron/.openclaw/workspace/dron-command-center/content/tiktok/pa-signals-TODAY.html`\n\nThen edit ONLY the data parts (keep ALL CSS and layout intact):\n- Update title date\n- Update cover slide: game count, sport count, date\n- Replace pick slides with today's signals (one slide per signal)\n- Update track width in CSS: `calc(var(--sz) * N)` where N = total slides\n- Update `const total = N` in the script\n- Keep --sz at 540px (DO NOT change this)\n\nTeam logo URLs:\n- NBA: `https://a.espncdn.com/i/teamlogos/nba/500/{abbr}.png` (tor, no, den, lac, ny, hou, min, cha, sac, etc.)\n- NHL: `https://a.espncdn.com/i/teamlogos/nhl/500/{abbr}.png` (nyr, cgy, det, fla, etc.)\n- Soccer: `https://a.espncdn.com/i/teamlogos/soccer/500/{id}.png` (Arsenal=359, Leverkusen=131, ManCity=382, RealMadrid=86)\n\n**3. Serve and screenshot**\n\nStart a local server:\n```bash\ncd /Users/dron/.openclaw/workspace/dron-command-center/content/tiktok && python3 -m http.server 8001 &\n```\n\nOpen in browser (profile=chrome):\n- Navigate to `http://localhost:8001/pa-signals-TODAY.html`\n- Resize viewport to 540x540\n- For each slide i (0 to N-1): evaluate `goTo(i)`, wait 500ms, take screenshot\n- Copy each screenshot PNG to exports/TODAY/ as slide-{i+1}.png\n- Kill the server when done\n\n**4. Post all slides to Discord**\n\nUse message tool (action=send, channel=discord, target=1477431773678932131).\n\nFirst message: '🎯 **TODAY'S FREE PICKS** — {date} | AI-powered sports signals from Precision Algorithms'\nThen send each slide PNG with brief caption.\nLast slide caption: '🔒 **Follow @PrecisionAlgos for daily free picks** | precisionalgorithms.com'\n\n### Critical Rules\n- ONLY include today's signals (filter by date)\n- DO NOT modify CSS sizing (keep --sz: 540px)\n- The template layout is LOCKED — only swap signal data\n- Each pick slide must have: PA logo header, sport/date meta, badge, team matchup with logos, 'Our Pick' section, odds+confidence boxes, CTA footer\n- Cover slide: emoji + TODAY'S/SIGNALS headline + game count + date + SWIPE CTA\n- CTA slide: GET THE/FULL EDGE + join free CTA",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773283872250,
+      "updatedAtMs": 1773285671446,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773285664645,
-        "lastRunAtMs": 1773283864645,
+        "nextRunAtMs": 1773287464695,
+        "lastRunAtMs": 1773285664695,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7605,
+        "lastDurationMs": 6751,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2102,7 +2102,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773284512872,
+      "updatedAtMs": 1773286312594,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2119,11 +2119,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773285364213,
-        "lastRunAtMs": 1773284464213,
+        "nextRunAtMs": 1773287164314,
+        "lastRunAtMs": 1773286264314,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 48659,
+        "lastDurationMs": 48280,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
