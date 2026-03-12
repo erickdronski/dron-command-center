@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773320421207,
+      "updatedAtMs": 1773328184051,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773320412511,
+        "lastRunAtMs": 1773328149344,
         "lastStatus": "ok",
-        "lastDurationMs": 8696,
+        "lastDurationMs": 34707,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773327612453,
+        "nextRunAtMs": 1773334812453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773324937487,
+      "updatedAtMs": 1773326740068,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773326724902,
-        "lastRunAtMs": 1773324924902,
+        "nextRunAtMs": 1773328524951,
+        "lastRunAtMs": 1773326724951,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12585,
+        "lastDurationMs": 15117,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773326724940
+        "runningAtMs": 1773328525017
       }
     },
     {
@@ -1900,7 +1900,7 @@
       "name": "PA Daily Carousel — 11 AM ET (HTML Template)",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773285825325,
+      "updatedAtMs": 1773328129289,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1919,11 +1919,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773327600000,
-        "lastRunAtMs": 1773241200057,
+        "nextRunAtMs": 1773414000000,
+        "lastRunAtMs": 1773327600130,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 73256,
+        "lastDurationMs": 529159,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773325274897,
+      "updatedAtMs": 1773327075814,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773327065849,
-        "lastRunAtMs": 1773325265849,
+        "nextRunAtMs": 1773328865896,
+        "lastRunAtMs": 1773327065896,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9048,
+        "lastDurationMs": 9918,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2001,7 +2001,7 @@
       "name": "PA X — Daily Signals (11 AM ET)",
       "enabled": true,
       "createdAtMs": 1773112405564,
-      "updatedAtMs": 1773241291949,
+      "updatedAtMs": 1773328148914,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -2020,11 +2020,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773327600000,
-        "lastRunAtMs": 1773241273313,
+        "nextRunAtMs": 1773414000000,
+        "lastRunAtMs": 1773328129289,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 18636,
+        "lastDurationMs": 19625,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
