@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773270026043,
+      "updatedAtMs": 1773277243196,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773270012528,
+        "lastRunAtMs": 1773277212516,
         "lastStatus": "ok",
-        "lastDurationMs": 13515,
+        "lastDurationMs": 30680,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773277212453,
+        "nextRunAtMs": 1773313212453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773268219245,
+      "updatedAtMs": 1773275416334,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773268200064,
+        "lastRunAtMs": 1773275400073,
         "lastStatus": "ok",
-        "lastDurationMs": 19181,
+        "lastDurationMs": 16261,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773275400000,
+        "nextRunAtMs": 1773282600000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1576,9 +1576,9 @@
       "agentId": "x-content",
       "sessionKey": "agent:x-content:discord:channel:1473394891290841223",
       "name": "DronskiErick-X-Content-Bot",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772147203311,
-      "updatedAtMs": 1773273736023,
+      "updatedAtMs": 1773276449828,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -1599,7 +1599,6 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773316800000,
         "lastRunAtMs": 1773273600052,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1616,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773272502036,
+      "updatedAtMs": 1773276363610,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1634,15 +1633,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773274290459,
-        "lastRunAtMs": 1773272490459,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 11577,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1773274290501
+        "nextRunAtMs": 1773278123387,
+        "lastRunAtMs": 1773276323387,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 40223,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "runningAtMs": 1773278123427
       }
     },
     {
@@ -1759,9 +1757,9 @@
       "agentId": "x-content",
       "sessionKey": "agent:x-content:discord:channel:1473394891290841223",
       "name": "DronskiErick-Shower-Thoughts",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772467724058,
-      "updatedAtMs": 1773266469372,
+      "updatedAtMs": 1773276449859,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,14,18,22 * * *",
@@ -1782,7 +1780,6 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773280800000,
         "lastRunAtMs": 1773266400074,
         "lastRunStatus": "error",
         "lastStatus": "error",
@@ -1800,7 +1797,7 @@
       "name": "📰 The Spiraling Millennial — Auto-Publish",
       "enabled": true,
       "createdAtMs": 1772498362049,
-      "updatedAtMs": 1773017362198,
+      "updatedAtMs": 1773276323131,
       "schedule": {
         "kind": "every",
         "everyMs": 259200000,
@@ -1819,14 +1816,14 @@
         "to": "1478189706482024681"
       },
       "state": {
-        "nextRunAtMs": 1773275962126,
-        "lastRunAtMs": 1773016762126,
+        "nextRunAtMs": 1773535162174,
+        "lastRunAtMs": 1773275962174,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 600072,
+        "lastDurationMs": 360957,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out"
+        "consecutiveErrors": 3,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | xai/grok-4: ⚠️ API rate limit reached. Please try again later. (rate_limit) | xai/grok-4-fast: No available auth profile for xai (all in cooldown or unavailable). (rate_limit) | anthropic/claude-opus-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-sonnet-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-haiku-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o: ⚠️ API rate limit reached. Please try again later. (rate_limit) | openai/gpt-4o-mini: No available auth profile for openai (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1968,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773273086074,
+      "updatedAtMs": 1773276671135,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1987,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773274864327,
-        "lastRunAtMs": 1773273064327,
+        "nextRunAtMs": 1773278464430,
+        "lastRunAtMs": 1773276664430,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21747,
+        "lastDurationMs": 6705,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2105,7 +2102,7 @@
       "name": "polymarket-lmsr-edge-scanner",
       "enabled": true,
       "createdAtMs": 1773152327890,
-      "updatedAtMs": 1773273476989,
+      "updatedAtMs": 1773277325515,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -2122,11 +2119,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773274302091,
-        "lastRunAtMs": 1773273402091,
+        "nextRunAtMs": 1773278163660,
+        "lastRunAtMs": 1773277263660,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 74898,
+        "lastDurationMs": 61855,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
