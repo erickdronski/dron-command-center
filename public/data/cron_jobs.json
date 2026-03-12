@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773333140922,
+      "updatedAtMs": 1773340243862,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,14 +180,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773333140750,
-        "lastStatus": "error",
-        "lastDurationMs": 172,
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1773340200000,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: ENOSPC: no space left on device, write"
+        "lastRunAtMs": 1773340200044,
+        "lastStatus": "ok",
+        "lastDurationMs": 43818,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773347400000,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773337588113,
+      "updatedAtMs": 1773339388558,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773339378448,
-        "lastRunAtMs": 1773337578448,
+        "nextRunAtMs": 1773341178508,
+        "lastRunAtMs": 1773339378508,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9665,
+        "lastDurationMs": 10050,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773339378495
+        "runningAtMs": 1773341178541
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773338242674,
+      "updatedAtMs": 1773340062056,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,14 +1984,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773340042532,
-        "lastRunAtMs": 1773338242532,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 142,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: ENOSPC: no space left on device, write"
+        "nextRunAtMs": 1773341842644,
+        "lastRunAtMs": 1773340042644,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 19412,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
