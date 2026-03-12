@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773330689658,
+      "updatedAtMs": 1773338242532,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773337889623,
-        "lastRunAtMs": 1773330689623,
+        "nextRunAtMs": 1773345442500,
+        "lastRunAtMs": 1773338242500,
         "lastStatus": "error",
-        "lastDurationMs": 35,
-        "consecutiveErrors": 159,
+        "lastDurationMs": 32,
+        "consecutiveErrors": 160,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773335793467,
+      "updatedAtMs": 1773337588113,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773337565950,
-        "lastRunAtMs": 1773335765950,
+        "nextRunAtMs": 1773339378448,
+        "lastRunAtMs": 1773337578448,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27517,
+        "lastDurationMs": 9665,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773337578417
+        "runningAtMs": 1773339378495
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773332473763,
+      "updatedAtMs": 1773338242674,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,14 +1984,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773337813472,
-        "lastRunAtMs": 1773332466044,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 7719,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773340042532,
+        "lastRunAtMs": 1773338242532,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 142,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: ENOSPC: no space left on device, write"
       }
     },
     {
