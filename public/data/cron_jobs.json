@@ -162,7 +162,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :30)",
       "enabled": true,
       "createdAtMs": 1771365805978,
-      "updatedAtMs": 1773426615242,
+      "updatedAtMs": 1773433814711,
       "schedule": {
         "kind": "cron",
         "expr": "30 8,10,12,14,16,18,20,22 * * *",
@@ -180,11 +180,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773426600054,
+        "lastRunAtMs": 1773433800050,
         "lastStatus": "ok",
-        "lastDurationMs": 15188,
+        "lastDurationMs": 14661,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773433800000,
+        "nextRunAtMs": 1773441000000,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -432,7 +432,7 @@
       "name": "🧹 Session Cleanup",
       "enabled": true,
       "createdAtMs": 1771619175350,
-      "updatedAtMs": 1773174375614,
+      "updatedAtMs": 1773433575637,
       "schedule": {
         "kind": "every",
         "everyMs": 259200000,
@@ -450,11 +450,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773433575541,
-        "lastRunAtMs": 1773174375541,
+        "nextRunAtMs": 1773692775598,
+        "lastRunAtMs": 1773433575598,
         "lastStatus": "error",
-        "lastDurationMs": 73,
-        "consecutiveErrors": 4,
+        "lastDurationMs": 39,
+        "consecutiveErrors": 5,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773430411883,
+      "updatedAtMs": 1773432211778,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773432204118,
-        "lastRunAtMs": 1773430404118,
+        "nextRunAtMs": 1773434004159,
+        "lastRunAtMs": 1773432204159,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7765,
+        "lastDurationMs": 7619,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773432204150
+        "runningAtMs": 1773434004198
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773431855146,
+      "updatedAtMs": 1773433656966,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773433645390,
-        "lastRunAtMs": 1773431845390,
+        "nextRunAtMs": 1773435445446,
+        "lastRunAtMs": 1773433645446,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9756,
+        "lastDurationMs": 11520,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2190,6 +2190,32 @@
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "329ab1f1-714f-4b14-b8cd-d6e4369c9708",
+      "agentId": "general-chat",
+      "sessionKey": "agent:general-chat:discord:channel:1473386869390835861",
+      "name": "Kalshi Edge Scanner",
+      "enabled": true,
+      "createdAtMs": 1773432915381,
+      "updatedAtMs": 1773432915381,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1773432915381
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the Kalshi edge scanner: cd ~/.openclaw/workspace && python3 kalshi_edge_scanner.py 2>&1. Post the full output to Discord channel #kalshi-edge-scanner (ID: 1482109786349895710). If there are BUY signals, highlight the top 3."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773434715381
       }
     }
   ]
