@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773403043042,
+      "updatedAtMs": 1773410243064,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773410242976,
-        "lastRunAtMs": 1773403042976,
+        "nextRunAtMs": 1773417443026,
+        "lastRunAtMs": 1773410243026,
         "lastStatus": "error",
-        "lastDurationMs": 66,
-        "consecutiveErrors": 169,
+        "lastDurationMs": 38,
+        "consecutiveErrors": 170,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773407791679,
+      "updatedAtMs": 1773409588945,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773409584106,
-        "lastRunAtMs": 1773407784106,
+        "nextRunAtMs": 1773411384152,
+        "lastRunAtMs": 1773409584152,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7573,
+        "lastDurationMs": 4793,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773409584140
+        "runningAtMs": 1773411384195
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773408455084,
+      "updatedAtMs": 1773410261935,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773410244647,
-        "lastRunAtMs": 1773408444647,
+        "nextRunAtMs": 1773412044695,
+        "lastRunAtMs": 1773410244695,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10437,
+        "lastDurationMs": 17240,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
