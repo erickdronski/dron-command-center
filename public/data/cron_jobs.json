@@ -467,7 +467,7 @@
       "name": "🔒 Daily Security Audit",
       "enabled": true,
       "createdAtMs": 1771619175379,
-      "updatedAtMs": 1773316800101,
+      "updatedAtMs": 1773403200077,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -485,11 +485,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773403200000,
-        "lastRunAtMs": 1773316800052,
+        "nextRunAtMs": 1773489600000,
+        "lastRunAtMs": 1773403200049,
         "lastStatus": "error",
-        "lastDurationMs": 49,
-        "consecutiveErrors": 14,
+        "lastDurationMs": 28,
+        "consecutiveErrors": 15,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773395842978,
+      "updatedAtMs": 1773403043042,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773403042925,
-        "lastRunAtMs": 1773395842925,
+        "nextRunAtMs": 1773410242976,
+        "lastRunAtMs": 1773403042976,
         "lastStatus": "error",
-        "lastDurationMs": 53,
-        "consecutiveErrors": 168,
+        "lastDurationMs": 66,
+        "consecutiveErrors": 169,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773400591133,
+      "updatedAtMs": 1773402391425,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773402383911,
-        "lastRunAtMs": 1773400583911,
+        "nextRunAtMs": 1773404183963,
+        "lastRunAtMs": 1773402383963,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7222,
+        "lastDurationMs": 7462,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773402383951
+        "runningAtMs": 1773404184000
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773401254957,
+      "updatedAtMs": 1773403052838,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773403044435,
-        "lastRunAtMs": 1773401244435,
+        "nextRunAtMs": 1773404844486,
+        "lastRunAtMs": 1773403044486,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10522,
+        "lastDurationMs": 8352,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2163,7 +2163,7 @@
       "name": "Daily Sports News Graphics (8AM)",
       "enabled": true,
       "createdAtMs": 1773368988220,
-      "updatedAtMs": 1773368988220,
+      "updatedAtMs": 1773403620719,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -2182,7 +2182,14 @@
         "channel": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773403200000
+        "nextRunAtMs": 1773489600000,
+        "lastRunAtMs": 1773403200077,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 420642,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
