@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773406824441,
+      "updatedAtMs": 1773414448867,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773406812517,
+        "lastRunAtMs": 1773414435833,
         "lastStatus": "ok",
-        "lastDurationMs": 11924,
+        "lastDurationMs": 13034,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773414012453,
+        "nextRunAtMs": 1773421212453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773411392188,
+      "updatedAtMs": 1773413192947,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773413184209,
-        "lastRunAtMs": 1773411384209,
+        "nextRunAtMs": 1773416003552,
+        "lastRunAtMs": 1773413184253,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7979,
+        "lastDurationMs": 8694,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773413184242
+        "runningAtMs": 1773416003604
       }
     },
     {
@@ -1900,7 +1900,7 @@
       "name": "PA Daily Carousel — 11 AM ET (HTML Template)",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773328129289,
+      "updatedAtMs": 1773414421601,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1919,11 +1919,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773414000000,
-        "lastRunAtMs": 1773327600130,
+        "nextRunAtMs": 1773500400000,
+        "lastRunAtMs": 1773414000050,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 529159,
+        "lastDurationMs": 421551,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773412054529,
+      "updatedAtMs": 1773415654954,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773413844744,
-        "lastRunAtMs": 1773412044744,
+        "nextRunAtMs": 1773417444848,
+        "lastRunAtMs": 1773415644848,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9785,
+        "lastDurationMs": 10106,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2001,7 +2001,7 @@
       "name": "PA X — Daily Signals (11 AM ET)",
       "enabled": true,
       "createdAtMs": 1773112405564,
-      "updatedAtMs": 1773328148914,
+      "updatedAtMs": 1773414435566,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -2020,11 +2020,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773414000000,
-        "lastRunAtMs": 1773328129289,
+        "nextRunAtMs": 1773500400000,
+        "lastRunAtMs": 1773414421601,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19625,
+        "lastDurationMs": 13965,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -2163,7 +2163,7 @@
       "name": "Daily Sports News Graphics (8AM)",
       "enabled": true,
       "createdAtMs": 1773368988220,
-      "updatedAtMs": 1773403620719,
+      "updatedAtMs": 1773414670140,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -2173,7 +2173,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "DAILY SPORTS NEWS GRAPHICS JOB — 8:00 AM ET\n\nYou are generating trending/breaking sports content graphics for the Precision Algorithms TikTok pipeline.\n\n## Instructions:\n1. Search the web for today's top trending/breaking sports news across: NBA, NFL, NHL, MLB, NCAAB, Soccer/World Cup, UFC\n2. Use sources: ESPN, Bleacher Report, The Athletic, CBS Sports, NBC Sports — only verified, published news\n3. Identify 3-5 stories that are trending, breaking, or critically important RIGHT NOW\n4. Generate a 'PA Morning Recap' carousel (5 slides, 9:16 format 1080x1920) covering the top stories — use the HTML template system in content/tiktok/ with Puppeteer rendering\n5. If there's a single MASSIVE breaking story (blockbuster trade, major injury, scandal), also generate a standalone single-page graphic for it\n6. Save all PNGs to ~/Desktop/PA-TikTok-Carousels/09-Daily-News/YYYY-MM-DD/\n7. Post previews to Discord channel 1477431773678932131\n8. Always include sources in the footer or slide notes\n9. Use the red theme for breaking news, blue for general recap, gold for records/milestones\n\n## Template Reference:\n- HTTP server: start one on port 8001 from content/tiktok/ if not running\n- Puppeteer: /tmp/node_modules/puppeteer (install if missing: cd /tmp && npm i puppeteer)\n- Viewport: 540x960, deviceScaleFactor: 2 → 1080x1920\n- CSS: use the established PA brand (navy bg, teal/gold/red/blue accents, Montserrat font)\n- Reference existing carousels in content/tiktok/ for CSS patterns\n\n## Content Types to Consider:\n- 🔴 BREAKING: Trades, injuries, suspensions, firings\n- 📊 RESULTS: Last night's big scores, upsets, milestones\n- 🏆 STANDINGS: Playoff race updates, clinching scenarios\n- ⚽ WORLD CUP: Any WC 2026 news (90 days away)\n- 🏀 MARCH MADNESS: Tournament updates if in season\n- 📈 BETTING: Line movements, sharp action, notable odds\n\nDo NOT make up any news. Only use verified, published stories from credible sources.",
+        "message": "DAILY SPORTS NEWS GRAPHICS JOB — 8:00 AM ET\n\nGenerate trending/breaking sports content graphics for Precision Algorithms TikTok.\n\n## CRITICAL: Use the proven 9:16 carousel template\n\n1. Read the reference template: `content/tiktok/pa-news-morning-2026-03-13.html` — this is the EXACT CSS and layout to follow\n2. Copy its CSS verbatim (all :root vars, .slide, .pa-logo, .body, .tag, .title, .score-list, .deal-list, .tier-row, .info-box, .slide-footer classes)\n3. Only change the DATA — swap headlines, scores, deals, tags\n4. Keep viewport 540×960 with deviceScaleFactor:2 → 1080×1920 output\n5. Use the carousel slider format (multiple .slide divs in a .track with goTo() JS)\n\n## Steps:\n1. Search ESPN, CBS Sports, NBC Sports, Bleacher Report for today's top 3-5 trending stories across NBA, NFL, NHL, MLB, NCAAB, Soccer, UFC\n2. Only use verified, published news — NEVER make up data\n3. Create HTML file: `content/tiktok/pa-news-morning-YYYY-MM-DD.html` using the reference template CSS\n4. Slide structure:\n   - Slide 1: Cover (bg-blue) — date badge, MORNING RECAP headline, 4 topic rows with emoji+text+badge\n   - Slides 2-4: Individual stories — use bg-gold for records, bg-red for breaking, bg-blue for results, bg-purple for college\n   - Slide 5: Biggest remaining story or CTA\n5. If a MASSIVE breaking story exists, also create a standalone single-page graphic\n6. Start HTTP server if not running: `cd content/tiktok && python3 -m http.server 8001 &`\n7. Install Puppeteer if needed: `cd /tmp && npm i puppeteer`\n8. Render with Puppeteer:\n```js\nconst puppeteer = require('/tmp/node_modules/puppeteer');\nawait page.setViewport({ width: 540, height: 960, deviceScaleFactor: 2 });\nawait page.goto('http://localhost:8001/pa-news-morning-YYYY-MM-DD.html');\nfor (let i = 0; i < totalSlides; i++) {\n  if (i > 0) await page.evaluate(n => goTo(n), i);\n  await page.screenshot({ path: `slide-${i+1}.png`, clip: { x:0, y:0, width:540, height:960 } });\n}\n```\n9. Save PNGs to `exports/daily-news/YYYY-MM-DD/` in workspace\n10. Post previews to Discord channel 1477431773678932131\n\n## Color themes:\n- 🔴 Red (bg-red) → Breaking news, trades, injuries\n- 🔵 Blue (bg-blue) → General recap, NBA results\n- 🟡 Gold (bg-gold) → Records, milestones\n- 🟣 Purple (bg-purple) → College basketball\n- 🟢 Default (bg-default) → General/teal accent\n\n## Element sizing (MUST follow):\n- PA icon: 56px, wordmark: 13px\n- Tag: 12px font, 8px/20px padding\n- Headlines (h1/h2): 52-56px\n- Title: 34px\n- Score matchup: 16px, score result: 26px\n- Deal player: 16px, deal detail: 12px\n- Topic text: 16px, topic emoji: 24px\n- All card widths: 94%\n- Card padding: 18px\n- Footer: 10px handles, 9px source\n\nDo NOT make up any news. Only verified, published stories.",
         "model": "sonnet",
         "timeoutSeconds": 600
       },
