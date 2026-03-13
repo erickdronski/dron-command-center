@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773410243064,
+      "updatedAtMs": 1773417443129,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773417443026,
-        "lastRunAtMs": 1773410243026,
+        "nextRunAtMs": 1773424643079,
+        "lastRunAtMs": 1773417443079,
         "lastStatus": "error",
-        "lastDurationMs": 38,
-        "consecutiveErrors": 170,
+        "lastDurationMs": 50,
+        "consecutiveErrors": 171,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773413192947,
+      "updatedAtMs": 1773416013252,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773416003552,
-        "lastRunAtMs": 1773413184253,
+        "nextRunAtMs": 1773417803614,
+        "lastRunAtMs": 1773416003614,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8694,
+        "lastDurationMs": 9638,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773416003604
+        "runningAtMs": 1773417803659
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773415654954,
+      "updatedAtMs": 1773417457454,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773417444848,
-        "lastRunAtMs": 1773415644848,
+        "nextRunAtMs": 1773419244899,
+        "lastRunAtMs": 1773417444899,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10106,
+        "lastDurationMs": 12555,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2037,7 +2037,7 @@
       "name": "PA X — Pick of the Day (12 PM ET)",
       "enabled": true,
       "createdAtMs": 1773112411293,
-      "updatedAtMs": 1773331223740,
+      "updatedAtMs": 1773417620459,
       "schedule": {
         "kind": "cron",
         "expr": "0 12 * * *",
@@ -2056,11 +2056,11 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773417600000,
-        "lastRunAtMs": 1773331200152,
+        "nextRunAtMs": 1773504000000,
+        "lastRunAtMs": 1773417600045,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23588,
+        "lastDurationMs": 20414,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
