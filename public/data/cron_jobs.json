@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773362786412,
+      "updatedAtMs": 1773364585340,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773364579207,
-        "lastRunAtMs": 1773362779207,
+        "nextRunAtMs": 1773366379254,
+        "lastRunAtMs": 1773364579254,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7205,
+        "lastDurationMs": 6086,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773364579245
+        "runningAtMs": 1773366379289
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773363456516,
+      "updatedAtMs": 1773365250350,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773365243296,
-        "lastRunAtMs": 1773363443296,
+        "nextRunAtMs": 1773367043353,
+        "lastRunAtMs": 1773365243353,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13220,
+        "lastDurationMs": 6997,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
