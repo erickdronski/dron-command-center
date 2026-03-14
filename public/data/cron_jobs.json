@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773513678809,
+      "updatedAtMs": 1773515479299,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773515429267,
-        "lastRunAtMs": 1773513629267,
+        "nextRunAtMs": 1773517229301,
+        "lastRunAtMs": 1773515429301,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 49542,
+        "lastDurationMs": 49998,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773515429290
+        "runningAtMs": 1773517229329
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773514682932,
+      "updatedAtMs": 1773516482018,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773516474537,
-        "lastRunAtMs": 1773514674537,
+        "nextRunAtMs": 1773518274574,
+        "lastRunAtMs": 1773516474574,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8395,
+        "lastDurationMs": 7444,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -2171,7 +2171,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773513756573,
+      "updatedAtMs": 1773515561716,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,11 +2187,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773515490828,
-        "lastRunAtMs": 1773513690828,
+        "nextRunAtMs": 1773517290905,
+        "lastRunAtMs": 1773515490905,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 65745,
+        "lastDurationMs": 70811,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2204,7 +2204,7 @@
       "name": "moltlaunch Starlight + Bounty Patrol",
       "enabled": true,
       "createdAtMs": 1773499294537,
-      "updatedAtMs": 1773514321017,
+      "updatedAtMs": 1773515615986,
       "schedule": {
         "kind": "every",
         "everyMs": 172800000,
@@ -2218,7 +2218,7 @@
         "message": "Run two moltlaunch tasks for agent 28435:\n\n**1. Bounce check & bounty scan:**\nexport PATH=\"$PATH:/Users/dron/.nvm/versions/node/v25.6.1/bin\"\nmltl inbox --agent 28435 --json 2>&1\nmltl bounty browse --json 2>&1\n\nIf there are open bounties that match DRON's skills (web dev, content, AI automation, research, copywriting), claim the best one with: mltl bounty claim --bounty <id>\n\n**2. Starlight visibility test (3 queries):**\nmltl starlight --message \"I need a Next.js website built\" --json 2>&1\nmltl starlight --message \"who can write landing page copy\" --json 2>&1\nmltl starlight --message \"I need an AI automation workflow\" --json 2>&1\n\nCheck if agent 28435 (DRON) appears in the results. If Starlight is erroring (Failed to generate response), note it and skip.\n\nOnly report to Discord if:\n- There's a new inbox task request\n- A bounty was found and claimed\n- DRON is NOT appearing in Starlight results for relevant queries (so we can fix it)\n\nOtherwise: reply HEARTBEAT_OK"
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "discord",
         "to": "1477428291961884773",
         "bestEffort": true
