@@ -153,7 +153,8 @@
         "nextRunAtMs": 1773500412453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1773500994114
       }
     },
     {
@@ -1615,7 +1616,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773497112109,
+      "updatedAtMs": 1773498911219,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1634,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773498903555,
-        "lastRunAtMs": 1773497103555,
+        "nextRunAtMs": 1773500703627,
+        "lastRunAtMs": 1773498903627,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8554,
+        "lastDurationMs": 7592,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773498903618
+        "runningAtMs": 1773500994114
       }
     },
     {
@@ -1900,7 +1901,7 @@
       "name": "PA Daily Carousel — 11 AM ET (HTML Template)",
       "enabled": true,
       "createdAtMs": 1773009738514,
-      "updatedAtMs": 1773414421601,
+      "updatedAtMs": 1773500968825,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -1919,14 +1920,14 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773500400000,
-        "lastRunAtMs": 1773414000050,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 421551,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773586800000,
+        "lastRunAtMs": 1773500400108,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 568717,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | xai/grok-4: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | xai/grok-4-fast: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: ⚠️ API rate limit reached. Please try again later. (rate_limit) | openai/gpt-4o-mini: No available auth profile for openai (all in cooldown or unavailable). (rate_limit)"
       }
     },
     {
@@ -1965,7 +1966,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773498460197,
+      "updatedAtMs": 1773500261040,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,14 +1985,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773500247637,
-        "lastRunAtMs": 1773498447637,
+        "nextRunAtMs": 1773502047916,
+        "lastRunAtMs": 1773500247916,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12560,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 13124,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": false
       }
     },
     {
@@ -2001,7 +2002,7 @@
       "name": "PA X — Daily Signals (11 AM ET)",
       "enabled": true,
       "createdAtMs": 1773112405564,
-      "updatedAtMs": 1773414435566,
+      "updatedAtMs": 1773500993313,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 * * *",
@@ -2020,14 +2021,14 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773500400000,
-        "lastRunAtMs": 1773414421601,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 13965,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773586800000,
+        "lastRunAtMs": 1773500968825,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 24488,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: ⚠️ API rate limit reached. Please try again later. (rate_limit) | xai/grok-4: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | xai/grok-4-fast: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-opus-4-6: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-sonnet-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | anthropic/claude-haiku-4-5: No available auth profile for anthropic (all in cooldown or unavailable). (rate_limit) | openai/gpt-4o: Provider openai is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o-mini: Provider openai is in cooldown (all profiles unavailable) (rate_limit)"
       }
     },
     {
@@ -2171,7 +2172,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773497274657,
+      "updatedAtMs": 1773499079994,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,14 +2188,45 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773499012801,
-        "lastRunAtMs": 1773497212801,
+        "nextRunAtMs": 1773500812836,
+        "lastRunAtMs": 1773499012836,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 61856,
+        "lastDurationMs": 67158,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1773500994114
+      }
+    },
+    {
+      "id": "06990acf-f396-45dd-b378-b9433dcaa6ce",
+      "agentId": "command-center",
+      "sessionKey": "agent:command-center:discord:channel:1477428291961884773",
+      "name": "moltlaunch Starlight + Bounty Patrol",
+      "enabled": true,
+      "createdAtMs": 1773499294537,
+      "updatedAtMs": 1773499294537,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,16,21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "timeoutSeconds": 120,
+        "message": "Run two moltlaunch tasks for agent 28435:\n\n**1. Bounce check & bounty scan:**\nexport PATH=\"$PATH:/Users/dron/.nvm/versions/node/v25.6.1/bin\"\nmltl inbox --agent 28435 --json 2>&1\nmltl bounty browse --json 2>&1\n\nIf there are open bounties that match DRON's skills (web dev, content, AI automation, research, copywriting), claim the best one with: mltl bounty claim --bounty <id>\n\n**2. Starlight visibility test (3 queries):**\nmltl starlight --message \"I need a Next.js website built\" --json 2>&1\nmltl starlight --message \"who can write landing page copy\" --json 2>&1\nmltl starlight --message \"I need an AI automation workflow\" --json 2>&1\n\nCheck if agent 28435 (DRON) appears in the results. If Starlight is erroring (Failed to generate response), note it and skip.\n\nOnly report to Discord if:\n- There's a new inbox task request\n- A bounty was found and claimed\n- DRON is NOT appearing in Starlight results for relevant queries (so we can fix it)\n\nOtherwise: reply HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "discord",
+        "to": "1477428291961884773",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773518400000
       }
     }
   ]
