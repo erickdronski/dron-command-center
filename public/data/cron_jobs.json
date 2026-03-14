@@ -502,7 +502,7 @@
       "name": "💾 Silent Workspace Backup",
       "enabled": true,
       "createdAtMs": 1771619175402,
-      "updatedAtMs": 1773496643848,
+      "updatedAtMs": 1773503843930,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -520,11 +520,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773503843822,
-        "lastRunAtMs": 1773496643822,
+        "nextRunAtMs": 1773511043872,
+        "lastRunAtMs": 1773503843872,
         "lastStatus": "error",
-        "lastDurationMs": 26,
-        "consecutiveErrors": 182,
+        "lastDurationMs": 58,
+        "consecutiveErrors": 183,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "model not allowed: ollama/llama3.2:1b"
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773501065242,
+      "updatedAtMs": 1773502859078,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773502829010,
-        "lastRunAtMs": 1773501029010,
+        "nextRunAtMs": 1773504629067,
+        "lastRunAtMs": 1773502829067,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 36232,
+        "lastDurationMs": 30011,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773502829058
+        "runningAtMs": 1773504629089
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773502118887,
+      "updatedAtMs": 1773503940891,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773503847946,
-        "lastRunAtMs": 1773502047946,
+        "nextRunAtMs": 1773505647991,
+        "lastRunAtMs": 1773503847991,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 70941,
+        "lastDurationMs": 92900,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2037,7 +2037,7 @@
       "name": "PA X — Pick of the Day (12 PM ET)",
       "enabled": true,
       "createdAtMs": 1773112411293,
-      "updatedAtMs": 1773417620459,
+      "updatedAtMs": 1773504000137,
       "schedule": {
         "kind": "cron",
         "expr": "0 12 * * *",
@@ -2056,14 +2056,14 @@
         "to": "1477431773678932131"
       },
       "state": {
-        "nextRunAtMs": 1773504000000,
-        "lastRunAtMs": 1773417600045,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 20414,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773590400000,
+        "lastRunAtMs": 1773504000037,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 100,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: All models failed (8): anthropic/claude-sonnet-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | xai/grok-4: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | xai/grok-4-fast: Provider xai is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-opus-4-6: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-sonnet-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | anthropic/claude-haiku-4-5: Provider anthropic is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o: Provider openai is in cooldown (all profiles unavailable) (rate_limit) | openai/gpt-4o-mini: Provider openai is in cooldown (all profiles unavailable) (rate_limit)"
       }
     },
     {
@@ -2171,7 +2171,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773501130420,
+      "updatedAtMs": 1773502890741,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,11 +2187,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773502865242,
-        "lastRunAtMs": 1773501065242,
+        "nextRunAtMs": 1773504665290,
+        "lastRunAtMs": 1773502865290,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 65178,
+        "lastDurationMs": 25451,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
