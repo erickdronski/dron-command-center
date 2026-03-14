@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773477232876,
+      "updatedAtMs": 1773479012334,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773479005438,
-        "lastRunAtMs": 1773477205438,
+        "nextRunAtMs": 1773480805491,
+        "lastRunAtMs": 1773479005491,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27438,
+        "lastDurationMs": 6843,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773479005479
+        "runningAtMs": 1773480805529
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773478655896,
+      "updatedAtMs": 1773480456928,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773480447098,
-        "lastRunAtMs": 1773478647098,
+        "nextRunAtMs": 1773482247148,
+        "lastRunAtMs": 1773480447148,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8798,
+        "lastDurationMs": 9780,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -2171,7 +2171,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773477961891,
+      "updatedAtMs": 1773479771527,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,11 +2187,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773479716727,
-        "lastRunAtMs": 1773477916727,
+        "nextRunAtMs": 1773481516773,
+        "lastRunAtMs": 1773479716773,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 45164,
+        "lastDurationMs": 54754,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
