@@ -127,7 +127,7 @@
       "name": "DronskiErick X Engagement (Every 2hrs :00)",
       "enabled": true,
       "createdAtMs": 1771365800344,
-      "updatedAtMs": 1773501029010,
+      "updatedAtMs": 1773507665968,
       "schedule": {
         "kind": "cron",
         "expr": "0 7,9,11,13,15,17,19,21 * * *",
@@ -146,11 +146,11 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1773500994125,
+        "lastRunAtMs": 1773507612479,
         "lastStatus": "ok",
-        "lastDurationMs": 34885,
+        "lastDurationMs": 53489,
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773507612453,
+        "nextRunAtMs": 1773514812453,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773504688485,
+      "updatedAtMs": 1773506482946,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773506429095,
-        "lastRunAtMs": 1773504629095,
+        "nextRunAtMs": 1773508229128,
+        "lastRunAtMs": 1773506429128,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 59390,
+        "lastDurationMs": 53818,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773506429120
+        "runningAtMs": 1773508229149
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773505692300,
+      "updatedAtMs": 1773507459772,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773507448010,
-        "lastRunAtMs": 1773505648010,
+        "nextRunAtMs": 1773509248179,
+        "lastRunAtMs": 1773507448179,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 44290,
+        "lastDurationMs": 11593,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -2171,7 +2171,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773504770072,
+      "updatedAtMs": 1773506561345,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,11 +2187,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773506490594,
-        "lastRunAtMs": 1773504690594,
+        "nextRunAtMs": 1773508290643,
+        "lastRunAtMs": 1773506490643,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 79478,
+        "lastDurationMs": 70702,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
