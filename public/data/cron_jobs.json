@@ -777,7 +777,7 @@
       "name": "💰 5K MRR App Builder",
       "enabled": true,
       "createdAtMs": 1771821048720,
-      "updatedAtMs": 1773376285093,
+      "updatedAtMs": 1773462678388,
       "schedule": {
         "everyMs": 86400000,
         "kind": "every",
@@ -798,10 +798,10 @@
         "to": "channel:1475349043394773092"
       },
       "state": {
-        "nextRunAtMs": 1773462649453,
-        "lastRunAtMs": 1773376249453,
+        "nextRunAtMs": 1773549049500,
+        "lastRunAtMs": 1773462649500,
         "lastStatus": "ok",
-        "lastDurationMs": 35640,
+        "lastDurationMs": 28888,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1615,7 +1615,7 @@
       "name": "🔄 Command Center Data Sync",
       "enabled": true,
       "createdAtMs": 1772148803552,
-      "updatedAtMs": 1773459211450,
+      "updatedAtMs": 1773461033071,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1633,15 +1633,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773461004917,
-        "lastRunAtMs": 1773459204917,
+        "nextRunAtMs": 1773462804972,
+        "lastRunAtMs": 1773461004972,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6533,
+        "lastDurationMs": 28099,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1773461004959
+        "runningAtMs": 1773462805012
       }
     },
     {
@@ -1965,7 +1965,7 @@
       "name": "moltlaunch inbox check",
       "enabled": true,
       "createdAtMs": 1773109213472,
-      "updatedAtMs": 1773460656165,
+      "updatedAtMs": 1773462456869,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1984,11 +1984,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773462446591,
-        "lastRunAtMs": 1773460646591,
+        "nextRunAtMs": 1773464246643,
+        "lastRunAtMs": 1773462446643,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9574,
+        "lastDurationMs": 10226,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -2171,7 +2171,7 @@
       "name": "Kalshi Edge Scanner",
       "enabled": true,
       "createdAtMs": 1773432915381,
-      "updatedAtMs": 1773459968374,
+      "updatedAtMs": 1773461765144,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2187,11 +2187,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773461716230,
-        "lastRunAtMs": 1773459916230,
+        "nextRunAtMs": 1773463516290,
+        "lastRunAtMs": 1773461716290,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 52144,
+        "lastDurationMs": 48854,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
